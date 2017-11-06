@@ -1,0 +1,7 @@
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Release\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Release\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Release\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Release\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Release\DrxDashboard.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Release\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Release\DrxDashboard.Core.pdb

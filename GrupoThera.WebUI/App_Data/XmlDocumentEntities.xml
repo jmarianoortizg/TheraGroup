@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MDM.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:Mdm.Entities.Contracts.IDto">
+            <summary>
+            Defines an dto class element
+            </summary>
+        </member>
+        <member name="T:Mdm.Entities.Contracts.IEntity">
+            <summary>
+            Defines an entity class element
+            </summary>
+        </member>
+        <member name="T:Mdm.Entities.Entity.UserInfo">
+            <summary>
+            A Entity class for UserInfo objects.
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.userInfoId">
+            <summary>
+             PK for User Info  Element
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.userName">
+            <summary>
+             User Info name
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.lastChangeDate">
+            <summary>
+             Last Change of the user info 
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.modifiedBy">
+            <summary>
+            Last of modified the user info 
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.fullName">
+            <summary>
+             Full name of the user info 
+            </summary>
+        </member>
+        <member name="P:Mdm.Entities.Entity.UserInfo.userNameHash">
+            <summary>
+             UserName hash of the user info 
+            </summary>
+        </member>
+        <member name="T:MDM.Entities.Entity.FAQ.Application">
+            <summary>
+            A Entity class for Application objects.
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Application.applicationId">
+            <summary>
+             PK for Application  Element
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Application.name">
+            <summary>
+             Application name
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Application.enabled">
+            <summary>
+             Enabled application
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Application.displayName">
+            <summary>
+            Application DisplayName 
+            </summary>
+        </member>
+        <member name="T:MDM.Entities.Entity.FAQ.Question">
+            <summary>
+            A Entity class for Questions objects.
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.questionId">
+            <summary>
+             PK for User Info  Element
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.quest">
+            <summary>
+             User Info name
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.languaje">
+            <summary>
+             Last Change of the user info 
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.answer">
+            <summary>
+            Last of modified the user info 
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.themeId">
+            <summary>
+            Foreigh key to the theme id
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Question.Theme">
+            <summary>
+            Entity of theme
+            </summary>
+        </member>
+        <member name="T:MDM.Entities.Entity.FAQ.Theme">
+            <summary>
+            A Entity class for Theme objects.
+            </summary>
+        </member>
+        <member name="M:MDM.Entities.Entity.FAQ.Theme.#ctor">
+            <summary>
+             Constructor for the Theme object
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.themeId">
+            <summary>
+             PK for Theme  Element
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.name">
+            <summary>
+             Theme name
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.language">
+            <summary>
+             Languaje set by Theme 
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.displayName">
+            <summary>
+            Display final name  
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.applicationId">
+            <summary>
+            Foreight key to application entiy
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.Application">
+            <summary>
+            Related application
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.FAQ.Theme.Question">
+            <summary>
+            Collection of questions by theme
+            </summary>
+        </member>
+        <member name="T:MDM.Entities.Entity.Mock.Category">
+            <summary>
+            A Entity class for category objects.
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Category.CatId">
+            <summary>
+             PK for category Element
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Category.CategoryName">
+            <summary>
+             Category name
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Category.Description">
+            <summary>
+             Description of the category
+            </summary>
+        </member>
+        <member name="T:MDM.Entities.Entity.Mock.Product">
+            <summary>
+            A Entity class for Product objects.
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Product.ProdId">
+            <summary>
+             PK for product Element
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Product.ProductName">
+            <summary>
+             product name
+            </summary>
+        </member>
+        <member name="P:MDM.Entities.Entity.Mock.Product.CatId">
+            <summary>
+             FK for category Element
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Layout";
+    var UserName = (string)(String)HttpContext.Current.Session["UserName"];
+    var Mail = (string)(String)HttpContext.Current.Session["Mail"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mdm Application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="Mdm Application Web Service">
+    <meta name="author" content="OM03424040">
+    @Styles.Render("~/Content/assets/css/drxTemplateCss")
+</head>
+
+<body class="infobar-overlay sidebar-hideon-collpase sidebar-scroll animated-content">
+    <header id="topnav" class="navbar navbar-teal navbar-fixed-top" role="banner">
+        <div class="logo-area">
+            <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+                <a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+                    <span class="icon-bg">
+                        <i class="ti ti-menu"></i>
+                    </span>
+                </a>
+            </span>
+            <a class="navbar-brand" href="index.html">Draexlmaier</a>
+
+            <div class="toolbar-icon-bg hidden-xs" id="toolbar-search">
+                <h4 class="ml-xs"><span style="color:white" class="ti ti-world"> MDM Application</span></h4>
+            </div>
+
+        </div><!-- logo-area -->
+        <!-- Profile Image-area -->
+        @Html.Partial("_NavBarTools")
+        <!-- /Profile Image-area -->
+    </header>
+
+    <div id="wrapper">
+        <div id="layout-static">
+            <div class="static-sidebar-wrapper sidebar-default">
+                <div class="static-sidebar">
+                    <div class="sidebar">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="userinfo"> 
+                                    <div>
+                                        <div class="username"><h4><span class="ti ti-world"> </span> MDM Application API</h4></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget stay-on-collapse" id="widget-sidebar">
+                            <nav role="navigation" class="widget-body">
+                                @Html.Partial("_Menu")
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="static-content-wrapper">
+                <div class="static-content">
+                    <div class="page-content">
+                        <ol class="breadcrumb">
+                            <span class="fa fa-home"></span>@Html.MvcSiteMap().SiteMapPath()
+                        </ol>
+                        <div class="container-fluid">
+                            @RenderBody()
+                        </div><!-- .container-fluid -->
+                    </div> <!-- #page-content -->
+                </div>
+                @Html.Partial("_Footer")
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/Content/assets/js/jquery")
+    @Scripts.Render("~/Content/assets/js/bootstrap")
+    @Scripts.Render("~/Content/assets/js/drxTemplateJs")
+    @Scripts.Render("~/Content/assets/js/drxTemplateIe10")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

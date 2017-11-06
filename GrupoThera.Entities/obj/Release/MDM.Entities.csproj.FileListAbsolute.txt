@@ -1,0 +1,7 @@
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\bin\Release\MDM.Entities.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\bin\Release\MDM.Entities.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\obj\Release\MDM.Entities.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\obj\Release\MDM.Entities.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\obj\Release\MDM.Entities.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\bin\Release\Newtonsoft.Json.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Entities\bin\Release\Newtonsoft.Json.xml

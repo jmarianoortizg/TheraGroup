@@ -1,0 +1,45 @@
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.csprojResolveAssemblyReference.cache
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Debug\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\obj\Debug\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DrxDashboard.Business.dll.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DelegateDecompiler.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\Mono.Reflection.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.xml

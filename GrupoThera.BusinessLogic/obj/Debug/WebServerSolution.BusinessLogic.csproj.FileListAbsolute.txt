@@ -1,0 +1,52 @@
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll.config
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessLogic\obj\Debug\WebServerSolution.BusinessLogic.pdb

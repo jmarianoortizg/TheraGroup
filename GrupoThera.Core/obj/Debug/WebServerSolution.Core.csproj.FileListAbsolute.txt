@@ -1,0 +1,26 @@
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Core\obj\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\obj\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.Core\obj\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\obj\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.Core\obj\Debug\WebServerSolution.Core.pdb

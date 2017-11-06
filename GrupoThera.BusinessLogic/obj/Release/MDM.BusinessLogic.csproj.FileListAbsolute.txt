@@ -1,0 +1,15 @@
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\MDM.BusinessLogic.dll.config
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\MDM.BusinessLogic.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\MDM.BusinessLogic.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\EntityFramework.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\MDM.Entities.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\MDM.Entities.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\EntityFramework.xml
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\obj\Release\MDM.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\obj\Release\MDM.BusinessLogic.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\obj\Release\MDM.BusinessLogic.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\Newtonsoft.Json.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.BusinessLogic\bin\Release\Newtonsoft.Json.xml

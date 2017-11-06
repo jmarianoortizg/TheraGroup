@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "_Unauthorized";
+    Layout = null;
+} 
+<!DOCTYPE html> 
+<html class="no-focus" lang="en">
+ <!--<![endif]-->
+@Html.Partial("_Head")
+<body>
+    <!-- Error Content -->
+    <div class="content bg-white text-center pulldown overflow-hidden">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <!-- Error Titles -->
+                <h1 class="font-s128 font-w300 text-modern animated zoomInDown">401</h1>
+                <h2 class="h3 font-w300 push-50 animated fadeInUp">No tienes permisos para ver esta pagina</h2>
+                <!-- END Error Titles -->
+                <!-- Search Form --> 
+                <!-- END Search Form -->
+            </div>
+        </div>
+    </div>
+    <!-- END Error Content -->
+    <!-- Error Footer -->
+    <div class="content pulldown text-muted text-center">
+        <a class="link-effect" href="@Url.Action("Index","Home")">Ir a menu Principal</a>
+        @Html.Partial("_Footer")
+    </div>
+
+    @Html.Partial("_Footer")
+
+    <!-- END Error Footer -->
+    <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+    @Scripts.Render("~/Content/assets/js/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Content/assets/js/bootstrap")
+    @Scripts.Render("~/Content/assets/js/GrupoTheraTemplateJs")
+</body>
+</html>
+

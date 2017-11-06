@@ -1,0 +1,75 @@
+D:\GT\GrupoThera\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll.config
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\AutoMapper.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\EntityFramework.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\Mono.Reflection.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\log4net.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\AutoMapper.xml
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\EntityFramework.xml
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera\GrupoThera.BusinessModel\bin\Debug\log4net.xml
+D:\GT\GrupoThera\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.dll
+D:\GT\GrupoThera\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll.config
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\AutoMapper.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\EntityFramework.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\Mono.Reflection.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\log4net.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\AutoMapper.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\EntityFramework.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\bin\Debug\log4net.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll.config
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessModel.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\AutoMapper.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\DelegateDecompiler.EntityFramework.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Mono.Reflection.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\log4net.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\AutoMapper.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\log4net.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.csprojResolveAssemblyReference.cache
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.pdb

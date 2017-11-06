@@ -1,0 +1,33 @@
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\GrupoThera.Core.pdb
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\log4net.dll
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\log4net.xml
+D:\GT\GrupoThera\GrupoThera.Core\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera\GrupoThera.Core\obj\Debug\GrupoThera.Core.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera\GrupoThera.Core\obj\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera\GrupoThera.Core\obj\Debug\GrupoThera.Core.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\GrupoThera.Core.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\log4net.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\log4net.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\obj\Debug\GrupoThera.Core.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\obj\Debug\GrupoThera.Core.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.Core\obj\Debug\GrupoThera.Core.pdb
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\GrupoThera.Core.dll
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\GrupoThera.Core.pdb
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\GrupoThera.Entities.dll
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\log4net.dll
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\Newtonsoft.Json.dll
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\GrupoThera.Entities.pdb
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\log4net.xml
+F:\Proyects\TheraGroup\GrupoThera.Core\bin\Debug\Newtonsoft.Json.xml
+F:\Proyects\TheraGroup\GrupoThera.Core\obj\Debug\GrupoThera.Core.csprojResolveAssemblyReference.cache
+F:\Proyects\TheraGroup\GrupoThera.Core\obj\Debug\GrupoThera.Core.dll
+F:\Proyects\TheraGroup\GrupoThera.Core\obj\Debug\GrupoThera.Core.pdb

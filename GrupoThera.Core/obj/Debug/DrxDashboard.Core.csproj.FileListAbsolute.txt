@@ -1,0 +1,18 @@
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\bin\Debug\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\bin\Debug\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\bin\Debug\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Core\obj\Debug\DrxDashboard.Core.pdb

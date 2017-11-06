@@ -1,0 +1,4 @@
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\bin\Release\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\bin\Release\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\obj\Release\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\obj\Release\DrxDashboard.Entities.pdb

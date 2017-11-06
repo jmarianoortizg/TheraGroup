@@ -1,0 +1,156 @@
+﻿@model GrupoThera.Entities.Models.General.DashboardModel
+@{
+    ViewBag.Title = "_AsideOriginal";
+}
+
+<!-- Side Overlay-->
+<aside id="side-overlay">
+    <!-- Side Overlay Scroll Container -->
+    <div id="side-overlay-scroll">
+        <!-- Side Header -->
+        <div class="side-header side-content">
+            <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+            <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+                <i class="fa fa-times"></i>
+            </button>
+            <span>
+                <img class="img-avatar img-avatar32" src="~/Content/assets/img/avatars/avatar1.jpg" alt="">
+                <span class="font-w600 push-10-l">
+                    <strong> @Html.DisplayFor(Model => Model.userName) </strong>
+                </span>
+            </span>
+        </div>
+        <!-- END Side Header -->
+        <!-- Side Content -->
+        <div class="side-content remove-padding-t">
+            <!-- Side Overlay Tabs -->
+            <div class="block pull-r-l border-t">
+                <ul class="nav nav-tabs nav-tabs-alt nav-justified" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#tabs-side-overlay-overview"><i class="fa fa-fw fa-coffee"></i> Seccion 1</a>
+                    </li>
+                    <li>
+                        <a href="#tabs-side-overlay-sales"><i class="fa fa-fw fa-line-chart"></i> Seccion 2</a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <!-- Overview Tab -->
+                    <div class="tab-pane fade fade-right in active" id="tabs-side-overlay-overview">
+                        <!-- Activity -->
+                        <div class="block pull-r-l">
+                            <div class="block-header bg-gray-lighter">
+                                <ul class="block-options">
+                                    <li>
+                                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                    </li>
+                                    <li>
+                                        <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                    </li>
+                                </ul>
+                                <h3 class="block-title">Actividad Reciente</h3>
+                            </div>
+                            <div class="block-content">
+                                <!-- Activity List -->
+                                <!-- END Activity List -->
+                            </div>
+                        </div>
+                        <!-- END Activity -->
+                        <!-- Quick Settings -->
+                        <div class="block pull-r-l">
+                            <div class="block-header bg-gray-lighter">
+                                <ul class="block-options">
+                                    <li>
+                                        <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                    </li>
+                                </ul>
+                                <h3 class="block-title">Opciones Rapidas</h3>
+                            </div>
+                            <div class="block-content">
+                                <!-- Quick Settings Form -->
+                                <form class="form-bordered" action="base_pages_dashboard.html" method="post" onsubmit="return false;">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="font-s13 font-w600">Option 0</div>
+                                                <div class="font-s13 font-w400 text-muted">Option 0</div>
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <label class="css-input switch switch-sm switch-primary push-10-t">
+                                                    <input type="checkbox"><span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="font-s13 font-w600">Option 1</div>
+                                                <div class="font-s13 font-w400 text-muted">Option 1</div>
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <label class="css-input switch switch-sm switch-primary push-10-t">
+                                                    <input type="checkbox"><span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="font-s13 font-w600">Option 2</div>
+                                                <div class="font-s13 font-w400 text-muted">Option 2</div>
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <label class="css-input switch switch-sm switch-primary push-10-t">
+                                                    <input type="checkbox" checked><span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="font-s13 font-w600">Option 3</div>
+                                                <div class="font-s13 font-w400 text-muted">Option 3</div>
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <label class="css-input switch switch-sm switch-primary push-10-t">
+                                                    <input type="checkbox" checked><span></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- END Quick Settings Form -->
+                            </div>
+                        </div>
+                        <!-- END Quick Settings -->
+                    </div>
+                    <!-- END Overview Tab -->
+                    <!-- Sales Tab -->
+                    <div class="tab-pane fade fade-left" id="tabs-side-overlay-sales">
+                        <div class="block pull-r-l">
+
+                            <!-- Today -->
+                            <div class="block-content block-content-full block-content-mini bg-gray-lighter">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <span class="font-w600 font-s13 text-gray-darker text-uppercase">Elements</span>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <span class="font-s13 text-muted">Element 1</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- END Sales Tab -->
+                </div>
+            </div>
+            <!-- END Side Overlay Tabs -->
+        </div>
+        <!-- END Side Content -->
+    </div>
+    <!-- END Side Overlay Scroll Container -->
+</aside>

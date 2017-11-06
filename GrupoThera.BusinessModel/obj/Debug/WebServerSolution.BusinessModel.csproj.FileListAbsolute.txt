@@ -1,0 +1,92 @@
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.dll.config
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\DelegateDecompiler.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\Mono.Reflection.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolution\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\DelegateDecompiler.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\Mono.Reflection.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\DrxDashboard.Business\obj\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\DelegateDecompiler.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\Mono.Reflection.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Dodongo\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.dll.config
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessModel.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\AutoMapper.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\DelegateDecompiler.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\DelegateDecompiler.EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\Mono.Reflection.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessLogic.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Core.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Entities.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\log4net.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.BusinessLogic.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Core.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\WebServerSolution.Entities.pdb
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\AutoMapper.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\bin\Debug\log4net.xml
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.dll
+D:\JWorld\Projects\WebServerSolutions\WebServerSolution Volvagia\WebServerSolution.BusinessModel\obj\Debug\WebServerSolution.BusinessModel.pdb

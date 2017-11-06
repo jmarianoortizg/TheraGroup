@@ -1,0 +1,15 @@
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.csprojResolveAssemblyReference.cache
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Entities\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.Entities\obj\Debug\DrxDashboard.Entities.pdb

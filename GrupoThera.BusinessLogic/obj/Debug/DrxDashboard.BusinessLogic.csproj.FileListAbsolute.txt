@@ -1,0 +1,31 @@
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.dll.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.dll.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.BusinessLogic\obj\Debug\DrxDashboard.BusinessLogic.pdb

@@ -1,0 +1,11 @@
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\MDM.Core.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\MDM.Core.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\log4net.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\MDM.Entities.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\Newtonsoft.Json.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\MDM.Entities.pdb
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\log4net.xml
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\bin\Release\Newtonsoft.Json.xml
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\obj\Release\MDM.Core.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\obj\Release\MDM.Core.dll
+D:\JWorld\Projects\MDM\trunk\MDMApplication\MDM.Core\obj\Release\MDM.Core.pdb

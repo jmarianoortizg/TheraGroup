@@ -1,0 +1,45 @@
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll.config
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll.config
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.pdb
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.dll
+D:\GT\GrupoThera V1 - Copy\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll.config
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.BusinessLogic.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.pdb
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.csprojResolveAssemblyReference.cache
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.pdb

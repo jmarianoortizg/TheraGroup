@@ -1,0 +1,53 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using GrupoThera.WebUI.Areas.HelpPage.Models
+@model Collection<ApiDescription>
+
+@{
+    ViewBag.Title = "MDM application API";
+
+    // Group APIs by controller
+    ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+}
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<div data-widget-group="group1">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-teal">
+                <div class="panel-heading">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+                <div class="panel-body">
+
+                    <header>
+                        <div class="content-wrapper">
+                            <div class="float-left">
+                                <h1>@ViewBag.Title</h1>
+                            </div>
+                        </div>
+                    </header>
+                    <div id="body">
+                        <section class="featured">
+                            <div class="content-wrapper">
+                                <h2>Introduction</h2>
+                                <p>
+                                    This developer informative page, was created to list all the methods created for the MDM Application.
+                                </p>
+                            </div>
+                        </section>
+                        <section class="content-wrapper main-content clear-fix">
+                            @foreach (var group in apiGroups)
+                            {
+                                @Html.DisplayFor(m => group, "ApiGroup")
+                            }
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

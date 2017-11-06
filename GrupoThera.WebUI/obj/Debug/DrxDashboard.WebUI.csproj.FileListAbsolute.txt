@@ -1,0 +1,243 @@
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\csc.exe
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\vbc.exe
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll.config
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Antlr3.Runtime.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\EntityFramework.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Newtonsoft.Json.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Owin.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Helpers.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Mvc.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Optimization.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Razor.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\WebGrease.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Helpers.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Mvc.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Optimization.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.Razor.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Antlr3.Runtime.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Newtonsoft.Json.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\EntityFramework.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.pdb
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Ninject.dll
+C:\Users\OM03424040\Desktop\DrxDashboard.WebUI\DrxDashboard.WebUI\bin\Ninject.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\csc.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\System.Collections.Immutable.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\vbc.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Antlr3.Runtime.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\MvcSiteMapProvider.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\MvcSiteMapProvider.WebActivator.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Newtonsoft.Json.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Ninject.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Ninject.Web.Common.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Helpers.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Mvc.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Optimization.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Razor.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\WebActivatorEx.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\WebGrease.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\AutoMapper.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\MvcSiteMapProvider.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\MvcSiteMapProvider.WebActivator.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Ninject.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Ninject.Web.Common.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Helpers.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Mvc.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Optimization.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.Razor.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Antlr3.Runtime.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Newtonsoft.Json.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\AutoMapper.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\bin\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\csc.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\System.Collections.Immutable.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\vbc.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\roslyn\VBCSCompiler.exe.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll.config
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.WebUI.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Antlr3.Runtime.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\EntityFramework.SqlServer.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\MvcSiteMapProvider.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\MvcSiteMapProvider.WebActivator.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Newtonsoft.Json.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Ninject.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Ninject.Web.Common.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Oracle.ManagedDataAccess.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Owin.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Helpers.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Mvc.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Optimization.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Razor.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\WebActivatorEx.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\WebGrease.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\EntityFramework.SqlServer.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\MvcSiteMapProvider.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\MvcSiteMapProvider.WebActivator.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Ninject.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Ninject.Web.Common.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Helpers.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Mvc.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Optimization.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.Razor.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.Deployment.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\System.Web.WebPages.Razor.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Antlr3.Runtime.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Newtonsoft.Json.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Google.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\obj\Debug\DrxDashboard.WebUI.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\AutoMapper.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard V1\DrxDashboard.WebUI\bin\AutoMapper.xml

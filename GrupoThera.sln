@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoThera.WebUI", "GrupoThera.WebUI\GrupoThera.WebUI.csproj", "{7FC567E5-E83B-44F3-9D6D-49D0C96DD708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoThera.BusinessLogic", "GrupoThera.BusinessLogic\GrupoThera.BusinessLogic.csproj", "{820C81DB-927B-4168-AD27-64AF1A38FC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoThera.Entities", "GrupoThera.Entities\GrupoThera.Entities.csproj", "{58364874-76A2-4018-A733-03D3BA3954F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoThera.BusinessModel", "GrupoThera.BusinessModel\GrupoThera.BusinessModel.csproj", "{00066AEC-8C12-440E-ADEE-60C5FF598CB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrupoThera.Core", "GrupoThera.Core\GrupoThera.Core.csproj", "{0A3C0998-FD2C-4B79-BC7C-4980E1FA7B83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FC567E5-E83B-44F3-9D6D-49D0C96DD708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC567E5-E83B-44F3-9D6D-49D0C96DD708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC567E5-E83B-44F3-9D6D-49D0C96DD708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC567E5-E83B-44F3-9D6D-49D0C96DD708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{820C81DB-927B-4168-AD27-64AF1A38FC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820C81DB-927B-4168-AD27-64AF1A38FC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820C81DB-927B-4168-AD27-64AF1A38FC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820C81DB-927B-4168-AD27-64AF1A38FC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58364874-76A2-4018-A733-03D3BA3954F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58364874-76A2-4018-A733-03D3BA3954F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58364874-76A2-4018-A733-03D3BA3954F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58364874-76A2-4018-A733-03D3BA3954F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00066AEC-8C12-440E-ADEE-60C5FF598CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00066AEC-8C12-440E-ADEE-60C5FF598CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00066AEC-8C12-440E-ADEE-60C5FF598CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00066AEC-8C12-440E-ADEE-60C5FF598CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3C0998-FD2C-4B79-BC7C-4980E1FA7B83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3C0998-FD2C-4B79-BC7C-4980E1FA7B83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3C0998-FD2C-4B79-BC7C-4980E1FA7B83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3C0998-FD2C-4B79-BC7C-4980E1FA7B83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

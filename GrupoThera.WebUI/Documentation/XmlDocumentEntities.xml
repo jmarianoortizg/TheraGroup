@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GrupoThera.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:GrupoThera.Entities.Contracts.IDto">
+            <summary>
+            Defines an dto class element
+            </summary>
+        </member>
+        <member name="T:GrupoThera.Entities.Contracts.IEntity">
+            <summary>
+            Defines an entity class element
+            </summary>
+        </member>
+        <member name="T:GrupoThera.Entities.Entity.Mock.Category">
+            <summary>
+            A Entity class for category objects.
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Category.CatId">
+            <summary>
+             PK for category Element
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Category.CategoryName">
+            <summary>
+             Category name
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Category.Description">
+            <summary>
+             Description of the category
+            </summary>
+        </member>
+        <member name="T:GrupoThera.Entities.Entity.Mock.Product">
+            <summary>
+            A Entity class for Product objects.
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Product.ProdId">
+            <summary>
+             PK for product Element
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Product.ProductName">
+            <summary>
+             product name
+            </summary>
+        </member>
+        <member name="P:GrupoThera.Entities.Entity.Mock.Product.CatId">
+            <summary>
+             FK for category Element
+            </summary>
+        </member>
+    </members>
+</doc>

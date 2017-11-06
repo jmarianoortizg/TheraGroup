@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebServerSolution.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:DrxDashboard.Entities.Contracts.IDto">
+            <summary>
+            Defines an dto class element
+            </summary>
+        </member>
+        <member name="T:DrxDashboard.Entities.Contracts.IEntity">
+            <summary>
+            Defines an entity class element
+            </summary>
+        </member>
+        <member name="T:DrxDashboard.Entities.Dto.CategoryDto">
+            <summary>
+            A DTO (Data Transfer Object) for category objects.
+            </summary>
+        </member>
+        <member name="M:DrxDashboard.Entities.Dto.CategoryDto.#ctor">
+            <summary>
+             PK for product Element
+            </summary>        
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.CategoryDto.CatId">
+            <summary>
+             PK for category Element
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.CategoryDto.CategoryName">
+            <summary>
+             Category name
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.CategoryDto.Description">
+            <summary>
+             Description of the category
+            </summary>
+        </member>
+        <member name="T:DrxDashboard.Entities.Dto.ProductDto">
+            <summary>
+            A DTO (Data Transfer Object) for product objects.
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.ProductDto.ProdId">
+            <summary>
+             PK for product Element
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.ProductDto.ProductName">
+            <summary>
+             product name
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Dto.ProductDto.CatId">
+            <summary>
+             FK for category Element
+            </summary>
+        </member>
+        <member name="T:DrxDashboard.Entities.Entity.Category">
+            <summary>
+            A Entity class for category objects.
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Category.CatId">
+            <summary>
+             PK for category Element
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Category.CategoryName">
+            <summary>
+             Category name
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Category.Description">
+            <summary>
+             Description of the category
+            </summary>
+        </member>
+        <member name="T:DrxDashboard.Entities.Entity.Product">
+            <summary>
+            A Entity class for Product objects.
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Product.ProdId">
+            <summary>
+             PK for product Element
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Product.ProductName">
+            <summary>
+             product name
+            </summary>
+        </member>
+        <member name="P:DrxDashboard.Entities.Entity.Product.CatId">
+            <summary>
+             FK for category Element
+            </summary>
+        </member>
+    </members>
+</doc>

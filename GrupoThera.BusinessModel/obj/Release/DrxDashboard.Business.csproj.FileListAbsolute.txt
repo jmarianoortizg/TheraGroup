@@ -1,0 +1,17 @@
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Business.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\AutoMapper.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.BusinessLogic.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Core.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Entities.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\EntityFramework.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\log4net.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.BusinessLogic.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Core.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\DrxDashboard.Entities.pdb
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\AutoMapper.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\EntityFramework.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\bin\Release\log4net.xml
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Release\DrxDashboard.Business.csprojResolveAssemblyReference.cache
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Release\DrxDashboard.Business.dll
+D:\JWorld\Projects\DrxDashboard\DrxDashboard.Business\obj\Release\DrxDashboard.Business.pdb
