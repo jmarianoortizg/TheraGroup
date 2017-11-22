@@ -24,7 +24,7 @@ namespace GrupoThera.BusinessLogic.Contracts.General
         /// <returns>
         /// The identifiable elements
         /// </returns>
-        T GetSingle(Expression<Func<T, bool>> filter, bool eager = true, string includeProperties = "");
+        T Get(Expression<Func<T, bool>> filter, bool eager = true, string includeProperties = "");
 
         /// <summary>
         /// Gets all identifiable elements.
@@ -38,14 +38,14 @@ namespace GrupoThera.BusinessLogic.Contracts.General
         /// <returns>
         /// The identifiable elements
         /// </returns>
-        IEnumerable<T> GetListCustom(Expression<Func<T, bool>> filter = null,
+        IEnumerable<T> GetList(Expression<Func<T, bool>> filter = null,
                                 Func<IQueryable<T>,
                                 IOrderedQueryable<T>> orderBy = null,
                                 int? page = default(int?),
                                 int? pagesize = default(int?),
                                 bool eager = true,
-                                 string includeProperties = ""
-                              );
+                                string includeProperties = "");
+
         /// <summary>
         /// Adds the specified element.
         /// </summary>
@@ -66,5 +66,6 @@ namespace GrupoThera.BusinessLogic.Contracts.General
         void Delete(T entity);
 
         #endregion Methods
+
     }
 }

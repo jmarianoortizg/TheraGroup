@@ -49,6 +49,22 @@
                             </div>
 
                             <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-primary floating">
+                                        @Html.DropDownListFor(model => model.selectedEmpresa, Model.listEmpresas, new { @id = "empresaSource", @class = "form-control required" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material form-material-primary floating">
+                                        @Html.DropDownListFor(model => model.selectedSucursal, Model.listSucursal, new { @id = "sucursalSource", @class = "form-control required" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
                                 <label class="checkbox" style="font-size:15px; margin-left:20px">
                                     @Html.CheckBoxFor(model => model.stayLogin)
                                     <span class="checkbox__icon"></span>

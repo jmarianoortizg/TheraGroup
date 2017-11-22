@@ -33,7 +33,6 @@ namespace GrupoThera.BusinessLogic.EntityFramework
         {
             DbSet = Contexto.Set<TEntity>();
         }
-
         #endregion Constructor
 
         #region Methods
@@ -59,11 +58,14 @@ namespace GrupoThera.BusinessLogic.EntityFramework
         /// <param name="entity">The element.</param>
         public void Delete(TEntity entity)
         {
-            using (var context = new TContext())
+            if (entity != null)
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Deleted;
-                context.SaveChanges();
+                using (var context = new TContext())
+                {
+                    var addedEntity = context.Entry(entity);
+                    addedEntity.State = EntityState.Deleted;
+                    context.SaveChanges();
+                }
             }
         }
 
@@ -76,7 +78,7 @@ namespace GrupoThera.BusinessLogic.EntityFramework
         /// <returns>
         /// The identifiable elements
         /// </returns>
-        public virtual TEntity GetSingle(Expression<Func<TEntity, bool>> filter, bool eager = true, string includeProperties = "")
+        public virtual TEntity Get(Expression<Func<TEntity, bool>> filter, bool eager = true, string includeProperties = "")
         {
             using (var context = new TContext())
             {
@@ -123,13 +125,14 @@ namespace GrupoThera.BusinessLogic.EntityFramework
         /// <returns>
         /// The identifiable elements
         /// </returns>
-        public virtual IEnumerable<TEntity> GetListCustom(
-                                                     Expression<Func<TEntity, bool>> filter = null,                                                        Func<IQueryable<TEntity>,
-                                                     IOrderedQueryable<TEntity>> orderBy = null,
-                                                     int? page = default(int?),
-                                                     int? pagesize = default(int?),
-                                                     bool eager = true,
-                                                      string includeProperties = ""
+        public virtual IEnumerable<TEntity> GetList(
+                                                        Expression<Func<TEntity, bool>> filter = null,
+                                                        Func<IQueryable<TEntity>,
+                                                        IOrderedQueryable<TEntity>> orderBy = null,
+                                                        int? page = default(int?),
+                                                        int? pagesize = default(int?),
+                                                        bool eager = true,
+                                                        string includeProperties = ""
                                                     )
         {
             using (var context = new TContext())
@@ -173,7 +176,6 @@ namespace GrupoThera.BusinessLogic.EntityFramework
                 return query.ToList();
             }
         }
-
 
         /// <summary>
         /// Updates the specified element.

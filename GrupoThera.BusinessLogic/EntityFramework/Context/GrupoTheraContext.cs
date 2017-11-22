@@ -39,7 +39,7 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("LD_MDM_OWNER"); 
+            modelBuilder.HasDefaultSchema("THERASYS_OWNER"); 
         }
         #endregion Methods
     }

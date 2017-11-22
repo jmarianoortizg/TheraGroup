@@ -1,4 +1,5 @@
-﻿using GrupoThera.Entities.Models.General;
+﻿using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.Entities.Models.General;
 using GrupoThera.WebUI.Utils;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,37 @@ using System.Web.Mvc;
 namespace GrupoThera.WebUI.Controllers
 {
     public class HomeController : Controller
-    { 
+    {
+        #region Fields
+
+        private ICatalogService _catalogService;
+        private IRoleAccountService _roleAccountService;
+
+        #endregion Fields
+
+        #region Constructor
+
+        public HomeController( ICatalogService catalogService,
+                               IRoleAccountService roleAccountService
+                             )
+        {
+            _catalogService = catalogService;
+            _roleAccountService = roleAccountService;
+        }
+
+        #endregion Constructor
+
+        #region Methods
         public ActionResult Index()
         {
-            if (HttpContext.Session["Identificated"].ToString().Equals("False"))
-                return View("~/Views/General/Loginview.cshtml");
+            if (HttpContext.Session["Identificated"].ToString().Equals("False")) {
+                var model = new UserLoginModel()
+                {
+                    listEmpresas = DropListHelper.GetDepartamentos(_catalogService.getDepartamentos()),
+                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursales())
+                };
+                return View("~/Views/General/Loginview.cshtml",model);
+            }
             else
             {
                 DashboardModel model = null;
@@ -24,7 +51,7 @@ namespace GrupoThera.WebUI.Controllers
                         priviledgesList = TempRolesList,
                         userName = HttpContext.Session["UserName"].ToString()
                     };
-                }                
+                }
                 return View("Dashboard", model);
             }
         }
@@ -37,7 +64,12 @@ namespace GrupoThera.WebUI.Controllers
         public ActionResult Logout()
         {
             RemoveSessionVariables();
-            return View("~/Views/General/Loginview.cshtml");
+            var model = new UserLoginModel()
+            {
+                listEmpresas = DropListHelper.GetDepartamentos(_catalogService.getDepartamentos()),
+                listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursales())
+            };
+            return View("~/Views/General/Loginview.cshtml",model);
         }
 
         private void RemoveSessionVariables()
@@ -58,29 +90,6 @@ namespace GrupoThera.WebUI.Controllers
             }
         }
 
-
-        /// borrame
-        /// 
-        [CustomAuthorizeAttribute(privilege = "Developer")]
-        public ActionResult Developer()
-        {
-            return View();
-        }
-
-        [CustomAuthorizeAttribute(privilege = "Administrador")]
-        public ActionResult Admin()
-        {
-            return View();
-        }
-
-        [CustomAuthorizeAttribute(privilege = "Other")]
-        public ActionResult Other()
-        {
-            return View();
-        }
-
-
-
-
+        #endregion Methods
     }
 }

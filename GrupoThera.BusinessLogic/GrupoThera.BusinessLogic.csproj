@@ -65,9 +65,9 @@
     <Compile Include="Contracts\General\IUsuario.cs" />
     <Compile Include="DataAccess\General\DepartamentoDA.cs" />
     <Compile Include="DataAccess\General\EmpresaDA.cs" />
-    <Compile Include="DataAccess\General\EmpresasSucursalMapDA.cs" />
-    <Compile Include="DataAccess\General\EmpresasSucursalUsRoleMapDA.cs" />
-    <Compile Include="DataAccess\General\EmpresasSucursalUsuarioMapDA.cs" />
+    <Compile Include="DataAccess\General\EmpresaSucursalMapDA.cs" />
+    <Compile Include="DataAccess\General\EmpresaSucursalUsRoleMapDA.cs" />
+    <Compile Include="DataAccess\General\EmpresaSucursalUsuarioMapDA.cs" />
     <Compile Include="DataAccess\General\RolDA.cs" />
     <Compile Include="DataAccess\General\SucursalDA.cs" />
     <Compile Include="DataAccess\General\UsuarioDA.cs" />

@@ -1,4 +1,8 @@
 ﻿
+using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.DataAccess.General;
+using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.BusinessModel.Managers.General;
 using Ninject;
 using System;
 using System.Web.Mvc;
@@ -43,7 +47,16 @@ namespace GrupoThera.WebUI.DependencyResolvers
         {
             #region General
 
-                
+                kernel.Bind<ICatalogService>().To<CatalogManager>().InSingletonScope();
+                kernel.Bind<IRoleAccountService>().To<RoleAccountManager>().InSingletonScope();
+                kernel.Bind<IDepartamento>().To<DepartamentoDA>().InSingletonScope();
+                kernel.Bind<IEmpresa>().To<EmpresaDA>().InSingletonScope();
+                kernel.Bind<IEmpresaSucursalMap>().To<EmpresaSucursalMapDA>().InSingletonScope();
+                kernel.Bind<IEmpresaSucursalUsRoleMap>().To<EmpresaSucursalUsRoleMapDA>().InSingletonScope();
+                kernel.Bind<IEmpresaSucursalUsuarioMap>().To<EmpresaSucursalUsuarioMapDA>().InSingletonScope();
+                kernel.Bind<IRol>().To<RolDA>().InSingletonScope();
+                kernel.Bind<ISucursal>().To<SucursalDA>().InSingletonScope();
+                kernel.Bind<IUsuario>().To<UsuarioDA>().InSingletonScope();
 
             #endregion General 
         }

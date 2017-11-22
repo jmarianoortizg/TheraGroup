@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GrupoThera.Entities.Entity.General
 {
-    [Table("CAT_USUARIOS")]
+    [Table("EMPRESAS")]
     public partial class Empresa : IEntity
     {
         [Key]

@@ -62,6 +62,12 @@ F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.dl
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Mono.Reflection.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\log4net.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.Mvc.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.Razor.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.Deployment.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.BusinessLogic.pdb
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Core.pdb
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\GrupoThera.Entities.pdb
@@ -70,6 +76,11 @@ F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\EntityFramework.SqlServer.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\Newtonsoft.Json.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\log4net.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.Mvc.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.Razor.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.xml
+F:\Proyects\TheraGroup\GrupoThera.BusinessModel\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessModel\obj\Debug\GrupoThera.BusinessModel.pdb
