@@ -541,36 +541,6 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="M:GrupoThera.WebUI.Controllers.api.MockController.getAllProducts">
-            <summary>
-            Get the list of products
-            </summary> 
-            <returns></returns>
-        </member>
-        <member name="M:GrupoThera.WebUI.Controllers.api.MockController.getProductById(System.Int32)">
-            <summary>
-            Get the product by id
-            </summary> 
-            <returns></returns>
-        </member>
-        <member name="M:GrupoThera.WebUI.Controllers.api.MockController.createProduct(System.Object)">
-            <summary>
-            Create a new product
-            </summary> 
-            <returns></returns>
-        </member>
-        <member name="M:GrupoThera.WebUI.Controllers.api.MockController.updateProduct(System.Object)">
-            <summary>
-            Update The product
-            </summary> 
-            <returns></returns>
-        </member>
-        <member name="M:GrupoThera.WebUI.Controllers.api.MockController.deleteProduct(System.Int32)">
-            <summary>
-            Get the product by id
-            </summary> 
-            <returns></returns>
-        </member>
         <member name="M:GrupoThera.WebUI.Controllers.HomeController.Developer">
             borrame
             

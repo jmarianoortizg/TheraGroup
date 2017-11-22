@@ -1,10 +1,7 @@
-﻿using GrupoThera.Business.Interfaces;
-using GrupoThera.Entities.Entity;
-using GrupoThera.Entities.Models.General;
+﻿using GrupoThera.Entities.Models.General;
 using GrupoThera.WebUI.Utils;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 

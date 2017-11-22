@@ -1,5 +1,4 @@
-﻿using GrupoThera.Entities.Entity.Mock;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace GrupoThera.BusinessLogic.EntityFramework.Context
 {
@@ -10,11 +9,9 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
     {
         #region Fields
 
-            #region Mock
-                public DbSet<Product> Products { get; set; }
-                public DbSet<Category> Categories { get; set; }
+            #region General
 
-            #endregion Mock 
+            #endregion General 
 
         #endregion Fields
 

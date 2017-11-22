@@ -53,17 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\General\IDtoConverter.cs" />
-    <Compile Include="Contracts\General\IEntityRepository.cs" />
-    <Compile Include="Contracts\Mock\IProduct.cs" />
-    <Compile Include="Contracts\Mock\ICategory.cs" />
-    <Compile Include="DataAccess\Mock\ProductDAO.cs" />
-    <Compile Include="DataAccess\Mock\CategoryDAO.cs" />
+    <Compile Include="Contracts\Basic\IDtoConverter.cs" />
+    <Compile Include="Contracts\Basic\IEntityRepository.cs" />
     <Compile Include="EntityFramework\Context\GrupoTheraContext.cs" />
     <Compile Include="EntityFramework\EntityRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contracts\General\" />
+    <Folder Include="DataAccess\General\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GrupoThera.Entities\GrupoThera.Entities.csproj">
       <Project>{58364874-76A2-4018-A733-03D3BA3954F4}</Project>

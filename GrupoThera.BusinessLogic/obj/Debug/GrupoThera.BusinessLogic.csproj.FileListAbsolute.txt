@@ -35,11 +35,9 @@ F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Oracle.ManagedDataAccess.dll
-F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\GrupoThera.Entities.pdb
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
-F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.dll
 F:\Proyects\TheraGroup\GrupoThera.BusinessLogic\obj\Debug\GrupoThera.BusinessLogic.pdb

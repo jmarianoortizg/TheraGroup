@@ -1,7 +1,4 @@
-﻿using GrupoThera.Business.Interfaces;
-using GrupoThera.Business.Managers;
-using GrupoThera.BusinessLogic.Contracts.Mock;
-using GrupoThera.BusinessLogic.DataAccess;
+﻿
 using Ninject;
 using System;
 using System.Web.Mvc;
@@ -44,12 +41,11 @@ namespace GrupoThera.WebUI.DependencyResolvers
         /// <param name="kernel"> The kernel of the register services.</param> 
         public static void RegisterServices(IKernel kernel)
         {
-            #region Mock
+            #region General
 
-                kernel.Bind<IProductService>().To<ProductManager>().InSingletonScope();
-                kernel.Bind<IProduct>().To<ProductDAO>().InSingletonScope();
+                
 
-            #endregion Mock 
+            #endregion General 
         }
 
         /// <summary>
