@@ -14,25 +14,25 @@ namespace GrupoThera.WebUI.Controllers
         [HttpPost]
         public JsonResult loginUser(UserLoginModel userLogin)
         { 
-            var listRoles = new List<Role>();
+            var listRoles = new List<Rol>();
 
-            var a = new Role()
-            {
-                RoleName = "Administrador"
-            };
+            //var a = new Role()
+            //{
+            //    RoleName = "Administrador"
+            //};
 
-            var b = new Role()
-            {
-                RoleName = "Developer"
-            };  
+            //var b = new Role()
+            //{
+            //    RoleName = "Developer"
+            //};  
 
-            listRoles.Add(a);
+            //listRoles.Add(a);
 
             if (listRoles.Count != 0)
             {
                 HttpContext.Session["Account"] = userLogin.UserName;
                 HttpContext.Session["UserName"] = "TODO";
-                HttpContext.Session["ListRoles"] = listRoles.Select(x => x.RoleName.ToString()).ToList();
+                HttpContext.Session["ListRoles"] = listRoles.Select(x => x.name.ToString()).ToList();
                 HttpContext.Session["Password"] = userLogin.Password;
 
                 if (userLogin.stayLogin)
@@ -40,7 +40,7 @@ namespace GrupoThera.WebUI.Controllers
                     cookieData cookie = new cookieData();
                     cookie.Password = userLogin.Password;
                     cookie.UserName = userLogin.UserName.ToUpper();
-                    cookie.ListRoles = listRoles.Select(x => x.RoleName.ToString()).ToList();
+                    cookie.ListRoles = listRoles.Select(x => x.name.ToString()).ToList();
                     Response.Cookies.Add(StandardClass.CreateCookie(cookie));
                 }
                 return Json(new

@@ -55,14 +55,27 @@
   <ItemGroup>
     <Compile Include="Contracts\Basic\IDtoConverter.cs" />
     <Compile Include="Contracts\Basic\IEntityRepository.cs" />
+    <Compile Include="Contracts\General\IDepartamento.cs" />
+    <Compile Include="Contracts\General\IEmpresa.cs" />
+    <Compile Include="Contracts\General\IEmpresasSucursalMap.cs" />
+    <Compile Include="Contracts\General\IEmpresasSucursalUsRoleMap.cs" />
+    <Compile Include="Contracts\General\IEmpresasSucursalUsuarioMap.cs" />
+    <Compile Include="Contracts\General\IRol.cs" />
+    <Compile Include="Contracts\General\ISucursal.cs" />
+    <Compile Include="Contracts\General\IUsuario.cs" />
+    <Compile Include="DataAccess\General\DepartamentoDA.cs" />
+    <Compile Include="DataAccess\General\EmpresaDA.cs" />
+    <Compile Include="DataAccess\General\EmpresasSucursalMapDA.cs" />
+    <Compile Include="DataAccess\General\EmpresasSucursalUsRoleMapDA.cs" />
+    <Compile Include="DataAccess\General\EmpresasSucursalUsuarioMapDA.cs" />
+    <Compile Include="DataAccess\General\RolDA.cs" />
+    <Compile Include="DataAccess\General\SucursalDA.cs" />
+    <Compile Include="DataAccess\General\UsuarioDA.cs" />
     <Compile Include="EntityFramework\Context\GrupoTheraContext.cs" />
     <Compile Include="EntityFramework\EntityRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\General\" />
-    <Folder Include="DataAccess\General\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GrupoThera.Entities\GrupoThera.Entities.csproj">
       <Project>{58364874-76A2-4018-A733-03D3BA3954F4}</Project>
