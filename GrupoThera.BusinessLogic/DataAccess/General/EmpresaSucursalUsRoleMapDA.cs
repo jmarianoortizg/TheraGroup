@@ -7,7 +7,7 @@ using System.Runtime.Remoting.Contexts;
 
 namespace GrupoThera.BusinessLogic.DataAccess.General
 {
-    public class EmpresaSucursalUsRoleMapDA : EntityRepositoryBase<EmpresaSucursalUsuarioMap, GrupoTheraContext>, IEmpresaSucursalUsRoleMap
+    public class EmpresaSucursalUsRoleMapDA : EntityRepositoryBase<EmpresaSucursalUsRoleMap, GrupoTheraContext>, IEmpresaSucursalUsRoleMap
     {
         #region Methods 
 

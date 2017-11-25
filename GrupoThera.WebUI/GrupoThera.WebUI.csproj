@@ -286,6 +286,7 @@
     <Content Include="Content\assets\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\assets\fonts\Simple-Line-Icons.woff" />
     <Content Include="Content\assets\img\avatars\avatar1.jpg" />
+    <Content Include="Content\assets\img\Banner\5.jpg" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-114x114.png" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-120x120.png" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-144x144.png" />

@@ -17,8 +17,8 @@ namespace GrupoThera.Entities.Entity.General
         public long empresaSucursalUsId { get; set; }
 
         [Column("CESUR_CESM_IDX")]
-        public long sucursalId { get; set; }
-        public virtual Sucursal Sucursal { get; set; }
+        public long empresaSucursalUsuarioMapId { get; set; }
+        public virtual EmpresaSucursalUsuarioMap EmpresaSucursalUsuarioMap { get; set; }
 
         [Column("CESUR_CROL_ID")]
         public long rolId { get; set; }

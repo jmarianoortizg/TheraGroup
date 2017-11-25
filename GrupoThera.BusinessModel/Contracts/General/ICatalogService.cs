@@ -15,6 +15,10 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<Empresa> getEmpresas();
         IList<Sucursal> getSucursales();
         IList<Rol> getRoles();
+        IList<Sucursal> getSucursalesbyEmpresa(long idEmpresa);
+        Empresa getEmpresaById(long idEmpresa);
+        Sucursal getSucursalById(long idSucursal);
+
 
         #endregion Methods
     }

@@ -13,14 +13,14 @@ namespace GrupoThera.Entities.Entity.General
     public partial class EmpresaSucursalMap : IEntity
     {
         [Key]
-        [Column("CESM_ID_PK")]
+        [Column("CESM_ID")]
         public long empresaSucursalId { get; set; }
 
-        [Column("CESM_CSUC_ID_FK")]
+        [Column("CESM_CSUC_ID")]
         public long sucursalId { get; set; }
         public virtual Sucursal Sucursal { get; set; }
 
-        [Column("CESM_EMP_ID_FK")]
+        [Column("CESM_EMP_ID")]
         public long empresaId { get; set; }
         public virtual Empresa Departamento { get; set; }
 

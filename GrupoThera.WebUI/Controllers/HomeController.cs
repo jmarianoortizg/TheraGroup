@@ -35,8 +35,8 @@ namespace GrupoThera.WebUI.Controllers
             if (HttpContext.Session["Identificated"].ToString().Equals("False")) {
                 var model = new UserLoginModel()
                 {
-                    listEmpresas = DropListHelper.GetDepartamentos(_catalogService.getDepartamentos()),
-                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursales())
+                    listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
+                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(1))
                 };
                 return View("~/Views/General/Loginview.cshtml",model);
             }
@@ -54,6 +54,11 @@ namespace GrupoThera.WebUI.Controllers
                 }
                 return View("Dashboard", model);
             }
+        }
+
+        public ActionResult getSucursalByEmpresa(string term)
+        {
+            return null;
         }
 
         public ActionResult Dashboard()
@@ -78,6 +83,8 @@ namespace GrupoThera.WebUI.Controllers
             HttpContext.Session["UserName"] = null;
             HttpContext.Session["ListRoles"] = null;
             HttpContext.Session["Password"] = null;
+            HttpContext.Session["Empresa"] = null;
+            HttpContext.Session["Sucursal"] = null;
             HttpContext.Session["Identificated"] = false;
 
             var userInfo = Request.Cookies["userInfoThera"];

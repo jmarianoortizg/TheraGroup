@@ -17,6 +17,7 @@ namespace GrupoThera.BusinessModel.Managers.General
         private IEmpresa _empresaDA;
         private ISucursal _sucursalDA;
         private IRol _rolDA;
+        private IEmpresaSucursalMap _empresaSucursalMapDA;
 
         #endregion Fields 
 
@@ -25,7 +26,8 @@ namespace GrupoThera.BusinessModel.Managers.General
         public CatalogManager( IDepartamento departamentoDA,
                                IEmpresa empresaDA,
                                ISucursal sucursalDA,
-                               IRol rolDA
+                               IRol rolDA,
+                               IEmpresaSucursalMap empresaSucursalMapDA
                              )
         {
             //Dependency Injection
@@ -33,6 +35,7 @@ namespace GrupoThera.BusinessModel.Managers.General
             _empresaDA = empresaDA;
             _sucursalDA = sucursalDA;
             _rolDA = rolDA;
+            _empresaSucursalMapDA = empresaSucursalMapDA;
         }
 
         #endregion Constructor 
@@ -54,9 +57,24 @@ namespace GrupoThera.BusinessModel.Managers.General
             return _sucursalDA.GetList().ToList();
         }
 
+        public IList<Sucursal> getSucursalesbyEmpresa(long idEmpresa)
+        {   
+            return _empresaSucursalMapDA.GetList(t => t.empresaId == idEmpresa).Select(x => x.Sucursal).ToList();
+        }
+
         public IList<Rol> getRoles()
         {
             return _rolDA.GetList().ToList();
+        }
+
+        public Empresa getEmpresaById(long idEmpresa)
+        {
+            return _empresaDA.Get(t => t.empresaId == idEmpresa);
+        }
+
+        public Sucursal getSucursalById(long idSucursal)
+        {
+            return _sucursalDA.Get(t => t.sucursalId == idSucursal);
         }
 
 

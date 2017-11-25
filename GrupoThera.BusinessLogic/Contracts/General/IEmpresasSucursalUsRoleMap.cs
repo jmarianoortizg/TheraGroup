@@ -3,7 +3,7 @@ using GrupoThera.Entities.Entity.General;
 
 namespace GrupoThera.BusinessLogic.Contracts.General
 {
-    public interface IEmpresaSucursalUsRoleMap : IEntityRepository<EmpresaSucursalUsuarioMap>
+    public interface IEmpresaSucursalUsRoleMap : IEntityRepository<EmpresaSucursalUsRoleMap>
     {
         #region Methods
 

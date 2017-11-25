@@ -5,15 +5,21 @@
 
 $(document).ready(function () {
 
+
     $("#spin").spinner({
         color: "black"
         , background: "rgba(189, 227, 231, .5)"
         , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
         , spin: true
     });
-}); 
 
-function BeginFormLogin() {  
+    $("#empresaSource").live('click', function() { 
+        alert('button clicked'); 
+    });
+
+});
+
+function BeginFormLogin() {
     $("#frmLogin").validate({
         errorClass: 'help-block text-right animated fadeInDown',
         errorElement: 'div',
@@ -53,15 +59,15 @@ function BeginFormLogin() {
 
     if (band) { $("#spin").show(); }
 
-    return band ;
-} 
+    return band;
+}
 
 function SuccessFormLogin(response) {
     $('#formLoginSuccess').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeOutDown element-visible')
     $('#formLoginError').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeOutDown element-visible')
 
     $("#spin").hide();
-    if (response.success){
+    if (response.success) {
         $('#formLoginSuccess').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeInDown element-visible')
         setTimeout(function () {
             window.location.href = '/Home/Dashboard/';
