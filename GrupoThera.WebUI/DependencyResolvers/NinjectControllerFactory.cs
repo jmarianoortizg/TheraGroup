@@ -1,8 +1,11 @@
 ﻿
+using GrupoThera.BusinessLogic.Contracts.Catalogs;
 using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.DataAccess.Catalogs;
 using GrupoThera.BusinessLogic.DataAccess.General;
 using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.BusinessModel.Managers.General;
+using GrupoThera.Entities.Entity.Catalogs;
 using Ninject;
 using System;
 using System.Web.Mvc;
@@ -47,7 +50,6 @@ namespace GrupoThera.WebUI.DependencyResolvers
         {
             #region General
 
-                kernel.Bind<ICatalogService>().To<CatalogManager>().InSingletonScope();
                 kernel.Bind<IRoleAccountService>().To<RoleAccountManager>().InSingletonScope();
                 kernel.Bind<IDepartamento>().To<DepartamentoDA>().InSingletonScope();
                 kernel.Bind<IEmpresa>().To<EmpresaDA>().InSingletonScope();
@@ -59,21 +61,42 @@ namespace GrupoThera.WebUI.DependencyResolvers
                 kernel.Bind<IUsuario>().To<UsuarioDA>().InSingletonScope();
 
             #endregion General 
-        }
 
-        /// <summary>
-        /// Get the controller according to the url pattern
-        /// </summary>
-        /// <param name="requestContext"> Definition of the url route.</param> 
-        /// <param name="controllerType"> Class type of the controller.</param> 
-        /// /// <returns>
-        /// The instance of the controller
-        /// </returns>
-        protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
-        {
-            return controllerType == null ? null : (IController)_kernel.Get(controllerType);
-        }
+            #region Catalog
 
-        #endregion Methods
+                kernel.Bind<ICatalogService>().To<CatalogManager>().InSingletonScope();
+                kernel.Bind<IAreaServicio>().To<AreaServicioDA>().InSingletonScope();
+                kernel.Bind<ICiudad>().To<CiudadDA>().InSingletonScope();
+                kernel.Bind<IClasificacionServicio>().To<ClasificacionServicioDA>().InSingletonScope();
+                kernel.Bind<ICliente>().To<ClienteDA>().InSingletonScope();
+                kernel.Bind<IConfiguracion>().To<ConfiguracionDA>().InSingletonScope();
+                kernel.Bind<IEstado>().To<EstadoDA>().InSingletonScope();
+                kernel.Bind<IFormaPago>().To<FormaPagoDA>().InSingletonScope();
+                kernel.Bind<IFrecuenciaServicio>().To<FrecuenciaServicioDA>().InSingletonScope();
+                kernel.Bind<IGiro>().To<GiroDA>().InSingletonScope();
+                kernel.Bind<IMetodoCotizacion>().To<MetodoCotizacionDA>().InSingletonScope();
+                kernel.Bind<IMoneda>().To<MonedaDA>().InSingletonScope();
+                kernel.Bind<IProvedor>().To<ProvedorDA>().InSingletonScope();
+                kernel.Bind<IServicio>().To<ServicioDA>().InSingletonScope();
+                kernel.Bind<ITiempoEntrega>().To<TiempoEntregaDA>().InSingletonScope();
+
+            #endregion
+
     }
+
+    /// <summary>
+    /// Get the controller according to the url pattern
+    /// </summary>
+    /// <param name="requestContext"> Definition of the url route.</param> 
+    /// <param name="controllerType"> Class type of the controller.</param> 
+    /// /// <returns>
+    /// The instance of the controller
+    /// </returns>
+    protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
+    {
+        return controllerType == null ? null : (IController)_kernel.Get(controllerType);
+    }
+
+    #endregion Methods
+}
 }

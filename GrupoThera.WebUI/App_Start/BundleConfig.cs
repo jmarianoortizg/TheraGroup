@@ -22,6 +22,7 @@ namespace GrupoThera.WebUI
                       "~/Content/assets/css/bootstrap.min.css",
                       "~/Content/assets/css/grupoTheraUI.css",
                       "~/Content/assets/css/themes/modern.min.css",
+                      "~/Content/assets/plugins/gridforms/gridforms/gridforms.css",
                       "~/Content/assets/css/grupoTheraCustom.css"
             )); 
 
@@ -33,6 +34,7 @@ namespace GrupoThera.WebUI
                     "~/Content/assets/js/core/jquery.placeholder.min.js",
                     "~/Content/assets/js/core/js.cookie.min.js",
                     "~/Content/assets/js/app.js",
+                    "~/Content/assets/plugins/gridforms/gridforms/gridforms.js",
                     "~/Content/assets/js/plugins/loadSpinner/jquery.babypaunch.spinner.js"
             )); 
         }

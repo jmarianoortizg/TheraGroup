@@ -249,6 +249,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\api\Filters\GenericAuthenticationFilter .cs" />
     <Compile Include="Controllers\api\Filters\MyExceptionFilter.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="DependencyResolvers\NinjectControllerFactory.cs" />
@@ -1177,6 +1178,15 @@
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.css" />
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.js" />
     <Content Include="Content\assets\less\variables.less" />
+    <Content Include="Content\plugins\gridforms\gridforms\gridforms.css" />
+    <Content Include="Content\plugins\gridforms\gridforms\gridforms.js" />
+    <Content Include="Content\plugins\gridforms\media\images\features.png" />
+    <Content Include="Content\plugins\gridforms\media\images\form-zoomed-out.png" />
+    <Content Include="Content\plugins\gridforms\media\images\logo.png" />
+    <Content Include="Content\plugins\gridforms\media\images\now-checkout-formbakery.png" />
+    <Content Include="Content\plugins\gridforms\media\images\responsive.png" />
+    <Content Include="Content\plugins\gridforms\media\images\try.png" />
+    <Content Include="Content\plugins\gridforms\media\style.css" />
     <Content Include="Documentation\XmlDocument.xml" />
     <Content Include="Documentation\XmlDocumentEntities.xml" />
     <Content Include="favicon.ico" />
@@ -1377,6 +1387,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\General\_AsideDashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\AreaServicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\plugins\gridforms\gridforms\gridforms.css.map" />
+    <Content Include="Content\plugins\gridforms\gridforms\gridforms.sass" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\plugins\gridforms\media\lib\grid.sass" />
+    <Content Include="Content\plugins\gridforms\media\lib\normalize.scss" />
+    <Content Include="Content\plugins\gridforms\media\lib\utils.sass" />
+    <Content Include="Content\plugins\gridforms\media\style.sass" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

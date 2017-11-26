@@ -1,4 +1,5 @@
-﻿using GrupoThera.Entities.Entity.General;
+﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.General;
 using System.Data.Entity;
 
 namespace GrupoThera.BusinessLogic.EntityFramework.Context
@@ -12,8 +13,7 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
 
             #region General
 
-                public DbSet<Departamento> Departamento { get; set; }
-                public DbSet<Empresa> Empresa { get; set; }
+                public DbSet<Departamento> Departamento { get; set; }        
                 public DbSet<EmpresaSucursalMap> EmpresasSucursalMap { get; set; }
                 public DbSet<EmpresaSucursalUsRoleMap> EmpresasSucursalUsRoleMap { get; set; }
                 public DbSet<EmpresaSucursalUsuarioMap> EmpresaSucursalUsuarioMap { get; set; }
@@ -21,7 +21,26 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
                 public DbSet<Sucursal> Sucursal { get; set; }
                 public DbSet<Usuario> Usuario { get; set; }
 
-            #endregion General 
+        #endregion General 
+
+            #region Catalogs
+
+                public DbSet<AreaServicio> AreaServicio { get; set; }
+                public DbSet<Ciudad> Ciudad { get; set; }
+                public DbSet<ClasificacionServicio> ClasificacionServicio { get; set; }
+                public DbSet<Cliente> Cliente { get; set; }
+                public DbSet<Configuracion> Configuracion { get; set; }
+                public DbSet<Empresa> Empresa { get; set; }
+                public DbSet<Estado> Estado { get; set; }
+                public DbSet<FormaPago> FormaPago { get; set; }
+                public DbSet<FrecuenciaServicio> FrecuenciaServicio { get; set; }
+                public DbSet<Giro> Giro { get; set; }
+                public DbSet<MetodoCotizacion> MetodoCotizacion { get; set; }
+                public DbSet<Moneda> Moneda { get; set; }
+                public DbSet<Provedor> Provedor { get; set; }
+                public DbSet<Servicio> Servicio { get; set; }
+
+        #endregion Catalogs
 
         #endregion Fields
 

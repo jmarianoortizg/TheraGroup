@@ -2,8 +2,9 @@
 @{
     ViewBag.Title = "General Menu";
     var isAllmightie = false;
+    var priviledgesList = (List<string>)HttpContext.Current.Session["ListRoles"];
 
-    if (Model != null && Model.priviledgesList.Contains("Developer"))
+    if (priviledgesList != null && priviledgesList.Contains("Developer"))
     {
         isAllmightie = true;
     }
@@ -20,16 +21,188 @@
     <li class="nav-main-heading"><span class="sidebar-mini-hide">Modulos</span></li>
 
     <li class="open">
-        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-badge"></i><span class="sidebar-mini-hide">UI Elements</span></a>
+        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-layers"></i><span class="sidebar-mini-hide">Catalogs</span></a>
         <ul>
+            
             <li>
-                @if ((Model != null &&  Model.priviledgesList.Contains("Creator") ) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("Empresa")) || isAllmightie)
                 {
-                    <a href="@(Url.Action("Index", "Home"))">Other</a>
+                    <a href="@Url.Action("Empresa","Catalog")"> Empresa </a>
                 }
                 else
                 {
-                    <a style="color:#ff6b6b;" class="linkDisabled" href="">Otherasdsa</a>
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Empresa
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Cliente")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Cliente","Catalog")"> Cliente </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Cliente
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Servicio")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Servicio","Catalog")"> Servicio </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Servicio
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Provedor")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Provedor","Catalog")"> Provedor </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Provedor
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Giro")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Giro","Catalog")"> Giro </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Clasificacion")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Clasificacion","Catalog")"> Clasificacion </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Clasificacion
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("AreaServicio")) || isAllmightie)
+                {
+                    <a href="@Url.Action("AreaServicio","Catalog")"> Area de Servicio </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Area de Servicio
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Estado")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Estado","Catalog")"> Estado </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Estado
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Frecuencia")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Frecuencia","Catalog")"> Frecuencia Servicio</a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Frecuencia Servicio
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("FormaPago")) || isAllmightie)
+                {
+                    <a href="@Url.Action("FormaPago","Catalog")"> Forma de Pago </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Forma de Pago
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Monedas")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Monedas","Catalog")"> Monedas  </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Monedas
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("TiempoEntrega")) || isAllmightie)
+                {
+                    <a href="@Url.Action("TiempoEntrega","Catalog")">Tiempo de Entrega  </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Tiempo de Entrega
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Configuracion")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Configuracion","Catalog")"> Configuracion </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Configuracion
+                    </a>
                 }
             </li>
         </ul>

@@ -33,4 +33,3 @@ F:\Proyects\TheraGroup\GrupoThera.Entities\System.Web.Razor.xml
 F:\Proyects\TheraGroup\GrupoThera.Entities\System.Web.WebPages.xml
 F:\Proyects\TheraGroup\GrupoThera.Entities\System.Web.WebPages.Deployment.xml
 F:\Proyects\TheraGroup\GrupoThera.Entities\System.Web.WebPages.Razor.xml
-F:\Proyects\TheraGroup\GrupoThera.Entities\obj\Debug\GrupoThera.Entities.csprojResolveAssemblyReference.cache

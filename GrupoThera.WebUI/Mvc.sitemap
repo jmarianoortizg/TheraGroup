@@ -3,8 +3,19 @@
             xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
-  <mvcSiteMapNode title="Home" controller="Home" action="Index">    
-     
-  </mvcSiteMapNode> 
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <!-- Catalogs-->
+    <mvcSiteMapNode title="Catalogo de Area de Servicio"  controller="Catalog" action="AreaServicio" >
+      <mvcSiteMapNode title="Nueva Area de Servicio"  controller="Catalog" action="CreateAreaServicio" />
+      <mvcSiteMapNode title="EdicionAreaServicio"  controller="Catalog" action="PEAreaServicio" />
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Catalogo de "  controller="Catalog" action="Empresa" >
+      <mvcSiteMapNode title="Nuevo "  controller="Catalog" action="Create" />
+      <mvcSiteMapNode title="Edicion "  controller="Catalog" action="PE" />
+    </mvcSiteMapNode>
+
+   
+  </mvcSiteMapNode>
 
 </mvcSiteMap>
