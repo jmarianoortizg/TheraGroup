@@ -42,17 +42,7 @@ namespace GrupoThera.WebUI.Controllers
             }
             else
             {
-                DashboardModel model = null;
-                var TempRolesList = (List<string>)HttpContext.Session["ListRoles"];
-                if (TempRolesList != null)
-                {
-                    model = new DashboardModel()
-                    {
-                        priviledgesList = TempRolesList,
-                        userName = HttpContext.Session["UserName"].ToString()
-                    };
-                }
-                return View("Dashboard", model);
+                return View("Dashboard");
             }
         }
 

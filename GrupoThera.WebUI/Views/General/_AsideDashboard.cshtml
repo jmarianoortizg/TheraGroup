@@ -1,6 +1,7 @@
-﻿@model GrupoThera.Entities.Models.General.DashboardModel
-@{
+﻿@{
     ViewBag.Title = "_AsideOriginal";
+    var UserName = (string)HttpContext.Current.Session["UserName"];
+
 }
 
 <!-- Side Overlay-->
@@ -16,7 +17,7 @@
             <span>
                 <img class="img-avatar img-avatar32" src="~/Content/assets/img/avatars/avatar1.jpg" alt="">
                 <span class="font-w600 push-10-l">
-                    <strong> @Html.DisplayFor(Model => Model.userName) </strong>
+                    <strong> @UserName </strong>
                 </span>
             </span>
         </div>

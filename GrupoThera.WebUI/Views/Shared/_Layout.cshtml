@@ -1,5 +1,4 @@
-﻿@model GrupoThera.Entities.Models.General.DashboardModel
-@{
+﻿@{
     ViewBag.Title = "Layout"; 
 }
 
@@ -10,9 +9,9 @@
     <!-- Page Container -->
     <div id="spin"> </div>
     <div id="page-container" class="sidebar-l sidebar-mini sidebar-o side-scroll header-navbar-fixed">
-            @Html.Partial("~/Views/General/_AsideDashboard.cshtml", Model)
+            @Html.Partial("~/Views/General/_AsideDashboard.cshtml")
 
-            @Html.Partial("_NavSideBar", Model)
+            @Html.Partial("_NavSideBar")
 
             @Html.Partial("_Header")
 

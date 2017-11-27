@@ -287,6 +287,7 @@
     <Content Include="Content\assets\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\assets\fonts\Simple-Line-Icons.woff" />
     <Content Include="Content\assets\img\avatars\avatar1.jpg" />
+    <Content Include="Content\assets\img\avatars\Error.jpg" />
     <Content Include="Content\assets\img\Banner\5.jpg" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-114x114.png" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-120x120.png" />
@@ -1178,6 +1179,7 @@
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.css" />
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.js" />
     <Content Include="Content\assets\less\variables.less" />
+    <Content Include="Content\plugins\gridforms\example.html" />
     <Content Include="Content\plugins\gridforms\gridforms\gridforms.css" />
     <Content Include="Content\plugins\gridforms\gridforms\gridforms.js" />
     <Content Include="Content\plugins\gridforms\media\images\features.png" />
@@ -1187,6 +1189,22 @@
     <Content Include="Content\plugins\gridforms\media\images\responsive.png" />
     <Content Include="Content\plugins\gridforms\media\images\try.png" />
     <Content Include="Content\plugins\gridforms\media\style.css" />
+    <Content Include="Content\plugins\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Content\plugins\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Content\plugins\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Content\plugins\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery-1.11.1.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery-1.7.2.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery-1.8.3.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery-1.9.1.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery-3.1.1.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.form.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.mockjax-1.5.3.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.mockjax-2.2.1.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.mockjax.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\jquery.simulate.js" />
+    <Content Include="Content\plugins\jquery-validation\lib\require.js" />
     <Content Include="Documentation\XmlDocument.xml" />
     <Content Include="Documentation\XmlDocumentEntities.xml" />
     <Content Include="favicon.ico" />
@@ -1400,6 +1418,12 @@
     <Content Include="Content\plugins\gridforms\media\lib\normalize.scss" />
     <Content Include="Content\plugins\gridforms\media\lib\utils.sass" />
     <Content Include="Content\plugins\gridforms\media\style.sass" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ErrorGeneral.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ErrorFocus.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

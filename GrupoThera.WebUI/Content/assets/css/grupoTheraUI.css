@@ -5489,7 +5489,7 @@ a.list-group-item:focus {
 @media screen and (min-width: 768px) {
   .content {
     margin: 0 auto;
-    padding: 30px 30px 1px;
+    padding: 20px 20px 1px;
     max-width: 100%;
     overflow-x: visible;
   }

@@ -1,4 +1,6 @@
 ﻿using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.Entities.Models.Catalog;
+using GrupoThera.WebUI.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region Constructor
 
-        public CatalogController( ICatalogService catalogService )
+        public CatalogController(ICatalogService catalogService)
         {
             _catalogService = catalogService;
         }
@@ -26,12 +28,40 @@ namespace GrupoThera.WebUI.Controllers
 
         #region Methods
 
-            #region areaServicio
-                public ActionResult AreaServicio()
+        #region areaServicio
+        public ActionResult AreaServicio()
+        {
+            var model = new CatalogModel()
+            {
+                listAreaServicio = DropListHelper.GetAreaServicios(_catalogService.getAreaServicios()),
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicio())
+
+            };
+            return View(model);
+        }
+
+        public ActionResult CreateAreaServicio(CatalogModel CatalogModel)
+        {
+            try
+            {
+                try
                 {
-                    return View();
+                    if (_catalogService.ExistAreaServicio(CatalogModel.AreaServicio.descripcion, CatalogModel.AreaServicio.clasificacionServicioId))
+                        throw new Exception("El Area de servicio con los datos ingresados ya existe");
                 }
-            #endregion areaServicio
+                catch (Exception ex)
+                {
+                    return View("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(ex, "CatalogController", "ExistClient"));
+                }
+                _catalogService.AddAreaServicio(CatalogModel.AreaServicio);
+                return RedirectToAction("AreaServicio");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+        #endregion areaServicio
 
         #endregion Methods
     }

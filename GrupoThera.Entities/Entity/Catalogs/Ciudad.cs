@@ -17,7 +17,7 @@ namespace GrupoThera.Entities.Entity.Catalogs
         public long giroId { get; set; }
 
         [Column("CIU_NOMBRE")]
-        public string descripcion { get; set; }
+        public string nombre { get; set; }
 
         [Column("CIU_EDO_ID")]
         public long estadoId { get; set; }

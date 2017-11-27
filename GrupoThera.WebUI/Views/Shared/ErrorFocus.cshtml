@@ -1,0 +1,36 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<div class="content bg-gray-lighter">
+    <div class="panel panel-default" style="display: block; visibility: visible; opacity: 1; transform: translateY(0px);" data-widget='{"draggable": "false"}' data-widget-static="">
+        <div class="panel-heading">
+            <h2>Error</h2>
+        </div>
+        <div class="panel-body" >
+            <div class="container" style="font-family: 'Segoe UI'">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="~/Content/assets/img/avatars/Error.jpg" style="height:200px; width:200px" />
+                    </div>
+                    <div class="col-md-9">
+                        <h2>Lo siento algo salio mal.</h2>
+                        <br />
+                        <h3>
+                            @Model.Exception.Message
+                        </h3>
+                        <div>
+                            @{
+                                var subject = "Controller: " + Model.ControllerName + " Action: " + Model.ActionName + ". " + Model.Exception;
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

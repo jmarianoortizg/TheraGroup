@@ -1,4 +1,5 @@
-﻿using GrupoThera.Entities.Entity.General;
+﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<Sucursal> getSucursalesbyEmpresa(long idEmpresa);
         Empresa getEmpresaById(long idEmpresa);
         Sucursal getSucursalById(long idSucursal);
+        IList<AreaServicio> getAreaServicios();
+        IList<ClasificacionServicio> getClasificacionServicio();
+        void AddAreaServicio(AreaServicio AreaServicio);
+        bool ExistAreaServicio(string descripcion, long clasificacionServicioId);
+
 
 
         #endregion Methods
