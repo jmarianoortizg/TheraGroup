@@ -1,11 +1,28 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.General;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace GrupoThera.Entities.Models.Catalog
 {
     public class CatalogModel
     {
+        public IList<AreaServicio> AllAreaServicio { get; set; }
+        public IList<Ciudad> AllCiudad { get; set; }
+        public IList<ClasificacionServicio> AllClasificacionServicio { get; set; }
+        public IList<Cliente> AllCliente { get; set; }
+        public IList<Configuracion> AllConfiguracion { get; set; }
+        public IList<Empresa> AllEmpresa { get; set; }
+        public IList<Estado> AllEstado { get; set; }
+        public IList<FormaPago> AllFormaPago { get; set; }
+        public IList<FrecuenciaServicio> AllFrecuenciaServicio { get; set; }
+        public IList<Giro> AllGiro { get; set; }
+        public IList<MetodoCotizacion> AllMetodoCotizacion { get; set; }
+        public IList<Moneda> AllMoneda { get; set; }
+        public IList<Provedor> AllProvedor { get; set; }
+        public IList<Servicio> AllServicio { get; set; }
+        public IList<TiempoEntrega> AllTiempoEntrega { get; set; }
+
         public AreaServicio AreaServicio { get; set; }
         public Ciudad Ciudad { get; set; }
         public ClasificacionServicio ClasificacionServicio { get; set; }

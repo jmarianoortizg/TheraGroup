@@ -45,7 +45,7 @@ namespace GrupoThera.WebUI.Controllers
 
                 var empresaSucursalUs = _roleAccountService.getEmpresaSucursalUsuario(userLogin.selectedEmpresa,userLogin.selectedSucursal,userLoginAccount.usuarioId);
 
-                if (userLoginAccount == null)
+                if (empresaSucursalUs == null)
                     throw new Exception("El usuario no pertenece a esta empresa y/o sucursal");
 
                 var userRoleAccount = _roleAccountService.getListRoleByUser(empresaSucursalUs.empresaSucursalUsuarioMapId);

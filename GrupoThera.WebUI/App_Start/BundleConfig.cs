@@ -37,7 +37,8 @@ namespace GrupoThera.WebUI
                     "~/Content/assets/js/app.js",
                     "~/Content/assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js",
                     "~/Content/plugins/gridforms/gridforms/gridforms.js",
-                    "~/Content/assets/js/plugins/loadSpinner/jquery.babypaunch.spinner.js"
+                    "~/Content/assets/js/plugins/loadSpinner/jquery.babypaunch.spinner.js",
+                    "~/Scripts/General/StdJavascript.js"
             ));
         }
     }

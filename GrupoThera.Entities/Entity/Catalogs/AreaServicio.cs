@@ -20,7 +20,7 @@ namespace GrupoThera.Entities.Entity.Catalogs
         public string descripcion { get; set; }
 
         [Column("ASER_COMENTARIOS")]
-        public string comentarios { get; set; }
+        public string comentario { get; set; }
 
         [Column("ASER_CLAS_ID")]
         public long clasificacionServicioId { get; set; }

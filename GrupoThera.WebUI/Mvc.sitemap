@@ -4,6 +4,40 @@
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
   <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <!-- Area Tecnica-->
+    <mvcSiteMapNode title="Area Tecnica OT Preliminar" controller="AreaTecnica" action="ATPreliminar"/>
+    <mvcSiteMapNode title="Area Tecnica Orden Servicio" controller="AreaTecnica" action="ATServicio"/>
+    <mvcSiteMapNode title="Area Tecnica Reportes" controller="AreaTecnica" action="ATReporte"/>
+
+    <!-- Compras-->
+    <mvcSiteMapNode title="Nueva Compra" controller="Compra" action="NewCompra"/>
+
+    <!-- Cotizacion-->
+    <mvcSiteMapNode title="Nueva Cotizacion" controller="Cotizacion" action="NuevaCotizacion"/>
+    <mvcSiteMapNode title="Busqueda Cotizacion" controller="Cotizacion" action="SearchCotizacion"/>
+    <mvcSiteMapNode title="Reporte Cotizacion" controller="Cotizacion" action="ReportCotizacion"/>
+
+    <!-- Facturacion-->
+    <mvcSiteMapNode title="Nueva Facturacion" controller="Facturacion" action="NewFacturacion"/>
+    
+    <!-- Informe-->
+    <mvcSiteMapNode title="Nuevo Informe" controller="Informe" action="CapturaInforme"/>
+
+    <!-- Laboratorio-->
+    <mvcSiteMapNode title="Nuevo Laboratorio" controller="Laboratorio" action="LBLaboratorio"/>
+
+
+    <!-- Orden de Trabajo-->
+    <mvcSiteMapNode title="Orden Trabajo Preliminar" controller="OrdenTrabajo" action="OTPreliminar"/>
+    <mvcSiteMapNode title="Orden Servicio" controller="OrdenTrabajo" action="OTServicio"/>
+    <mvcSiteMapNode title="Orden de Trabajo Reporte" controller="OrdenTrabajo" action="OTReporte"/>
+
+    <!-- Remision-->    
+    <mvcSiteMapNode title="Nueva Remision" controller="Remision" action="NewRemision"/>   
+    
+    <!-- Reporte-->
+    <mvcSiteMapNode title="Nuevo Reporte" controller="Reporte" action="NewReport"/>   
+    
     <!-- Catalogs-->
     <mvcSiteMapNode title="Catalogo de Area de Servicio"  controller="Catalog" action="AreaServicio" >
       <mvcSiteMapNode title="Nueva Area de Servicio"  controller="Catalog" action="CreateAreaServicio" />
@@ -14,6 +48,8 @@
       <mvcSiteMapNode title="Nuevo "  controller="Catalog" action="Create" />
       <mvcSiteMapNode title="Edicion "  controller="Catalog" action="PE" />
     </mvcSiteMapNode>
+
+    
 
    
   </mvcSiteMapNode>

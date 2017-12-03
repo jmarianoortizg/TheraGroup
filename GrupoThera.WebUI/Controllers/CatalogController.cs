@@ -29,11 +29,15 @@ namespace GrupoThera.WebUI.Controllers
         #region Methods
 
         #region areaServicio
+        [CustomAuthorizeAttribute(privilege = "AreaServicio,GeneralCatalog")]
+
         public ActionResult AreaServicio()
         {
+            var allAreaServicio = _catalogService.getAreaServicios();
             var model = new CatalogModel()
             {
-                listAreaServicio = DropListHelper.GetAreaServicios(_catalogService.getAreaServicios()),
+                AllAreaServicio = allAreaServicio,
+                listAreaServicio = DropListHelper.GetAreaServicios(allAreaServicio),
                 listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicio())
 
             };

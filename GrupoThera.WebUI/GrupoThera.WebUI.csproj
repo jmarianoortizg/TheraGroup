@@ -250,6 +250,15 @@
     <Compile Include="Controllers\api\Filters\GenericAuthenticationFilter .cs" />
     <Compile Include="Controllers\api\Filters\MyExceptionFilter.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\AreaTecnicaController.cs" />
+    <Compile Include="Controllers\ReporteController.cs" />
+    <Compile Include="Controllers\InformeController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\RemisionController.cs" />
+    <Compile Include="Controllers\FacturacionController.cs" />
+    <Compile Include="Controllers\LaboratorioController.cs" />
+    <Compile Include="Controllers\OrdenTrabajoController.cs" />
+    <Compile Include="Controllers\CotizacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="DependencyResolvers\NinjectControllerFactory.cs" />
@@ -1212,6 +1221,7 @@
     <Content Include="Mvc.sitemap">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Scripts\General\StdJavascript.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1424,6 +1434,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\ErrorFocus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\NuevaCotizacion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\SearchCotizacion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\ReportCotizacion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OrdenTrabajo\OTPreliminar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OrdenTrabajo\OTServicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OrdenTrabajo\OTReporte.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATPreliminar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATServicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATReporte.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Facturacion\NewFacturacion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Compra\NewCompra.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Remision\NewRemision.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Informe\CapturaInforme.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\NewReport.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\LBLaboratorio.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
