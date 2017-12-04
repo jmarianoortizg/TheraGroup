@@ -65,7 +65,7 @@ namespace GrupoThera.WebUI.Utils
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
             {
                 Text = a.nombre,
-                Value = a.estadoId.ToString()
+                Value = a.ciudadId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
@@ -99,17 +99,7 @@ namespace GrupoThera.WebUI.Utils
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
-
-        public static SelectList GetEmpresa(IList<Empresa> list)
-        {
-            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
-            {
-                Text = a.razonSocial,
-                Value = a.empresaId.ToString()
-            }).ToList();
-            return new SelectList(itemsList, "Value", "Text", "Selected");
-        }
-
+        
         public static SelectList GetEstado(IList<Estado> list)
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()

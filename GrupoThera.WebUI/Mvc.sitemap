@@ -38,17 +38,71 @@
     <!-- Reporte-->
     <mvcSiteMapNode title="Nuevo Reporte" controller="Reporte" action="NewReport"/>   
     
-    <!-- Catalogs-->
-    <mvcSiteMapNode title="Catalogo de Area de Servicio"  controller="Catalog" action="AreaServicio" >
-      <mvcSiteMapNode title="Nueva Area de Servicio"  controller="Catalog" action="CreateAreaServicio" />
-      <mvcSiteMapNode title="EdicionAreaServicio"  controller="Catalog" action="PEAreaServicio" />
-    </mvcSiteMapNode>
-    
-    <mvcSiteMapNode title="Catalogo de "  controller="Catalog" action="Empresa" >
-      <mvcSiteMapNode title="Nuevo "  controller="Catalog" action="Create" />
-      <mvcSiteMapNode title="Edicion "  controller="Catalog" action="PE" />
+    <!-- Catalogs--> 
+    <mvcSiteMapNode title="Catalogo de Empresas "  controller="Catalog" action="Empresa" >
+      <mvcSiteMapNode title="Nueva Empresa"  controller="Catalog" action="CreateEmpresa" />
+      <mvcSiteMapNode title="Edicion Empresa"  controller="Catalog" action="PEEmpresa" />
     </mvcSiteMapNode>
 
+    <mvcSiteMapNode title="Catalogo de Clientes"  controller="Catalog" action="Cliente" >
+      <mvcSiteMapNode title="Nuevo Cliente"  controller="Catalog" action="CreateCliente" />
+      <mvcSiteMapNode title="Edicion Cliente "  controller="Catalog" action="PECliente" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Servicios "  controller="Catalog" action="Servicio" >
+      <mvcSiteMapNode title="Nuevo Servicio"  controller="Catalog" action="CreateServicio" />
+      <mvcSiteMapNode title="Edicion Servicio "  controller="Catalog" action="PEServicio" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Provedores"  controller="Catalog" action="Provedor" >
+      <mvcSiteMapNode title="Nuevo Provedor"  controller="Catalog" action="CreateProvedor" />
+      <mvcSiteMapNode title="Edicion Provedor "  controller="Catalog" action="PEProvedor" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Giros"  controller="Catalog" action="Giro" >
+      <mvcSiteMapNode title="Nuevo Giro"  controller="Catalog" action="CreateGiro" />
+      <mvcSiteMapNode title="Edicion Giro "  controller="Catalog" action="PEGiro" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Clasificaciones "  controller="Catalog" action="Clasificacion" >
+      <mvcSiteMapNode title="Nueva Clasificacion"  controller="Catalog" action="CreateClasificacion" />
+      <mvcSiteMapNode title="Edicion Clasificacion "  controller="Catalog" action="PEClasificacion" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Area de Servicio"  controller="Catalog" action="AreaServicio" >
+      <mvcSiteMapNode title="Nueva Area de Servicio"  controller="Catalog" action="CreateAreaServicio" />
+      <mvcSiteMapNode title="Edicion de AreaServicio"  controller="Catalog" action="PEAreaServicio" />
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Catalogo de Estados"  controller="Catalog" action="Estado" >
+      <mvcSiteMapNode title="Nuevo Estado"  controller="Catalog" action="CreateEstado" />
+      <mvcSiteMapNode title="Edicion Estado "  controller="Catalog" action="PEEstado" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Frecuencias de Servicio "  controller="Catalog" action="FrecuenciaServicio" >
+      <mvcSiteMapNode title="Nueva Frecuencia de Servicio"  controller="Catalog" action="CreateFrecuenciaServicio" />
+      <mvcSiteMapNode title="Edicion Frecuencia de Servicio"  controller="Catalog" action="PEFrecuenciaServicio" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Formas de Pago"  controller="Catalog" action="FormaPago" >
+      <mvcSiteMapNode title="Nueva Forma de Pago"  controller="Catalog" action="CreateFormaPago" />
+      <mvcSiteMapNode title="Edicion Forma de Pago"  controller="Catalog" action="PEFormaPago" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Monedas "  controller="Catalog" action="Moneda" >
+      <mvcSiteMapNode title="Nueva Moneda"  controller="Catalog" action="CreateMoneda" />
+      <mvcSiteMapNode title="Edicion Moneda"  controller="Catalog" action="PEMoneda" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Tiempo de Entrega "  controller="Catalog" action="TiempoEntrega" >
+      <mvcSiteMapNode title="Nuevo Tiempo de Entrega"  controller="Catalog" action="CreateTiempoEntrega" />
+      <mvcSiteMapNode title="Edicion Tiempo de Entrega "  controller="Catalog" action="PETiempoEntrega" />
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Catalogo de Configuracion"  controller="Catalog" action="Configuracion" >
+      <mvcSiteMapNode title="Nueva Configuracion"  controller="Catalog" action="CreateConfiguracion" />
+      <mvcSiteMapNode title="Edicion Configuracion "  controller="Catalog" action="PEConfiguracion" />
+    </mvcSiteMapNode>
     
 
    

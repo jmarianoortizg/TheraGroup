@@ -23,7 +23,6 @@ namespace GrupoThera.WebUI
                       "~/Content/assets/css/grupoTheraUI.css",
                       "~/Content/assets/css/themes/modern.min.css",
                       "~/Content/plugins/gridforms/gridforms/gridforms.css",
-                      "~/Content/assets/js/plugins/sweetalert2/sweetalert2.min.css",
                       "~/Content/assets/css/grupoTheraCustom.css"
             )); 
 

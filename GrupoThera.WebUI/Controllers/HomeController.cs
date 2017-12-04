@@ -1,4 +1,5 @@
 ﻿using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.Entities.Entity.General;
 using GrupoThera.Entities.Models.General;
 using GrupoThera.WebUI.Utils;
 using System;
@@ -42,6 +43,10 @@ namespace GrupoThera.WebUI.Controllers
             }
             else
             {
+                var empresa = (Empresa)HttpContext.Session["Empresa"];
+                HttpContext.Session["EmpresaName"] = empresa.nombre;
+                var sucursal = (Sucursal)HttpContext.Session["Sucursal"];
+                HttpContext.Session["SucursalName"] = sucursal.nombre;
                 return View("Dashboard");
             }
         }
@@ -75,6 +80,8 @@ namespace GrupoThera.WebUI.Controllers
             HttpContext.Session["Password"] = null;
             HttpContext.Session["Empresa"] = null;
             HttpContext.Session["Sucursal"] = null;
+            HttpContext.Session["EmpresaName"] = null;
+            HttpContext.Session["SucursalName"] = null;
             HttpContext.Session["Identificated"] = false;
 
             var userInfo = Request.Cookies["userInfoThera"];

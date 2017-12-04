@@ -93,20 +93,7 @@ namespace GrupoThera.BusinessModel.Managers.General
             return _departamentoDA.GetList().ToList();
         }
 
-        #endregion Departamento
-
-        #region Empresas
-        public IList<Empresa> getEmpresas()
-        {
-            return _empresaDA.GetList().ToList();
-        }
-
-        public Empresa getEmpresaById(long idEmpresa)
-        {
-            return _empresaDA.Get(t => t.empresaId == idEmpresa);
-        }
-
-        #endregion Empresas 
+        #endregion Departamento 
 
         #region Sucursales
         public IList<Sucursal> getSucursales()
@@ -141,14 +128,32 @@ namespace GrupoThera.BusinessModel.Managers.General
             return true;
         }
 
+        public AreaServicio getAreaServicioById(long idAreaServicio)
+        {
+            return _areaServicioDA.Get(t => t.areaServicioId == idAreaServicio);
+        }
+
         public IList<AreaServicio> getAreaServicios()
         {
             return _areaServicioDA.GetList().ToList();
         }
+
         public void AddAreaServicio(AreaServicio AreaServicio)
         {
              _areaServicioDA.Add(AreaServicio);
         }
+
+        public void EditAreaServicio(AreaServicio AreaServicio)
+        {
+            _areaServicioDA.Update(AreaServicio);
+        }
+
+        public void DeleteAreaServicio(long idAreaServicio)
+        {
+            var item = _areaServicioDA.Get( t => t.areaServicioId == idAreaServicio);
+            _areaServicioDA.Delete(item);
+        }
+
         #endregion AreaServicio
 
         #region ClasificacionServicio
@@ -157,6 +162,88 @@ namespace GrupoThera.BusinessModel.Managers.General
             return _clasificacionServicioDA.GetList().ToList();
         }
         #endregion ClasificacionServicio
+
+        #region Empresa 
+
+        public IList<Empresa> getEmpresas()
+        {
+            return _empresaDA.GetList().ToList();
+        }
+
+        public Empresa getEmpresaById(long idEmpresa)
+        {
+            return _empresaDA.Get(t => t.empresaId == idEmpresa);
+        } 
+
+        public void AddEmpresa(Empresa Empresa)
+        {
+            _empresaDA.Add(Empresa);
+        }
+
+        public void EditEmpresa(Empresa Empresa)
+        {
+            _empresaDA.Update(Empresa);
+        }
+
+        public void DeleteEmpresa(long idEmpresa)
+        {
+            var item = _empresaDA.Get(t => t.empresaId == idEmpresa);
+            _empresaDA.Delete(item);
+        }
+
+        #endregion Empresa
+
+        #region Cliente 
+
+        public IList<Cliente> getClientes()
+        {
+            return _clienteDA.GetList().ToList();
+        }
+
+        public Cliente getClienteById(long idCliente)
+        {
+            return _clienteDA.Get(t => t.clienteId == idCliente);
+        }
+
+        public void AddCliente(Cliente Cliente)
+        {
+            _clienteDA.Add(Cliente);
+        }
+
+        public void EditCliente(Cliente Cliente)
+        {
+            _clienteDA.Update(Cliente);
+        }
+
+        public void DeleteCliente(long idCliente)
+        {
+            var item = _clienteDA.Get(t => t.clienteId == idCliente);
+            _clienteDA.Delete(item);
+        }
+
+        #endregion Cliente
+
+        #region Estado
+        public IList<Estado> getEstado()
+        {
+            return _estadoDA.GetList().ToList();
+        }
+        #endregion Estado
+
+        #region Ciudad
+        public IList<Ciudad> getCiudad()
+        {
+            return _ciudadDA.GetList().ToList();
+        }
+
+        #endregion Ciudad
+
+        #region Giro
+        public IList<Giro> getGiro()
+        {
+            return _giroDA.GetList().ToList();
+        }
+        #endregion Giro
 
         #endregion Methods  
     }

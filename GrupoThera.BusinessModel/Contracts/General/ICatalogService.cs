@@ -12,19 +12,31 @@ namespace GrupoThera.BusinessModel.Contracts.General
     {
         #region Methods 
 
-        IList<Departamento> getDepartamentos();
-        IList<Empresa> getEmpresas();
+        IList<Departamento> getDepartamentos(); 
         IList<Sucursal> getSucursales();
         IList<Rol> getRoles();
-        IList<Sucursal> getSucursalesbyEmpresa(long idEmpresa);
-        Empresa getEmpresaById(long idEmpresa);
+        IList<Sucursal> getSucursalesbyEmpresa(long idEmpresa); 
         Sucursal getSucursalById(long idSucursal);
         IList<AreaServicio> getAreaServicios();
         IList<ClasificacionServicio> getClasificacionServicio();
+        IList<Estado> getEstado();
+        IList<Ciudad> getCiudad();
+        IList<Giro> getGiro();
         void AddAreaServicio(AreaServicio AreaServicio);
         bool ExistAreaServicio(string descripcion, long clasificacionServicioId);
-
-
+        AreaServicio getAreaServicioById(long idAreaServicio);
+        void EditAreaServicio(AreaServicio AreaServicio);
+        void DeleteAreaServicio(long idAreaServicio);
+        IList<Empresa> getEmpresas();
+        Empresa getEmpresaById(long idEmpresa);
+        void AddEmpresa(Empresa Empresa);
+        void EditEmpresa(Empresa Empresa);
+        void DeleteEmpresa(long idEmpresa);
+        IList<Cliente> getClientes();
+        Cliente getClienteById(long idCliente);
+        void AddCliente(Cliente Cliente);
+        void EditCliente(Cliente Cliente);
+        void DeleteCliente(long idCliente);
 
         #endregion Methods
     }

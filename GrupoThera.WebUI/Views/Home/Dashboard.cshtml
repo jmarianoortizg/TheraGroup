@@ -1,14 +1,16 @@
 ﻿@{
     ViewBag.Title = "Home Page";
     var UserName = (string)HttpContext.Current.Session["UserName"];
+    var EmpresaName = (string)HttpContext.Current.Session["EmpresaName"];
+    var SucursalName = (string)HttpContext.Current.Session["SucursalName"]; 
 }
 
 <!-- Page Header -->
 <div class="content bg-image overflow-hidden" style="background-image: url(../../Content/assets/img/Banner/5.jpg)">
     <div class="push-50-t push-15">
         <h1 class="h2 text-white animated zoomIn">@UserName</h1>
-        <h2 class="h5 text-white-op animated zoomIn">Empresa:</h2>
-        <h2 class="h5 text-white-op animated zoomIn">Sucursal:</h2>
+        <h2 class="h5 text-white-op animated zoomIn">Empresa: @EmpresaName</h2>
+        <h2 class="h5 text-white-op animated zoomIn">Sucursal: @SucursalName</h2>
     </div>
 </div>
 <!-- END Page Header -->

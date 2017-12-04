@@ -63,6 +63,8 @@ namespace GrupoThera.WebUI
                     HttpContext.Current.Session.Add("ListRoles", null);
                     HttpContext.Current.Session.Add("Empresa", null);
                     HttpContext.Current.Session.Add("Sucursal", null);
+                    HttpContext.Current.Session.Add("EmpresaName", null);
+                    HttpContext.Current.Session.Add("SucursalName", null);
                     HttpContext.Current.Session.Add("Identificated", false);
                     return;
                 } 
@@ -90,6 +92,8 @@ namespace GrupoThera.WebUI
                 HttpContext.Current.Session.Add("Password", null);
                 HttpContext.Current.Session.Add("ListRoles", null);
                 HttpContext.Current.Session.Add("Identificated", false);
+                HttpContext.Current.Session.Add("EmpresaName", null);
+                HttpContext.Current.Session.Add("SucursalName", null);
                 HttpContext.Current.Session.Add("Empresa", null);
                 HttpContext.Current.Session.Add("Sucursal", null);
             }

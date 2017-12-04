@@ -1,15 +1,15 @@
-﻿function createMessageSucess(message) {
-    $.notify({ type: 'success', icon: "fa fa-check", message: message });
+﻿function createMessageSuccess(message) {    
+    $.notify({ icon: "fa fa-check", message: message }, { type: 'success' });
 }
 
 function createMessageDanger(message) {
-    $.notify({ type: 'danger', icon: "fa fa-ban", message: message });
+    $.notify({ icon: "fa fa-ban", message: message }, { type: 'danger' });    
 }
 
 function createMessageWarning(message) {
-    $.notify({ type: 'warning', icon: "fa fa-warning", message: message });
+    $.notify({ icon: "fa fa-warning", message: message }, { type: 'warning' });    
 }
 
 function createMessageInfo(message) {
-    $.notify({ type: "info", icon: "fa fa-info-circle", message: message });
+    $.notify({ icon: "fa fa-info-circle", message: message }, { type: 'info' });    
 }

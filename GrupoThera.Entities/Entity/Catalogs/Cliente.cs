@@ -41,7 +41,7 @@ namespace GrupoThera.Entities.Entity.Catalogs
         public string fax { get; set; }
 
         [Column("CLI_MAIL")]
-        public string mail { get; set; }
+        public string email { get; set; }
 
         [Column("CLI_COMENTARIOS")]
         public string comentarios { get; set; }

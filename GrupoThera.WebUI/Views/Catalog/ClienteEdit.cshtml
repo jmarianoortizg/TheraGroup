@@ -1,0 +1,110 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "ClienteEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditCliente", "Catalog", FormMethod.Post, new { id = "formEditCliente", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditCliente()" }))
+{
+    @Html.HiddenFor(model => model.Cliente.clienteId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="4">
+                <label>Razon Social</label>
+                @Html.TextBoxFor(model => model.Cliente.razonSocial, new { id = "razonSocial", name = "razonSocial", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>RFC</label>
+                @Html.TextBoxFor(model => model.Cliente.rfc, new { id = "rfc", name = "rfc", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="4">
+            <div data-field-span="2">
+                <label>Direccion</label>
+                @Html.TextBoxFor(model => model.Cliente.direccion, new { id = "direccion", name = "direccion", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Direccion Servicio</label>
+                @Html.TextBoxFor(model => model.Cliente.dirServicio, new { id = "dirServicio", name = "dirServicio", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Contacto</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto, new { id = "contacto", name = "contacto", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Contacto Cargo</label>
+                @Html.TextBoxFor(model => model.Cliente.contactoCargo, new { id = "contactoCargo", name = "contactoCargo", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Estado</label>
+                @Html.DropDownListFor(model => model.Cliente.estadoId, Model.listEstado, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Ciudad</label>
+                @Html.DropDownListFor(model => model.Cliente.ciudadId, Model.listCiudad, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Giro</label>
+                @Html.DropDownListFor(model => model.Cliente.giroId, Model.listGiro, new { @class = "form-control required" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Telefono</label>
+                @Html.TextBoxFor(model => model.Cliente.telefono, new { id = "telefono", name = "telefono", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Fax</label>
+                @Html.TextBoxFor(model => model.Cliente.fax, new { id = "fax", name = "fax", @class = "form-control", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Email</label>
+                @Html.TextBoxFor(model => model.Cliente.email, new { id = "email", name = "email", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Comentarios</label>
+                @Html.TextBoxFor(model => model.Cliente.comentarios, new { id = "comentarios", name = "comentarios", @class = "form-control", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Contacto2</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto2, new { id = "contacto2", name = "contacto2", @class = "form-control", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Contacto3</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto3, new { id = "contacto3", name = "contacto3", @class = "form-control", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Contacto4</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto4, new { id = "contacto4", name = "contacto4", @class = "form-control", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Contacto5</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto5, new { id = "contacto5", name = "contacto5", @class = "form-control", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Contacto6</label>
+                @Html.TextBoxFor(model => model.Cliente.contacto6, new { id = "contacto6", name = "contacto6", @class = "form-control", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">            
+            <div data-field-span="2">
+                <label>Telefono2</label>
+                @Html.TextBoxFor(model => model.Cliente.telefono2, new { id = "telefono2", name = "telefono2", @class = "form-control", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Cliente</button>
+        </div>
+    </div>
+}
+

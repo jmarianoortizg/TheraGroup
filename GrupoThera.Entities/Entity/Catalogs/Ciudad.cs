@@ -14,7 +14,7 @@ namespace GrupoThera.Entities.Entity.Catalogs
     {
         [Key]
         [Column("CIU_ID")]
-        public long giroId { get; set; }
+        public long ciudadId { get; set; }
 
         [Column("CIU_NOMBRE")]
         public string nombre { get; set; }

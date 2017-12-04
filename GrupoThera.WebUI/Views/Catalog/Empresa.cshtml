@@ -1,7 +1,7 @@
 ﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
 @{
-    ViewBag.Title = "AreaServicioView";
-    var allItems = Model.AllAreaServicio.Count;
+    ViewBag.Title = "EmpresaView";
+    var allItems = Model.AllEmpresa.Count;
 }
 
 <!-- Page Header -->
@@ -9,7 +9,7 @@
     <div class="row items-push">
         <div class="col-sm-7">
             <h1 class="page-heading">
-                Catalogo Area de Servicio <small>Creacion / Edicion / Eliminacion</small>
+                Catalogo Empresa <small>Creacion / Edicion / Eliminacion</small>
             </h1>
         </div>
     </div>
@@ -33,29 +33,58 @@
             <!-- Nuevo -->
             <div class="tab-pane fade fade-up in active" id="catalog-new">                
                 <!-- New Item -->
-                    @using (Html.BeginForm("CreateAreaServicio", "Catalog", FormMethod.Post, new { id = "formCreateAreaServicio", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateCreateAreaServicio()" }))
+                    @using (Html.BeginForm("CreateEmpresa", "Catalog", FormMethod.Post, new { id = "formCreateEmpresa", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateCreateEmpresa()" }))
                     {
                         <fieldset>
                             <legend>Creacion Nuevo Item</legend>
-                            <div data-row-span="3">
+                            <div data-row-span="5">
+                                <div data-field-span="2">
+                                    <label>Nombre</label>
+                                    @Html.TextBoxFor(model => model.Empresa.nombre, new { id = "nombre", name = "nombre", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="2">
+                                    <label>Razon Social</label>
+                                    @Html.TextBoxFor(model => model.Empresa.razonSocial, new { id = "razonSocial", name = "razonSocial", @class = "form-control required", type = "text" })
+                                </div> 
                                 <div data-field-span="1">
-                                    <label>Descripcion</label>
-                                    @Html.TextBoxFor(model => model.AreaServicio.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+                                    <label>RFC</label>
+                                    @Html.TextBoxFor(model => model.Empresa.rfc, new { id = "rfc", name = "rfc", @class = "form-control required", type = "text" })
+                                </div> 
+                            </div>
+                            <div data-row-span="1">
+                                <div data-field-span="1">
+                                    <label>Direccion</label>
+                                    @Html.TextBoxFor(model => model.Empresa.direccion, new { id = "direccion", name = "direccion", @class = "form-control required", type = "text" })
+                                </div> 
+                            </div>
+                            <div data-row-span="5">
+                                <div data-field-span="1">
+                                    <label>Telefono</label>
+                                    @Html.TextBoxFor(model => model.Empresa.telefono, new { id = "telefono", name = "telefono", @class = "form-control required", type = "text" })
                                 </div>
                                 <div data-field-span="1">
-                                    <label>Comentarios</label>
-                                    @Html.TextBoxFor(model => model.AreaServicio.comentario, new { id = "comentarios", name = "comentarios", @class = "form-control", type = "text" })
+                                    <label>Telefono2</label>
+                                    @Html.TextBoxFor(model => model.Empresa.telefono2, new { id = "telefono2", name = "telefono2", @class = "form-control required", type = "text" })
                                 </div>
                                 <div data-field-span="1">
-                                    <label>Clasificacion de Servicio</label>
-                                    @Html.DropDownListFor(model => model.AreaServicio.clasificacionServicioId, Model.listClasificacionServicio, new { @class = "form-control required" })
+                                    <label>Email</label>
+                                    @Html.TextBoxFor(model => model.Empresa.email, new { id = "email", name = "email", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="1">
+                                    <label>Contacto</label>
+                                    @Html.TextBoxFor(model => model.Empresa.contacto, new { id = "contacto", name = "contacto", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="1">
+                                    <label>Formato</label>
+                                    @Html.TextBoxFor(model => model.Empresa.formato, new { id = "formato", name = "formato", @class = "form-control required", type = "text" })
                                 </div>
                             </div>
                         </fieldset>
+                     
                         <br /><br />
                         <div class="clearfix pt-md">
                             <div class="pull-right">
-                                <button class="btn-primary btn">Crear Nueva Area de Servicio</button>
+                                <button class="btn-primary btn">Crear Nueva Empresa</button>
                             </div>
                         </div>
                     }
@@ -70,23 +99,23 @@
                 <table class="table table-striped table-vcenter">
                     <thead>
                         <tr>
-                            <th>Descripcion</th>
-                            <th style="width: 30%;">Comentarios</th>
-                            <th style="width: 15%;">Clasificacion</th>
+                            <th>Nombre</th>
+                            <th>Razon Social</th>
+                            <th>RFC</th>
                             <th class="text-center" style="width: 5%;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.AllAreaServicio)
+                        @foreach (var item in Model.AllEmpresa)
                         {
                             <tr>
-                                <td class="">@Html.DisplayFor(modelItem => item.descripcion)</td>
-                                <td class="">@Html.DisplayFor(modelItem => item.comentario)</td>
-                                <td class="">@Html.DisplayFor(modelItem => item.clasificacionServicio.descripcion)</td>
+                                <td class="">@Html.DisplayFor(modelItem => item.nombre)</td>
+                                <td class="">@Html.DisplayFor(modelItem => item.razonSocial)</td>
+                                <td class="">@Html.DisplayFor(modelItem => item.rfc)</td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a id="@Html.DisplayFor(modelItem => item.areaServicioId)" class="btn btn-xs btn-default clsEditAreaServicio" type="button"  title="Edicion"><i class="fa fa-pencil"></i></a>
-                                        <a id="@Html.DisplayFor(modelItem => item.areaServicioId)" class="btn btn-xs btn-default clsDeleteAreaServicio" type="button"  title="Eliminar"><i class="fa fa-times"></i></a>
+                                        <a id="@Html.DisplayFor(modelItem => item.empresaId)" class="btn btn-xs btn-default clsEditEmpresa" type="button"  title="Edicion"><i class="fa fa-pencil"></i></a>
+                                        <a id="@Html.DisplayFor(modelItem => item.empresaId)" class="btn btn-xs btn-default clsDeleteEmpresa" type="button"  title="Eliminar"><i class="fa fa-times"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -98,8 +127,10 @@
 
             <!-- Edicion -->
             <div class="tab-pane fade fade-up" id="catalog-edit">                
-                <div class="col-md-12" id="divEditionAreaServicio" style="height:200px">
-                    <h4>Selecciona un item para la edicion</h4>
+                <div class="col-md-12" id="divEditionEmpresa">
+                    <div class="border-b push-30">
+                        <h2 class="push-10"><span class="h5 font-w400 text-muted">Selecciona un item para la edicion</span></h2>
+                    </div> 
                 </div>
             </div>
             <!-- END Edicion -->
@@ -119,14 +150,14 @@
 
             $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados Correctamente' }, { type: 'info' });
 
-            $(".clsEditAreaServicio").on('click', function (e) {
+            $(".clsEditEmpresa").on('click', function (e) {
 
                 var model = {
-                    "idAreaServicioSelected": $(this).attr("id")
+                    "idEmpresaSelected": $(this).attr("id")
                 };
 
                 $.ajax({
-                    url: '@Url.Action("AreaServicioEdit", "Catalog")',
+                    url: '@Url.Action("EmpresaEdit", "Catalog")',
                     async: false,
                     type: 'POST',
                     cache: false,
@@ -134,18 +165,18 @@
                     data: JSON.stringify(model),
                     success: function (result) {
                         $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados para edicion' }, { type: 'info' });
-                        $("#divEditionAreaServicio").html(result);
+                        $("#divEditionEmpresa").html(result);
                     }
                 });
             });
 
-            $(".clsDeleteAreaServicio").on('click', function (e) {
+            $(".clsDeleteEmpresa").on('click', function (e) {
                 var model = {
-                    "idAreaServicioSelected": $(this).attr("id")
+                    "idEmpresaSelected": $(this).attr("id")
                 };
                 var item = $(this).closest("tr");
                 $.ajax({
-                    url: '@Url.Action("DeleteAreaServicio", "Catalog")',
+                    url: '@Url.Action("DeleteEmpresa", "Catalog")',
                     async: false,
                     type: 'POST',
                     cache: false,
@@ -154,19 +185,19 @@
                     success: function (result) {
                         if (result.success == true) {
                             item.remove();
-                            $("#divEditionAreaServicio").html("<h4>Selecciona un item para la edicion</h4>");
+                            $("#divEditionEmpresa").html("<div class='border-b push-30'><h2 class='push-10'><span class='h5 font-w400 text-muted'>Selecciona un item para la edicion</span></h2></div> ");
                             $.notify({ icon: "fa fa-check", message: 'Eliminacion Correcta' }, { type: 'success' });
                         } else {
                             $.notify({ icon: "fa fa-info-circle", message: 'Error Localizado: Observar la seccion de Edicion' }, { type: 'info' });
-                            $("#divEditionAreaServicio").html(result.responseText);
+                            $("#divEditionEmpresa").html(result.responseText);
                         }
                     }
                 });
             });
         });
 
-        function validateEditAreaServicio() {
-            $("#formEditAreaServicio").validate({
+        function validateEditEmpresa() {
+            $("#formEditEmpresa").validate({
                 wrapper: 'span',
                 errorPlacement: function (error, element) {
                     error.css({ 'padding-left': '10px', 'margin-right': '20px', 'padding-bottom': '2px' });
@@ -180,14 +211,14 @@
 
                 }
             });
-            var band = $('#formEditAreaServicio').validate().form();
+            var band = $('#formEditEmpresa').validate().form();
 
             return band;
         }
 
 
-        function validateCreateAreaServicio() {
-            $("#formCreateAreaServicio").validate({
+        function validateCreateEmpresa() {
+            $("#formCreateEmpresa").validate({
                 wrapper: 'span',
                 errorPlacement: function (error, element) {
                     error.css({ 'padding-left': '10px', 'margin-right': '20px', 'padding-bottom': '2px' });
@@ -201,7 +232,7 @@
 
                 }
             });
-            var band = $('#formCreateAreaServicio').validate().form();
+            var band = $('#formCreateEmpresa').validate().form();
 
             return band;
         }
