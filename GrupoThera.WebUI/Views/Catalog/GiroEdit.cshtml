@@ -1,0 +1,31 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "GiroEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditGiro", "Catalog", FormMethod.Post, new { id = "formEditGiro", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditGiro()" }))
+{
+    @Html.HiddenFor(model => model.Giro.giroId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.Giro.descripcion, new { id = "descripcion", name = "nombre", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Detalle</label>
+                @Html.TextBoxFor(model => model.Giro.detalle, new { id = "descripcion", name = "razonSocial", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Giro</button>
+        </div>
+    </div>
+}
+

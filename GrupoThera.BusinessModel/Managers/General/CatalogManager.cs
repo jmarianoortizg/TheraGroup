@@ -239,11 +239,80 @@ namespace GrupoThera.BusinessModel.Managers.General
         #endregion Ciudad
 
         #region Giro
-        public IList<Giro> getGiro()
+
+        public bool ExistGiro(string descripcion)
+        {
+            var giro = _giroDA.Get(t => t.descripcion.ToUpper().Equals(descripcion.ToUpper()));
+            if (giro == null)
+                return false;
+            return true;
+        }
+
+        public IList<Giro> getGiros()
         {
             return _giroDA.GetList().ToList();
         }
+
+        public Giro getGiroById(long idGiro)
+        {
+            return _giroDA.Get(t => t.giroId == idGiro);
+        }
+
+        public void AddGiro(Giro Giro)
+        {
+            _giroDA.Add(Giro);
+        }
+
+        public void EditGiro(Giro Giro)
+        {
+            _giroDA.Update(Giro);
+        }
+
+        public void DeleteGiro(long idGiro)
+        {
+            var item = _giroDA.Get(t => t.giroId == idGiro);
+            _giroDA.Delete(item);
+        }
+
         #endregion Giro
+
+        #region Provedor 
+
+        public bool existProvedor(string nombre, string razonSocial,string rfc)
+        {
+            var provedor = _provedorDA.Get(t => t.nombre.ToUpper().Equals(nombre.ToUpper()) && t.razonSocial.ToUpper().Equals(razonSocial.ToUpper()) && t.rfc.ToUpper().Equals(rfc.ToUpper()));
+            if (provedor == null)
+                return false;
+            return true;
+        }
+
+        public IList<Provedor> getProvedores()
+        {
+            return _provedorDA.GetList().ToList();
+        }
+
+        public Provedor getProvedorById(long idProvedor)
+        {
+            return _provedorDA.Get(t => t.provedorId == idProvedor);
+        }
+
+        public void AddProvedor(Provedor Provedor)
+        {
+            _provedorDA.Add(Provedor);
+        }
+
+        public void EditProvedor(Provedor Provedor)
+        {
+            _provedorDA.Update(Provedor);
+        }
+
+        public void DeleteProvedor(long idProvedor)
+        {
+            var item = _provedorDA.Get(t => t.provedorId == idProvedor);
+            _provedorDA.Delete(item);
+        }
+
+        #endregion Provedor
 
         #endregion Methods  
     }

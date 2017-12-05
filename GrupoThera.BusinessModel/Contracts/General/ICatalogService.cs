@@ -21,7 +21,6 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<ClasificacionServicio> getClasificacionServicio();
         IList<Estado> getEstado();
         IList<Ciudad> getCiudad();
-        IList<Giro> getGiro();
         void AddAreaServicio(AreaServicio AreaServicio);
         bool ExistAreaServicio(string descripcion, long clasificacionServicioId);
         AreaServicio getAreaServicioById(long idAreaServicio);
@@ -37,6 +36,18 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void AddCliente(Cliente Cliente);
         void EditCliente(Cliente Cliente);
         void DeleteCliente(long idCliente);
+        bool existProvedor(string nombre, string razonSocial, string rfc);
+        IList<Provedor> getProvedores();
+        Provedor getProvedorById(long idProvedor);
+        void AddProvedor(Provedor Provedor);
+        void EditProvedor(Provedor Provedor);
+        void DeleteProvedor(long idProvedor);
+        bool ExistGiro(string descripcion);
+        IList<Giro> getGiros();
+        Giro getGiroById(long idCliente);
+        void AddGiro(Giro Giro);
+        void EditGiro(Giro Giro);
+        void DeleteGiro(long idGiro);
 
         #endregion Methods
     }

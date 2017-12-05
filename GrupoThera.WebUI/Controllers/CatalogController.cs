@@ -210,7 +210,7 @@ namespace GrupoThera.WebUI.Controllers
                 listCliente = DropListHelper.GetCliente(allCliente),
                 listEstado = DropListHelper.GetEstado(_catalogService.getEstado()),
                 listCiudad = DropListHelper.GetCiudad(_catalogService.getCiudad()),
-                listGiro = DropListHelper.GetGiro(_catalogService.getGiro())
+                listGiro = DropListHelper.GetGiro(_catalogService.getGiros())
             };
             TempData["CatalogModel"] = model;
             return View(model);
@@ -275,7 +275,173 @@ namespace GrupoThera.WebUI.Controllers
 
         #endregion empresa
 
-        
+        #region Giro
+        [CustomAuthorizeAttribute(privilege = "Giro,GeneralCatalog")]
+
+        public ActionResult Giro()
+        {
+            var allGiro = _catalogService.getGiros();
+            var model = new CatalogModel()
+            {
+                AllGiro = allGiro,
+                listGiro = DropListHelper.GetGiro(allGiro)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateGiro(CatalogModel CatalogModel)
+        {
+            try
+            {
+                try
+                {
+                    if (_catalogService.ExistGiro(CatalogModel.Giro.descripcion))
+                        throw new Exception("El concepto Giro con los datos ingresados ya existe ( Descripcion)");
+                }
+                catch (Exception ex)
+                {
+                    return View("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(ex, "CatalogController", "ExistClient"));
+                }
+                _catalogService.AddGiro(CatalogModel.Giro);
+                return RedirectToAction("Giro");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult GiroEdit(int idGiroSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.Giro = _catalogService.getGiroById(idGiroSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditGiro(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditGiro(CatalogModel.Giro);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit Giro : ID: {0}, New Name: {1} by {2}", CatalogModel.Giro.giroId, CatalogModel.Giro.descripcion, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("Giro");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("Giro");
+        }
+
+        public ActionResult DeleteGiro(int idGiroSelected)
+        {
+            try
+            {
+                _catalogService.DeleteGiro(idGiroSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete Giro : ID: {0} by {1}", idGiroSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion giro
+
+        #region provedor
+        [CustomAuthorizeAttribute(privilege = "Provedor,GeneralCatalog")]
+
+        public ActionResult Provedor()
+        {
+            var allProvedor = _catalogService.getProvedores();
+            var model = new CatalogModel()
+            {
+                AllProvedor = allProvedor,
+                listProvedor = DropListHelper.GetProvedor(allProvedor)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateProvedor(CatalogModel CatalogModel)
+        {
+            try
+            {
+                try
+                {
+                    if (_catalogService.existProvedor(CatalogModel.Provedor.nombre, CatalogModel.Provedor.razonSocial, CatalogModel.Provedor.rfc))
+                        throw new Exception("El Provedor con los datos ingresados ya existe ( Nombre, Razon Social, RFC)");
+                }
+                catch (Exception ex)
+                {
+                    return View("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(ex, "CatalogController", "ExistClient"));
+                }
+                _catalogService.AddProvedor(CatalogModel.Provedor);
+                return RedirectToAction("Provedor");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult ProvedorEdit(int idProvedorSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.Provedor = _catalogService.getProvedorById(idProvedorSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditProvedor(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditProvedor(CatalogModel.Provedor);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit Provedor : ID: {0}, New Name: {1} by {2}", CatalogModel.Provedor.provedorId, CatalogModel.Provedor.razonSocial, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("Provedor");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("Provedor");
+        }
+
+        public ActionResult DeleteProvedor(int idProvedorSelected)
+        {
+            try
+            {
+                _catalogService.DeleteProvedor(idProvedorSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete Provedor : ID: {0} by {1}", idProvedorSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion provedor
+
+
 
         #endregion Methods
     }

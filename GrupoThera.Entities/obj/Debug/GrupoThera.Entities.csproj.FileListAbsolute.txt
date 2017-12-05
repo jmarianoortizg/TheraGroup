@@ -13,7 +13,6 @@ D:\GT\GrupoThera V1 - Copy\GrupoThera.Entities\XmlDocumentEntities.xml
 D:\GT\GrupoThera V1 - Copy\GrupoThera.Entities\Newtonsoft.Json.dll
 D:\GT\GrupoThera V1 - Copy\GrupoThera.Entities\Newtonsoft.Json.xml
 D:\GT\GrupoThera V1 - Copy\GrupoThera.Entities\obj\Debug\GrupoThera.Entities.csprojResolveAssemblyReference.cache
-F:\Proyects\TheraGroup\GrupoThera.Entities\obj\Debug\GrupoThera.Entities.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.Entities\obj\Debug\GrupoThera.Entities.dll
 F:\Proyects\TheraGroup\GrupoThera.Entities\obj\Debug\GrupoThera.Entities.pdb
 F:\Proyects\TheraGroup\GrupoThera.Entities\GrupoThera.Entities.dll
