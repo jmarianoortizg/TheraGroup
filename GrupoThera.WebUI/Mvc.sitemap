@@ -64,9 +64,9 @@
       <mvcSiteMapNode title="Edicion Giro "  controller="Catalog" action="PEGiro" />
     </mvcSiteMapNode>
 
-    <mvcSiteMapNode title="Catalogo de Clasificaciones "  controller="Catalog" action="Clasificacion" >
-      <mvcSiteMapNode title="Nueva Clasificacion"  controller="Catalog" action="CreateClasificacion" />
-      <mvcSiteMapNode title="Edicion Clasificacion "  controller="Catalog" action="PEClasificacion" />
+    <mvcSiteMapNode title="Catalogo de Clasificacion Servicio "  controller="Catalog" action="ClasificacionServicio" >
+      <mvcSiteMapNode title="Nueva Clasificacion Servicio"  controller="Catalog" action="CreateClasificacionServicio" />
+      <mvcSiteMapNode title="Edicion Clasificacion Servicio"  controller="Catalog" action="PEClasificacionServicios" />
     </mvcSiteMapNode>
 
     <mvcSiteMapNode title="Catalogo de Area de Servicio"  controller="Catalog" action="AreaServicio" >

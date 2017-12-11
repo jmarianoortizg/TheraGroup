@@ -230,6 +230,13 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
         #endregion Estado
 
+        #region MetodosCotizacion
+        public IList<MetodoCotizacion> getMetodoCotizaciones()
+        {
+            return _metodoCotizacionDA.GetList().ToList();
+        }
+        #endregion MetodoCotizacion
+
         #region Ciudad
         public IList<Ciudad> getCiudad()
         {
@@ -313,6 +320,156 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
 
         #endregion Provedor
+
+        #region Clasificacion        
+
+        public IList<ClasificacionServicio> getClasificacionServicios()
+        {
+            return _clasificacionServicioDA.GetList().ToList();
+        }
+
+        public ClasificacionServicio getClasificacionServicioById(long idClasificacionServicio)
+        {
+            return _clasificacionServicioDA.Get(t => t.clasificacionServicioId == idClasificacionServicio);
+        }
+
+        public void AddClasificacionServicio(ClasificacionServicio ClasificacionServicio)
+        {
+            _clasificacionServicioDA.Add(ClasificacionServicio);
+        }
+
+        public void EditClasificacionServicio(ClasificacionServicio ClasificacionServicio)
+        {
+            _clasificacionServicioDA.Update(ClasificacionServicio);
+        }
+
+        public void DeleteClasificacionServicio(long idClasificacion)
+        {
+            var item = _clasificacionServicioDA.Get(t => t.clasificacionServicioId == idClasificacion);
+            _clasificacionServicioDA.Delete(item);
+        }
+
+        #endregion Clasificacion
+
+        #region Frecuencia        
+
+        public IList<FrecuenciaServicio> getFrecuenciaServicios()
+        {
+            return _frecuenciaServicioDA.GetList().ToList();
+        }
+
+        public FrecuenciaServicio getFrecuenciaServicioById(long idFrecuenciaServicio)
+        {
+           return _frecuenciaServicioDA.Get(t => t.frecuenciaServicioId == idFrecuenciaServicio);
+        }
+
+        public void AddFrecuenciaServicio(FrecuenciaServicio FrecuenciaServicio)
+        {
+            _frecuenciaServicioDA.Add(FrecuenciaServicio);
+        }
+
+        public void EditFrecuenciaServicio(FrecuenciaServicio FrecuenciaServicio)
+        {
+            _frecuenciaServicioDA.Update(FrecuenciaServicio);
+        }
+
+        public void DeleteFrecuenciaServicio(long idFrecuenciaServicio)
+        {
+            var item = _frecuenciaServicioDA.Get(t => t.frecuenciaServicioId == idFrecuenciaServicio);
+            _frecuenciaServicioDA.Delete(item);
+        }
+
+        #endregion Frecuencia
+
+        #region Moneda        
+
+        public IList<Moneda> getMonedas()
+        {
+            return _monedaDA.GetList().ToList();
+        }
+
+        public Moneda getMonedaById(long idMoneda)
+        {
+            return _monedaDA.Get(t => t.monedaId == idMoneda);
+        }
+
+        public void AddMoneda(Moneda Moneda)
+        {
+            _monedaDA.Add(Moneda);
+        }
+
+        public void EditMoneda(Moneda Moneda)
+        {
+            _monedaDA.Update(Moneda);
+        }
+
+        public void DeleteMoneda(long idMoneda)
+        {
+            var item = _monedaDA.Get(t => t.monedaId == idMoneda);
+            _monedaDA.Delete(item);
+        }
+
+        #endregion Moneda
+
+        #region TiempoEntrega        
+
+        public IList<TiempoEntrega> getTiempoEntregas()
+        {
+            return _tiempoEntregaDA.GetList().ToList();
+        }
+
+        public TiempoEntrega getTiempoEntregaById(long idTiempoEntrega)
+        {
+            return _tiempoEntregaDA.Get(t => t.tiempoEntregaId == idTiempoEntrega);
+        }
+
+        public void AddTiempoEntrega(TiempoEntrega TiempoEntrega)
+        {
+            _tiempoEntregaDA.Add(TiempoEntrega);
+        }
+
+        public void EditTiempoEntrega(TiempoEntrega TiempoEntrega)
+        {
+            _tiempoEntregaDA.Update(TiempoEntrega);
+        }
+
+        public void DeleteTiempoEntrega(long idTiempoEntrega)
+        {
+            var item = _tiempoEntregaDA.Get(t => t.tiempoEntregaId == idTiempoEntrega);
+            _tiempoEntregaDA.Delete(item);
+        }
+
+        #endregion TiempoEntrega
+
+        #region Configuracion        
+
+        public IList<Configuracion> getConfiguraciones()
+        {
+            return _configuracionDA.GetList().ToList();
+        }
+
+        public Configuracion getConfiguracionById(long idConfiguracion)
+        {
+            return _configuracionDA.Get(t => t.configuracionId == idConfiguracion);
+        }
+
+        public void AddConfiguracion(Configuracion Configuracion)
+        {
+            _configuracionDA.Add(Configuracion);
+        }
+
+        public void EditConfiguracion(Configuracion Configuracion)
+        {
+            _configuracionDA.Update(Configuracion);
+        }
+
+        public void DeleteConfiguracion(long idConfiguracion)
+        {
+            var item = _configuracionDA.Get(t => t.configuracionId == idConfiguracion);
+            _configuracionDA.Delete(item);
+        }
+
+        #endregion Configuracion
 
         #endregion Methods  
     }

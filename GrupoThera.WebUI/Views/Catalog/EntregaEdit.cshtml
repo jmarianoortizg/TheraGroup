@@ -1,0 +1,69 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "ProvedorEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditProvedor", "Catalog", FormMethod.Post, new { id = "formEditProvedor", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditProvedor()" }))
+{
+    @Html.HiddenFor(model => model.Provedor.provedorId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Nombre</label>
+                @Html.TextBoxFor(model => model.Provedor.nombre, new { id = "nombre", name = "nombre", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Razon Social</label>
+                @Html.TextBoxFor(model => model.Provedor.razonSocial, new { id = "razonSocial", name = "razonSocial", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>RFC</label>
+                @Html.TextBoxFor(model => model.Provedor.rfc, new { id = "rfc", name = "rfc", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="1">
+            <div data-field-span="1">
+                <label>Direccion</label>
+                @Html.TextBoxFor(model => model.Provedor.direccion, new { id = "direccion", name = "direccion", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Contacto</label>
+                @Html.TextBoxFor(model => model.Provedor.contacto, new { id = "contacto", name = "contacto", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Email</label>
+                @Html.TextBoxFor(model => model.Provedor.mail, new { id = "mail", name = "mail", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Telefono</label>
+                @Html.TextBoxFor(model => model.Provedor.telefono, new { id = "telefono", name = "telefono", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Telefono2</label>
+                @Html.TextBoxFor(model => model.Provedor.telefono2, new { id = "telefono2", name = "telefono2", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Cuenta Banco</label>
+                @Html.TextBoxFor(model => model.Provedor.cuentaBanco, new { id = "cuentaBanco", name = "cuentaBanco", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Comentarios</label>
+                @Html.TextBoxFor(model => model.Provedor.comentarios, new { id = "comentarios", name = "comentarios", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Provedor</button>
+        </div>
+    </div>
+}
+

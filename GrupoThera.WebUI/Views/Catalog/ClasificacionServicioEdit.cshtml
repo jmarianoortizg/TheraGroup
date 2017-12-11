@@ -1,0 +1,36 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "ClasificacionServicioEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditClasificacionServicio", "Catalog", FormMethod.Post, new { id = "formEditClasificacionServicio", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditClasificacionServicio()" }))
+{
+    @Html.HiddenFor(model => model.ClasificacionServicio.clasificacionServicioId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.ClasificacionServicio.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Comentarios</label>
+                @Html.TextBoxFor(model => model.ClasificacionServicio.comentarios, new { id = "comentarios", name = "comentarios", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Metodo de Cotizacion</label>
+                @Html.DropDownListFor(model => model.ClasificacionServicio.metodoCotizacionId, Model.listMetodoCotizacion, new { @class = "form-control required" })
+            </div>
+        </div>
+    </fieldset>
+
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Clasificacion de Servicio</button>
+        </div>
+    </div>
+}
+

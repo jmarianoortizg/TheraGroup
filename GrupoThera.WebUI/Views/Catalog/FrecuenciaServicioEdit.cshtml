@@ -1,0 +1,32 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "FrecuenciaServicioEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditFrecuenciaServicio", "Catalog", FormMethod.Post, new { id = "formEditFrecuenciaServicio", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditFrecuenciaServicio()" }))
+{
+    @Html.HiddenFor(model => model.FrecuenciaServicio.frecuenciaServicioId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Frecuencia</label>
+                @Html.TextBoxFor(model => model.FrecuenciaServicio.frecuencia, new { id = "frecuencia", name = "frecuencia", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.FrecuenciaServicio.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Frecuencia de Servicio</button>
+        </div>
+    </div>
+}
+

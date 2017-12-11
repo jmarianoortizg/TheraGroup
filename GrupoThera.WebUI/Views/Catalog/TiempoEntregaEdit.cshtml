@@ -1,0 +1,31 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "TiempoEntregaEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditTiempoEntrega", "Catalog", FormMethod.Post, new { id = "formEditTiempoEntrega", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditTiempoEntrega()" }))
+{
+    @Html.HiddenFor(model => model.TiempoEntrega.tiempoEntregaId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.TiempoEntrega.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Tiempo de Entrega</label>
+                @Html.TextBoxFor(model => model.TiempoEntrega.tiempoEntrega, new { id = "tiempoEntrega", name = "tiempoEntrega", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Tiempo de Entrega</button>
+        </div>
+    </div>
+}
+

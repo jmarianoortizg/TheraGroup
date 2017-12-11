@@ -1,0 +1,44 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "ConfiguracionEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditConfiguracion", "Catalog", FormMethod.Post, new { id = "formEditConfiguracion", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditConfiguracion()" }))
+{
+    @Html.HiddenFor(model => model.Configuracion.configuracionId)
+
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Parametro</label>
+                @Html.TextBoxFor(model => model.Configuracion.parametro, new { id = "parametro", name = "parametro", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Valor 1</label>
+                @Html.TextBoxFor(model => model.Configuracion.valor1, new { id = "valor1", name = "valor1", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Valor 2</label>
+                @Html.TextBoxFor(model => model.Configuracion.valor2, new { id = "valor2", name = "valor2", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Valor 3</label>
+                @Html.TextBoxFor(model => model.Configuracion.valor3, new { id = "valor3", name = "valor3", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.Configuracion.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Configuracion</button>
+        </div>
+    </div>
+}
+

@@ -358,7 +358,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #endregion giro
 
-        #region provedor
+        #region Provedor
         [CustomAuthorizeAttribute(privilege = "Provedor,GeneralCatalog")]
 
         public ActionResult Provedor()
@@ -439,9 +439,366 @@ namespace GrupoThera.WebUI.Controllers
             }
         }
 
-        #endregion provedor
+        #endregion Provedor
 
+        #region Clasificacion
+        [CustomAuthorizeAttribute(privilege = "ClasificacionServicio,GeneralCatalog")]
 
+        public ActionResult ClasificacionServicio()
+        {
+            var allClasificacionServicio = _catalogService.getClasificacionServicios();
+            var model = new CatalogModel()
+            {
+                AllClasificacionServicio = allClasificacionServicio,
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(allClasificacionServicio),
+                listMetodoCotizacion = DropListHelper.GetMetodoCotizacion(_catalogService.getMetodoCotizaciones())
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateClasificacionServicio(CatalogModel CatalogModel)
+        {
+            try
+            {   
+                _catalogService.AddClasificacionServicio(CatalogModel.ClasificacionServicio);
+                return RedirectToAction("ClasificacionServicio");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult ClasificacionServicioEdit(int idClasificacionServicioSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.ClasificacionServicio = _catalogService.getClasificacionServicioById(idClasificacionServicioSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditClasificacionServicio(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditClasificacionServicio(CatalogModel.ClasificacionServicio);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit ClasificacionServicio : ID: {0}, New Name: {1} by {2}", CatalogModel.ClasificacionServicio.clasificacionServicioId, CatalogModel.ClasificacionServicio.descripcion, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("ClasificacionServicio");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("ClasificacionServicio");
+        }
+
+        public ActionResult DeleteClasificacionServicio(int idClasificacionServicioSelected)
+        {
+            try
+            {
+                _catalogService.DeleteClasificacionServicio(idClasificacionServicioSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete ClasificacionServicio : ID: {0} by {1}", idClasificacionServicioSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion Clasificacion
+
+        #region Frecuencia
+        [CustomAuthorizeAttribute(privilege = "FrecuenciaServicio,GeneralCatalog")]
+
+        public ActionResult FrecuenciaServicio()
+        {
+            var allFrecuenciaServicio = _catalogService.getFrecuenciaServicios();
+            var model = new CatalogModel()
+            {
+                AllFrecuenciaServicio = allFrecuenciaServicio,
+                listFrecuenciaServicio = DropListHelper.GetFrecuenciaServicio(allFrecuenciaServicio)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateFrecuenciaServicio(CatalogModel CatalogModel)
+        {
+            try
+            {   
+                _catalogService.AddFrecuenciaServicio(CatalogModel.FrecuenciaServicio);
+                return RedirectToAction("FrecuenciaServicio");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult FrecuenciaServicioEdit(int idFrecuenciaServicioSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.FrecuenciaServicio = _catalogService.getFrecuenciaServicioById(idFrecuenciaServicioSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditFrecuenciaServicio(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditFrecuenciaServicio(CatalogModel.FrecuenciaServicio);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit FrecuenciaServicio : ID: {0}, New Name: {1} by {2}", CatalogModel.FrecuenciaServicio.frecuenciaServicioId, CatalogModel.FrecuenciaServicio.frecuencia, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("FrecuenciaServicio");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("FrecuenciaServicio");
+        }
+
+        public ActionResult DeleteFrecuenciaServicio(int idFrecuenciaServicioSelected)
+        {
+            try
+            {
+                _catalogService.DeleteFrecuenciaServicio(idFrecuenciaServicioSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete FrecuenciaServicio : ID: {0} by {1}", idFrecuenciaServicioSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion Frecuencia
+
+        #region Moneda
+        [CustomAuthorizeAttribute(privilege = "Moneda,GeneralCatalog")]
+
+        public ActionResult Moneda()
+        {
+            var allMoneda = _catalogService.getMonedas();
+            var model = new CatalogModel()
+            {
+                AllMoneda = allMoneda,
+                listMoneda = DropListHelper.GetMoneda(allMoneda)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult MonedaEdit(int idMonedaSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.Moneda = _catalogService.getMonedaById(idMonedaSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditMoneda(CatalogModel CatalogModel)
+        {
+            try
+            {
+                CatalogModel.Moneda.defaultt = "N";
+                _catalogService.EditMoneda(CatalogModel.Moneda);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit Moneda : ID: {0}, New Name: {1} by {2}", CatalogModel.Moneda.monedaId, CatalogModel.Moneda.moneda, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("Moneda");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("Moneda");
+        }
+
+        public ActionResult DeleteMoneda(int idMonedaSelected)
+        {
+            try
+            {
+                _catalogService.DeleteMoneda(idMonedaSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete Moneda : ID: {0} by {1}", idMonedaSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion Moneda
+
+        #region TiempoEntrega
+        [CustomAuthorizeAttribute(privilege = "TiempoEntrega,GeneralCatalog")]
+
+        public ActionResult TiempoEntrega()
+        {
+            var allTiempoEntrega = _catalogService.getTiempoEntregas();
+            var model = new CatalogModel()
+            {
+                AllTiempoEntrega = allTiempoEntrega,
+                listTiempoEntrega = DropListHelper.GetTiempoEntrega(allTiempoEntrega)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateTiempoEntrega(CatalogModel CatalogModel)
+        {
+            try
+            {   
+                _catalogService.AddTiempoEntrega(CatalogModel.TiempoEntrega);
+                return RedirectToAction("TiempoEntrega");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult TiempoEntregaEdit(int idTiempoEntregaSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.TiempoEntrega = _catalogService.getTiempoEntregaById(idTiempoEntregaSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditTiempoEntrega(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditTiempoEntrega(CatalogModel.TiempoEntrega);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit TiempoEntrega : ID: {0}, New Name: {1} by {2}", CatalogModel.TiempoEntrega.tiempoEntregaId, CatalogModel.TiempoEntrega.tiempoEntrega, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("TiempoEntrega");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("TiempoEntrega");
+        }
+
+        public ActionResult DeleteTiempoEntrega(int idTiempoEntregaSelected)
+        {
+            try
+            {
+                _catalogService.DeleteTiempoEntrega(idTiempoEntregaSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete TiempoEntrega : ID: {0} by {1}", idTiempoEntregaSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion TiempoEntrega
+
+        #region Configuracion
+        [CustomAuthorizeAttribute(privilege = "Configuracion,GeneralCatalog")]
+
+        public ActionResult Configuracion()
+        {
+            var allConfiguracion = _catalogService.getConfiguraciones();
+            var model = new CatalogModel()
+            {
+                AllConfiguracion = allConfiguracion,
+                listConfiguracion = DropListHelper.GetConfiguracion(allConfiguracion)
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateConfiguracion(CatalogModel CatalogModel)
+        {
+            try
+            {   
+                _catalogService.AddConfiguracion(CatalogModel.Configuracion);
+                return RedirectToAction("Configuracion");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult ConfiguracionEdit(int idConfiguracionSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.Configuracion = _catalogService.getConfiguracionById(idConfiguracionSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditConfiguracion(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditConfiguracion(CatalogModel.Configuracion);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit Configuracion : ID: {0}, New Name: {1} by {2}", CatalogModel.Configuracion.configuracionId, CatalogModel.Configuracion.descripcion, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("Configuracion");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("Configuracion");
+        }
+
+        public ActionResult DeleteConfiguracion(int idConfiguracionSelected)
+        {
+            try
+            {
+                _catalogService.DeleteConfiguracion(idConfiguracionSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete Configuracion : ID: {0} by {1}", idConfiguracionSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion Configuracion
 
         #endregion Methods
     }

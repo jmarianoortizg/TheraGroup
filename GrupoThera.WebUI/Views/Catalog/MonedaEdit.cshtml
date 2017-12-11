@@ -1,0 +1,34 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "MonedaEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditMoneda", "Catalog", FormMethod.Post, new { id = "formEditMoneda", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditMoneda()" }))
+{
+    @Html.HiddenFor(model => model.Moneda.monedaId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Moneda</label>
+                @Html.TextBoxFor(model => model.Moneda.moneda, new { id = "moneda", name = "moneda", @class = "form-control required ", type = "text", @readonly = true, Style = "color:#FA5858;" })
+            </div>
+            <div data-field-span="2">
+                <label>Tipo de cambio</label>
+                @Html.TextBoxFor(model => model.Moneda.tipoCambio, new { id = "tipoCambio", name = "tipoCambio", @class = "form-control required onlyNumber", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.Moneda.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text", @readonly = true, Style = "color:#FA5858;" })
+            </div>
+        </div>
+    </fieldset>    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Moneda</button>
+        </div>
+    </div>
+}
+

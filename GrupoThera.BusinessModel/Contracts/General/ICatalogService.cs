@@ -20,6 +20,7 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<AreaServicio> getAreaServicios();
         IList<ClasificacionServicio> getClasificacionServicio();
         IList<Estado> getEstado();
+        IList<MetodoCotizacion> getMetodoCotizaciones();
         IList<Ciudad> getCiudad();
         void AddAreaServicio(AreaServicio AreaServicio);
         bool ExistAreaServicio(string descripcion, long clasificacionServicioId);
@@ -48,6 +49,37 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void AddGiro(Giro Giro);
         void EditGiro(Giro Giro);
         void DeleteGiro(long idGiro);
+
+        IList<ClasificacionServicio> getClasificacionServicios();
+        ClasificacionServicio getClasificacionServicioById(long idClasificacion);
+        void AddClasificacionServicio(ClasificacionServicio Clasificacion);
+        void EditClasificacionServicio(ClasificacionServicio Clasificacion);
+        void DeleteClasificacionServicio(long idClasificacion);
+
+        IList<FrecuenciaServicio> getFrecuenciaServicios();
+        FrecuenciaServicio getFrecuenciaServicioById(long idFrecuenciaServicio);
+        void AddFrecuenciaServicio(FrecuenciaServicio FrecuenciaServicio);
+        void EditFrecuenciaServicio(FrecuenciaServicio FrecuenciaServicio);
+        void DeleteFrecuenciaServicio(long idFrecuenciaServicio);
+
+        IList<Moneda> getMonedas();
+        Moneda getMonedaById(long idMoneda);
+        void AddMoneda(Moneda Moneda);
+        void EditMoneda(Moneda Moneda);
+        void DeleteMoneda(long idMoneda);
+
+        IList<Configuracion> getConfiguraciones();
+        Configuracion getConfiguracionById(long idConfiguracion);
+        void AddConfiguracion(Configuracion Configuracion);
+        void EditConfiguracion(Configuracion Configuracion);
+        void DeleteConfiguracion(long idConfiguracion);
+
+        IList<TiempoEntrega> getTiempoEntregas();
+        TiempoEntrega getTiempoEntregaById(long idTiempoEntrega);
+        void AddTiempoEntrega(TiempoEntrega TiempoEntrega);
+        void EditTiempoEntrega(TiempoEntrega TiempoEntrega);
+        void DeleteTiempoEntrega(long idTiempoEntrega);
+
 
         #endregion Methods
     }
