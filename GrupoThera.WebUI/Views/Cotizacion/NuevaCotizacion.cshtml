@@ -1,7 +1,147 @@
-﻿
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
 @{
     ViewBag.Title = "NuevaCotizacion";
 }
 
-<h2>NuevaCotizacion</h2>
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-8">
+            <h1 class="page-heading">
+                Nueva Cotizacion <small> Ingrese los datos seguidos para generar una nueva cotizacion</small>
+            </h1>
+        </div>
+    </div>
+</div> 
 
+@using (Ajax.BeginForm("CreateCotizacion", "Cotizacion", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    OnSuccess = "SuccessCreateCotizacion",
+    OnBegin = "BeginCreateCotizacion",
+    OnFailure = "FailureCreateCotizacion",
+}, new { @id = "frmCreateCotizacion", @class = "js-validation-bootstrap" }))
+{
+<div class="content content-narrow">
+    <div class="row">
+        <div class="col-md-10">
+            <!-- Nueva Cotizacion Form -->
+            <div class="block">
+                <ul class="nav nav-tabs" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#btabs-animated-slideleft-components">
+                            Componentes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#btabs-animated-slideleft-partidas">
+                            Partidas
+                        </a>
+                    </li>
+                    <li class="pull-right">
+                        <a title="" href="#btabs-animated-slideleft-settings" data-original-title="Settings" data-toggle="tooltip"><i class="si si-settings"></i></a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <div class="tab-pane fade fade-left active in" id="btabs-animated-slideleft-components">
+                        <!-- Components Section -->
+                            @Html.Partial("NuevaCotizacionComponentes", Model)
+                        <!-- /Components Section -->
+                    </div>
+                    <!-- Partidas -->
+                    <div class="tab-pane fade fade-left" id="btabs-animated-slideleft-partidas">
+                        <!-- Partidas Section -->
+                        @Html.Partial("NuevaCotizacionPartidas", Model)
+                        <!-- /Partidas Section -->
+                    </div>
+                    <!-- /Partidas -->
+                </div>
+            </div>
+            <!-- /Nueva Cotizacion Form -->
+        </div>
+        <!-- Totales -->
+        <div class="col-md-2">
+            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Subtotal</span></h3>
+            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Iva</span></h3>
+            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Total</span></h3>
+            <hr />
+            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Partidas</span></h3>
+            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Cantidad</span></h3>
+        </div>
+        <!-- /Totales -->
+    </div>
+</div>
+}
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/assets/js/plugins/jquery-validation/dist/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/jquery-validation/additional-methods.min.js")"></script>
+ 
+    <script>
+        $(document).ready(function () {
+
+            $("#spin").spinner({
+                color: "black"
+              , background: "rgba(189, 227, 231, .5)"
+              , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+              , spin: true
+            });
+
+            $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados Correctamente' }, { type: 'info' });
+        });
+
+        function BeginCreateCotizacion()
+        { 
+            $("#frmCreateCotizacion").validate({
+                ignore: [],
+                errorClass: 'help-block animated fadeInDown',
+                errorElement: 'div',
+                errorPlacement: function (error, e) {
+                    jQuery(e).parents('.form-group > div').append(error);
+                },
+                highlight: function (e) {
+                    var elem = jQuery(e);
+
+                    elem.closest('.form-group').removeClass('has-error').addClass('has-error');
+                    elem.closest('.help-block').remove();
+                },
+                success: function (e) {
+                    var elem = jQuery(e);
+
+                    elem.closest('.form-group').removeClass('has-error');
+                    elem.closest('.help-block').remove();
+                },
+                rules: {
+                    'val-username': {
+                        required: true,
+                        minlength: 3
+                    } 
+                },
+                messages: {
+                    'val-username': {
+                        required: 'Please enter a username',
+                        minlength: 'Your username must consist of at least 3 characters'
+                    } 
+                }
+            }); 
+         
+            var band = $('#frmCreateCotizacion').validate().form();
+
+            if (band) { $("#spin").show(); }
+
+            return band;
+        }
+
+        function SuccessCreateCotizacion(response) {
+            $("#spin").hide();
+            if (response.success) {
+                alert("tre");
+            }
+        }
+
+        function FailureCreateCotizacion(response) {
+            $("#spin").hide();
+            alert("Please contact with technical support");
+        }
+</script>
+} 

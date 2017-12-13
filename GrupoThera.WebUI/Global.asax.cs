@@ -65,7 +65,6 @@ namespace GrupoThera.WebUI
                     HttpContext.Current.Session.Add("Sucursal", null);
                     HttpContext.Current.Session.Add("EmpresaName", null);
                     HttpContext.Current.Session.Add("SucursalName", null);
-                    HttpContext.Current.Session.Add("Identificated", false);
                     return;
                 } 
                     HttpContext.Current.Session.Add("UserName", UserCookie["Name"].ToString());
@@ -73,8 +72,7 @@ namespace GrupoThera.WebUI
                     HttpContext.Current.Session.Add("Password", password);
                     HttpContext.Current.Session.Add("Empresa", _catalogManager.getEmpresaById(Convert.ToInt16(idEmpresa)));
                     HttpContext.Current.Session.Add("Sucursal", _catalogManager.getSucursalById(Convert.ToInt16(idSucursal)));
-                    HttpContext.Current.Session.Add("Identificated", true); 
-
+ 
                     var roles = Request.Cookies["userInfoThera"]["ListRoles"];
                     if (roles != null)
                     {
@@ -91,7 +89,6 @@ namespace GrupoThera.WebUI
                 HttpContext.Current.Session.Add("Account", null);
                 HttpContext.Current.Session.Add("Password", null);
                 HttpContext.Current.Session.Add("ListRoles", null);
-                HttpContext.Current.Session.Add("Identificated", false);
                 HttpContext.Current.Session.Add("EmpresaName", null);
                 HttpContext.Current.Session.Add("SucursalName", null);
                 HttpContext.Current.Session.Add("Empresa", null);

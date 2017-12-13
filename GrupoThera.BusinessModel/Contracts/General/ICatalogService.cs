@@ -20,6 +20,7 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<AreaServicio> getAreaServicios();
         IList<ClasificacionServicio> getClasificacionServicio();
         IList<Estado> getEstado();
+        IList<FormaPago> getFormasPago();
         IList<MetodoCotizacion> getMetodoCotizaciones();
         IList<Ciudad> getCiudad();
         void AddAreaServicio(AreaServicio AreaServicio);

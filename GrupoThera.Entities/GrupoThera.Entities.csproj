@@ -90,6 +90,9 @@
     <Compile Include="Entity\Catalogs\Provedor.cs" />
     <Compile Include="Entity\Catalogs\Servicio.cs" />
     <Compile Include="Entity\Catalogs\Cliente.cs" />
+    <Compile Include="Entity\Cotizaciones\PrePartidas.cs" />
+    <Compile Include="Entity\Cotizaciones\Preliminar.cs" />
+    <Compile Include="Entity\Cotizaciones\StatusCotizacion.cs" />
     <Compile Include="Entity\General\EmpresaSucursalUsRoleMap.cs" />
     <Compile Include="Entity\General\EmpresaSucursalUsuarioMap.cs" />
     <Compile Include="Entity\General\EmpresaSucursalMap.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Entity\General\Usuario.cs" />
     <Compile Include="Filters\Mock\NotificationFilter.cs" />
     <Compile Include="Models\Catalog\CatalogModel.cs" />
+    <Compile Include="Models\Cotizacion\CotizacionModel.cs" />
     <Compile Include="Models\General\DashboardModel.cs" />
     <Compile Include="Models\General\UserLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

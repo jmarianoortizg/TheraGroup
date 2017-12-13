@@ -230,6 +230,13 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
         #endregion Estado
 
+        #region Estado
+        public IList<FormaPago> getFormasPago()
+        {
+            return _formaPagoDA.GetList().ToList();
+        }
+        #endregion Estado
+
         #region MetodosCotizacion
         public IList<MetodoCotizacion> getMetodoCotizaciones()
         {

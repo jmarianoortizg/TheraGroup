@@ -5413,7 +5413,7 @@ a.list-group-item:focus {
 }
 .side-content {
   margin: 0 auto;
-  padding: 15px 20px 0px;
+  padding: 22px 20px 0px;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -7393,11 +7393,11 @@ a.block.block-link-hover3:active {
 }
 .pulldown {
   position: relative;
-  top: 50px;
+  top: 10px;
 }
 @media screen and (min-width: 992px) {
   .pulldown {
-    top: 150px;
+    top: 0px;
   }
 }
 .remove-margin {

@@ -33,7 +33,8 @@ namespace GrupoThera.WebUI.Controllers
         #region Methods
         public ActionResult Index()
         {
-            if (HttpContext.Session["Identificated"].ToString().Equals("False")) {
+            var username = (string)HttpContext.Session["UserName"];
+            if (username == null) {
                 var model = new UserLoginModel()
                 {
                     listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
@@ -66,8 +67,8 @@ namespace GrupoThera.WebUI.Controllers
             RemoveSessionVariables();
             var model = new UserLoginModel()
             {
-                listEmpresas = DropListHelper.GetDepartamentos(_catalogService.getDepartamentos()),
-                listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursales())
+                listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
+                listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(1))
             };
             return View("~/Views/General/Loginview.cshtml",model);
         }

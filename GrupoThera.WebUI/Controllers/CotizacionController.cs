@@ -1,4 +1,5 @@
 ﻿using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.Entities.Models.Cotizacion;
 using GrupoThera.WebUI.Utils;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,19 @@ namespace GrupoThera.WebUI.Controllers
         [CustomAuthorizeAttribute(privilege = "NuevaCotizacion,GeneralCotizacion")]
 
         public ActionResult NuevaCotizacion()
+        {
+            var model = new CotizacionModel()
+            {
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicios()),
+                listAreaServicio = DropListHelper.GetAreaServicios(_catalogService.getAreaServicios()),
+                listCliente = DropListHelper.GetCliente(_catalogService.getClientes()),
+                listFormaPago = DropListHelper.GetFormaPago(_catalogService.getFormasPago())
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateCotizacion()
         {
             return View();
         }
