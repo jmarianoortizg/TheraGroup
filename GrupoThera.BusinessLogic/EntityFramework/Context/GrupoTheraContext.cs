@@ -1,4 +1,5 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
 using System.Data.Entity;
 
@@ -41,6 +42,11 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
                 public DbSet<Servicio> Servicio { get; set; }
 
         #endregion Catalogs
+
+            #region Cotizacion
+                public DbSet<Preliminar> Preliminar { get; set; }
+                public DbSet<PrePartidas> PrePartidas { get; set; }
+            #endregion Cotizacion
 
         #endregion Fields
 

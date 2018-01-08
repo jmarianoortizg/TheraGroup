@@ -269,6 +269,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Utils\CustomAuthorizeAttribute.cs" />
     <Compile Include="Utils\DropListHelper.cs" />
+    <Compile Include="Utils\StdClassWeb.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -298,6 +299,7 @@
     <Content Include="Content\assets\img\avatars\avatar1.jpg" />
     <Content Include="Content\assets\img\avatars\Error.jpg" />
     <Content Include="Content\assets\img\Banner\5.jpg" />
+    <Content Include="Content\assets\img\Banner\6.jpg" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-114x114.png" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-120x120.png" />
     <Content Include="Content\assets\img\favicons\apple-touch-icon-144x144.png" />
@@ -1548,6 +1550,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Cotizacion\NuevaCotizacionPartidas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\NuevaCotizacionNewLineConcept.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\SearchCotizacionItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\Servicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalog\ServicioEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\NuevaCotizacionNewPrices.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

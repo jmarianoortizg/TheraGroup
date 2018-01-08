@@ -1,7 +1,128 @@
-﻿
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionSearch
 @{
     ViewBag.Title = "SearchCotizacion";
 }
-
-<h2>SearchCotizacion</h2>
+<div class="content">
+    <div class="row">
+        <div class="col-sm-5 col-lg-3">
+            <div class="collapse navbar-collapse remove-padding" id="tickets-nav">
+                <!-- Preliminares Menu -->
+                <div class="block">
+                    <div class="block-header bg-gray-lighter">
+                        <ul class="block-options">
+                            <li>
+                                <button data-toggle="modal" data-target="#modal-compose" type="button"><i class="si si-settings"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">Preliminares</h3>
+                    </div>
+                    <div class="block-content">
+                        <ul class="nav nav-pills nav-stacked push">
+                            <li class="active">
+                                <a href="base_pages_tickets.html">
+                                    <span class="badge pull-right">750</span><i class="fa fa-fw fa-inbox push-5-r"></i> Todos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">5</span><i class="fa fa-fw fa-warning push-5-r"></i> Abiertos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">50</span><i class="fa fa-fw fa-folder-open-o push-5-r"></i> Cerrados
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">700</span><i class="fa fa-fw fa-folder-o push-5-r"></i> Canceladas
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END Tickets Menu -->
+                <!-- Filtros Stats -->
+                <div class="block">
+                    <div class="block-header bg-gray-lighter">
+                        <ul class="block-options">
+                            <li>
+                                <button type="button"><i class="si si-settings"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">Filtros</h3>
+                    </div>
+                    <div class="block-content">
+                        <table class="table table-borderless table-condensed table-vcenter font-s13">
+                            <tbody>
+                                <tr>
+                                    <td class="font-w600" style="width: 75%;">Tickets</td>
+                                    <td class="text-right">720</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        @*<div class="clearfix push-5">
+                                            <span class="pull-right text-muted text-right">500</span>
+                                            -- Email
+                                        </div>
+                                        <div class="clearfix push-5">
+                                            <span class="pull-right text-muted text-right">220</span>
+                                            -- Contact Form
+                                        </div>
+                                        <div class="clearfix">
+                                            <span class="pull-right text-muted text-right">30</span>
+                                            -- Forum
+                                        </div>*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-w600">Responses</td>
+                                    <td class="text-right">2355</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-w600">Response Time (avg)</td>
+                                    <td class="text-right">2 hrs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END Quick Stats -->
+            </div>
+            <!-- END Collapsible Tickets Navigation -->
+        </div>
+        <div class="col-sm-7 col-lg-9">
+            <!-- Tickets List -->
+            <div class="block">
+                <div class="block-header bg-gray-lighter">
+                    <ul class="block-options">
+                        <li>
+                            <button class="js-tooltip" title="10 Tickets Anteriores" type="button" data-toggle="block-option"><i class="si si-arrow-left"></i></button>
+                        </li>
+                        <li>
+                            <button class="js-tooltip" title="Siguientes 10 Tickets" type="button" data-toggle="block-option"><i class="si si-arrow-right"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                        </li>
+                        <li>
+                            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                        </li>
+                    </ul>
+                    <div class="block-title text-normal">
+                        <h3 class="block-title"><strong>[</strong> Cotizaciones <strong>]</strong></h3>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <!-- Tickets Table -->
+                    <div class="pull-r-l" id="divItemsCotizacion">
+                        @Html.Partial("SearchCotizacionItem", Model)
+                    </div>
+                    <!-- END Tickets Table -->
+                </div>
+            </div>
+            <!-- END Tickets List -->
+        </div>
+    </div>
+</div>
 

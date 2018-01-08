@@ -800,6 +800,84 @@ namespace GrupoThera.WebUI.Controllers
 
         #endregion Configuracion
 
+        #region Servicio
+        [CustomAuthorizeAttribute(privilege = "Servicio,GeneralCatalog")]
+
+        public ActionResult Servicio()
+        {
+            var allServicio = _catalogService.getServicios();
+            var model = new CatalogModel()
+            {
+                AllServicio = allServicio,
+                listAreaServicio = DropListHelper.GetAreaServicios(_catalogService.getAreaServicios()),
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicio()),
+                listFrecuenciaServicio = DropListHelper.GetFrecuenciaServicio(_catalogService.getFrecuenciaServicios()),
+                listProvedor = DropListHelper.GetProvedor(_catalogService.getProvedores()),
+                listTiempoEntrega = DropListHelper.GetTiempoEntrega(_catalogService.getTiempoEntregas())
+            };
+            TempData["CatalogModel"] = model;
+            return View(model);
+        }
+
+        public ActionResult CreateServicio(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.AddServicio(CatalogModel.Servicio);
+                return RedirectToAction("Servicio");
+            }
+            catch (Exception ex)
+            {
+                return View("~/Views/Shared/ErrorGeneral.cshtml", new HandleErrorInfo(ex, "CatalogController", "CreateClient"));
+            }
+        }
+
+        public ActionResult ServicioEdit(int idServicioSelected)
+        {
+            var model = (CatalogModel)TempData["CatalogModel"];
+            TempData.Keep("CatalogModel");
+            model.Servicio = _catalogService.getServicioById(idServicioSelected);
+            return View(model);
+        }
+
+        public ActionResult PEEditServicio(CatalogModel CatalogModel)
+        {
+            try
+            {
+                _catalogService.EditServicio(CatalogModel.Servicio);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Edit Servicio : ID: {0}, New Name: {1} by {2}", CatalogModel.Servicio.servicioId, CatalogModel.Servicio.clave, HttpContext.Session["UserName"].ToString()));
+                return RedirectToAction("Servicio");
+            }
+            catch (Exception ex)
+            {
+                View("~/Views/Shared/ErrorBoxForm.cshtml", ex.Message);
+            }
+            return RedirectToAction("Servicio");
+        }
+
+        public ActionResult DeleteServicio(int idServicioSelected)
+        {
+            try
+            {
+                _catalogService.DeleteServicio(idServicioSelected);
+                Logger.WriteLog(LogLevel.INFO, string.Format("Delete Servicio : ID: {0} by {1}", idServicioSelected, HttpContext.Session["UserName"].ToString()));
+                return Json(new
+                {
+                    success = true
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseText = ex.Message
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        #endregion Servicio
+
         #endregion Methods
     }
 }

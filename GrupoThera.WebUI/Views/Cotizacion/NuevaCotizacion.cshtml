@@ -3,15 +3,21 @@
     ViewBag.Title = "NuevaCotizacion";
 }
 
+<link rel="stylesheet" href="assets/plugins/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+<link rel="stylesheet" href="assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+
 <div class="content bg-gray-lighter">
     <div class="row items-push">
         <div class="col-sm-8">
             <h1 class="page-heading">
-                Nueva Cotizacion <small> Ingrese los datos seguidos para generar una nueva cotizacion</small>
+                Nueva Cotizacion <small> Ingrese los datos para generar una nueva cotizacion</small>
             </h1>
         </div>
     </div>
 </div> 
+<div id="createCotizacionError">
+
+</div>
 
 @using (Ajax.BeginForm("CreateCotizacion", "Cotizacion", null, new AjaxOptions
 {
@@ -27,28 +33,28 @@
             <!-- Nueva Cotizacion Form -->
             <div class="block">
                 <ul class="nav nav-tabs" data-toggle="tabs">
-                    <li class="active">
+                    <li>
                         <a href="#btabs-animated-slideleft-components">
                             Componentes
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="#btabs-animated-slideleft-partidas">
                             Partidas
                         </a>
                     </li>
                     <li class="pull-right">
-                        <a title="" href="#btabs-animated-slideleft-settings" data-original-title="Settings" data-toggle="tooltip"><i class="si si-settings"></i></a>
+                        <a title="" href="#btabs-animated-slideleft-settings" data-original-title="Configuraciones" data-toggle="tooltip"><i class="si si-settings"></i></a>
                     </li>
                 </ul>
                 <div class="block-content tab-content">
-                    <div class="tab-pane fade fade-left active in" id="btabs-animated-slideleft-components">
+                    <div class="tab-pane fade fade-left" id="btabs-animated-slideleft-components">
                         <!-- Components Section -->
                             @Html.Partial("NuevaCotizacionComponentes", Model)
                         <!-- /Components Section -->
                     </div>
                     <!-- Partidas -->
-                    <div class="tab-pane fade fade-left" id="btabs-animated-slideleft-partidas">
+                    <div class="tab-pane fade fade-left active in" id="btabs-animated-slideleft-partidas">
                         <!-- Partidas Section -->
                         @Html.Partial("NuevaCotizacionPartidas", Model)
                         <!-- /Partidas Section -->
@@ -59,13 +65,21 @@
             <!-- /Nueva Cotizacion Form -->
         </div>
         <!-- Totales -->
-        <div class="col-md-2">
-            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Subtotal</span></h3>
-            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Iva</span></h3>
-            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Total</span></h3>
+        <div class="col-md-2 col-xs-12 row items-push">
+            <h3 class="push-10">$<span id="lblSub">0</span> <span class="h5 font-w400 text-muted">Subtotal</span></h3>
+            @Html.HiddenFor(x => x.subtotal, new { id = "valSub", Value = "0.0" })
+            <h3 class="push-10">$<span id="lblIva">0</span> <span class="h5 font-w400 text-muted">Iva</span></h3>
+            @Html.HiddenFor(x => x.iva, new { id = "valIva", Value = "0.0" })
+            <h3 class="push-10">$<span id="lblTotal">0</span> <span class="h5 font-w400 text-muted">Total</span></h3>
+            @Html.HiddenFor(x => x.total, new { id = "valTotal", Value = "0.0" })
             <hr />
-            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Partidas</span></h3>
-            <h3 class="push-10">$0 <span class="h5 font-w400 text-muted">Cantidad</span></h3>
+            <h3 class="push-10">#<span id="lblPartidas">0</span> <span class="h5 font-w400 text-muted">Partidas</span></h3>
+            @Html.HiddenFor(x => x.noPartidas, new { id = "valPartidas", Value = "0.0" })
+            <h3 class="push-10">#<span id="lblCantidad">0</span> <span class="h5 font-w400 text-muted">Cantidad</span></h3>
+            @Html.HiddenFor(x => x.cantidad, new { id = "valCantidad", Value = "0.0" })
+            <hr />
+            <button class="btn btn-primary push-5-r push-10" type="submit" id="btnSubmitCreateCotizacion"><i class="fa fa-wifi"></i> Nueva Cotizacion</button>
+            <button class="btn btn-danger push-5-r push-10" type="button" onClick="window.location.reload()"><i class="fa fa-refresh"></i> Recargar</button>
         </div>
         <!-- /Totales -->
     </div>
@@ -76,9 +90,43 @@
 
     <script src="@Url.Content("~/Content/assets/js/plugins/jquery-validation/dist/jquery.validate.min.js")"></script>
     <script src="@Url.Content("~/Content/assets/js/plugins/jquery-validation/additional-methods.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")"></script>
+
  
     <script>
         $(document).ready(function () {
+
+            App.initHelpers(['datepicker', 'datetimepicker']);
+
+            $('#cmbSelectProduct').on('change', function () {
+
+                var model = { idServicio: $('#cmbSelectProduct :selected').val() };
+
+                $.ajax({
+                    url: '@Url.Action("refreshPrices", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#DivListPrices').html(data);
+                        createMessageInfo("INFO: Precios Cargados Correctamente");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+
+            $('.onlyNumber').keyup(function () {
+                this.value = this.value.replace(/[^0-9\.]/g, '');
+            });
+
+            $('.onlyNumberInteger').keyup(function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
 
             $("#spin").spinner({
                 color: "black"
@@ -88,6 +136,46 @@
             });
 
             $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados Correctamente' }, { type: 'info' });
+
+            $('#addLine').click(function (e) {
+
+                var band = validatePartida();
+
+                if (band) {
+
+                    var model =
+                        {
+                            qty: $('#cantidad').val(),
+                            noSerie: $('#noSerie').val(),
+                            marca: $('#marca').val(),
+                            model: $('#modelo').val(),
+                            claveServicioCode: $('#cmbSelectProduct :selected').val(),
+                            claveServicioText: $('#cmbSelectProduct :selected').text(),
+                            comentarios: $('#comentario').val(),
+                            priceSuggest: $('#priceSuggest').val(),
+                            priceSelected: $('#selectedPrice').val()
+                        }
+
+                    $.ajax({
+                        url: '@Url.Action("addLineConcepts", "Cotizacion")',
+                        type: 'POST',
+                        data: JSON.stringify(model),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            $('#tableCotizacion > tbody:last').append(data);
+                            refreshTotals();
+                            $('.deleteRowsTable').click(function (e) {
+                                $(this).closest('tr').remove();
+                                refreshTotals();
+                            });
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        },
+                    });
+                }
+            });
+
         });
 
         function BeginCreateCotizacion()
@@ -112,36 +200,90 @@
                     elem.closest('.help-block').remove();
                 },
                 rules: {
-                    'val-username': {
-                        required: true,
-                        minlength: 3
-                    } 
+                   
                 },
                 messages: {
-                    'val-username': {
-                        required: 'Please enter a username',
-                        minlength: 'Your username must consist of at least 3 characters'
-                    } 
+                    
                 }
             }); 
          
+            $('#divSuccessCotizacion').html("");
             var band = $('#frmCreateCotizacion').validate().form();
 
+            if (band) {
+                $("#spin").show();
+                $("#btnSubmitCreateCotizacion").prop('disabled', 'disabled');
+            } else {
+                createMessageWarning("Warning: Alguno campos faltantes son requeridos")
+            }
             if (band) { $("#spin").show(); }
 
             return band;
         }
 
         function SuccessCreateCotizacion(response) {
-            $("#spin").hide();
+            $("#createCotizacionError").html("");
             if (response.success) {
-                alert("tre");
+                createMessageSuccess("Ok: Cotizacion Creada Correctamente");
+            } else {
+                $("#createCotizacionError").html(response.responseHtml);
             }
+
+            setTimeout(function () {
+                $("#spin").hide();
+                $("#btnSubmitCreateCotizacion").prop('disabled', false);
+            }, 800);
+
         }
 
         function FailureCreateCotizacion(response) {
             $("#spin").hide();
+            $("#btnSubmitCreateCotizacion").prop('disabled', false);
             alert("Please contact with technical support");
         }
+
+        function refreshTotals() {
+            var totalPrice = 0;
+            var totalIva = 0;
+            var total = 0;
+            var cantidad = 0;
+            var partidas = 0;
+
+            $('.sum').each(function () {
+                totalPrice += parseFloat($(this).attr('totalValue'));
+            });
+
+            $('.qty').each(function () {
+                cantidad += parseFloat($(this).attr('totalQty'));
+                partidas++;
+            });
+
+            totalIva = parseFloat(totalPrice) * .16;
+            total = parseFloat(totalPrice) + parseFloat(totalIva);
+
+            $('#lblSub').html(isNaN(totalPrice) ? "0.00" : parseFloat(totalPrice).toFixed(2));
+            $('#lblIva').html(isNaN(totalIva) ? "0.00" : parseFloat(totalIva).toFixed(2));
+            $('#lblTotal').html(isNaN(total) ? "0.00" : parseFloat(total).toFixed(2));
+            $('#lblPartidas').html(isNaN(partidas) ? "0.00" : parseFloat(partidas).toFixed(2));
+            $('#lblCantidad').html(isNaN(cantidad) ? "0.00" : parseFloat(cantidad).toFixed(2));
+
+
+            $('#valSub').val(isNaN(totalPrice) ? "0.00" : parseFloat(totalPrice).toFixed(2));
+            $('#valIva').val(isNaN(totalIva) ? "0.00" : parseFloat(totalIva).toFixed(2));
+            $('#valTotal').val(isNaN(total) ? "0.00" : parseFloat(total).toFixed(2));
+            $('#valPartidas').val(isNaN(partidas) ? "0.00" : parseFloat(partidas).toFixed(2));
+            $('#valCantidad').val(isNaN(cantidad) ? "0.00" : parseFloat(cantidad).toFixed(2));
+        }
+
+        function validatePartida() {
+            var band = true;
+            if ($('#cmbSelectProduct option:selected').length == 0) { band = false; createMessageDanger("Error: Clave de servicio es requerida") }
+            if ($('#cantidad').val() == "") { band = false; createMessageDanger("Error: La cantidad es requerida") }
+            if ($('#noSerie').val() == "") { band = false; createMessageDanger("Error: Numero de serie es requerido") }
+            if ($('#marca').val() == "") { band = false; createMessageDanger("Error: Marca es requerida") }
+            if ($('#modelo').val() == "") { band = false; createMessageDanger("Error: Model es requerido") }
+            return band;
+        }
+
 </script>
 } 

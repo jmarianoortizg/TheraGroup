@@ -69,6 +69,8 @@
     <Compile Include="Contracts\Catalogs\IConfiguracion.cs" />
     <Compile Include="Contracts\Catalogs\IClasificacionServicio.cs" />
     <Compile Include="Contracts\Catalogs\IAreaServicio.cs" />
+    <Compile Include="Contracts\Cotizacion\IPrePartida.cs" />
+    <Compile Include="Contracts\Cotizacion\IPreliminar.cs" />
     <Compile Include="Contracts\General\IDepartamento.cs" />
     <Compile Include="Contracts\Catalogs\IEmpresa.cs" />
     <Compile Include="Contracts\General\IEmpresasSucursalMap.cs" />
@@ -91,6 +93,8 @@
     <Compile Include="DataAccess\Catalogs\ProvedorDA.cs" />
     <Compile Include="DataAccess\Catalogs\ServicioDA.cs" />
     <Compile Include="DataAccess\Catalogs\AreaServicioDA.cs" />
+    <Compile Include="DataAccess\Cotizacion\PrePartidaDA.cs" />
+    <Compile Include="DataAccess\Cotizacion\PreliminarDA.cs" />
     <Compile Include="DataAccess\General\DepartamentoDA.cs" />
     <Compile Include="DataAccess\Catalogs\EmpresaDA.cs" />
     <Compile Include="DataAccess\General\EmpresaSucursalMapDA.cs" />

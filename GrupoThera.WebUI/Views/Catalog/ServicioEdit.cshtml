@@ -1,0 +1,107 @@
+﻿@model GrupoThera.Entities.Models.Catalog.CatalogModel
+@{
+    ViewBag.Title = "ServicioEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditServicio", "Catalog", FormMethod.Post, new { id = "formEditServicio", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditServicio()" }))
+{
+    @Html.HiddenFor(model => model.Servicio.servicioId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="3">
+            <div data-field-span="1">
+                <label>Clave</label>
+                @Html.TextBoxFor(model => model.Servicio.clave, new { id = "clave", name = "clave", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Descripcion</label>
+                @Html.TextBoxFor(model => model.Servicio.descripcion, new { id = "descripcion", name = "descripcion", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="3">
+            <div data-field-span="1">
+            </div>
+            <div data-field-span="2">
+                <label>Descripcion2</label>
+                @Html.TextBoxFor(model => model.Servicio.descripcion2, new { id = "descripcion2", name = "descripcion2", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Area Servicio</label>
+                @Html.DropDownListFor(model => model.Servicio.areaServicioId, Model.listAreaServicio, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Clasificacion Servicio</label>
+                @Html.DropDownListFor(model => model.Servicio.clasificacionServicioId, Model.listClasificacionServicio, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Frecuencia Servicio</label>
+                @Html.DropDownListFor(model => model.Servicio.frecuenciaServicioId, Model.listFrecuenciaServicio, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Provedores</label>
+                @Html.DropDownListFor(model => model.Servicio.provedorId, Model.listProvedor, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Tiempos Entrega</label>
+                @Html.DropDownListFor(model => model.Servicio.tiempoEntregaId, Model.listTiempoEntrega, new { @class = "form-control required" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Precio Base</label>
+                @Html.TextBoxFor(model => model.Servicio.precioBase, new { id = "precioBase", name = "clave", @class = "form-control required onlyNumber", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Precio Promedio</label>
+                @Html.TextBoxFor(model => model.Servicio.precioPromedio, new { id = "precioPromedio", name = "descripcion", @class = "form-control required onlyNumber", type = "text" })
+            </div>
+            <div data-field-span="1">
+                <label>Precio Minimo</label>
+                @Html.TextBoxFor(model => model.Servicio.precioMinimo, new { id = "precioMinimo", name = "descripcion", @class = "form-control required onlyNumber", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Tipo</label>
+                @Html.DropDownListFor(model => model.Servicio.tipo, new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="Producto", Value = "Producto" },
+                                    new SelectListItem{ Text="Servicio", Value = "Servicio" }
+                                }, new { @class = "form-control" })
+            </div>
+            <div data-field-span="1">
+                <label>Acreditado</label>
+                @Html.DropDownListFor(model => model.Servicio.acreditado, new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="Si", Value = "Y" },
+                                    new SelectListItem{ Text="No", Value = "N" }
+                                }, new { @class = "form-control" })
+            </div>
+            <div data-field-span="1">
+                <label>SubContrato</label>
+                @Html.DropDownListFor(model => model.Servicio.subcontrato, new List<SelectListItem>
+                                {
+                                    new SelectListItem{ Text="Si", Value = "Y" },
+                                    new SelectListItem{ Text="No", Value = "N" }
+                                }, new { @class = "form-control" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="1">
+                <label>Comentarios</label>
+                @Html.TextAreaFor(model => model.Servicio.comentarios, new { id = "comentarios  ", name = "comentarios", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Servicio</button>
+        </div>
+    </div>
+}
+

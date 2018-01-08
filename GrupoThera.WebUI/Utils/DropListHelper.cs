@@ -154,7 +154,7 @@ namespace GrupoThera.WebUI.Utils
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
             {
-                Text = a.moneda,
+                Text = a.simbolo + " " + a.moneda + "-" + a.tipoCambio,
                 Value = a.monedaId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
@@ -174,7 +174,7 @@ namespace GrupoThera.WebUI.Utils
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
             {
-                Text = a.clave + "-" + a.descripcion,
+                Text = a.clave,
                 Value = a.servicioId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");

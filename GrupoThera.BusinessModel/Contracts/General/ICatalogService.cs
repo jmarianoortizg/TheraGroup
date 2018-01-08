@@ -21,6 +21,7 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<ClasificacionServicio> getClasificacionServicio();
         IList<Estado> getEstado();
         IList<FormaPago> getFormasPago();
+        FormaPago getFormaPagoById(long idFormaPago);
         IList<MetodoCotizacion> getMetodoCotizaciones();
         IList<Ciudad> getCiudad();
         void AddAreaServicio(AreaServicio AreaServicio);
@@ -80,6 +81,12 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void AddTiempoEntrega(TiempoEntrega TiempoEntrega);
         void EditTiempoEntrega(TiempoEntrega TiempoEntrega);
         void DeleteTiempoEntrega(long idTiempoEntrega);
+
+        IList<Servicio> getServicios();
+        Servicio getServicioById(long idServicio);
+        void AddServicio(Servicio Servicio);
+        void EditServicio(Servicio Servicio);
+        void DeleteServicio(long idServicio);
 
 
         #endregion Methods

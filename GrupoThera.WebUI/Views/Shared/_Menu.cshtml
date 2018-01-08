@@ -372,8 +372,6 @@
                 }
             </li>
 
-           
-
             <li>
                 @if ((priviledgesList != null && priviledgesList.Contains("Moneda")) || isAllmightie)
                 {
@@ -384,6 +382,20 @@
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
                         <span class="fs fa-exclamation-triangle"></span>
                         Moneda
+                    </a>
+                }
+            </li>
+
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("Servicio")) || isAllmightie)
+                {
+                    <a href="@Url.Action("Servicio","Catalog")"> Servicio  </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fs fa-exclamation-triangle"></span>
+                        Servicio
                     </a>
                 }
             </li>

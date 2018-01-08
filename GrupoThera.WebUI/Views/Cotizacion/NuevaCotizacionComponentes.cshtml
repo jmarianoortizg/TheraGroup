@@ -1,21 +1,63 @@
-﻿
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
 @{
     ViewBag.Title = "NuevaCotizacionComponentes";
 }
 
 <div class="form-horizontal">
     <div class="form-group">
-        <label class="col-md-3 control-label" for="val-username">Username<span class="text-danger">*</span></label>
-        <div class="col-md-7">
-            <input class="form-control" type="text" id="val-username" name="val-username" placeholder="Choose a nice username..">
+        <label class="col-md-3 control-label" for="val-username">Fecha<span class="text-danger">*</span></label>
+        <div class="col-md-6">            
+            @Html.TextBoxFor(model => model.preliminar.fechaCreacion, new { @id = "fechaCreacion", placeholder = "Selecciona Fecha Servicio", @class = "js-datetimepicker form-control required", type = "text" })
         </div>
     </div>
-</div>
-<div class="form-group">
-    <label class="col-md-3 control-label" for="val-username"> <span class="text-danger"> </span></label>
-    <div class="col-md-7">
-        <input class="btn btn-sm btn-primary" type="submit" value="Submit">  
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Cliente<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.DropDownListFor(model => model.selectedCliente, Model.listCliente, new { @class = "form-control required" })
+        </div>
     </div>
-     
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Forma de Pago<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.DropDownListFor(model => model.selectedFormaPago, Model.listFormaPago, new { @class = "form-control required" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Clasificacion<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.DropDownListFor(model => model.selectedClasificacionServicio, Model.listClasificacionServicio, new { @class = "form-control required" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Moneda<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.DropDownListFor(model => model.selectedMoneda, Model.listMoneda, new { @class = "form-control required" })
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="col-xs-6">
+            <label for="material-textarea-large">Comentarios de la Cotizacion</label>
+            @Html.TextAreaFor(model => model.preliminar.comentarios, new { id = "comentarios", @class = "form-control",rows = "6", type = "text", placeholder = "Contenido" })
+        </div>
+        <div class="col-xs-6">
+            <label for="material-textarea-large">Direccion del Servicio</label>
+            @Html.TextAreaFor(model => model.preliminar.direccionServicio, new { id = "direccionServicio", @class = "form-control", rows = "6", type = "text", placeholder = "Contenido" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Username<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.TextBoxFor(model => model.Preliminar.comentarios, new { @id = "val-username",  placeholder = "Choose a nice username..", @class = "form-control required", type = "text" })
+        </div>
+    </div>*@
+    @*<div class="form-group">
+        <label class="col-md-3 control-label" for="val-username">Cliente<span class="text-danger">*</span></label>
+        <div class="col-md-7">
+            @Html.DropDownListFor(model => model.selectedCarrier, Model.listCarrier, new { @class = "form-control required" })
+        </div>
+    </div>*@
 </div>
+
 

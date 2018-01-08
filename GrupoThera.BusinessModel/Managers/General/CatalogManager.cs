@@ -230,12 +230,18 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
         #endregion Estado
 
-        #region Estado
+        #region FormaPago
         public IList<FormaPago> getFormasPago()
         {
             return _formaPagoDA.GetList().ToList();
         }
-        #endregion Estado
+
+        public FormaPago getFormaPagoById(long idFormaPago)
+        {
+            return _formaPagoDA.Get(t => t.formaPagoId == idFormaPago);
+        }
+
+        #endregion FormaPago
 
         #region MetodosCotizacion
         public IList<MetodoCotizacion> getMetodoCotizaciones()
@@ -327,6 +333,36 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
 
         #endregion Provedor
+
+        #region Servicio
+
+        public IList<Servicio> getServicios()
+        {
+            return _servicioDA.GetList().ToList();
+        }
+
+        public Servicio getServicioById(long idServicio)
+        {
+            return _servicioDA.Get(t => t.servicioId == idServicio);
+        }
+
+        public void AddServicio(Servicio Servicio)
+        {
+            _servicioDA.Add(Servicio);
+        }
+
+        public void EditServicio(Servicio Servicio)
+        {
+            _servicioDA.Update(Servicio);
+        }
+
+        public void DeleteServicio(long idServicio)
+        {
+            var item = _servicioDA.Get(t => t.servicioId == idServicio);
+            _servicioDA.Delete(item);
+        }
+
+        #endregion Servicio
 
         #region Clasificacion        
 

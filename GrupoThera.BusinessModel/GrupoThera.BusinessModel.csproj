@@ -61,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,8 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Cotizacion\ICotizacionService.cs" />
     <Compile Include="Contracts\General\ICatalogService.cs" />
     <Compile Include="Contracts\General\IRoleAccountService.cs" />
+    <Compile Include="Managers\Cotizacion\CotizacionManager.cs" />
     <Compile Include="Managers\General\CatalogManager.cs" />
     <Compile Include="Managers\General\RoleAccountManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

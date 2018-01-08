@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GrupoThera.Entities.Entity.Cotizaciones
 {
-    [Table("COT_PRELIMINAR_PARTIDAS ")]
+    [Table("COT_PRELIMINARES")]
     public partial class Preliminar : IEntity
     {
         public Preliminar()

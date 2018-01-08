@@ -1,0 +1,14 @@
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
+@{
+    ViewBag.Title = "NuevaCotizacionComponentes";
+    var valueProduct = Model.servicio; 
+    var listPrces = new List<SelectListItem> { new SelectListItem { Text = "Precio Base: $" + valueProduct.precioBase, Value = valueProduct.precioBase.ToString() },
+                    new SelectListItem { Text = "Precio Promedio: $" + valueProduct.precioPromedio, Value = valueProduct.precioPromedio.ToString() },
+                    new SelectListItem { Text = "Precio Minimo: $" + valueProduct.precioMinimo, Value = valueProduct.precioPromedio.ToString() } };
+
+}
+
+    <div class="form-material">                
+        @Html.DropDownListFor(model => model.selectedPrice, listPrces, new { @id = "selectedPrice", @class = "form-control required" })
+        <label for="material-text2">Listado Precios</label>
+    </div>
