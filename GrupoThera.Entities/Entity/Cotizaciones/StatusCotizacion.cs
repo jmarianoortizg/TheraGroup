@@ -17,9 +17,9 @@ namespace GrupoThera.Entities.Entity.Cotizaciones
         public long statusCotizacionId { get; set; }
 
         [Column("CSTC_DESCRIPCION")]
-        public long descripcion { get; set; }
+        public string descripcion { get; set; }
 
         [Column("CSTC_CODIGO")]
-        public long codigo { get; set; }
+        public string codigo { get; set; }
     }
 }

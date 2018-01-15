@@ -1216,6 +1216,7 @@
     <Content Include="Content\plugins\jquery-validation\lib\jquery.mockjax.js" />
     <Content Include="Content\plugins\jquery-validation\lib\jquery.simulate.js" />
     <Content Include="Content\plugins\jquery-validation\lib\require.js" />
+    <Content Include="Content\plugins\timeAgo\js\jquery.timeago.js" />
     <Content Include="Documentation\XmlDocument.xml" />
     <Content Include="Documentation\XmlDocumentEntities.xml" />
     <Content Include="favicon.ico" />

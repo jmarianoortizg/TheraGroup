@@ -1416,6 +1416,12 @@ input[type="email"].form-control {
 .label-danger {
   background-color: #d26a5c;
 }
+.label-primaryDark {
+  background-color: ##3e4a59;
+}
+.label-modern {
+  background-color: #14adc4;
+}
 .label-danger[href]:hover,
 .label-danger[href]:focus {
   background-color: #c54736;

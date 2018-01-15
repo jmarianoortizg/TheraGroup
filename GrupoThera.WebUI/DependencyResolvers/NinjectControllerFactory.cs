@@ -93,9 +93,6 @@ namespace GrupoThera.WebUI.DependencyResolvers
             kernel.Bind<IPrePartida>().To<PrePartidaDA>().InSingletonScope();
 
             #endregion Cotizacion 
-
-
-
         }
 
         /// <summary>

@@ -1,6 +1,14 @@
 ﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionSearch
 @{
     ViewBag.Title = "SearchCotizacion";
+    var abiertas = Model.abiertas.Count;
+    var aprobacion = Model.aprobacion.Count;
+    var cerrados = Model.cerrados.Count;
+    var canceladas = Model.canceladas.Count;
+    var rechazados = Model.rechazadas.Count;
+    var enviadoCliente = Model.clientes.Count;
+    var total = Model.listaPreliminares.Count;
+
 }
 <div class="content">
     <div class="row">
@@ -18,24 +26,34 @@
                     </div>
                     <div class="block-content">
                         <ul class="nav nav-pills nav-stacked push">
-                            <li class="active">
-                                <a href="base_pages_tickets.html">
-                                    <span class="badge pull-right">750</span><i class="fa fa-fw fa-inbox push-5-r"></i> Todos
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">@abiertas</span><i class="fa fa-fw fa-folder-open-o push-5-r"></i> Abiertas
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <span class="badge pull-right">5</span><i class="fa fa-fw fa-warning push-5-r"></i> Abiertos
+                                    <span class="badge pull-right">@aprobacion</span><i class="fa fa-fw fa-warning push-5-r"></i> Aprobacion
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <span class="badge pull-right">50</span><i class="fa fa-fw fa-folder-open-o push-5-r"></i> Cerrados
+                                    <span class="badge pull-right">@cerrados</span><i class="fa fa-fw fa-lock push-5-r"></i> Cerrados
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)">
-                                    <span class="badge pull-right">700</span><i class="fa fa-fw fa-folder-o push-5-r"></i> Canceladas
+                                    <span class="badge pull-right">@canceladas</span><i class="fa fa-fw fa-times-circle-o push-5-r"></i> Canceladas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">@rechazados</span><i class="fa fa-fw fa-reply  push-5-r"></i> Rechazados
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <span class="badge pull-right">@enviadoCliente</span><i class="fa fa-fw fa-paper-plane-o push-5-r"></i> Enviado Cliente
                                 </a>
                             </li>
                         </ul>
@@ -57,32 +75,32 @@
                             <tbody>
                                 <tr>
                                     <td class="font-w600" style="width: 75%;">Tickets</td>
-                                    <td class="text-right">720</td>
+                                    <td class="text-right">@total</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         @*<div class="clearfix push-5">
-                                            <span class="pull-right text-muted text-right">500</span>
-                                            -- Email
-                                        </div>
-                                        <div class="clearfix push-5">
-                                            <span class="pull-right text-muted text-right">220</span>
-                                            -- Contact Form
-                                        </div>
-                                        <div class="clearfix">
-                                            <span class="pull-right text-muted text-right">30</span>
-                                            -- Forum
-                                        </div>*@
+                                                <span class="pull-right text-muted text-right">500</span>
+                                                -- Email
+                                            </div>
+                                            <div class="clearfix push-5">
+                                                <span class="pull-right text-muted text-right">220</span>
+                                                -- Contact Form
+                                            </div>
+                                            <div class="clearfix">
+                                                <span class="pull-right text-muted text-right">30</span>
+                                                -- Forum
+                                            </div>*@
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="font-w600">Responses</td>
-                                    <td class="text-right">2355</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-w600">Response Time (avg)</td>
-                                    <td class="text-right">2 hrs</td>
-                                </tr>
+                                @*<tr>
+                                        <td class="font-w600">Responses</td>
+                                        <td class="text-right">2355</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-w600">Response Time (avg)</td>
+                                        <td class="text-right">2 hrs</td>
+                                    </tr>*@
                             </tbody>
                         </table>
                     </div>
@@ -103,19 +121,16 @@
                             <button class="js-tooltip" title="Siguientes 10 Tickets" type="button" data-toggle="block-option"><i class="si si-arrow-right"></i></button>
                         </li>
                         <li>
-                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                        </li>
-                        <li>
                             <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
                         </li>
                     </ul>
                     <div class="block-title text-normal">
-                        <h3 class="block-title"><strong>[</strong> Cotizaciones <strong>]</strong></h3>
+                        <h3 class="block-title"><strong>[</strong> Cotizaciones <strong>]</strong> </h3>
                     </div>
                 </div>
                 <div class="block-content">
                     <!-- Tickets Table -->
-                    <div class="pull-r-l" id="divItemsCotizacion">
+                    <div class="pull-r-l pre-scrollable" id="divItemsCotizacion">
                         @Html.Partial("SearchCotizacionItem", Model)
                     </div>
                     <!-- END Tickets Table -->
@@ -123,6 +138,41 @@
             </div>
             <!-- END Tickets List -->
         </div>
+        <div class="col-sm-12 col-lg-9">
+            <div class="block">
+                <div class="block-content">
+                    <div class="row items-push">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                        <div class="col-sm-8">
+                            <button class="btn btn-success push-5-r push-10" type="button"><i class="fa fa-plus"></i> Nueva Version</button>
+                            <button class="btn btn-danger push-5-r push-10" type="button"><i class="fa fa-times-circle-o"></i> Cancelada</button>
+                            <button class="btn btn-default push-5-r push-10" type="button"><i class="fa fa-paper-plane-o"></i> Enviada Cliente</button>
+                            <button class="btn btn-default push-5-r push-10" type="button"><i class="fa fa-file-excel-o"></i> Exportar</button>
+                            <button class="btn btn-default push-5-r push-10" type="button"><i class="fa fa-download"></i> Decargar</button>
+                            <button class="btn btn-success push-5-r push-10" type="button"><i class="fa fa-plus"></i> OT Preliminar</button>
+                            <button class="btn btn-primary push-5-r push-10" type="button"><i class="fa fa-edit"></i> Editar Cotizacion</button>
+                            <button class="btn btn-default push-5-r push-10" type="button"><i class="fa fa-print"></i> Imprimir</button>
+                            <button class="btn btn-default push-5-r push-10" type="button"><i class="fa fa-folder-open-o"></i> Abierta</button>
+                            <button class="btn btn-danger push-5-r push-10" type="button"><i class="fa fa-lock"></i> Cerrada</button>
+                            <button class="btn btn-warning push-5-r push-10" type="button"><i class="fa fa-reply"></i> Rechazada</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/plugins/timeAgo/js/jquery.timeago.js")"></script>
+
+    <script>
+        $("time.timeago").timeago();
+    </script>
+}
+
 

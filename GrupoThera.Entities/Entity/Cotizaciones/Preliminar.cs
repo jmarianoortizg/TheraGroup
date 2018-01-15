@@ -51,7 +51,7 @@ namespace GrupoThera.Entities.Entity.Cotizaciones
         public string comentarios { get; set; }
 
         [Column("COTP_TCAMBIO")]
-        public string tipoCambio { get; set; }
+        public decimal tipoCambio { get; set; }
 
         [Column("COTP_VIATICOS")]
         public decimal viaticos { get; set; }
@@ -70,21 +70,24 @@ namespace GrupoThera.Entities.Entity.Cotizaciones
 
         [Column("COTP_TOTAL")]
         public decimal total { get; set; }
-                
+
         [Column("COTP_CONF_CLAVE")]
-        public string confClave{ get; set; }
+        public string confClave { get; set; }
 
         [Column("COTP_CONF_EMISION")]
-        public string confEmision{ get; set; }
+        public string confEmision { get; set; }
 
         [Column("COTP_CONF_VIGENCIA")]
-        public string confVigencia{ get; set; }
+        public string confVigencia { get; set; }
 
         [Column("COTP_CONF_TIPODOC")]
         public string confTipoDoc { get; set; }
 
         [Column("COTP_CONF_REVISION")]
-        public string confRevision{ get; set; }
+        public string confRevision { get; set; }
+
+        [Column("COTP_APPROBATION")]
+        public bool approbation { get; set; }
 
         [Column("COTP_FORMATO_COT")]
         public string confFormato { get; set; }

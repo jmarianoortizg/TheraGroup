@@ -38,12 +38,11 @@
             </div>
         </div>
     </div>
-
     <div class="form-group">
         <label class="col-md-2 control-label"></label>
         <div class="col-md-5">
             <div class="form-material">
-                @Html.DropDownListFor(model => model.selectedServicio, Model.listServicio, new { @id = "cmbSelectProduct", @class = "form-control required" })
+                @Html.DropDownListFor(model => model.selectedServicio, Model.listServicio, new { @id = "cmbSelectProduct", @class = "js-select2 form-control required" })
                 <label for="material-text2">Servicio</label>
             </div>
         </div>

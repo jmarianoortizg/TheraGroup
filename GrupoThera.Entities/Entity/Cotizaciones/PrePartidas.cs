@@ -54,6 +54,9 @@ namespace GrupoThera.Entities.Entity.Cotizaciones
         [Column("CPP_CANTIDAD")]
         public long cantidad { get; set; }
 
+        [Column("CPP_APPROBATION")]
+        public bool approbation { get; set; }
+
         [Column("CPP_SERV_ID")]
         public long servicioId { get; set; }
         public virtual Servicio Servicio { get; set; }

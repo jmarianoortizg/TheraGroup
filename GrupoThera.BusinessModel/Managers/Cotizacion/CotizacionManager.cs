@@ -1,5 +1,7 @@
-﻿using GrupoThera.BusinessLogic.Contracts.Cotizacion;
+﻿using GrupoThera.BusinessLogic.Contracts.Catalogs;
+using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.Cotizacion;
+using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Models.Cotizacion;
 using System;
@@ -16,7 +18,8 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
         #region Fields
 
         private IPreliminar _preliminarDA;
-        private IPrePartida _prePartidaDA;        
+        private IPrePartida _prePartidaDA;
+        private IConfiguracion _configuracionDA;
 
         #endregion Fields 
 
@@ -35,70 +38,81 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
 
         public string createPreliminar(CotizacionModel CotizacionModel)
         {
-            Preliminar item = null;
-            try
-            {
-                item = new Preliminar()
-                {
-                    noDoc = 0,
-                    noDocInt = 0,
-                    empresaPrefijo = CotizacionModel.sucursal.prefijo,
-                    fechaCreacion = DateTime.Now,
-                    owner = (string)HttpContext.Current.Session["UserName"],
-                    comentarios = CotizacionModel.preliminar.comentarios,
-                    tipoCambio = CotizacionModel.moneda.tipoCambio.ToString(),
-                    viaticos = 0,
-                    direccionServicio = CotizacionModel.preliminar.direccionServicio,
-                    iva = CotizacionModel.iva,
-                    subtotal = CotizacionModel.subtotal,
-                    total = CotizacionModel.total,
-                    confClave = "",
-                    confEmision = "",
-                    confVigencia = "",
-                    confTipoDoc = "",
-                    confRevision = "",
-                    confFormato = "",
-                    statusCotizacionId = 13,
-                    monedaId = CotizacionModel.selectedMoneda,
-                    formaPagoId = CotizacionModel.selectedMoneda,
-                    clienteId = CotizacionModel.selectedCliente,
-                    clasificacionServicioId = CotizacionModel.selectedClasificacionServicio,
-                    sucursalId = CotizacionModel.sucursal.sucursalId,
-                    empresaId = CotizacionModel.empresa.empresaId
-                };
-                _preliminarDA.Add(item);
+            //Preliminar item = null;
+            //try
+            //{
+            //    var configuracion1 = _configuracionDA.GetList().ToList().Where(t=> t.parametro.Equals("CVE-COT-PRE")).FirstOrDefault();
+            //    var configuracion2 = _configuracionDA.GetList().ToList().Where(t => t.parametro.Equals("REPCOT-TIPO-DOC")).FirstOrDefault();
+            //    var configuracion3 = _configuracionDA.GetList().ToList().Where(t => t.parametro.Equals("FORMAT_COT_WEL")).FirstOrDefault();
+                
+            //    item = new Preliminar()
+            //    {
+            //        noDoc = 0,
+            //        noDocInt = 0,
+            //        empresaPrefijo = CotizacionModel.sucursal.prefijo,
+            //        fechaCreacion = DateTime.Now,
+            //        owner = (string)HttpContext.Current.Session["UserName"],
+            //        comentarios = CotizacionModel.preliminar.comentarios,
+            //        tipoCambio = CotizacionModel.moneda.tipoCambio,
+            //        viaticos = 0,
+            //        direccionServicio = CotizacionModel.preliminar.direccionServicio,
+            //        iva = CotizacionModel.iva,
+            //        subtotal = CotizacionModel.subtotal,
+            //        total = CotizacionModel.total,
+            //        confClave = configuracion1.valor1,
+            //        confEmision = configuracion1.valor2,
+            //        confVigencia = configuracion1.valor3,
+            //        confTipoDoc = configuracion2.valor1,
+            //        confRevision = configuracion1.valor2,
+            //        confFormato = configuracion3.valor1,
+            //        statusCotizacionId = 13, //Abierta
+            //        approbation = CotizacionModel.cotizacionFields.Where(t=> t.approval == true).Count() == 0 ? false: true,
+            //        monedaId = CotizacionModel.selectedMoneda,
+            //        formaPagoId = CotizacionModel.selectedMoneda,
+            //        clienteId = CotizacionModel.selectedCliente,
+            //        clasificacionServicioId = CotizacionModel.selectedClasificacionServicio,
+            //        sucursalId = CotizacionModel.sucursal.sucursalId,
+            //        empresaId = CotizacionModel.empresa.empresaId
+            //    };
+            //    _preliminarDA.Add(item);
 
-                foreach (CotizacionField cf in CotizacionModel.cotizacionFields)
-                {
-                    decimal iva = Convert.ToDecimal(cf.priceFinal * .16);
-                    var prePartida = new PrePartidas()
-                    {
-                        claveServicio = cf.claveServicioText,
-                        descripcionServicio = cf.comentarios,
-                        iva = iva,
-                        precio = cf.priceFinal,
-                        descuento = 0,
-                        total = cf.priceFinal + iva,
-                        marca = cf.marca,
-                        modelo = cf.model,
-                        serie = cf.noSerie,
-                        comentarios = cf.comentarios,
-                        cantidad = cf.qty,
-                        servicioId = Convert.ToInt64(cf.claveServicioCode),
-                        preliminaresId = item.preliminaresId,
-
-                    };
-                    _prePartidaDA.Add(prePartida);
-                }
-            }
-            catch (Exception ex)
-            {
-                if(item.preliminaresId != 0 )
-                    _preliminarDA.Delete(item);
-                return ex.Message;
-            }
+            //    foreach (CotizacionField cf in CotizacionModel.cotizacionFields)
+            //    {
+            //        decimal iva = Convert.ToDecimal(cf.priceFinal * .16);
+            //        var prePartida = new PrePartidas()
+            //        {
+            //            claveServicio = cf.claveServicioText,
+            //            descripcionServicio = cf.comentarios,
+            //            iva = iva,
+            //            precio = cf.priceFinal,
+            //            descuento = 0,
+            //            total = cf.priceFinal + iva,
+            //            marca = cf.marca,
+            //            modelo = cf.model,
+            //            serie = cf.noSerie,
+            //            comentarios = cf.comentarios,
+            //            cantidad = cf.qty,
+            //            servicioId = Convert.ToInt64(cf.claveServicioCode),
+            //            preliminaresId = item.preliminaresId,
+            //            approbation = cf.approval
+            //        };
+            //        _prePartidaDA.Add(prePartida);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    if(item.preliminaresId != 0 )
+            //        _preliminarDA.Delete(item);
+            //    return ex.Message;
+            //}
             return "OK";
         }
+
+        public IList<Preliminar> getAllPreliminar()
+        {
+            return _preliminarDA.GetList().ToList();
+        }
+
         #endregion Methods  
     }
 }

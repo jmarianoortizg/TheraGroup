@@ -101,3 +101,6 @@ label.error {
     font-size:small;
 
 }
+
+.modal-open .select2-container--open { z-index: 999999 !important; width:100% !important; }
+

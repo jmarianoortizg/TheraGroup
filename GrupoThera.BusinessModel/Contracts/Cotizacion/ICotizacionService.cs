@@ -1,4 +1,5 @@
-﻿using GrupoThera.Entities.Models.Cotizacion;
+﻿using GrupoThera.Entities.Entity.Cotizaciones;
+using GrupoThera.Entities.Models.Cotizacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace GrupoThera.BusinessModel.Contracts.Cotizacion
         #region Methods 
 
         string createPreliminar(CotizacionModel CotizacionModel);
-        
+        IList<Preliminar> getAllPreliminar();
+
         #endregion Methods
     }
 }
