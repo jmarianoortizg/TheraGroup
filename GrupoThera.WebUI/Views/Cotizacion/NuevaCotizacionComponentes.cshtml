@@ -13,7 +13,7 @@
     <div class="form-group">
         <label class="col-md-3 control-label" for="val-username">Cliente<span class="text-danger">*</span></label>
         <div class="col-md-7">
-            @Html.DropDownListFor(model => model.selectedCliente, Model.listCliente, new { @class = "form-control required" })
+            @Html.DropDownListFor(model => model.selectedCliente, Model.listCliente, new { @class = "form-control js-select2 required" })
         </div>
     </div>
     <div class="form-group">

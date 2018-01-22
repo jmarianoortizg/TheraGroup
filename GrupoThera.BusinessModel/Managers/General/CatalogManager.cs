@@ -1,7 +1,9 @@
 ﻿using GrupoThera.BusinessLogic.Contracts.Catalogs;
+using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessLogic.Contracts.General;
 using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
 using System;
 using System.Collections.Generic;
@@ -34,13 +36,13 @@ namespace GrupoThera.BusinessModel.Managers.General
         private IProvedor _provedorDA;
         private IServicio _servicioDA;
         private ITiempoEntrega _tiempoEntregaDA;
-
+        private IStatusCotizacion _statusCotizacionDA;
 
         #endregion Fields 
 
         #region Constructor 
 
-        public CatalogManager(IDepartamento departamentoDA,
+        public CatalogManager( IDepartamento departamentoDA,
                                ISucursal sucursalDA,
                                IRol rolDA,
                                IEmpresaSucursalMap empresaSucursalMapDA,
@@ -58,7 +60,8 @@ namespace GrupoThera.BusinessModel.Managers.General
                                IMoneda monedaDA,
                                IProvedor provedorDA,
                                IServicio servicioDA,
-                               ITiempoEntrega tiempoEntregaDA
+                               ITiempoEntrega tiempoEntregaDA,
+                               IStatusCotizacion statusCotizacionDA
                              )
         {
             //Dependency Injection
@@ -81,6 +84,7 @@ namespace GrupoThera.BusinessModel.Managers.General
             _provedorDA = provedorDA;
             _servicioDA = servicioDA;
             _tiempoEntregaDA = tiempoEntregaDA;
+            _statusCotizacionDA = statusCotizacionDA;
         }
 
         #endregion Constructor 
@@ -513,6 +517,15 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
 
         #endregion Configuracion
+
+        #region StatusCotizacion        
+
+        public IList<StatusCotizacion> getStatusCotizacion()
+        {
+            return _statusCotizacionDA.GetList().ToList();
+        }
+
+        #endregion StatusCotizacion
 
         #endregion Methods  
     }

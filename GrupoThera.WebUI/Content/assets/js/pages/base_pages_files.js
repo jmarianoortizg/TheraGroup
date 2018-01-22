@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_files.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Files Page
  */
 

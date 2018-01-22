@@ -1,5 +1,6 @@
 /*
  *  Document   : base_ui_chat.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Chat Pages
  */
 

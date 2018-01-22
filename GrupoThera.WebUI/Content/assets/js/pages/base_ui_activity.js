@@ -1,5 +1,6 @@
 /*
  *  Document   : base_ui_activity.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Activity Page
  */
 
@@ -57,13 +58,14 @@ var BaseUIActivity = function() {
                         }, 50);
                     });
                 }
-            }).then(
-                function (result) {
+            }).then(function(result){
+                if (result.value) {
                     swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
-                }, function(dismiss) {
-                    // dismiss can be 'cancel', 'overlay', 'esc' or 'timer'
+                    // result.dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
+                } else if (result.dismiss === 'cancel') {
+                    swal('Cancelled', 'Your imaginary file is safe :)', 'error');
                 }
-            );
+            });
         });
     };
 

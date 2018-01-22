@@ -46,7 +46,9 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
             #region Cotizacion
                 public DbSet<Preliminar> Preliminar { get; set; }
                 public DbSet<PrePartidas> PrePartidas { get; set; }
-            #endregion Cotizacion
+                public DbSet<StatusCotizacion> StatusCotizacion { get; set; }
+
+        #endregion Cotizacion
 
         #endregion Fields
 

@@ -21,5 +21,19 @@ namespace GrupoThera.Entities.Models.Cotizacion
         public IList<Preliminar> clientes { get; set; }
         public string statusActual { get; set; }
         public IList<Preliminar> preliminaresActual { get; set; }
+
+        // Filter Section
+        public string from { get; set; }
+        public string to { get; set; }
+        public long nCotizacion { get; set; }
+        public string marca { get; set; }
+        public string modelo { get; set; }
+        public string nSerie { get; set; }
+        public SelectList listCliente { get; set; }
+        public int selectedCliente { get; set; }
+        public SelectList listClasificacion { get; set; }
+        public int selectedClasificacion { get; set; }
+        public SelectList listStatus { get; set; }
+        public int selectedStatus { get; set; }
     }
 }

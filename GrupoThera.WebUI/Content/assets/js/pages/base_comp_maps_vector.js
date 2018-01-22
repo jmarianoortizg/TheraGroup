@@ -1,5 +1,6 @@
 /*
  *  Document   : base_comp_maps_vector.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Vector Maps Page
  */
 

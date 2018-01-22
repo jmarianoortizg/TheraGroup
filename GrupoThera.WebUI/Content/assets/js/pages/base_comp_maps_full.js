@@ -1,5 +1,6 @@
 /*
  *  Document   : base_comp_maps_full.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Google Maps Full Page
  */
 

@@ -1,4 +1,5 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,6 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void AddGiro(Giro Giro);
         void EditGiro(Giro Giro);
         void DeleteGiro(long idGiro);
-
         IList<ClasificacionServicio> getClasificacionServicios();
         ClasificacionServicio getClasificacionServicioById(long idClasificacion);
         void AddClasificacionServicio(ClasificacionServicio Clasificacion);
@@ -87,6 +87,8 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void AddServicio(Servicio Servicio);
         void EditServicio(Servicio Servicio);
         void DeleteServicio(long idServicio);
+
+        IList<StatusCotizacion> getStatusCotizacion();
 
 
         #endregion Methods

@@ -1,83 +1,56 @@
 /*
  *  Document   : base_pages_login.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Login Page
  */
 
-$(document).ready(function () {
-
-
-    $("#spin").spinner({
-        color: "black"
-        , background: "rgba(189, 227, 231, .5)"
-        , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
-        , spin: true
-    });
-
-    $("#empresaSource").live('click', function() { 
-        alert('button clicked'); 
-    });
-
-});
-
-function BeginFormLogin() {
-    $("#frmLogin").validate({
-        errorClass: 'help-block text-right animated fadeInDown',
-        errorElement: 'div',
-        errorPlacement: function (error, e) {
-            jQuery(e).parents('.form-group > div').append(error);
-        },
-        highlight: function (e) {
-            jQuery(e).closest('.form-group').removeClass('has-error').addClass('has-error');
-            jQuery(e).closest('.help-block').remove();
-        },
-        success: function (e) {
-            jQuery(e).closest('.form-group').removeClass('has-error');
-            jQuery(e).closest('.help-block').remove();
-        },
-        messages: {
-            'UserName': {
-                required: 'Ingrese nombre de usuario',
-                minlength: 'El nombre de ususario debe de tener al menos 3 caracteres'
+var BasePagesLogin = function() {
+    // Init Login Form Validation, for more examples you can check out https://github.com/jzaefferer/jquery-validation
+    var initValidationLogin = function(){
+        jQuery('.js-validation-login').validate({
+            errorClass: 'help-block text-right animated fadeInDown',
+            errorElement: 'div',
+            errorPlacement: function(error, e) {
+                jQuery(e).parents('.form-group > div').append(error);
             },
-            'Password': {
-                required: 'Ingrese el Password',
-                minlength: 'El Password debe de tener al menos una longitud de 5 caracteres'
-            }
-        },
-        rules: {
-            UserName: {
-                required: true
+            highlight: function(e) {
+                jQuery(e).closest('.form-group').removeClass('has-error').addClass('has-error');
+                jQuery(e).closest('.help-block').remove();
             },
-            Password: {
-                required: true,
-                minlength: 5
+            success: function(e) {
+                jQuery(e).closest('.form-group').removeClass('has-error');
+                jQuery(e).closest('.help-block').remove();
+            },
+            rules: {
+                'login-username': {
+                    required: true,
+                    minlength: 3
+                },
+                'login-password': {
+                    required: true,
+                    minlength: 5
+                }
+            },
+            messages: {
+                'login-username': {
+                    required: 'Please enter a username',
+                    minlength: 'Your username must consist of at least 3 characters'
+                },
+                'login-password': {
+                    required: 'Please provide a password',
+                    minlength: 'Your password must be at least 5 characters long'
+                }
             }
+        });
+    };
+
+    return {
+        init: function () {
+            // Init Login Form Validation
+            initValidationLogin();
         }
-    });
+    };
+}();
 
-    var band = $('#frmLogin').validate().form();
-
-    if (band) { $("#spin").show(); }
-
-    return band;
-}
-
-function SuccessFormLogin(response) {
-    $('#formLoginSuccess').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeOutDown element-visible')
-    $('#formLoginError').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeOutDown element-visible')
-
-    $("#spin").hide();
-    if (response.success) {
-        $('#formLoginSuccess').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeInDown element-visible')
-        setTimeout(function () {
-            window.location.href = '/Home/Dashboard/';
-        }, 3000);
-    }
-    else
-        $('#formLoginError').removeClass('animated fadeOutDown element-hidden').addClass('animated fadeInDown element-visible')
-}
-
-function FailureFormLogin(response) {
-    $("#spin").hide();
-    alert("Please contact with technical support");
-}
+// Initialize when page loads
+jQuery(function(){ BasePagesLogin.init(); });

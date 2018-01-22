@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_register.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Register Page
  */
 

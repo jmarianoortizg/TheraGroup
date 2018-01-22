@@ -1,5 +1,6 @@
 /*
  *  Document   : base_comp_animations.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Animations Page
  */
 

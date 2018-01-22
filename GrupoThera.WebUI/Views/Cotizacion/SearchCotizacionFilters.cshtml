@@ -1,0 +1,78 @@
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionSearch
+@{
+    ViewBag.Title = "SearchCotizacionFilters";
+}
+
+
+    <div class="form-group form-horizontal">
+        <div class="form-group">
+            <div class="col-md-12">
+                <label class="col-md-2 control-label" for="example-daterange1">Cliente</label>
+                <div class="col-md-8">
+                    @Html.DropDownListFor(model => model.selectedCliente, Model.listCliente, new { @id = "cmbClient", @class = "form-control js-select2 ", style = "width:100%;" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Fechas</label>
+                <div class="col-md-8">
+                    <div class="input-daterange input-group" data-date-format="dd/mm/yyyy">
+                        @Html.TextBoxFor(model => model.from, new { id="from", name= "from", @class="form-control", type="text", placeholder="De" })
+                        <span class="input-group-addon"><i class="fa fa-chevron-right"></i></span>
+                        @Html.TextBoxFor(model => model.to, new { id="to", name="to", @class="form-control", type="text", placeholder="Hasta" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Status</label>
+                <div class="col-md-8">
+                    @Html.DropDownListFor(model => model.selectedStatus, Model.listStatus, new { @id = "cmbStatus", @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Clasificacion</label>
+                <div class="col-md-8">
+                    @Html.DropDownListFor(model => model.selectedClasificacion, Model.listClasificacion, new { @id = "cmbClasficacion", @class = "form-control" })
+                </div>
+            </div>
+            @*<div class="form-group">
+                    <label class="col-md-4 control-label" for="example-daterange1">Rango $</label>
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(model => model.selectedClasificacion, Model.listClasificacion, new { @id = "cmbClasficacion", @class = "js-rangeslider", min = "0", max = "10000", from = "100", to = "10000", prefix = "$", type = "double", grid = "true" })
+                    </div>
+                </div>*@
+        </div>
+    </div>
+
+    <div class="form-horizontal">
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Marca</label>
+                <div class="col-md-8">
+                    @Html.TextBoxFor(model => model.marca, new { id = "marca", name = "marca", @class = "form-control", type = "text", placeholder = "Marca" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Modelo</label>
+                <div class="col-md-8">
+                    @Html.TextBoxFor(model => model.modelo, new { id = "modelo", name = "12", @class = "form-control", type = "text", placeholder = "Modelo" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1">Numero Serie</label>
+                <div class="col-md-8">
+                    @Html.TextBoxFor(model => model.nSerie, new { id = "nSerie", name = "nSerie", @class = "form-control", type = "text", placeholder = "Numero Serie" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="example-daterange1"># Cotizacion</label>
+                <div class="col-md-8">
+                    @Html.TextBoxFor(model => model.nCotizacion, new { id = "nCotizacion", name = "nCotizacion", @class = "form-control onlyNumberInteger", type = "text", placeholder = "Numero Cotizacion" })
+                </div>
+            </div>
+        </div>
+    </div>

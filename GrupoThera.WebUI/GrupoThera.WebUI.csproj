@@ -1567,6 +1567,15 @@
   <ItemGroup>
     <Content Include="Views\Cotizacion\NuevaCotizacionNewPrices.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\SearchCotizacionFilters.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\SearchCotizacionCounters.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cotizacion\SearchCotizacionStatus.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

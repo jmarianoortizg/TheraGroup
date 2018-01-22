@@ -1,5 +1,6 @@
 /*
  *  Document   : base_ui_icons.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Icons Page
  */
 

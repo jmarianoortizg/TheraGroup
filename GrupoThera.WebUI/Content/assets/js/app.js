@@ -1,5 +1,6 @@
 /*
  *  Document   : app.js
+ *  Author     : pixelcave
  *  Description: UI Framework Custom Functionality (available to all pages)
  *
  */
@@ -53,8 +54,7 @@ var App = function() {
         });
 
         // Init form placeholder (for IE9)
-        jQuery('.form-control').placeholder(); 
-        
+        jQuery('.form-control').placeholder();
     };
 
     // Layout functionality
@@ -77,7 +77,7 @@ var App = function() {
         // Init sidebar and side overlay custom scrolling
         uiHandleScroll('init');
 
-        // Init transparent header functionality (solid on scroll - used in frontend)
+        // Init transparent header functionality (solid on scroll)
         if ($lPage.hasClass('header-navbar-fixed') && $lPage.hasClass('header-navbar-transparent')) {
             jQuery(window).on('scroll', function(){
                 if (jQuery(this).scrollTop() > 20) {
@@ -111,15 +111,6 @@ var App = function() {
         } else {
             $lMain.css('min-height', $hWindow - ($hHeader + $hFooter));
         }
-    };
-
-    var uiSpinner = function () {
-        $("#spin").spinner({
-            color: "black"
-                , background: "rgba(189, 227, 231, .5)"
-                , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
-                , spin: true
-        });
     };
 
     // Handles sidebar and side overlay custom scrolling functionality
@@ -620,12 +611,13 @@ var App = function() {
     var uiYearCopy = function() {
         var $date     = new Date();
         var $yearCopy = jQuery('.js-year-copy');
+        var $baseYear = ($yearCopy.length > 0 && $yearCopy.html().length > 0) ? $yearCopy.html() : $date.getFullYear();
 
-        if ($date.getFullYear() === 2017) {
-            $yearCopy.html('2017');
-        } else {
-            $yearCopy.html('2017-' + $date.getFullYear().toString().substr(2,2));
-        }
+        if (parseInt($baseYear) >= $date.getFullYear()) {
+            $yearCopy.text($date.getFullYear());
+        } else {
+            $yearCopy.text($baseYear + '-' + $date.getFullYear().toString().substr(2, 2));
+        }
     };
 
     // Manage page loading screen functionality
@@ -1238,6 +1230,43 @@ var App = function() {
         });
     };
 
+    /*
+     * AutoNumeric, for more examples you can check out https://github.com/autoNumeric/autoNumeric
+     *
+     * App.initHelper('autonumeric');
+     *
+     */
+    var uiHelperAutoNumeric = function(){
+        // Init initAutoNumeric functionality
+        if (jQuery('.js-autonumeric-dollar').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-dollar', AutoNumeric.getPredefinedOptions().NorthAmerican);
+        }
+
+        if (jQuery('.js-autonumeric-euro').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-euro', AutoNumeric.getPredefinedOptions().French);
+        }
+
+        if (jQuery('.js-autonumeric-pound').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-pound', AutoNumeric.getPredefinedOptions().British);
+        }
+
+        if (jQuery('.js-autonumeric-franc').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-franc', AutoNumeric.getPredefinedOptions().Swiss);
+        }
+
+        if (jQuery('.js-autonumeric-yen').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-yen', AutoNumeric.getPredefinedOptions().Japanese);
+        }
+
+        if (jQuery('.js-autonumeric-yuan').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-yuan', AutoNumeric.getPredefinedOptions().Chinese);
+        }
+
+        if (jQuery('.js-autonumeric-brl').length > 0 ) {
+            new AutoNumeric.multiple('.js-autonumeric-brl', AutoNumeric.getPredefinedOptions().Brazilian);
+        }
+    };
+
     return {
         init: function($func) {
             switch ($func) {
@@ -1255,7 +1284,7 @@ var App = function() {
                     break;
                 case 'uiForms':
                     uiForms();
-                    break; 
+                    break;
                 case 'uiHandleTheme':
                     uiHandleTheme();
                     break;
@@ -1277,7 +1306,7 @@ var App = function() {
                     uiLayout();
                     uiNav();
                     uiBlocks();
-                    uiForms();  
+                    uiForms();
                     uiHandleTheme();
                     uiToggleClass();
                     uiScrollTo();
@@ -1366,6 +1395,9 @@ var App = function() {
                 case 'masonry':
                     uiHelperMasonry();
                     break;
+                case 'autonumeric':
+                    uiHelperAutoNumeric();
+                    break;
                 default:
                     return false;
             }
@@ -1382,7 +1414,7 @@ var App = function() {
     };
 }();
 
-// Create an alias for App (you can use GrupoTheraUI in your pages instead of App if you like)
+// Create an alias for App (you can use OneUI in your pages instead of App if you like)
 var OneUI = App;
 
 // Initialize app when page loads

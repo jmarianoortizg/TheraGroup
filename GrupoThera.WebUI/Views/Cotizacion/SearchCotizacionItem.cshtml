@@ -2,73 +2,69 @@
 @{
     ViewBag.Title = "SearchCotizacionItem";
 }
-<table class="table table-hover table-vcenter">
-    <tbody>
-        @foreach (var item in Model.preliminaresActual)
-        {
-            var time = item.fechaCreacion;
-            <tr>
-                <td class="font-w600 text-center" style="width: 80px;">#@Html.DisplayFor(modelItem => item.preliminaresId )</td>
-                <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
-                    @if (item.StatusCotizacion.descripcion.Equals("ABIERTA")) {
-                        <span class="label label-primary">Abierta</span>
-                    }
-                    else if (item.StatusCotizacion.descripcion.Equals("APROBACION")) {
-                        <span class="label label-warning">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
-                    }
-                    else if (item.StatusCotizacion.descripcion.Equals("CERRADA")) {
-                        <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
-                    }
-                    else if (item.StatusCotizacion.descripcion.Equals("CANCEL")) {
-                        <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
-                    }
-                    else if (item.StatusCotizacion.descripcion.Equals("RECHAZADA")) {
-                        <span class="label label-modern">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
-                    }
-                    else if (item.StatusCotizacion.descripcion.Equals("ENVCLIENTE")) {
-                        <span class="label label-success">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
-                    }
-                </td>
-                <td>
-                    <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
-                    <div class="text-muted">
-                        <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a>
-                    </div>
-                </td>
-                <td class="hidden-xs hidden-sm hidden-md text-muted" style="width: 120px;">
-                    <em>Cliente: @Html.DisplayFor(modelItem => item.Cliente.razonSocial)</em>
-                </td>
-                <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 60px;">
-                    <div class="btn-group">
-                        <button title="" class="btn btn-xs btn-default" type="button" data-original-title="Edicion Item" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
-                    </div>
-                </td>
-            </tr>
-        }
-        @*
-         <tr>
-            <td class="font-w600 text-center" style="width: 80px;">#0001</td>
-            <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
-                <span class="label label-success">Abierta</span>
-            </td>
-            <td>
-                <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">Comentarios de la cotización</a>
-                <div class="text-muted">
-                    <em>19 horas atras</em> por <a href="javascript:void(0)">Mariano Ortiz</a>
-                </div>
-            </td>
-            <td class="hidden-xs hidden-sm hidden-md text-muted" style="width: 120px;">
-                <em>Cliente: Razon Social</em>
-            </td>
-            <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 60px;">
-                <div class="btn-group">
-                    <button title="" class="btn btn-xs btn-default" type="button" data-original-title="Edicion Item" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
-                </div>
-            </td>
-        </tr>
-            *@
 
-    </tbody>
-</table>
+@if (Model.preliminaresActual.Count == 0)
+{
+    <h3 style="margin-left:10%" class="block-title text-city"><strong>[</strong> No Resultados <strong>]</strong> </h3>
+    <hr />
+}
+else
+{
+        <table class="table table-hover table-vcenter">
+            <tbody>
+                @foreach (var item in Model.preliminaresActual)
+                {
+                    var time = item.fechaCreacion;
+                    <tr>
+                        <td class="font-w600 text-center" style="width: 80px;">#@Html.DisplayFor(modelItem => item.preliminaresId)</td>
+                        <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
+                            @if (item.StatusCotizacion.codigo.Equals("ABIERTA"))
+                            {
+                                <span class="label label-primary">Abierta</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("APROBACION"))
+                            {
+                                <span class="label label-warning">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("CERRADA"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("CANCEL"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("RECHAZADA"))
+                            {
+                                <span class="label label-modern">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("ENVCLIENTE"))
+                            {
+                                <span class="label label-success">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                            else if (item.StatusCotizacion.codigo.Equals("OBSOLETA"))
+                            {
+                                <span class="label label-primaryDark">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                            }
+                        </td>
+                        <td>
+                            <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
+                            <div class="text-muted">
+                                <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt")
+                            </div>
+                        </td>
+                        <td class="hidden-xs hidden-sm hidden-md text-muted" style="width: 120px;">
+                            <em>Cliente: @Html.DisplayFor(modelItem => item.Cliente.razonSocial)</em>
+                        </td>
+                        <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 60px;">
+                            <div class="btn-group">
+                                <button title="" class="btn btn-xs btn-default" type="button" data-original-title="Edicion Item" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
 
 

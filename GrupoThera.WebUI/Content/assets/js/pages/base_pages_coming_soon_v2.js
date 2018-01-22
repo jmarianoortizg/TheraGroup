@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_coming_soon_v2.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Coming Soon v2 Page
  */
 

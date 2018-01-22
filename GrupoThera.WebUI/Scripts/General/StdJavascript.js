@@ -13,3 +13,10 @@ function createMessageWarning(message) {
 function createMessageInfo(message) {
     $.notify({ icon: "fa fa-info-circle", message: message }, { type: 'info' });    
 }
+
+function goToByScroll(id) {
+    $("html, body").delay(100).animate({
+        scrollTop: $('#' + id).offset().top
+    }, 500);
+}
+

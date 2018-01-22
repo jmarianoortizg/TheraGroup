@@ -83,6 +83,8 @@ namespace GrupoThera.WebUI.DependencyResolvers
             kernel.Bind<IProvedor>().To<ProvedorDA>().InSingletonScope();
             kernel.Bind<IServicio>().To<ServicioDA>().InSingletonScope();
             kernel.Bind<ITiempoEntrega>().To<TiempoEntregaDA>().InSingletonScope();
+            kernel.Bind<IStatusCotizacion>().To<StatusCotizacionDA>().InSingletonScope();
+
 
             #endregion
 

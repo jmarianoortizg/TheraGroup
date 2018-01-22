@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_dashboard_v2.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Dashboard v2 Page
  */
 

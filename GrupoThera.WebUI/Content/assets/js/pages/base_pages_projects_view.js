@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_projects_view.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Project Page
  */
 

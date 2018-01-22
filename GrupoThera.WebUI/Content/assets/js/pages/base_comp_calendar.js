@@ -1,5 +1,6 @@
 /*
  *  Document   : base_comp_calendar.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Calendar Page
  */
 
@@ -160,6 +161,7 @@ var BaseCompCalendar = function() {
                     start: new Date($y, $m, 23),
                     end: new Date($y, $m, 25),
                     allDay: true,
+                    url: 'http://twitter.com/pixelcave',
                     color: '#32ccfe'
                 }
             ]

@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_lock.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Lock Screen Page
  */
 

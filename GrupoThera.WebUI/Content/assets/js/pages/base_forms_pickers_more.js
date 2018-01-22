@@ -1,5 +1,6 @@
 /*
  *  Document   : base_forms_pickers_more.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Form Pickers and More Page
  */
 

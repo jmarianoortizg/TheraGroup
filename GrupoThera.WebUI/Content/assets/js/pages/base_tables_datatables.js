@@ -1,5 +1,6 @@
 /*
  *  Document   : base_tables_datatables.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Tables Datatables Page
  */
 

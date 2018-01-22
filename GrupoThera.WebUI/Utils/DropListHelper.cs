@@ -1,4 +1,5 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
 using System;
 using System.Collections.Generic;
@@ -84,7 +85,7 @@ namespace GrupoThera.WebUI.Utils
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
             {
-                Text = a.razonSocial,
+                Text = a.rfc + "-" + a.razonSocial,
                 Value = a.clienteId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
@@ -186,6 +187,16 @@ namespace GrupoThera.WebUI.Utils
             {
                 Text = a.tiempoEntrega,
                 Value = a.tiempoEntregaId.ToString()
+            }).ToList();
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
+        public static SelectList GetStatusCotizacion(IList<StatusCotizacion> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.statusCotizacionId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }

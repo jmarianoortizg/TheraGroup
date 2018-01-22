@@ -1,5 +1,6 @@
 /*
  *  Document   : base_comp_rating.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Rating Page
  */
 

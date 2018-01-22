@@ -1,5 +1,6 @@
 /*
  *  Document   : base_pages_reminder.js
+ *  Author     : pixelcave
  *  Description: Custom JS code used in Reminder Page
  */
 
