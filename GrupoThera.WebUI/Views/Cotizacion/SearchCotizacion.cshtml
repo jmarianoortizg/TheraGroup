@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="~/Content/assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.min.css">
 
 
-<div class="content bg-gray-lighter">
+<div class="content bg-gray-lighter hidden-print">
     <div class="row items-push">
         <div class="col-sm-8">
             <h1 class="page-heading">
@@ -37,7 +37,7 @@
         <div class="col-sm-5 col-lg-3">
             <div class="collapse navbar-collapse remove-padding" id="tickets-nav">
                 <!-- Preliminares Menu -->
-                <div class="block">
+                <div class="block hidden-print">
                     <div class="block-header bg-gray-lighter">
                         <ul class="block-options">
                             <li>
@@ -46,13 +46,13 @@
                         </ul>
                         <h3 class="block-title">Preliminares</h3>
                     </div>
-                    <div class="block-content">
+                    <div class="block-content" id="divCotizacionCounters">
                         @Html.Partial("SearchCotizacionCounters", Model)
                     </div>
                 </div>
                 <!-- END Tickets Menu -->
                 <!-- bottones Estados Stats -->
-                <div class="block">
+                <div class="block hidden-print">
                     <div class="block-header bg-gray-lighter">
                         <ul class="block-options">
                             <li>
@@ -69,23 +69,22 @@
             </div>
             <!-- END Collapsible Tickets Navigation -->
         </div>
+
         <div class="col-sm-12 col-lg-9">
             <!-- Filtos List -->
-            <div class="block block-opt-hidden" id="filtros">
+            <div class="block hidden-print block-opt-hidden" id="filtros">
                 @using (Ajax.BeginForm("searchCotizacionFilter", "Cotizacion",
-                                                        new AjaxOptions
-                                                        {
-                                                            InsertionMode = InsertionMode.Replace,
-                                                            UpdateTargetId = "divItemsCotizacion",
-                                                            OnSuccess = "SuccessSeachCotizacion",
-                                                            OnFailure = "FailureSeachCotizacion",
-                                                        }))
+                                                    new AjaxOptions
+                                                    {
+                                                        InsertionMode = InsertionMode.Replace,
+                                                        UpdateTargetId = "divItemsCotizacion",
+                                                        OnSuccess = "SuccessSeachCotizacion",
+                                                        OnFailure = "FailureSeachCotizacion",
+                                                    }))
                 {
                     <div class="block-header bg-gray-lighter">
+
                         <ul class="block-options">
-                            <li>
-                                <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-down"></i></button>
-                            </li>
                             <li>
                                 <button type="submit"><i class="fa fa-search-plus"></i> Aplicar Filtro</button>
                             </li>
@@ -93,23 +92,19 @@
                         <h3 class="block-title text-normal"><strong>[</strong> Filtros <strong>]</strong> </h3>
                     </div>
                     <div class="block-content">
+
                         <div class="row">
                             @Html.Partial("SearchCotizacionFilters", Model)
                         </div>
+
                     </div>
                 }
             </div>
             <!-- END Tickets List -->
             <!-- Filtros List -->
-            <div class="block" id="cotizaciones">
+            <div class="block hidden-print" id="cotizaciones">
                 <div class="block-header bg-gray-lighter">
                     <ul class="block-options">
-                        <li>
-                            <button class="js-tooltip" title="10 Tickets Anteriores" type="button" data-toggle="block-option"><i class="si si-arrow-left"></i></button>
-                        </li>
-                        <li>
-                            <button class="js-tooltip" title="Siguientes 10 Tickets" type="button" data-toggle="block-option"><i class="si si-arrow-right"></i></button>
-                        </li>
                         <li>
                             <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
                         </li>
@@ -128,16 +123,13 @@
             </div>
             <!-- END Tickets List -->
         </div>
-        <div class="col-sm-12 col-lg-9">
+        <div class="col-sm-12 col-lg-12">
             <div class="block">
-                <div class="block-content">
-                    <div class="row items-push" id="acciones">
+                <div class="block-content" style="padding-left:2%; padding-right:2%">
+                    <div class="row items-push" id="divCotizacionView">
                         <div class="col-sm-4 col-lg-4">
                             <h3 class="block-title text-primary"><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3>
                             <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
-                        </div>
-                        <div class="col-sm-8">
-
                         </div>
                     </div>
                 </div>
@@ -166,25 +158,79 @@
             $('.onlyNumberInteger').keyup(function () {
                 this.value = this.value.replace(/[^0-9]/g, '');
             });
+
+            $("#spin").spinner({
+                color: "black"
+                  , background: "rgba(189, 227, 231, .5)"
+                  , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+                  , spin: true
+            });
+
+            $('.statusCounters').on('click', function () {
+                var model = { "statusCounter": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("showPreliminarCounterView", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divItemsCotizacion').html(data);
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+
+            uploadView();
+
         });
 
         function SuccessSeachCotizacion(response) {
 
             if (response.success) {
                 $('#divItemsCotizacion').html(response.cotizacionHtml);
+                $('#divCotizacionCounters').html(response.cotizacionCountersHtml);
                 $("time.timeago").timeago();
+                createMessageInfo("INFO: Filtro aplicado correctamente");
+                uploadView();
+                goToByScroll("divItemsCotizacion");
             } else {
                 $('#searchCotizacionError').html(response.errorHtml);
             }
-            setTimeout(function () {
-                $("#spin").hide();
-            }, 800);
         }
 
         function FailureSeachCotizacion(response) {
             $('#searchCotizacionError').html(response.resumeHtml);
-            $("#spin").hide();
         }
+
+        function uploadView() {
+            $('.cotizacionView').on('click', function () {
+
+                var model = { "idPreliminarSelected": $(this).attr("id") };
+                $("#spin").show();
+                $.ajax({
+                    url: '@Url.Action("searchPreliminarView", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divCotizacionView').html(data);
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        setTimeout(function () {
+                            $("#spin").hide();
+                        }, 800);
+                        goToByScroll("divCotizacionView");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
     </script>
 }
 

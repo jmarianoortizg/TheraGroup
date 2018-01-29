@@ -7,38 +7,36 @@
     var canceladas = Model.canceladas.Count;
     var rechazados = Model.rechazadas.Count;
     var enviadoCliente = Model.clientes.Count;
-    var total = Model.listaPreliminares.Count;
-
 }
 
 <ul class="nav nav-pills nav-stacked push">
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="OPEN">
             <span class="badge pull-right">@abiertas</span><i class="fa fa-fw fa-folder-open-o push-5-r"></i> Abiertas
         </a>
     </li>
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="APROVE">
             <span class="badge pull-right">@aprobacion</span><i class="fa fa-fw fa-warning push-5-r"></i> Aprobacion
         </a>
     </li>
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="CLOSED">
             <span class="badge pull-right">@cerrados</span><i class="fa fa-fw fa-lock push-5-r"></i> Cerrados
         </a>
     </li>
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="CANCEL">
             <span class="badge pull-right">@canceladas</span><i class="fa fa-fw fa-times-circle-o push-5-r"></i> Canceladas
         </a>
     </li>
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="REJECTED">
             <span class="badge pull-right">@rechazados</span><i class="fa fa-fw fa-reply  push-5-r"></i> Rechazados
         </a>
     </li>
     <li>
-        <a href="javascript:void(0)">
+        <a class="statusCounters" id="SENDCLIENT">
             <span class="badge pull-right">@enviadoCliente</span><i class="fa fa-fw fa-paper-plane-o push-5-r"></i> Enviado Cliente
         </a>
     </li>

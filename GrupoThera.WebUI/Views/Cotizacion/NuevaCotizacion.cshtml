@@ -12,6 +12,9 @@
             <h1 class="page-heading">
                 Nueva Cotizacion <small> Ingrese los datos para generar una nueva cotizacion</small>
             </h1>
+            <h2 class="page-heading text-success" style="margin-left:10%" >
+                <span id="messageSuccess"></span>
+            </h2>
         </div>
     </div>
 </div> 
@@ -180,7 +183,10 @@
         });
 
         function BeginCreateCotizacion()
-        { 
+        {
+            $("#createCotizacionError").html("");
+            $("#messageSuccess").text("");
+
             $("#frmCreateCotizacion").validate({
                 ignore: [],
                 errorClass: 'help-block animated fadeInDown',
@@ -230,10 +236,13 @@
 
         function SuccessCreateCotizacion(response) {
             $("#createCotizacionError").html("");
+            $("#messageSuccess").text("");
             if (response.success) {
                 createMessageSuccess("Ok: Cotizacion Creada Correctamente");
+                $("#messageSuccess").text('Cotizacion Creada #' + response.idPreliminar);
             } else {
                 $("#createCotizacionError").html(response.responseHtml);
+                $("#messageSuccess").text("");
             }
 
             setTimeout(function () {

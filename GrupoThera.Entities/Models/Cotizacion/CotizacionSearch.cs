@@ -19,7 +19,6 @@ namespace GrupoThera.Entities.Models.Cotizacion
         public IList<Preliminar> canceladas { get; set; }
         public IList<Preliminar> rechazadas { get; set; }
         public IList<Preliminar> clientes { get; set; }
-        public string statusActual { get; set; }
         public IList<Preliminar> preliminaresActual { get; set; }
 
         // Filter Section

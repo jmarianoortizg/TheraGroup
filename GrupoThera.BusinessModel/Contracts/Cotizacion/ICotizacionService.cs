@@ -14,6 +14,8 @@ namespace GrupoThera.BusinessModel.Contracts.Cotizacion
 
         string createPreliminar(CotizacionModel CotizacionModel);
         IList<Preliminar> getAllPreliminar();
+        Preliminar getPreliminarById(long idPreliminar);
+        IList<PrePartidas> getAllPrePartidasByPreliminar(long idPreliminar);
 
         #endregion Methods
     }

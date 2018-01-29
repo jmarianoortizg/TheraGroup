@@ -71,10 +71,11 @@ namespace GrupoThera.WebUI.Controllers
             cotizacionModel.empresa = empresa;
 
             var result = _cotizacionService.createPreliminar(cotizacionModel);
-            if (result.Equals("OK"))
+            if (!result.Contains("ERROR"))
             {
                 return Json(new
                 {
+                    idPreliminar = result,
                     success = true,
                 }, JsonRequestBehavior.AllowGet);
             }
@@ -124,9 +125,8 @@ namespace GrupoThera.WebUI.Controllers
                 rechazadas = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("RECHAZADA")).ToList(),
                 clientes = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("ENVCLIENTE")).ToList(),
                 preliminaresActual = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("ABIERTA")).ToList(),
-                statusActual = "ABIERTA",
-                listClasificacion = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicios()),
-                listCliente = DropListHelper.GetCliente(_catalogService.getClientes()),
+                listClasificacion = DropListHelper.GetClasificacionServicioValue0(_catalogService.getClasificacionServicios()),
+                listCliente = DropListHelper.GetClienteValue0(_catalogService.getClientes()),
                 listStatus = DropListHelper.GetStatusCotizacion(_catalogService.getStatusCotizacion()),
             };
             TempData["CotizacionSearch"] = model;
@@ -141,7 +141,7 @@ namespace GrupoThera.WebUI.Controllers
 
             var allPreliminares = _cotizacionService.getAllPreliminar();
 
-            if (!string.IsNullOrEmpty(CotizacionSearch.selectedCliente.ToString()))
+            if (CotizacionSearch.selectedCliente != 0)
             {
                 allPreliminares = allPreliminares.Where(i => i.clienteId == CotizacionSearch.selectedCliente).ToList();
             }
@@ -151,11 +151,11 @@ namespace GrupoThera.WebUI.Controllers
                 var dateTo = DateTime.Parse(CotizacionSearch.to);
                 allPreliminares = allPreliminares.Where(t => t.fechaCreacion.Date >= dateFrom.Date && t.fechaCreacion.Date <= dateTo).ToList();
             }
-            if (!string.IsNullOrEmpty(CotizacionSearch.selectedStatus.ToString()))
+            if (CotizacionSearch.selectedStatus != 0)
             {
                 allPreliminares = allPreliminares.Where(i => i.statusCotizacionId == CotizacionSearch.selectedStatus).ToList();
             }
-            if (!string.IsNullOrEmpty(CotizacionSearch.selectedClasificacion.ToString()))
+            if (CotizacionSearch.selectedClasificacion != 0)
             {
                 allPreliminares = allPreliminares.Where(i => i.clasificacionServicioId == CotizacionSearch.selectedClasificacion).ToList();
             }
@@ -177,14 +177,49 @@ namespace GrupoThera.WebUI.Controllers
             }
 
             CotizacionSearch.preliminaresActual = allPreliminares;
+            CotizacionSearch.abiertas = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("ABIERTA")).ToList();
+            CotizacionSearch.aprobacion = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("APROBACION")).ToList();
+            CotizacionSearch.cerrados = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("CERRADA")).ToList();
+            CotizacionSearch.canceladas = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("CANCEL")).ToList();
+            CotizacionSearch.rechazadas = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("RECHAZADA")).ToList();
+            CotizacionSearch.clientes = allPreliminares.Where(t => t.StatusCotizacion.codigo.Equals("ENVCLIENTE")).ToList();
 
             return Json(new
             {
                 success = true,
-                cotizacionHtml = StdClassWeb.RenderToString(PartialView("SearchCotizacionItem", CotizacionSearch), HttpContext)
+                cotizacionHtml = StdClassWeb.RenderToString(PartialView("SearchCotizacionItem", CotizacionSearch), HttpContext),
+                cotizacionCountersHtml = StdClassWeb.RenderToString(PartialView("SearchCotizacionCounters", CotizacionSearch), HttpContext)
             },
             JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult searchPreliminarView(int idPreliminarSelected)
+        {
+            var preliminarItem = _cotizacionService.getPreliminarById(idPreliminarSelected);
+            preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
+            return PartialView("~/Views/Cotizacion/SearchCotizacionView.cshtml",preliminarItem);
+        }
+
+        public ActionResult showPreliminarCounterView(string statusCounter)
+        {
+            var model = (CotizacionSearch)TempData["CotizacionSearch"];
+            TempData.Keep("CotizacionSearch");
+
+            if (statusCounter.Equals("OPEN"))
+                model.preliminaresActual = model.abiertas;
+            else if (statusCounter.Equals("APROVE"))
+                model.preliminaresActual = model.aprobacion;
+            else if (statusCounter.Equals("CLOSED"))
+                model.preliminaresActual = model.cerrados;
+            else if (statusCounter.Equals("CANCEL"))
+                model.preliminaresActual = model.canceladas;
+            else if (statusCounter.Equals("REJECTED"))
+                model.preliminaresActual = model.rechazadas;
+            else if (statusCounter.Equals("SENDCLIENT"))
+                model.preliminaresActual = model.rechazadas;
+            return PartialView("SearchCotizacionItem", model);
+        }
+
 
         #endregion SearchCotizacion
 

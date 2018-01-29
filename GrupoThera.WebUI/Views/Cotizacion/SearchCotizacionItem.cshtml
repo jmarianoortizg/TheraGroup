@@ -15,6 +15,7 @@ else
                 @foreach (var item in Model.preliminaresActual)
                 {
                     var time = item.fechaCreacion;
+                    var id = item.preliminaresId;
                     <tr>
                         <td class="font-w600 text-center" style="width: 80px;">#@Html.DisplayFor(modelItem => item.preliminaresId)</td>
                         <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
@@ -53,12 +54,12 @@ else
                                 <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt")
                             </div>
                         </td>
-                        <td class="hidden-xs hidden-sm hidden-md text-muted" style="width: 120px;">
+                        <td>
                             <em>Cliente: @Html.DisplayFor(modelItem => item.Cliente.razonSocial)</em>
                         </td>
-                        <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 60px;">
+                        <td>
                             <div class="btn-group">
-                                <button title="" class="btn btn-xs btn-default" type="button" data-original-title="Edicion Item" data-toggle="tooltip"><i class="fa fa-edit"></i></button>
+                                <a id="@id" class="btn btn-xs btn-default cotizacionView" data-original-title="Ver" data-toggle="tooltip"><i class="fa fa-street-view"></i></a>
                             </div>
                         </td>
                     </tr>

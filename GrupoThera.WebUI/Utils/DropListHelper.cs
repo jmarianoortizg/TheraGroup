@@ -81,6 +81,17 @@ namespace GrupoThera.WebUI.Utils
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
 
+        public static SelectList GetClasificacionServicioValue0(IList<ClasificacionServicio> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.clasificacionServicioId.ToString()
+            }).ToList();
+            itemsList.Add(new SelectListItem() { Text = "No Clasificacion Servicio Seleccionado", Value = "0" });
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
         public static SelectList GetCliente(IList<Cliente> list)
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
@@ -90,6 +101,18 @@ namespace GrupoThera.WebUI.Utils
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
+
+        public static SelectList GetClienteValue0(IList<Cliente> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.rfc + "-" + a.razonSocial,
+                Value = a.clienteId.ToString()
+            }).ToList();
+            itemsList.Add(new SelectListItem() { Text = "No Cliente Seleccionado", Value = "0" });
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
 
         public static SelectList GetConfiguracion(IList<Configuracion> list)
         {
@@ -198,6 +221,7 @@ namespace GrupoThera.WebUI.Utils
                 Text = a.descripcion,
                 Value = a.statusCotizacionId.ToString()
             }).ToList();
+            itemsList.Add(new SelectListItem() { Text = "No Estatus Seleccionado", Value = "0" });
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
     }

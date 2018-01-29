@@ -1,0 +1,116 @@
+﻿@model GrupoThera.Entities.Entity.Cotizaciones.Preliminar
+@{
+    ViewBag.Title = "SearchCotizacionView";
+}
+
+<div class="block">
+    <div class="block-header">
+        <ul class="block-options">
+            <li>
+                <button onclick="goToByScroll('searchCotizacionError');" type="button"><i class="fa fa-search"></i> Ir Filtros</button>
+            </li>
+            <li>
+                <button @*onclick="App.initHelper('print-page');"*@ type="button"><i class="si si-printer"></i> Imprimir</button>
+            </li>
+            <li>
+                <button type="button"><i class="fa fa-download"></i> Descargar</button>
+            </li>
+            <li>
+                <button type="button"><i class="fa fa-edit"></i> Edicion</button>
+            </li>
+            <li>
+                <button type="button"><i class="fa fa-reply"></i> Rechazar</button>
+            </li>
+            <li>
+                <button type="button"><i class="fa fa-times-circle-o"></i> Cancelar</button>
+            </li>
+        </ul>
+    </div>
+    <div class="block-content block-content-narrow">
+        <!-- Invoice Info -->
+        <div class="h1 text-center push-30-t push-30 text-primary">COTIZACION #@Html.DisplayFor(modelItem => Model.preliminaresId)</div>
+        <hr class="hidden-print">
+        <div class="row items-push-2x">
+            <!-- Client Info -->
+            <div class="col-xs-6 col-sm-4 col-lg-3">
+                <p class="h2 font-w400 push-5">Cliente</p>
+                <address>
+                    @Html.DisplayFor(modelItem => Model.Cliente.rfc)<br>
+                    @Html.DisplayFor(modelItem => Model.Cliente.direccion)<br>
+                    @Html.DisplayFor(modelItem => Model.Cliente.email)<br>
+                    <i class="si si-call-end"></i> @Html.DisplayFor(modelItem => Model.Cliente.telefono)
+                </address>
+            </div>
+            <!-- END Client Info -->
+            <!-- General Info -->
+            <div class="col-xs-6 col-sm-4 col-sm-offset-4 col-lg-3 col-lg-offset-6 text-right">
+                <p class="h2 font-w400 push-5">Generales</p>
+                <address>
+                    <strong> Pago: </strong> @Html.DisplayFor(modelItem => Model.FormaPago.pago)<br>
+                    <strong> Clasificacion: </strong> @Html.DisplayFor(modelItem => Model.ClasificacionServicio.descripcion)<br>
+                    <strong> Moneda: </strong> @Html.DisplayFor(modelItem => Model.Moneda.moneda) - @Html.DisplayFor(modelItem => Model.Moneda.tipoCambio)<br>
+                </address>
+            </div>
+            <!-- END General Info -->
+        </div>
+        <!-- END Invoice Info -->
+        <!-- Table -->
+        <div class="table-responsive push-50">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 50px;">Cantidad</th>
+                        <th>Servicio</th>
+                        <th class="text-center" style="width: 50px;">Estatus</th>
+                        <th class="text-center" style="width: 100px;">Numero Serie</th>
+                        <th class="text-right" style="width: 120px;">Marca</th>
+                        <th class="text-right" style="width: 120px;">Modelo</th>
+                        <th class="text-right" style="width: 120px;">Precio</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Prepartidas)
+                    {
+                        var a = item.approbation;
+                        <tr>
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.cantidad)</td>
+                            <td>
+                                <p class="font-w600 push-10">@Html.DisplayFor(modelItem => item.Servicio.clave)</p>
+                                <div class="text-muted">@Html.DisplayFor(modelItem => item.Servicio.descripcion)</div>
+                            </td>
+                            <td class="text-center">
+                                @if (item.approbation == true)
+                                {
+                                    <span class="label label-warning">Aprobacion</span>
+                                }
+                                else
+                                {
+                                    <span class="label label-primary">OK</span>
+                                }
+                            </td>
+                            <td class="text-right">@Html.DisplayFor(modelItem => item.serie)</td>
+                            <td class="text-right">@Html.DisplayFor(modelItem => item.marca)</td>
+                            <td class="text-right">@Html.DisplayFor(modelItem => item.modelo)</td>
+                            <td class="text-right">$ @Html.DisplayFor(modelItem => item.precio)</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td class="font-w600 text-right" colspan="6">Subtotal</td>
+                        <td class="text-right">$ @Html.DisplayFor(modelItem => Model.subtotal)</td>
+                    </tr>
+                    <tr>
+                        <td class="font-w600 text-right" colspan="6">IVA</td>
+                        <td class="text-right">$ @Html.DisplayFor(modelItem => Model.iva)</td>
+                    </tr>
+                    <tr class="active">
+                        <td class="font-w700 text-uppercase text-right" colspan="6">Total</td>
+                        <td class="font-w700 text-right">$ @Html.DisplayFor(modelItem => Model.total)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END Table -->
+       
+    </div>
+</div>
