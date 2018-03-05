@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OTPre;
 using System.Data.Entity;
 
 namespace GrupoThera.BusinessLogic.EntityFramework.Context
@@ -49,6 +50,12 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
                 public DbSet<StatusCotizacion> StatusCotizacion { get; set; }
 
         #endregion Cotizacion
+
+            #region OrdenTrabajo
+                public DbSet<OTPreliminar> OrdenTrabajo { get; set; }
+                public DbSet<OTPrePartidas> OTPrePartidas { get; set; }
+                public DbSet<StatusOrden> StatusOrden { get; set; }
+            #endregion OrdenTrabajo
 
         #endregion Fields
 

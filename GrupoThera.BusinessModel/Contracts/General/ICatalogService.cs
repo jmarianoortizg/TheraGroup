@@ -89,6 +89,8 @@ namespace GrupoThera.BusinessModel.Contracts.General
         void DeleteServicio(long idServicio);
 
         IList<StatusCotizacion> getStatusCotizacion();
+        StatusCotizacion getStatusCotizacionStatus(string status);
+        long getStatusCotizacionId(string status);
 
 
         #endregion Methods

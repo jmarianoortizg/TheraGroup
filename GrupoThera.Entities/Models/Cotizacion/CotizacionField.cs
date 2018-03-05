@@ -18,11 +18,10 @@ namespace GrupoThera.Entities.Models.Cotizacion
         public string claveServicioText { get; set; }
         public string comentarios { get; set; }
         public long idServicio { get; set; }
-        public long priceSuggest { get; set; }
-        public long priceSelected { get; set; }
-        public long priceFinal { get; set; }
+        public decimal priceSuggest { get; set; }
+        public decimal priceSelected { get; set; }
+        public decimal priceFinal { get; set; }
         public bool approval { get; set; }
-
 
         #endregion Fields 
     }

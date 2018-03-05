@@ -1,34 +1,59 @@
 ﻿@model GrupoThera.Entities.Entity.Cotizaciones.Preliminar
 @{
     ViewBag.Title = "SearchCotizacionView";
+    var intValue = Model.preliminaresId;
+    string hexValue = intValue.ToString("X");
+    string idCotizacion = "";
+
+    if (Model.noDoc != 0)
+    {
+        idCotizacion = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+    }
+    else {
+        idCotizacion = intValue.ToString();
+    }
+
 }
 
 <div class="block">
     <div class="block-header">
         <ul class="block-options">
             <li>
-                <button onclick="goToByScroll('searchCotizacionError');" type="button"><i class="fa fa-search"></i> Ir Filtros</button>
+                <a class="btn btn-noborder" onclick="goToByScroll('searchCotizacionError');"><i class="fa fa-search"></i> Ir Filtros</a>
             </li>
             <li>
-                <button @*onclick="App.initHelper('print-page');"*@ type="button"><i class="si si-printer"></i> Imprimir</button>
+                <a class="btn btn-noborder" onclick="App.initHelper('print-page');"><i class="si si-printer"></i> Imprimir</a>
             </li>
             <li>
-                <button type="button"><i class="fa fa-download"></i> Descargar</button>
+                <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
             </li>
-            <li>
-                <button type="button"><i class="fa fa-edit"></i> Edicion</button>
-            </li>
-            <li>
-                <button type="button"><i class="fa fa-reply"></i> Rechazar</button>
-            </li>
-            <li>
-                <button type="button"><i class="fa fa-times-circle-o"></i> Cancelar</button>
-            </li>
+            @if (!Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
+                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL") &&
+                  !Model.StatusCotizacion.codigo.Equals("RECHAZADA"))
+            {
+                <li>
+                    <a class="btn btn-noborder" href="SearchCotizcionEdicion/?preliminarId=@hexValue" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
+                </li>
+            }
+            @if ( !Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
+                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+            {
+                <li>
+                    <a class="btn btn-noborder statusPreliminar" id="REJECT"><i class="fa fa-reply"></i> Rechada Cliente</a>
+                </li>
+            }
+            @if ( !Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
+                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+            {
+                <li>
+                    <a class="btn btn-noborder statusPreliminar" id="CANCEL"><i class="fa fa-times-circle-o"></i> Cancelar</a>
+                </li>
+            }
         </ul>
     </div>
     <div class="block-content block-content-narrow">
         <!-- Invoice Info -->
-        <div class="h1 text-center push-30-t push-30 text-primary">COTIZACION #@Html.DisplayFor(modelItem => Model.preliminaresId)</div>
+        <div class="h1 text-center push-30-t push-30 text-primary">COTIZACION #@idCotizacion</div>
         <hr class="hidden-print">
         <div class="row items-push-2x">
             <!-- Client Info -->
@@ -111,6 +136,6 @@
             </table>
         </div>
         <!-- END Table -->
-       
+
     </div>
 </div>

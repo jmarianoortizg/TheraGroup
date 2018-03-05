@@ -1,0 +1,97 @@
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
+@{
+    ViewBag.Title = "SearchCotizacionEditionPartidas";
+    var valueProduct = Model.allServicio.ToList().FirstOrDefault();
+    var listPrces = new List<SelectListItem> { new SelectListItem { Text = "Precio Base: $" + valueProduct.precioBase, Value = valueProduct.precioBase.ToString() },
+                    new SelectListItem { Text = "Precio Promedio: $" + valueProduct.precioPromedio, Value = valueProduct.precioPromedio.ToString() },
+                    new SelectListItem { Text = "Precio Minimo: $" + valueProduct.precioMinimo, Value = valueProduct.precioPromedio.ToString() } };
+
+}
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-2">
+            <div class="form-material form-material-primary">
+                <input class="form-control onlyNumberInteger" id="cantidad" type="text">
+                <label for="material-text2">Cantidad</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-material form-material-primary">
+                <input class="form-control" id="noSerie" type="text">
+                <label for="material-text2">Numero Serie</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-4">
+            <div class="form-material form-material-primary">
+                <input class="form-control" id="marca" type="text">
+                <label for="material-text2">Marca</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-material form-material-primary">
+                <input class="form-control" id="modelo" type="text">
+                <label for="material-text2">Modelo</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-7">
+            <div class="form-material">
+                @Html.DropDownListFor(model => model.selectedServicio, Model.listServicio, new { @id = "cmbSelectProduct", @class = "js-select2 form-control required ", style = "width:100%;" })
+                <label for="material-text2">Servicio</label>
+            </div>
+        </div>
+        <div class="col-md-3" id="DivListPrices">
+            <div class="form-material">
+                @Html.DropDownListFor(model => model.selectedPrice, listPrces, new { @id = "selectedPrice", @class = "form-control required" })
+                <label for="material-text2">Listado Precios</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-4">
+            <div class="form-material form-material-primary">
+                <input class="form-control onlyNumber" id="priceSuggest" type="text">
+                <label for="material-text2">Precio Sugerido (Previa Autorizacion)</label>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <textarea class="form-control" id="comentario" placeholder="Comentarios partida" rows="3"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label"></label>
+        <div class="col-md-1 col-xs-12">
+            <button class="btn btn-success push-5-r push-10" type="button" id="addLine"><i class="fa fa-plus"></i> Nueva Partida</button>
+        </div>
+    </div>
+</div>
+
+<div class="block-content">
+    <table class="table table-striped table-bordered " id="tableCotizacion">
+        <thead>
+            <tr>
+                <th style="width:50px">Cantidad</th>
+                <th style="width:50px">Precio</th>
+                <th style="width:50px">Status</th>
+                <th class="text-center">Numero Serie</th>
+                <th class="text-center">Marca</th>
+                <th class="text-center">Modelo</th>
+                <th class="text-center">Servicio</th>
+                <th class="text-center">Comentarios</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.Partial("SearchCotizacionEditionPartidasLineConcept", Model)
+        </tbody>
+    </table>
+</div>
+

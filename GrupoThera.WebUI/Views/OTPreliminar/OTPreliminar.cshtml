@@ -1,0 +1,290 @@
+﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
+@{
+    ViewBag.Title = "OTPreliminar";
+
+    var abiertas = Model.abiertas.Count;
+    var cerrada = Model.cerrada.Count;
+    var obsoleta = Model.obsoleta.Count;
+    var cancelada = Model.cancelada.Count;
+    var aceptadaAT = Model.aceptadaAT.Count;
+    var rechazada = Model.rechazada.Count;
+    var laboratorio = Model.laboratorio.Count;
+    var total = Model.listaOTPreliminares.Count;
+}
+
+<link rel="stylesheet" href="~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.min.css">
+<link rel="stylesheet" href="~/Content/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="~/Content/assets/js/plugins/select2/select2-bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/assets/js/plugins/select2/select2.css" />
+<link rel="stylesheet" href="~/Content/assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+<link rel="stylesheet" href="~/Content/assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.skinHTML5.min.css">
+
+
+<div class="content bg-gray-lighter hidden-print">
+    <div class="row items-push">
+        <div class="col-sm-8">
+            <h1 class="page-heading">
+                Busqueda OT Preliminares <small> </small>
+            </h1>
+        </div>
+    </div>
+</div>
+<div id="searchCotizacionError">
+
+</div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-sm-5 col-lg-3">
+            <div class="collapse navbar-collapse remove-padding" id="tickets-nav">
+                <!-- Preliminares Menu -->
+                <div class="block hidden-print">
+                    <div class="block-header bg-gray-lighter">
+                        <ul class="block-options">
+                            <li>
+                                <button data-toggle="modal" data-target="#modal-compose" type="button"><i class="si si-settings"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">OT Preliminares</h3>
+                    </div>
+                    <div class="block-content" id="divCotizacionCounters">
+                        @Html.Partial("SearchOTPCounters", Model)
+                    </div>
+                </div>
+                <!-- END Tickets Menu -->
+                <!-- bottones Estados Stats -->
+                <div class="block hidden-print">
+                    <div class="block-header bg-gray-lighter">
+                        <ul class="block-options">
+                            <li>
+                                <button type="button"><i class="si si-settings"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">Acciones</h3>
+                    </div>
+                    <div class="block-content" id="divCotizacionStatus">
+                        <table class="table table-borderless table-condensed table-vcenter font-s13">
+                            <tbody>
+                                <tr>
+                                    <td class="font-w600" style="width: 60%;">[ OT Preliminar Seleccionada ] </td>
+                                    <td class="text-right"> [ N/A ]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END Quick Stats -->
+            </div>
+            <!-- END Collapsible Tickets Navigation -->
+        </div>
+
+        <div class="col-sm-12 col-lg-9">
+            <!-- Filtos List -->
+            <div class="block hidden-print block-opt-hidden" id="filtros">
+                @using (Ajax.BeginForm("searchCotizacionFilter", "Cotizacion",
+                                        new AjaxOptions
+                                        {
+                                            InsertionMode = InsertionMode.Replace,
+                                            UpdateTargetId = "divItemsCotizacion",
+                                            OnSuccess = "SuccessSeachCotizacion",
+                                            OnFailure = "FailureSeachCotizacion",
+                                        }))
+                {
+                    <div class="block-header bg-gray-lighter">
+
+                        <ul class="block-options">
+                            <li>
+                                <button type="submit"><i class="fa fa-search-plus"></i> Aplicar Filtro</button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title text-normal"><strong>[</strong> Filtros <strong>]</strong> </h3>
+                    </div>
+                    <div class="block-content">
+
+                        <div class="row">
+                            @Html.Partial("SearchOTPFilters", Model)
+                        </div>
+
+                    </div>
+                }
+            </div>
+            <!-- END Tickets List -->
+            <!-- Filtros List -->
+            <div class="block hidden-print" id="cotizaciones">
+                <div class="block-header bg-gray-lighter">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                        </li>
+                    </ul>
+                    <div class="block-title text-normal">
+                        <h3 class="block-title"><strong>[</strong> OT Preliminares <strong>]</strong> </h3>
+                    </div>
+                </div>
+                <div class="block-content">
+                    <!-- Tickets Table -->
+                    <div class="pull-r-l pre-scrollable" id="divItemsCotizacion">
+                        @Html.Partial("SearchOTPItem", Model)
+                    </div>
+                    <!-- END Tickets Table -->
+                </div>
+            </div>
+            <!-- END Tickets List -->
+        </div>
+        <div class="col-sm-12 col-lg-12">
+            <div class="block">
+                <div class="block-content" style="padding-left:2%; padding-right:2%">
+                    <div class="row items-push" id="divCotizacionView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>[</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/plugins/timeAgo/js/jquery.timeago.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/select2/select2.full.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js")"></script>
+
+    <script>
+        App.initHelpers(['datepicker', 'datetimepicker', 'select2', 'rangeslider']);
+
+        $("time.timeago").timeago();
+
+        $(document).ready(function () {
+
+            $('.onlyNumberInteger').keyup(function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            $("#spin").spinner({
+                color: "black"
+                  , background: "rgba(189, 227, 231, .5)"
+                  , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+                  , spin: true
+            });
+
+            statusCounters();
+            uploadView();
+        });
+
+        function SuccessSeachCotizacion(response) {
+
+            if (response.success) {
+                $('#divItemsCotizacion').html(response.cotizacionHtml);
+                $('#divCotizacionCounters').html(response.cotizacionCountersHtml);
+                $("time.timeago").timeago();
+                createMessageInfo("INFO: Filtro aplicado correctamente");
+                uploadView();
+                goToByScroll("divItemsCotizacion");
+            } else {
+                $('#searchCotizacionError').html(response.errorHtml);
+            }
+        }
+
+        function FailureSeachCotizacion(response) {
+            $('#searchCotizacionError').html(response.resumeHtml);
+        }
+
+        function uploadView() {
+            $('.cotizacionView').on('click', function () {
+
+                var model = { "idPreliminarSelected": $(this).attr("id") };
+                var idPreliminar = $(this).attr("id");
+                $("#spin").show();
+                $.ajax({
+                    url: '@Url.Action("searchPreliminarView", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divCotizacionView').html(data.responseCotizationView);
+                        $('#divCotizacionStatus').html(data.responseCotizationStatus);
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        setTimeout(function () {
+                            $("#spin").hide();
+                        }, 800);
+                        goToByScroll("divCotizacionView");
+                        statusCounters();
+                        statusPreliminar(idPreliminar);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusCounters() {
+
+            $('.statusCounters').on('click', function () {
+                var model = { "statusCounter": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("showPreliminarCounterView", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divItemsCotizacion').html(data.cotizacionHtml);
+                        uploadView();
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusPreliminar(idPreliminar) {
+
+            $("#spin").show();
+
+            $('.statusPreliminar').on('click', function () {
+
+                var model = { "statusPreliminar": $(this).attr("id"), "idPreliminar": idPreliminar };
+
+                $.ajax({
+                    url: '@Url.Action("changePreliminarStatus", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.success) {
+                            $('#divItemsCotizacion').html("");
+                            $('#divCotizacionCounters').html(data.cotizacionCounters);
+                            $('#divCotizacionStatus').html("<h4 class='block-title text-primary'><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
+                            $('#divCotizacionView').html("-------");
+                            createMessageSuccess(data.messageSuccess);
+                            statusCounters();
+                            setTimeout(function () {
+                                $("#spin").hide();
+                            }, 800);
+                        } else {
+                            createMessageDanger("ERROR: Mensaje mostrado en el inicio de la pagina");
+                            $('#searchCotizacionError').html(data.responseHtml);
+                            goToByScroll("searchCotizacionError");
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+    </script>
+}
+
+

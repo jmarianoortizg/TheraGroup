@@ -1,0 +1,49 @@
+﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
+@{
+    ViewBag.Title = "SearchOTPCounters";
+    var abiertas = Model.abiertas.Count;
+    var cerrada = Model.cerrada.Count;
+    var obsoleta = Model.obsoleta.Count;
+    var cancelada = Model.cancelada.Count;
+    var aceptadaAT = Model.aceptadaAT.Count;
+    var rechazada = Model.rechazada.Count;
+    var laboratorio = Model.laboratorio.Count;
+}
+
+<ul class="nav nav-pills nav-stacked push">
+    <li>
+        <a class="statusCounters" id="ABIERTA">
+            <span class="badge pull-right">@abiertas</span><i class="fa fa-fw fa-folder-open-o push-5-r"></i> Abiertas
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="CERRADA">
+            <span class="badge pull-right">@cerrada</span><i class="fa fa-fw fa-warning push-5-r"></i> Aprobadas
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="OBSOLETA">
+            <span class="badge pull-right">@obsoleta</span><i class="fa fa-fw fa-lock push-5-r"></i> Cerradas
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="CANCEL">
+            <span class="badge pull-right">@cancelada</span><i class="fa fa-fw fa-times-circle-o push-5-r"></i> Canceladas
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="ACEPAT">
+            <span class="badge pull-right">@aceptadaAT</span><i class="fa fa-fw fa-reply  push-5-r"></i> Aceptadas A.T
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="RECHAZADA">
+            <span class="badge pull-right">@rechazada</span><i class="fa fa-fw fa-paper-plane-o push-5-r"></i> Rechazadas
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="ENVLAB">
+            <span class="badge pull-right">@laboratorio</span><i class="fa fa-fw fa-paper-plane-o push-5-r"></i> Enviadas Laboratorio
+        </a>
+    </li>
+</ul>

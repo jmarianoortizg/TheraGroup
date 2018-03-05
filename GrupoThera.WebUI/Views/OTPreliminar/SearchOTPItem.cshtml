@@ -1,0 +1,80 @@
+﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
+@{
+    ViewBag.Title = "SearchCotizacionItem";
+}
+
+@if (Model.OTPreliminaresActual.Count == 0)
+{
+    <h3 style="margin-left:10%" class="block-title text-city"><strong>[</strong> No Resultados <strong>]</strong> </h3>
+    <hr />
+}
+else
+{
+        <table class="table table-hover table-vcenter">
+            <tbody>
+                @foreach (var item in Model.OTPreliminaresActual)
+                {
+                    var time = item.fechaCreacion;
+                    var id = item.otPreliminarId;
+                    var idCotizacion = "";
+                    if (item.noDoc != 0)
+                    {
+                        idCotizacion = item.noDoc.ToString() + "-" + item.noDocInt.ToString();
+                    }
+                    else
+                    {
+                        idCotizacion = item.preliminaresId.ToString();
+                    }
+                    <tr>
+                        <td class="font-w600 text-center" style="width: 80px;">#@idCotizacion</td>
+                        <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
+                            @if (item.StatusOrden.codigo.Equals("ABIERTA"))
+                            {
+                                <span class="label label-primary">Abierta</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("CERRADA"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("OBSOLETA"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("CANCEL"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("ACEPAT"))
+                            {
+                                <span class="label label-success">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("RECHAZADA"))
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
+                            }
+                            else if (item.StatusOrden.codigo.Equals("ENVLAB"))
+                            {
+                                <span class="label label-primary">Laboratorio</span>
+                            }
+                        </td>
+                        <td>
+                            <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
+                            <div class="text-muted">
+                                <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt")
+                            </div>
+                        </td>
+                        <td>
+                            <em>Cliente: @Html.DisplayFor(modelItem => item.Cliente.razonSocial)</em>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a id="@id" class="btn btn-xs btn-default cotizacionView" data-original-title="Ver" data-toggle="tooltip"><i class="fa fa-street-view"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
+
+

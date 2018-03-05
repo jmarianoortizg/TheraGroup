@@ -80,6 +80,9 @@
     <Compile Include="Contracts\General\IRol.cs" />
     <Compile Include="Contracts\General\ISucursal.cs" />
     <Compile Include="Contracts\General\IUsuario.cs" />
+    <Compile Include="Contracts\OT\IStatusOrden.cs" />
+    <Compile Include="Contracts\OT\IOTPrePartida.cs" />
+    <Compile Include="Contracts\OT\IOTPreliminar.cs" />
     <Compile Include="DataAccess\Catalogs\ClasificacionServicioDA.cs" />
     <Compile Include="DataAccess\Catalogs\ClienteDA.cs" />
     <Compile Include="DataAccess\Catalogs\ConfiguracionDA.cs" />
@@ -105,6 +108,9 @@
     <Compile Include="DataAccess\General\RolDA.cs" />
     <Compile Include="DataAccess\General\SucursalDA.cs" />
     <Compile Include="DataAccess\General\UsuarioDA.cs" />
+    <Compile Include="DataAccess\OT\StatusOrdenDA.cs" />
+    <Compile Include="DataAccess\OT\OTPrePartidaDA.cs" />
+    <Compile Include="DataAccess\OT\OTPreliminarDA.cs" />
     <Compile Include="EntityFramework\Context\GrupoTheraContext.cs" />
     <Compile Include="EntityFramework\EntityRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

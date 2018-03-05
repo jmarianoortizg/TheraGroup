@@ -8,7 +8,6 @@
     var rechazados = Model.rechazadas.Count;
     var enviadoCliente = Model.clientes.Count;
     var total = Model.listaPreliminares.Count;
-
 }
 
 <link rel="stylesheet" href="~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker3.min.css">
@@ -25,11 +24,13 @@
             <h1 class="page-heading">
                 Busqueda Preliminares <small> </small>
             </h1>
+            <h2 class="page-heading text-success" style="margin-left:10%">
+                <span id="messageSuccess"></span>
+            </h2>
         </div>
     </div>
 </div>
 <div id="searchCotizacionError">
-
 </div>
 
 <div class="content">
@@ -61,8 +62,15 @@
                         </ul>
                         <h3 class="block-title">Acciones</h3>
                     </div>
-                    <div class="block-content">
-                        @Html.Partial("SearchCotizacionStatus", Model)
+                    <div class="block-content" id="divCotizacionStatus">
+                        <table class="table table-borderless table-condensed table-vcenter font-s13">
+                            <tbody>
+                                <tr>
+                                    <td class="font-w600" style="width: 60%;">[ Cotizacion Seleccionada ] </td>
+                                    <td class="text-right"> [ N/A ]</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <!-- END Quick Stats -->
@@ -74,13 +82,13 @@
             <!-- Filtos List -->
             <div class="block hidden-print block-opt-hidden" id="filtros">
                 @using (Ajax.BeginForm("searchCotizacionFilter", "Cotizacion",
-                                                    new AjaxOptions
-                                                    {
-                                                        InsertionMode = InsertionMode.Replace,
-                                                        UpdateTargetId = "divItemsCotizacion",
-                                                        OnSuccess = "SuccessSeachCotizacion",
-                                                        OnFailure = "FailureSeachCotizacion",
-                                                    }))
+                                            new AjaxOptions
+                                            {
+                                                InsertionMode = InsertionMode.Replace,
+                                                UpdateTargetId = "divItemsCotizacion",
+                                                OnSuccess = "SuccessSeachCotizacion",
+                                                OnFailure = "FailureSeachCotizacion",
+                                            }))
                 {
                     <div class="block-header bg-gray-lighter">
 
@@ -166,26 +174,8 @@
                   , spin: true
             });
 
-            $('.statusCounters').on('click', function () {
-                var model = { "statusCounter": $(this).attr("id") };
-
-                $.ajax({
-                    url: '@Url.Action("showPreliminarCounterView", "Cotizacion")',
-                    type: 'POST',
-                    data: JSON.stringify(model),
-                    contentType: 'application/json',
-                    success: function (data) {
-                        $('#divItemsCotizacion').html(data);
-                        createMessageInfo("INFO: Preliminar cargada Correctamente");
-                    },
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
-                    },
-                });
-            });
-
+            statusCounters();
             uploadView();
-
         });
 
         function SuccessSeachCotizacion(response) {
@@ -210,6 +200,7 @@
             $('.cotizacionView').on('click', function () {
 
                 var model = { "idPreliminarSelected": $(this).attr("id") };
+                var idPreliminar = $(this).attr("id");
                 $("#spin").show();
                 $.ajax({
                     url: '@Url.Action("searchPreliminarView", "Cotizacion")',
@@ -217,12 +208,83 @@
                     data: JSON.stringify(model),
                     contentType: 'application/json',
                     success: function (data) {
-                        $('#divCotizacionView').html(data);
+                        $('#divCotizacionView').html(data.responseCotizationView);
+                        $('#divCotizacionStatus').html(data.responseCotizationStatus);
                         createMessageInfo("INFO: Preliminar cargada Correctamente");
                         setTimeout(function () {
                             $("#spin").hide();
                         }, 800);
                         goToByScroll("divCotizacionView");
+                        statusCounters();
+                        statusPreliminar(idPreliminar);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusCounters() {
+
+            $('.statusCounters').on('click', function () {
+                var model = { "statusCounter": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("showPreliminarCounterView", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divItemsCotizacion').html(data.cotizacionHtml);
+                        uploadView();
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusPreliminar(idPreliminar) {
+
+            $("#spin").show();
+            $('#searchCotizacionError').html("");
+            $("#messageSuccess").text("");
+
+            $('.statusPreliminar').on('click', function () {
+
+                var model = { "statusPreliminar": $(this).attr("id"), "idPreliminar": idPreliminar };
+
+                $.ajax({
+                    url: '@Url.Action("changePreliminarStatus", "Cotizacion")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.success) {
+                            $('#divItemsCotizacion').html("");
+                            $('#divCotizacionCounters').html(data.cotizacionCounters);
+                            $('#divCotizacionStatus').html("<h4 class='block-title text-primary'><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
+                            $('#divCotizacionView').html("-------");
+
+                            if (data.headerMessage) {
+                                $("#messageSuccess").text(data.messageSuccess);
+                                goToByScroll("searchCotizacionError");
+                            }else{
+                                createMessageSuccess(data.messageSuccess);
+                            }
+
+                            statusCounters();
+                            setTimeout(function () {
+                                $("#spin").hide();
+                            }, 800);
+                        } else {
+                            createMessageDanger("ERROR: Mensaje mostrado en el inicio de la pagina");
+                            $('#searchCotizacionError').html(data.responseHtml);
+                            goToByScroll("searchCotizacionError");
+                        }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
@@ -233,5 +295,3 @@
 
     </script>
 }
-
-

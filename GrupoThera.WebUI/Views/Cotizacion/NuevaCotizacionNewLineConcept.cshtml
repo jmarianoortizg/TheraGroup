@@ -2,8 +2,8 @@
 @{
     ViewBag.Title = "NuevaCotizacionNewLineConcept";
     string Rowid = Guid.NewGuid().ToString();
-    var total = 0d;
-    var cantidad = 0d;
+    var total = 0m;
+    var cantidad = 0m;
     if (Model.cotizacionField.priceSuggest == 0)
     {
         total = Model.cotizacionField.priceFinal = Model.cotizacionField.priceSelected;
@@ -13,6 +13,7 @@
         Model.cotizacionField.approval = true;
     }
     cantidad = Model.cotizacionField.qty;
+    total *= cantidad;
 }
 
 <tr id='@Rowid'>

@@ -20,20 +20,20 @@ function goToByScroll(id) {
     }, 1000);
 }
 
-function inicialiceSpinner() {
-    $("#spin").spinner({
-        color: "black"
-                   , background: "rgba(189, 227, 231, .5)"
-                   , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
-                   , spin: true
-    });
-}
+//function inicialiceSpinner() {
+//    $("#spin").spinner({
+//        color: "black"
+//                   , background: "rgba(189, 227, 231, .5)"
+//                   , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+//                   , spin: true
+//    });
+//}
 
-function spinShow() {
-    $("#spin").show();
-}
+//function spinShow() {
+//    $("#spin").show();
+//}
 
-function spinHide() {
-    $("#spin").hide();
-}
+//function spinHide() {
+//    $("#spin").hide();
+//}
 

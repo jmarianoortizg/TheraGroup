@@ -74,7 +74,7 @@
             <li>
                 @if ((priviledgesList != null && priviledgesList.Contains("OTPreliminar")) || isAllmightie)
                 {
-                    <a href="@Url.Action("OTPreliminar","OrdenTrabajo")"> Orden Trabajo Preliminar </a>
+                    <a href="@Url.Action("OTPreliminar","OTPreliminar")"> Orden Trabajo Preliminar </a>
                 }
                 else
                 {
@@ -90,7 +90,7 @@
             <li>
                 @if ((priviledgesList != null && priviledgesList.Contains("OTServicio")) || isAllmightie)
                 {
-                    <a href="@Url.Action("OTServicio","OrdenTrabajo")"> Orden Trabajo Servicio </a>
+                    <a href="@Url.Action("OTServicio","OTPreliminar")"> Orden Trabajo Servicio </a>
                 }
                 else
                 {
@@ -106,7 +106,7 @@
             <li>
                 @if ((priviledgesList != null && priviledgesList.Contains("OTReporte")) || isAllmightie)
                 {
-                    <a href="@Url.Action("OTReporte","OrdenTrabajo")"> Reportes Orden Trabajo </a>
+                    <a href="@Url.Action("OTReporte","OTPreliminar")"> Reportes Orden Trabajo </a>
                 }
                 else
                 {

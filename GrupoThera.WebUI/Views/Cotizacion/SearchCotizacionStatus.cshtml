@@ -1,32 +1,38 @@
-﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionSearch
+﻿@model GrupoThera.Entities.Entity.Cotizaciones.Preliminar
 @{
     ViewBag.Title = "SearchCotizacionStatus";
+    var idPreliminar = Model.preliminaresId;
 }
 
 <table class="table table-borderless table-condensed table-vcenter font-s13">
     <tbody>
         <tr>
             <td class="font-w600" style="width: 60%;">[ Cotizacion Seleccionada ] </td>
-            <td class="text-right"> [ N/A ]</td>
+            <td class="text-right"> [ @idPreliminar ]</td>
         </tr>
-        @*<tr>
-        <td colspan="2"> <button id="NEWVERSION" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> Nueva Version</button> </td>
-    </tr>
-    <tr>
-        <td colspan="2"> <button id="CANCEL" class="btn btn-danger push-5-r push-10 statusPreliminar" type="button"><i class=""></i> Cancelada</button> </td>
-    </tr>*@
-    <tr>
-        <td colspan="2"> <button id="SENDCLIENT" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-paper-plane-o"></i> Enviada Cliente</button> </td>
-    </tr>       
-        <tr>
-            <td colspan="2"> <button id="OT" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> OT Preliminar</button> </td>
-        </tr>
-        <tr>
-            <td colspan="2"> <button id="OPEN" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-folder-open-o"></i> Abierta</button> </td>
-        </tr>
-        <tr>
-            <td colspan="2"> <button id="CLOSE" class="btn btn-danger push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-lock"></i> Cerrada</button> </td>
-        </tr>
-        
+        @if (!Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CERRADA"))
+        {
+            <tr>
+                <td colspan="2"> <button id="NEWVERSION" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> Nueva Version</button> </td>
+            </tr>
+        }
+        @if (!Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CERRADA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+        {
+            <tr>
+                <td colspan="2"> <button id="ENVCLIENTE" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-paper-plane-o"></i> Enviada Cliente</button> </td>
+            </tr>
+        }
+        @if (!Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CERRADA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+        {
+            <tr>
+                <td colspan="2"> <button id="OT" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> OT Preliminar</button> </td>
+            </tr>
+        }
+        @if (!Model.StatusCotizacion.codigo.Equals("ABIERTA") && !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CERRADA"))
+        {
+            <tr>
+                <td colspan="2"> <button id="ABIERTA" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-folder-open-o"></i> Abierta</button> </td>
+            </tr>
+        }
     </tbody>
 </table>

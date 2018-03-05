@@ -1,5 +1,6 @@
 ﻿using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.BusinessModel.Contracts.OT;
 using GrupoThera.Core.Utils;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
@@ -19,15 +20,17 @@ namespace GrupoThera.WebUI.Controllers
         #region Fields
 
         private ICatalogService _catalogService;
+        private IOTPreliminarService _otService;
         private ICotizacionService _cotizacionService;
 
         #endregion Fields
 
         #region Constructor
 
-        public CotizacionController(ICatalogService catalogService, ICotizacionService cotizacionService)
+        public CotizacionController(ICatalogService catalogService, ICotizacionService cotizacionService, IOTPreliminarService otService)
         {
             _catalogService = catalogService;
+            _otService = otService;
             _cotizacionService = cotizacionService;
         }
 
@@ -114,6 +117,13 @@ namespace GrupoThera.WebUI.Controllers
 
         public ActionResult SearchCotizacion()
         {
+            var model = generateInitialModel();
+            TempData["CotizacionSearch"] = model;
+            return View(model);
+        }
+
+        public CotizacionSearch generateInitialModel()
+        {
             var allPreliminares = _cotizacionService.getAllPreliminar();
             var model = new CotizacionSearch()
             {
@@ -129,9 +139,8 @@ namespace GrupoThera.WebUI.Controllers
                 listCliente = DropListHelper.GetClienteValue0(_catalogService.getClientes()),
                 listStatus = DropListHelper.GetStatusCotizacion(_catalogService.getStatusCotizacion()),
             };
-            TempData["CotizacionSearch"] = model;
-            return View(model);
-        }
+            return model;
+        } 
 
         public ActionResult searchCotizacionFilter(CotizacionSearch CotizacionSearch)
         {
@@ -161,7 +170,7 @@ namespace GrupoThera.WebUI.Controllers
             }
             if (CotizacionSearch.nCotizacion != 0)
             {
-                allPreliminares = allPreliminares.Where(i => i.preliminaresId == CotizacionSearch.nCotizacion).ToList();
+                allPreliminares = allPreliminares.Where(i => i.preliminaresId == CotizacionSearch.nCotizacion || i.noDoc == CotizacionSearch.nCotizacion).ToList();
             }
             if (!string.IsNullOrEmpty(CotizacionSearch.marca))
             {
@@ -197,7 +206,11 @@ namespace GrupoThera.WebUI.Controllers
         {
             var preliminarItem = _cotizacionService.getPreliminarById(idPreliminarSelected);
             preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
-            return PartialView("~/Views/Cotizacion/SearchCotizacionView.cshtml",preliminarItem);
+            return Json(new
+            {
+                responseCotizationView = StdClassWeb.RenderToString(PartialView("~/Views/Cotizacion/SearchCotizacionView.cshtml", preliminarItem), HttpContext),
+                responseCotizationStatus = StdClassWeb.RenderToString(PartialView("~/Views/Cotizacion/SearchCotizacionStatus.cshtml", preliminarItem), HttpContext)
+            }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult showPreliminarCounterView(string statusCounter)
@@ -215,11 +228,120 @@ namespace GrupoThera.WebUI.Controllers
                 model.preliminaresActual = model.canceladas;
             else if (statusCounter.Equals("REJECTED"))
                 model.preliminaresActual = model.rechazadas;
-            else if (statusCounter.Equals("SENDCLIENT"))
-                model.preliminaresActual = model.rechazadas;
-            return PartialView("SearchCotizacionItem", model);
+            else if (statusCounter.Equals("ENVCLIENTE"))
+                model.preliminaresActual = model.clientes;
+            return Json(new
+            {
+                success = true,
+                cotizacionHtml = StdClassWeb.RenderToString(PartialView("SearchCotizacionItem", model), HttpContext),
+                cotizacionCountersHtml = StdClassWeb.RenderToString(PartialView("SearchCotizacionCounters", model), HttpContext)
+            },
+            JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult SearchCotizcionEdicion(string preliminarId)
+        {
+            int intAgain = int.Parse(preliminarId, System.Globalization.NumberStyles.HexNumber);
+            var preliminarItem = _cotizacionService.getPreliminarById(intAgain);
+            preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
+
+            var allClasificacionServicios = _catalogService.getClasificacionServicio();
+            var allServicios = _catalogService.getServicios();
+            var model = new CotizacionModel()
+            {
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicios()),
+                listServicio = DropListHelper.GetServicio(allServicios),
+                listCliente = DropListHelper.GetCliente(_catalogService.getClientes()),
+                listFormaPago = DropListHelper.GetFormaPago(_catalogService.getFormasPago()),
+                listMoneda = DropListHelper.GetMoneda(_catalogService.getMonedas()),
+                allServicio = allServicios,
+                allClasificacionServicio = allClasificacionServicios,
+                preliminar = preliminarItem
+            };
+
+            model.preliminar.comentarios = preliminarItem.comentarios;
+            model.preliminar.direccionServicio = preliminarItem.direccionServicio;
+            model.preliminar.preliminaresId = preliminarItem.preliminaresId;
+            model.selectedCliente = Convert.ToInt16(preliminarItem.clienteId);
+            model.selectedClasificacionServicio = Convert.ToInt16(preliminarItem.clasificacionServicioId);
+            model.selectedFormaPago = Convert.ToInt16(preliminarItem.formaPagoId);
+            model.selectedMoneda = Convert.ToInt16(preliminarItem.monedaId);
+
+            TempData["CotizacionModel"] = model;
+            return View("SearchCotizacionEdition", model);
+        }
+
+        public ActionResult EditCotizacion(CotizacionModel cotizacionModel)
+        {
+            var result = _cotizacionService.edicionPreliminar(cotizacionModel);
+            if (result.Equals("OK"))
+            {
+                result = _cotizacionService.edicionPartidasPreliminar(cotizacionModel);
+                if (result.Equals("OK"))
+                {
+                    return Json(new
+                    {
+                        success = true
+                    }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new
+            {
+                success = false,
+                responseHtml = StdClassWeb.RenderToString(PartialView("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(new Exception(result), "CatalogController", "CreateClient")), HttpContext)
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult changePreliminarStatus(string statusPreliminar, long idPreliminar)
+        {
+            try
+            {   
+                var preliminarItem = _cotizacionService.getPreliminarById(idPreliminar);
+                var messageSuccess = "";
+                var messageHeader = false;
+                if (statusPreliminar.Equals("ABIERTA") || statusPreliminar.Equals("ENVCLIENTE") || statusPreliminar.Equals("CANCEL"))
+                {
+                    var status = _catalogService.getStatusCotizacion().Where(t => t.codigo.Equals(statusPreliminar)).FirstOrDefault();
+                    preliminarItem.StatusCotizacion = status;
+                    preliminarItem.statusCotizacionId = status.statusCotizacionId;
+                    var result = _cotizacionService.edicionPreliminar(preliminarItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);
+                    messageSuccess = "OK: Cambio de estado correctemente";
+                } else if (statusPreliminar.Equals("OT")) {
+                    preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
+                    var result = _otService.createOT(preliminarItem);
+                    if (result.Contains("Error"))
+                        throw new Exception(result);
+                    messageSuccess = "Nueva Pre-Orden de trabajo Creada #" + result;
+                    messageHeader = true;
+                    _cotizacionService.disableParents(preliminarItem);
+                } else if (statusPreliminar.Equals("NEWVERSION")) {
+                    preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
+                    var result = _cotizacionService.newVersion(preliminarItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);
+                    messageSuccess = "OK: Nueva version creada correctamente";
+                }
+
+                var model = generateInitialModel();     
+                return Json(new
+                {
+                    success = true,
+                    messageSuccess = messageSuccess,
+                    headerMessage = messageHeader, 
+                    cotizacionCounters = StdClassWeb.RenderToString(PartialView("SearchCotizacionCounters", model), HttpContext)
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseHtml = StdClassWeb.RenderToString(PartialView("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(new Exception(ex.Message), "CotizationController", "changePreliminarStatus")), HttpContext)
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
 
         #endregion SearchCotizacion
 

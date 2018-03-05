@@ -1388,6 +1388,9 @@ input[type="email"].form-control {
 .label-primary {
   background-color: #5c90d2;
 }
+.label-purple {
+  background-color:mediumpurple;
+}
 .label-primary[href]:hover,
 .label-primary[href]:focus {
   background-color: #3675c5;
@@ -1417,7 +1420,7 @@ input[type="email"].form-control {
   background-color: #d26a5c;
 }
 .label-primaryDark {
-  background-color: ##3e4a59;
+  background-color: #3e4a59;
 }
 .label-modern {
   background-color: #14adc4;

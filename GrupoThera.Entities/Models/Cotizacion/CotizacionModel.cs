@@ -13,6 +13,11 @@ namespace GrupoThera.Entities.Models.Cotizacion
 {
     public class CotizacionModel
     {
+        public CotizacionModel()
+        {
+            preliminar = new Preliminar();
+        }
+
         public IList<FormaPago> allFormaPago { get; set; }
         public IList<ClasificacionServicio> allClasificacionServicio { get; set; }
         public IList<Cliente> allCliente { get; set; }

@@ -16,8 +16,17 @@ else
                 {
                     var time = item.fechaCreacion;
                     var id = item.preliminaresId;
+                    var idCotizacion = "";
+                    if (item.noDoc != 0)
+                    {
+                        idCotizacion = item.noDoc.ToString() + "-" + item.noDocInt.ToString();
+                    }
+                    else
+                    {
+                        idCotizacion = item.preliminaresId.ToString();
+                    }
                     <tr>
-                        <td class="font-w600 text-center" style="width: 80px;">#@Html.DisplayFor(modelItem => item.preliminaresId)</td>
+                        <td class="font-w600 text-center" style="width: 80px;">#@idCotizacion</td>
                         <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
                             @if (item.StatusCotizacion.codigo.Equals("ABIERTA"))
                             {
@@ -37,7 +46,7 @@ else
                             }
                             else if (item.StatusCotizacion.codigo.Equals("RECHAZADA"))
                             {
-                                <span class="label label-modern">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
                             }
                             else if (item.StatusCotizacion.codigo.Equals("ENVCLIENTE"))
                             {
@@ -45,7 +54,7 @@ else
                             }
                             else if (item.StatusCotizacion.codigo.Equals("OBSOLETA"))
                             {
-                                <span class="label label-primaryDark">@Html.DisplayFor(modelItem => item.StatusCotizacion.descripcion)</span>
+                                <span class="label label-primaryDark">Obsoleta</span>
                             }
                         </td>
                         <td>

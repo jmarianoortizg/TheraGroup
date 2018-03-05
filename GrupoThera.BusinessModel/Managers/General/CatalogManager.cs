@@ -525,6 +525,18 @@ namespace GrupoThera.BusinessModel.Managers.General
             return _statusCotizacionDA.GetList().ToList();
         }
 
+        public StatusCotizacion getStatusCotizacionStatus(string status)
+        {
+            return _statusCotizacionDA.Get(t=> t.codigo.Equals(status));
+        }
+
+        public long getStatusCotizacionId(string status)
+        {
+            return _statusCotizacionDA.Get(t => t.codigo.Equals(status)).statusCotizacionId;
+        }
+
+
+
         #endregion StatusCotizacion
 
         #endregion Methods  

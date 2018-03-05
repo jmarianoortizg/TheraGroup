@@ -12,6 +12,11 @@ namespace GrupoThera.Entities.Models.Cotizacion
 {
     public class CotizacionSearch
     {
+        public CotizacionSearch()
+        {
+            preliminaresActual = new List<Preliminar>();
+        }
+
         public IList<Preliminar> listaPreliminares { get; set; }        
         public IList<Preliminar> abiertas { get; set; }
         public IList<Preliminar> aprobacion { get; set; }

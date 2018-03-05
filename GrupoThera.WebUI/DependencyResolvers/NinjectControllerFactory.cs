@@ -2,13 +2,17 @@
 using GrupoThera.BusinessLogic.Contracts.Catalogs;
 using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.Contracts.OT;
 using GrupoThera.BusinessLogic.DataAccess.Catalogs;
 using GrupoThera.BusinessLogic.DataAccess.Cotizacion;
 using GrupoThera.BusinessLogic.DataAccess.General;
+using GrupoThera.BusinessLogic.DataAccess.OT;
 using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.BusinessModel.Contracts.OT;
 using GrupoThera.BusinessModel.Managers.Cotizacion;
 using GrupoThera.BusinessModel.Managers.General;
+using GrupoThera.BusinessModel.Managers.OT;
 using GrupoThera.Entities.Entity.Catalogs;
 using Ninject;
 using System;
@@ -95,6 +99,15 @@ namespace GrupoThera.WebUI.DependencyResolvers
             kernel.Bind<IPrePartida>().To<PrePartidaDA>().InSingletonScope();
 
             #endregion Cotizacion 
+
+            #region OT
+
+            kernel.Bind<IOTPreliminarService>().To<OTPreliminarManager>().InSingletonScope();
+            kernel.Bind<IOTPreliminar>().To<OTPreliminarDA>().InSingletonScope();
+            kernel.Bind<IOTPrePartida>().To<OTPrePartidaDA>().InSingletonScope();
+
+            #endregion OT 
+
         }
 
         /// <summary>
