@@ -1,7 +1,16 @@
 ﻿@model GrupoThera.Entities.Entity.Cotizaciones.Preliminar
 @{
     ViewBag.Title = "SearchCotizacionStatus";
-    var idPreliminar = Model.preliminaresId;
+    string idPreliminar = "";
+
+    if (Model.noDoc != 0)
+    {
+        idPreliminar = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+    }
+    else
+    {
+        idPreliminar = Model.preliminaresId.ToString();
+    }
 }
 
 <table class="table table-borderless table-condensed table-vcenter font-s13">
@@ -28,10 +37,10 @@
                 <td colspan="2"> <button id="OT" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> OT Preliminar</button> </td>
             </tr>
         }
-        @if (!Model.StatusCotizacion.codigo.Equals("ABIERTA") && !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CERRADA"))
+        @if (Model.StatusCotizacion.codigo.Equals("CERRADA"))
         {
             <tr>
-                <td colspan="2"> <button id="ABIERTA" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-folder-open-o"></i> Abierta</button> </td>
+                <td colspan="2"> <button id="CERRADA" class="btn btn-default push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-lock"></i> Duplicar </button> </td>
             </tr>
         }
     </tbody>

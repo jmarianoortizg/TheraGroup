@@ -21,6 +21,7 @@ namespace GrupoThera.BusinessModel.Contracts.Cotizacion
         IList<PrePartidas> getAllPrePartidasByPreliminar(long idPreliminar);
         string newVersion(Preliminar preliminarItem);
         void disableParents(Preliminar preliminarItem);
+        string duplicateCotizacion(Preliminar preliminarItem);
 
         #endregion Methods
     }

@@ -118,17 +118,22 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
                 var itemPar = cotizacionModel.preliminar;
                 var itemEdit = _preliminarDA.Get(t => t.preliminaresId == itemPar.preliminaresId);
 
-                itemEdit.comentarios = itemPar.comentarios;
-                itemEdit.direccionServicio = itemPar.direccionServicio;
-                itemEdit.clienteId = cotizacionModel.selectedCliente;
-                itemEdit.clasificacionServicioId = cotizacionModel.selectedClasificacionServicio;
-                itemEdit.monedaId = cotizacionModel.selectedMoneda;
-                itemEdit.formaPagoId = cotizacionModel.selectedFormaPago;
-                itemEdit.Cliente = null;
-                itemEdit.ClasificacionServicio = null;
-                itemEdit.Moneda = null;
-                itemEdit.FormaPago = null;
-                _preliminarDA.Update(itemEdit);
+                if (itemEdit.StatusCotizacion.Equals("ABIERTA"))
+                {
+                    itemEdit.comentarios = itemPar.comentarios;
+                    itemEdit.direccionServicio = itemPar.direccionServicio;
+                    itemEdit.clienteId = cotizacionModel.selectedCliente;
+                    itemEdit.clasificacionServicioId = cotizacionModel.selectedClasificacionServicio;
+                    itemEdit.monedaId = cotizacionModel.selectedMoneda;
+                    itemEdit.formaPagoId = cotizacionModel.selectedFormaPago;
+                    itemEdit.Cliente = null;
+                    itemEdit.ClasificacionServicio = null;
+                    itemEdit.Moneda = null;
+                    itemEdit.FormaPago = null;
+                    _preliminarDA.Update(itemEdit);
+                } else {
+                    throw new Exception("El estatus de la Cotizacion ha cambiado y no esta abierta actualmente");
+                }
             }
             catch (Exception ex)
             {
@@ -238,7 +243,7 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
                     confTipoDoc = preliminarItem.confTipoDoc,
                     confRevision = preliminarItem.confRevision,
                     confFormato = preliminarItem.confFormato,
-                    statusCotizacionId = 13, //Abierta
+                    statusCotizacionId = _catalogService.getStatusCotizacionId("ABIERTA"), 
                     approbation = preliminarItem.approbation,
                     monedaId = preliminarItem.monedaId,
                     formaPagoId = preliminarItem.formaPagoId,
@@ -265,7 +270,7 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
                         comentarios = itemPre.comentarios,
                         cantidad = itemPre.cantidad,
                         servicioId = itemPre.servicioId,
-                        preliminaresId = itemPre.preliminaresId,
+                        preliminaresId = item.preliminaresId,
                         approbation = itemPre.approbation
                     };
                     _prePartidaDA.Add(prePartida);
@@ -322,6 +327,75 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
                     _preliminarDA.Update(item);
                 }
             }
+        }
+
+        public string duplicateCotizacion(Preliminar Preliminar)
+        {
+            Preliminar item = null;
+            try
+            {
+                item = new Preliminar()
+                {
+                    noDoc = 0,
+                    noDocInt = 0,
+                    empresaPrefijo = Preliminar.empresaPrefijo,
+                    fechaCreacion = DateTime.Now,
+                    owner = (string)HttpContext.Current.Session["UserName"],
+                    comentarios = Preliminar.comentarios,
+                    tipoCambio = Preliminar.tipoCambio,
+                    viaticos = Preliminar.viaticos,
+                    direccionServicio = Preliminar.direccionServicio,
+                    iva = Preliminar.iva,
+                    subtotal = Preliminar.subtotal,
+                    totalIva = Preliminar.totalIva,
+                    total = Preliminar.total,
+                    confClave = Preliminar.confClave,
+                    confEmision = Preliminar.confEmision,
+                    confVigencia = Preliminar.confVigencia,
+                    confTipoDoc = Preliminar.confTipoDoc,
+                    confRevision = Preliminar.confRevision,
+                    confFormato = Preliminar.confFormato,
+                    monedaId = Preliminar.monedaId,
+                    preliminaresId = Preliminar.preliminaresId,
+                    formaPagoId = Preliminar.formaPagoId,
+                    empresaId = Preliminar.empresaId,
+                    sucursalId = Preliminar.sucursalId,
+                    statusCotizacionId = _catalogService.getStatusCotizacionId("ENVCLIENTE"), //Abierta,
+                    clienteId = Preliminar.clienteId,
+                    clasificacionServicioId = Preliminar.clasificacionServicioId
+                };
+                _preliminarDA.Add(item);
+
+                item.Prepartidas = getAllPrePartidasByPreliminar(item.preliminaresId);
+
+                foreach (PrePartidas itempp in item.Prepartidas)
+                {
+                    var prePartida = new PrePartidas()
+                    {
+                        claveServicio = "-",
+                        descripcionServicio = itempp.comentarios,
+                        iva = itempp.iva,
+                        precio = itempp.precio,
+                        descuento = 0,
+                        total = itempp.precio + itempp.iva,
+                        marca = itempp.marca,
+                        modelo = itempp.modelo,
+                        serie = itempp.serie,
+                        comentarios = itempp.comentarios,
+                        cantidad = itempp.cantidad,
+                        servicioId = Convert.ToInt64(itempp.Servicio.servicioId),
+                        preliminaresId = item.preliminaresId
+                    };
+                    _prePartidaDA.Add(prePartida);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (item.preliminaresId != 0)
+                    _preliminarDA.Delete(item);
+                return "ERROR: " + ex.Message;
+            }
+            return item.preliminaresId.ToString();
         }
 
         #endregion Methods  

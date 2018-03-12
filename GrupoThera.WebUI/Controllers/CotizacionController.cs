@@ -308,7 +308,9 @@ namespace GrupoThera.WebUI.Controllers
                     if (!result.Equals("OK"))
                         throw new Exception(result);
                     messageSuccess = "OK: Cambio de estado correctemente";
-                } else if (statusPreliminar.Equals("OT")) {
+                }
+                else if (statusPreliminar.Equals("OT"))
+                {
                     preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
                     var result = _otService.createOT(preliminarItem);
                     if (result.Contains("Error"))
@@ -316,7 +318,17 @@ namespace GrupoThera.WebUI.Controllers
                     messageSuccess = "Nueva Pre-Orden de trabajo Creada #" + result;
                     messageHeader = true;
                     _cotizacionService.disableParents(preliminarItem);
-                } else if (statusPreliminar.Equals("NEWVERSION")) {
+                }
+                else if (statusPreliminar.Equals("CERRADA"))
+                {   
+                    var result = _cotizacionService.duplicateCotizacion(preliminarItem);
+                    if (result.Contains("Error"))
+                        throw new Exception(result);
+                    messageSuccess = "Nueva Cotizacion Duplicada Creada #" + result;
+                    messageHeader = true;
+                }
+                else if (statusPreliminar.Equals("NEWVERSION"))
+                {
                     preliminarItem.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarItem.preliminaresId);
                     var result = _cotizacionService.newVersion(preliminarItem);
                     if (!result.Equals("OK"))

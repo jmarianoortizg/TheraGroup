@@ -133,11 +133,18 @@
         </div>
         <div class="col-sm-12 col-lg-12">
             <div class="block">
-                <div class="block-content" style="padding-left:2%; padding-right:2%">
-                    <div class="row items-push" id="divCotizacionView">
-                        <div class="col-sm-4 col-lg-4">
-                            <h3 class="block-title text-primary"><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3>
-                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                <ul class="nav nav-tabs nav-tabs-right" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#btabs-static2-cotizacion">Cotizacion</a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <div class="tab-pane active" id="btabs-static2-cotizacion">
+                        <div class="row items-push" id="divCotizacionView">
+                            <div class="col-sm-4 col-lg-4">
+                                <h3 class="block-title text-primary"><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,7 +193,6 @@
                 $("time.timeago").timeago();
                 createMessageInfo("INFO: Filtro aplicado correctamente");
                 uploadView();
-                goToByScroll("divItemsCotizacion");
             } else {
                 $('#searchCotizacionError').html(response.errorHtml);
             }
@@ -214,12 +220,11 @@
                         setTimeout(function () {
                             $("#spin").hide();
                         }, 800);
-                        goToByScroll("divCotizacionView");
                         statusCounters();
                         statusPreliminar(idPreliminar);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("uploadView: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
@@ -241,7 +246,7 @@
                         createMessageInfo("INFO: Preliminar cargada Correctamente");
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
@@ -267,10 +272,11 @@
                             $('#divItemsCotizacion').html("");
                             $('#divCotizacionCounters').html(data.cotizacionCounters);
                             $('#divCotizacionStatus').html("<h4 class='block-title text-primary'><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
-                            $('#divCotizacionView').html("-------");
+                            $('#divCotizacionView').html("[ Cotizacion no Seleecionada ]");
 
                             if (data.headerMessage) {
                                 $("#messageSuccess").text(data.messageSuccess);
+                                createMessageSuccess(data.messageSuccess);
                                 goToByScroll("searchCotizacionError");
                             }else{
                                 createMessageSuccess(data.messageSuccess);
@@ -287,10 +293,14 @@
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("statusPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
+        }
+
+        function reloadDivCotizacion() {
+            $('#divCotizacionView').html(" <br> [ Edicion En Proceso, favor de seleccionarla de nuevo ] <br><br>");
         }
 
     </script>

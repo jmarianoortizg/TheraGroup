@@ -46,7 +46,7 @@
         <td id="SERVICIO" align="center">
             @Html.DisplayFor(modelItem => item.Servicio.descripcion)
             @Html.HiddenFor(model => item.Servicio.descripcion, new { Name = string.Format("cotizacionFields[{0}].claveServicioText", Rowid) })
-            @Html.HiddenFor(model => item.Servicio.clasificacionServicioId, new { Name = string.Format("cotizacionFields[{0}].claveServicioCode", Rowid) })
+            @Html.HiddenFor(model => item.Servicio.servicioId, new { Name = string.Format("cotizacionFields[{0}].claveServicioCode", Rowid) })
         </td>
         <td id="COMENTARIO" align="center">
             @Html.DisplayFor(modelItem => item.Servicio.comentarios)
