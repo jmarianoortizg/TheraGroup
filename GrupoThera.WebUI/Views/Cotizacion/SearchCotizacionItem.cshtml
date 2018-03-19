@@ -60,7 +60,7 @@ else
                         <td>
                             <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
                             <div class="text-muted">
-                                <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt")
+                                <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt") | Total: <span class="text-success">$@Html.DisplayFor(modelItem => item.total)</span>
                             </div>
                         </td>
                         <td>

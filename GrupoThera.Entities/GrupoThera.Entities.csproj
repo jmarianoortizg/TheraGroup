@@ -80,6 +80,7 @@
     <Compile Include="Entity\Catalogs\MetodoCotizacion.cs" />
     <Compile Include="Entity\Catalogs\ClasificacionServicio.cs" />
     <Compile Include="Entity\Catalogs\Configuracion.cs" />
+    <Compile Include="Entity\Catalogs\Note.cs" />
     <Compile Include="Entity\Catalogs\TiempoEntrega.cs" />
     <Compile Include="Entity\Catalogs\Moneda.cs" />
     <Compile Include="Entity\Catalogs\FormaPago.cs" />

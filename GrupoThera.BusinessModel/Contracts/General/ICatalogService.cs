@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +93,12 @@ namespace GrupoThera.BusinessModel.Contracts.General
         StatusCotizacion getStatusCotizacionStatus(string status);
         long getStatusCotizacionId(string status);
 
+        IList<StatusOTPreliminar> getStatusOTPreliminar();
+        StatusOTPreliminar getStatusOTPreliminarStatus(string status);
+        long getStatusOTPreliminarId(string status);
+
+        IList<Note> getNotesByDocument(long idNote);
+        void AddNote(Note note);
 
         #endregion Methods
     }

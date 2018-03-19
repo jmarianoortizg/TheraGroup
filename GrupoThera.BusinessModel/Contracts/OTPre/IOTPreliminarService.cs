@@ -15,6 +15,8 @@ namespace GrupoThera.BusinessModel.Contracts.OT
 
         string createOT(Preliminar Preliminar);
         IList<OTPreliminar> getAllOTPreliminar();
+        OTPreliminar getOTPreliminarById(long idOTPreliminar);
+        IList<OTPrePartidas> getAllPrePartidasByOTPreliminar(long idOTPreliminar);
 
         #endregion Methods
     }

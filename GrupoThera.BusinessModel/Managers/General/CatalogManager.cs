@@ -1,10 +1,12 @@
 ﻿using GrupoThera.BusinessLogic.Contracts.Catalogs;
 using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.Contracts.OT;
 using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +39,9 @@ namespace GrupoThera.BusinessModel.Managers.General
         private IServicio _servicioDA;
         private ITiempoEntrega _tiempoEntregaDA;
         private IStatusCotizacion _statusCotizacionDA;
+        private IStatusOTPreliminar _statusOTPreliminarDA;
+        private INote _noteDA;
+
 
         #endregion Fields 
 
@@ -61,7 +66,9 @@ namespace GrupoThera.BusinessModel.Managers.General
                                IProvedor provedorDA,
                                IServicio servicioDA,
                                ITiempoEntrega tiempoEntregaDA,
-                               IStatusCotizacion statusCotizacionDA
+                               IStatusCotizacion statusCotizacionDA,
+                               IStatusOTPreliminar statusOTPreliminarDA,
+                               INote noteDA
                              )
         {
             //Dependency Injection
@@ -85,6 +92,8 @@ namespace GrupoThera.BusinessModel.Managers.General
             _servicioDA = servicioDA;
             _tiempoEntregaDA = tiempoEntregaDA;
             _statusCotizacionDA = statusCotizacionDA;
+            _statusOTPreliminarDA = statusOTPreliminarDA;
+            _noteDA = noteDA;
         }
 
         #endregion Constructor 
@@ -535,9 +544,41 @@ namespace GrupoThera.BusinessModel.Managers.General
             return _statusCotizacionDA.Get(t => t.codigo.Equals(status)).statusCotizacionId;
         }
 
-
-
         #endregion StatusCotizacion
+
+        #region StatusOTPreliminar        
+
+        public IList<StatusOTPreliminar> getStatusOTPreliminar()
+        {
+            return _statusOTPreliminarDA.GetList().ToList();
+        }
+
+        public StatusOTPreliminar getStatusOTPreliminarStatus(string status)
+        {
+            return _statusOTPreliminarDA.Get(t => t.codigo.Equals(status));
+        }
+
+        public long getStatusOTPreliminarId(string status)
+        {
+            return _statusOTPreliminarDA.Get(t => t.codigo.Equals(status)).statusOTPreliminarId;
+        }
+
+        #endregion StatusOTPreliminar
+
+        #region Note 
+
+        public IList<Note> getNotesByDocument(long idNote)
+        {
+            return _noteDA.GetList().Where(t=> t.noteDocId == idNote).ToList();
+        }
+
+        public void AddNote(Note note)
+        {
+            _noteDA.Add(note);
+        }
+
+        #endregion Empresa
+
 
         #endregion Methods  
     }

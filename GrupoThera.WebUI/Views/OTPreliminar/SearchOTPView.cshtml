@@ -1,49 +1,49 @@
-﻿@model GrupoThera.Entities.Entity.Cotizaciones.Preliminar
+﻿@model GrupoThera.Entities.Entity.OTPre.OTPreliminar
 @{
-    ViewBag.Title = "SearchCotizacionView";
-    var intValue = Model.preliminaresId;
+    ViewBag.Title = "SearchOTPView";
+    var intValue = Model.otPreliminarId;
     string hexValue = intValue.ToString("X");
-    string idCotizacion = "";
+    string idOtPreliminar = "";
 
     if (Model.noDoc != 0)
     {
-        idCotizacion = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+        idOtPreliminar = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
     }
-    else {
-        idCotizacion = intValue.ToString();
+    else
+    {
+        idOtPreliminar = intValue.ToString();
     }
 
 }
-
 <div class="block">
     <div class="block-header">
         <ul class="block-options">
             <li>
-                <a class="btn btn-noborder" onclick="goToByScroll('searchCotizacionError');"><i class="fa fa-search"></i> Ir Filtros</a>
+                <a class="btn btn-noborder" onclick="goToByScroll('searchOTPreliminarError');"><i class="fa fa-search"></i> Ir Filtros</a>
             </li>
             @*<li>
-                <a class="btn btn-noborder" onclick="App.initHelper('print-page');"><i class="si si-printer"></i> Imprimir</a>
-            </li>
-            <li>
-                <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
-            </li>*@
-            @if (!Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
-                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL") &&
-                  !Model.StatusCotizacion.codigo.Equals("RECHAZADA"))
+                    <a class="btn btn-noborder" onclick="App.initHelper('print-page');"><i class="si si-printer"></i> Imprimir</a>
+                </li>
+                <li>
+                    <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
+                </li>*@
+            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
             {
                 <li>
                     <a class="btn btn-noborder" href="SearchCotizcionEdicion/?preliminarId=@hexValue" onclick="reloadDivCotizacion();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
                 </li>
             }
-            @if ( !Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
-                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL"))
             {
                 <li>
                     <a class="btn btn-noborder statusPreliminar" id="REJECT"><i class="fa fa-reply"></i> Rechada Cliente</a>
                 </li>
             }
-            @if ( !Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&
-                  !Model.StatusCotizacion.codigo.Equals("OBSOLETA") && !Model.StatusCotizacion.codigo.Equals("CANCEL"))
+            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL"))
             {
                 <li>
                     <a class="btn btn-noborder statusPreliminar" id="CANCEL"><i class="fa fa-times-circle-o"></i> Cancelar</a>
@@ -53,7 +53,7 @@
     </div>
     <div class="block-content block-content-narrow">
         <!-- Invoice Info -->
-        <div class="h1 text-center push-30-t push-30 text-primary">COTIZACION #@idCotizacion</div>
+        <div class="h1 text-center push-30-t push-30 text-primary">OT Preliminar #@idOtPreliminar</div>
         <hr class="hidden-print">
         <div class="row items-push-2x">
             <!-- Client Info -->
@@ -91,28 +91,16 @@
                         <th class="text-right" style="width: 120px;">Marca</th>
                         <th class="text-right" style="width: 120px;">Modelo</th>
                         <th class="text-right" style="width: 120px;">Precio</th>
-
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Prepartidas)
+                    @foreach (var item in Model.OTPrePartidas)
                     {
-                        var a = item.approbation;
                         <tr>
                             <td class="text-center">@Html.DisplayFor(modelItem => item.cantidad)</td>
                             <td>
                                 <p class="font-w600 push-10">@Html.DisplayFor(modelItem => item.Servicio.clave)</p>
                                 <div class="text-muted">@Html.DisplayFor(modelItem => item.Servicio.descripcion)</div>
-                            </td>
-                            <td class="text-center">
-                                @if (item.approbation == true)
-                                {
-                                    <span class="label label-warning">Aprobacion</span>
-                                }
-                                else
-                                {
-                                    <span class="label label-primary">OK</span>
-                                }
                             </td>
                             <td class="text-right">@Html.DisplayFor(modelItem => item.serie)</td>
                             <td class="text-right">@Html.DisplayFor(modelItem => item.marca)</td>
@@ -139,3 +127,4 @@
 
     </div>
 </div>
+

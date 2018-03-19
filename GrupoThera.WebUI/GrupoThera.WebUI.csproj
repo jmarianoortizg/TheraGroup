@@ -1600,6 +1600,21 @@
   <ItemGroup>
     <Content Include="Views\OTPreliminar\SearchOTPItem.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPreliminarItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPNewNotes.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

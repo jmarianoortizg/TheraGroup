@@ -1,4 +1,5 @@
-﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
+﻿
+@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
 @{
     ViewBag.Title = "OTPreliminar";
 
@@ -29,7 +30,7 @@
         </div>
     </div>
 </div>
-<div id="searchCotizacionError">
+<div id="searchOTPreliminarError">
 
 </div>
 
@@ -47,7 +48,7 @@
                         </ul>
                         <h3 class="block-title">OT Preliminares</h3>
                     </div>
-                    <div class="block-content" id="divCotizacionCounters">
+                    <div class="block-content" id="divOTPreliminarCounters">
                         @Html.Partial("SearchOTPCounters", Model)
                     </div>
                 </div>
@@ -62,7 +63,7 @@
                         </ul>
                         <h3 class="block-title">Acciones</h3>
                     </div>
-                    <div class="block-content" id="divCotizacionStatus">
+                    <div class="block-content" id="divOTPreliminarStatus">
                         <table class="table table-borderless table-condensed table-vcenter font-s13">
                             <tbody>
                                 <tr>
@@ -81,13 +82,13 @@
         <div class="col-sm-12 col-lg-9">
             <!-- Filtos List -->
             <div class="block hidden-print block-opt-hidden" id="filtros">
-                @using (Ajax.BeginForm("searchCotizacionFilter", "Cotizacion",
+                @using (Ajax.BeginForm("searchOTPreliminarFilter", "OTPreliminar",
                                         new AjaxOptions
                                         {
                                             InsertionMode = InsertionMode.Replace,
-                                            UpdateTargetId = "divItemsCotizacion",
-                                            OnSuccess = "SuccessSeachCotizacion",
-                                            OnFailure = "FailureSeachCotizacion",
+                                            UpdateTargetId = "divItemsOTPreliminar",
+                                            OnSuccess = "SuccessSeachOTPreliminar",
+                                            OnFailure = "FailureSeachOTPreliminar",
                                         }))
                 {
                     <div class="block-header bg-gray-lighter">
@@ -123,8 +124,8 @@
                 </div>
                 <div class="block-content">
                     <!-- Tickets Table -->
-                    <div class="pull-r-l pre-scrollable" id="divItemsCotizacion">
-                        @Html.Partial("SearchOTPItem", Model)
+                    <div class="pull-r-l pre-scrollable" id="divItemsOTPreliminar">
+                        @Html.Partial("SearchOTPreliminarItem", Model)
                     </div>
                     <!-- END Tickets Table -->
                 </div>
@@ -133,11 +134,40 @@
         </div>
         <div class="col-sm-12 col-lg-12">
             <div class="block">
-                <div class="block-content" style="padding-left:2%; padding-right:2%">
-                    <div class="row items-push" id="divCotizacionView">
-                        <div class="col-sm-4 col-lg-4">
-                            <h3 class="block-title text-primary"><strong>[</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
-                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                <ul class="nav nav-tabs nav-tabs-alt nav-tabs-right" data-toggle="tabs">
+                    <li class="active">
+                        <a href="#btabs-alt-static2-OTPreliminar">OT Preliminar</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-alt-static2-Notas">Notas</a>
+                    </li>
+                    <li>
+                        <a href="#btabs-alt-static2-NewNotas">Nueva Nota</a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content">
+                    <div class="tab-pane active" id="btabs-alt-static2-OTPreliminar">
+                        <div class="row items-push" id="divOTPreliminarView">
+                            <div class="col-sm-4 col-lg-4">
+                                <h3 class="block-title text-primary"><strong> [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="btabs-alt-static2-Notas">
+                        <div class="row items-push" id="divOTPreliminarNotasView">
+                            <div class="col-sm-4 col-lg-4">
+                                <h3 class="block-title text-primary"><strong>NOTAS [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="btabs-alt-static2-NewNotas">
+                        <div class="row items-push" id="divOTPreliminarNewNotasView">
+                            <div class="col-sm-4 col-lg-4">
+                                <h3 class="block-title text-primary"><strong>NUEVA NOTA [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,48 +208,50 @@
             uploadView();
         });
 
-        function SuccessSeachCotizacion(response) {
+        function SuccessSeachOTPreliminar(response) {
 
             if (response.success) {
-                $('#divItemsCotizacion').html(response.cotizacionHtml);
-                $('#divCotizacionCounters').html(response.cotizacionCountersHtml);
+                $('#divItemsOTPreliminar').html(response.otpreliminarHtml);
+                $('#divOTPreliminarCounters').html(response.otpreliminarCountersHtml);
                 $("time.timeago").timeago();
                 createMessageInfo("INFO: Filtro aplicado correctamente");
                 uploadView();
-                goToByScroll("divItemsCotizacion");
+                goToByScroll("divItemsOTPreliminar");
             } else {
-                $('#searchCotizacionError').html(response.errorHtml);
+                $('#searchOTPreliminarError').html(response.errorHtml);
             }
         }
 
-        function FailureSeachCotizacion(response) {
-            $('#searchCotizacionError').html(response.resumeHtml);
+        function FailureSeachOTPreliminar(response) {
+            $('#searchOTPreliminarError').html(response.resumeHtml);
         }
 
         function uploadView() {
-            $('.cotizacionView').on('click', function () {
+            $('.otpreliminarView').on('click', function () {
 
-                var model = { "idPreliminarSelected": $(this).attr("id") };
-                var idPreliminar = $(this).attr("id");
+                var model = { "idOTPreliminarSelected": $(this).attr("id") };
+                var idOTPreliminar = $(this).attr("id");
                 $("#spin").show();
                 $.ajax({
-                    url: '@Url.Action("searchPreliminarView", "Cotizacion")',
+                    url: '@Url.Action("searchOTPreliminarView", "OTPreliminar")',
                     type: 'POST',
                     data: JSON.stringify(model),
                     contentType: 'application/json',
                     success: function (data) {
-                        $('#divCotizacionView').html(data.responseCotizationView);
-                        $('#divCotizacionStatus').html(data.responseCotizationStatus);
-                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        $('#divOTPreliminarView').html(data.responseOTPreliminarView);
+                        $('#divOTPreliminarStatus').html(data.responseOTPreliminarStatus);
+                        $('#divOTPreliminarNotasView').html(data.responseOTPNotas);
+                        $('#divOTPreliminarNewNotasView').html(data.responseOTPNewNotas);
+
+                        createMessageInfo("INFO: OT Preliminar cargada Correctamente");
                         setTimeout(function () {
                             $("#spin").hide();
                         }, 800);
-                        goToByScroll("divCotizacionView");
                         statusCounters();
-                        statusPreliminar(idPreliminar);
+                        statusPreliminar(idOTPreliminar);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("uploadView: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
@@ -231,17 +263,17 @@
                 var model = { "statusCounter": $(this).attr("id") };
 
                 $.ajax({
-                    url: '@Url.Action("showPreliminarCounterView", "Cotizacion")',
+                    url: '@Url.Action("showOTPreliminarCounterView", "OTPreliminar")',
                     type: 'POST',
                     data: JSON.stringify(model),
                     contentType: 'application/json',
                     success: function (data) {
-                        $('#divItemsCotizacion').html(data.cotizacionHtml);
+                        $('#divItemsOTPreliminar').html(data.cotizacionHtml);
                         uploadView();
-                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        createMessageInfo("INFO: OT Preliminar cargada Correctamente");
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
@@ -262,10 +294,10 @@
                     contentType: 'application/json',
                     success: function (data) {
                         if (data.success) {
-                            $('#divItemsCotizacion').html("");
-                            $('#divCotizacionCounters').html(data.cotizacionCounters);
-                            $('#divCotizacionStatus').html("<h4 class='block-title text-primary'><strong>[</strong> Cotizacion Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
-                            $('#divCotizacionView').html("-------");
+                            $('#divItemsOTPreliminar').html("");
+                            $('#divOTPreliminarCounters').html(data.cotizacionCounters);
+                            $('#divOTPreliminarStatus').html("<h4 class='block-title text-primary'><strong>[</strong> OT Preliminar Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
+                            $('#divOTPreliminarView').html("-------");
                             createMessageSuccess(data.messageSuccess);
                             statusCounters();
                             setTimeout(function () {
@@ -273,16 +305,35 @@
                             }, 800);
                         } else {
                             createMessageDanger("ERROR: Mensaje mostrado en el inicio de la pagina");
-                            $('#searchCotizacionError').html(data.responseHtml);
-                            goToByScroll("searchCotizacionError");
+                            $('#searchOTPreliminarError').html(data.responseHtml);
+                            goToByScroll("searchOTPreliminarError");
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("statusPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
         }
+
+        function FailureOTPNewNote(response) {
+            $('#searchOTPreliminarError').html(response.resumeHtml);
+        }
+
+        function BeginOTPNewNote() {
+            if ($('#txtNewOTP').val() == "")
+            {
+                createMessageDanger("ERROR: la nueva nota no tiene contenido ");
+                return false;
+            }
+            return true;
+        }
+
+        function SuccessOTPNewNote(){
+            $('#txtNewOTP').val("");
+            createMessageSuccess("OK: Nueva Nota Creada ");
+        }
+
 
     </script>
 }

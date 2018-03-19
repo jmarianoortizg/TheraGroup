@@ -86,7 +86,10 @@ namespace GrupoThera.Entities.Entity.OTPre
         
         [Column("OTP_FORMATO_OT")]
         public string confFormato { get; set; }
-        
+
+        [Column("OTP_NOTE_ID")]
+        public long noteId { get; set; }
+
         [Column("OTP_MON_ID")]        
         public long monedaId { get; set; }
         public virtual Moneda Moneda { get; set; }
@@ -108,8 +111,8 @@ namespace GrupoThera.Entities.Entity.OTPre
         public virtual Sucursal Sucursal { get; set; }
 
         [Column("OTP_OTS_ID")]
-        public long statusOrdenId { get; set; }
-        public virtual StatusOrden StatusOrden { get; set; }
+        public long statusOTPreliminarId { get; set; }
+        public virtual StatusOTPreliminar StatusOTPreliminar { get; set; }
 
         [Column("OTP_CLI_ID")]
         public long clienteId { get; set; }

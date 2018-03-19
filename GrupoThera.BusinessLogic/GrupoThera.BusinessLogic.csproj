@@ -62,6 +62,7 @@
     <Compile Include="Contracts\Catalogs\ICiudad.cs" />
     <Compile Include="Contracts\Catalogs\IGiro.cs" />
     <Compile Include="Contracts\Catalogs\IMetodoCotizacion.cs" />
+    <Compile Include="Contracts\Catalogs\INote.cs" />
     <Compile Include="Contracts\Catalogs\IServicio.cs" />
     <Compile Include="Contracts\Catalogs\IMoneda.cs" />
     <Compile Include="Contracts\Catalogs\IProvedor.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="DataAccess\Catalogs\GiroDA.cs" />
     <Compile Include="DataAccess\Catalogs\MetodoCotizacionDA.cs" />
     <Compile Include="DataAccess\Catalogs\MonedaDA.cs" />
+    <Compile Include="DataAccess\Catalogs\NoteDA.cs" />
     <Compile Include="DataAccess\Catalogs\TiempoEntregaDA.cs" />
     <Compile Include="DataAccess\Catalogs\ProvedorDA.cs" />
     <Compile Include="DataAccess\Catalogs\ServicioDA.cs" />

@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 namespace GrupoThera.Entities.Entity.OTPre
 {
     [Table("OT_PRELIMINAR_STATUS")]
-    public partial class StatusOrden : IEntity
+    public partial class StatusOTPreliminar : IEntity
     {
         [Key]
         [Column("OTS_ID")]
-        public long statusOrdenId { get; set; }
+        public long statusOTPreliminarId { get; set; }
 
         [Column("OTS_STATUS")]
         public string descripcion { get; set; }

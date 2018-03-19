@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GrupoThera.BusinessLogic.DataAccess.OT
 {
-    public class StatusOrdenDA : EntityRepositoryBase<StatusOrden, GrupoTheraContext>, IStatusOrden
+    public class StatusOTPreliminarDA : EntityRepositoryBase<StatusOTPreliminar, GrupoTheraContext>, IStatusOTPreliminar
     {
         #region Methods 
 

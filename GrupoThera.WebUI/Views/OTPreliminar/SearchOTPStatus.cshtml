@@ -1,0 +1,29 @@
+﻿@model GrupoThera.Entities.Entity.OTPre.OTPreliminar
+@{
+    ViewBag.Title = "SearchOTPStatus";
+    string idOTPreliminar = "";
+
+    if (Model.noDoc != 0)
+    {
+        idOTPreliminar = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+    }
+    else
+    {
+        idOTPreliminar = Model.otPreliminarId.ToString();
+    }
+}
+
+<table class="table table-borderless table-condensed table-vcenter font-s13">
+    <tbody>
+        <tr>
+            <td class="font-w600" style="width: 60%;">[ OT Preliminar Seleccionada ] </td>
+            <td class="text-right"> [ @idOTPreliminar ]</td>
+        </tr>
+        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA"))
+        {
+            <tr>
+                <td colspan="2"> <button id="NEWVERSION" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> Nueva Version</button> </td>
+            </tr>
+        }
+    </tbody>
+</table>

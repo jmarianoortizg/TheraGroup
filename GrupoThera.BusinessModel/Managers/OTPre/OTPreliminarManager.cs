@@ -23,17 +23,19 @@ namespace GrupoThera.BusinessModel.Managers.OT
         private IOTPreliminar _otPreliminarDA;
         private IOTPrePartida _otPrePartidaDA;
         private IConfiguracion _configuracionDA;
+        private ICatalogService _catalogService;
 
         #endregion Fields 
 
         #region Constructor 
 
-        public OTPreliminarManager(IOTPreliminar otPreliminarDA, IOTPrePartida otPrePartidaDA, IConfiguracion configuracionDA)
+        public OTPreliminarManager(IOTPreliminar otPreliminarDA, IOTPrePartida otPrePartidaDA, IConfiguracion configuracionDA, ICatalogService catalogService)
         {
             //Dependency Injection
             _otPreliminarDA = otPreliminarDA;
             _otPrePartidaDA = otPrePartidaDA;
             _configuracionDA = configuracionDA;
+            _catalogService = catalogService;
         }
 
         #endregion Constructor 
@@ -71,7 +73,7 @@ namespace GrupoThera.BusinessModel.Managers.OT
                     formaPagoId = Preliminar.formaPagoId,
                     empresaId = Preliminar.empresaId,
                     sucursalId = Preliminar.sucursalId,
-                    statusOrdenId = 5, //Abierta,
+                    statusOTPreliminarId = _catalogService.getStatusOTPreliminarId("ABIERTA"),
                     clienteId = Preliminar.clienteId,
                     clasificacionServicioId = Preliminar.clasificacionServicioId
                 };
@@ -110,6 +112,16 @@ namespace GrupoThera.BusinessModel.Managers.OT
         public IList<OTPreliminar> getAllOTPreliminar()
         {
             return _otPreliminarDA.GetList().ToList();
+        }
+
+        public OTPreliminar getOTPreliminarById(long idOTPreliminar)
+        {
+            return _otPreliminarDA.Get(t => t.otPreliminarId == idOTPreliminar);
+        }
+
+        public IList<OTPrePartidas> getAllPrePartidasByOTPreliminar(long idOTPreliminar)
+        {
+            return _otPrePartidaDA.GetList(t => t.otPreliminarId == idOTPreliminar).ToList();
         }
 
         #endregion Methods  

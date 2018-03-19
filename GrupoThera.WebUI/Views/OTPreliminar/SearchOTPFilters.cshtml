@@ -47,25 +47,25 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="example-daterange1">Marca</label>
                 <div class="col-md-8">
-                    @Html.TextBoxFor(model => model.marca, new { id = "marca", name = "marca", @class = "form-control", type = "text", placeholder = "Marca" })
+                    @Html.TextBoxFor(model => model.marca, new { id = "marca", name = "marca", @class = "form-control", type = "text", placeholder = "Marca", disabled = "disabled" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="example-daterange1">Modelo</label>
                 <div class="col-md-8">
-                    @Html.TextBoxFor(model => model.modelo, new { id = "modelo", name = "12", @class = "form-control", type = "text", placeholder = "Modelo" })
+                    @Html.TextBoxFor(model => model.modelo, new { id = "modelo", name = "12", @class = "form-control", type = "text", placeholder = "Modelo", disabled = "disabled" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="example-daterange1">Numero Serie</label>
                 <div class="col-md-8">
-                    @Html.TextBoxFor(model => model.nSerie, new { id = "nSerie", name = "nSerie", @class = "form-control", type = "text", placeholder = "Numero Serie" })
+                    @Html.TextBoxFor(model => model.nSerie, new { id = "nSerie", name = "nSerie", @class = "form-control", type = "text", placeholder = "Numero Serie", disabled = "disabled" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="example-daterange1"># Cotizacion</label>
                 <div class="col-md-8">
-                    @Html.TextBoxFor(model => model.nCotizacion, new { id = "nCotizacion", name = "nCotizacion", @class = "form-control onlyNumberInteger", type = "text", placeholder = "Numero Cotizacion" })
+                    @Html.TextBoxFor(model => model.nOTPreliminar, new { id = "nOTPreliminar", name = "nOTPreliminar", @class = "form-control onlyNumberInteger", type = "text", placeholder = "Numero OT PReliminar" })
                 </div>
             </div>
         </div>

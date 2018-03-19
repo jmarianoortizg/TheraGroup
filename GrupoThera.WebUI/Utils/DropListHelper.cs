@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,7 +115,6 @@ namespace GrupoThera.WebUI.Utils
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
 
-
         public static SelectList GetConfiguracion(IList<Configuracion> list)
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
@@ -222,6 +222,17 @@ namespace GrupoThera.WebUI.Utils
             {
                 Text = a.descripcion,
                 Value = a.statusCotizacionId.ToString()
+            }).ToList();
+            itemsList.Add(new SelectListItem() { Text = "No Estatus Seleccionado", Value = "0" });
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
+        public static SelectList GetStatusOTPreliminar(IList<StatusOTPreliminar> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.statusOTPreliminarId.ToString()
             }).ToList();
             itemsList.Add(new SelectListItem() { Text = "No Estatus Seleccionado", Value = "0" });
             return new SelectList(itemsList, "Value", "Text", "Selected");

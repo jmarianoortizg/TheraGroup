@@ -1,5 +1,8 @@
 ﻿using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.BusinessModel.Contracts.OT;
+using GrupoThera.Core.Utils;
+using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.OTPre;
 using GrupoThera.Entities.Models.OTPre;
 using GrupoThera.WebUI.Utils;
 using System;
@@ -31,37 +34,164 @@ namespace GrupoThera.WebUI.Controllers
 
         #region Methods
 
-            #region OTPreliminar
+        #region OTPreliminar
 
-                [CustomAuthorizeAttribute(privilege = "OTPreliminar,GeneralOrdenTrabajo")]
+        [CustomAuthorizeAttribute(privilege = "OTPreliminar,GeneralOrdenTrabajo")]
 
-                public ActionResult OTPreliminar()
-                {
-                    var model = generateInitialModel();
-                    TempData["OTPreliminarSearch"] = model;
-                    return View(model);
-                }
+        public ActionResult OTPreliminar()
+        {
+            var model = generateInitialModel();
+            TempData["OTPreliminarSearch"] = model;
+            return View(model);
+        }
 
-                public OTPreliminarSearch generateInitialModel()
-                {
-                    var allOTPreliminares = _otPreliminarService.getAllOTPreliminar();
-                    var model = new OTPreliminarSearch()
-                    {
-                        listaOTPreliminares = allOTPreliminares,
-                        abiertas = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("ABIERTA")).ToList(),
-                        cerrada = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("CERRADA")).ToList(),
-                        obsoleta = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("OBSOLETA")).ToList(),
-                        cancelada = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("CANCEL")).ToList(),
-                        aceptadaAT = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("ACEPAT")).ToList(),
-                        rechazada = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("RECHAZADA")).ToList(),
-                        laboratorio = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("ENVLAB")).ToList(),
-                        OTPreliminaresActual = allOTPreliminares.Where(t => t.StatusOrden.codigo.Equals("ABIERTA")).ToList(),
-                        listClasificacion = DropListHelper.GetClasificacionServicioValue0(_catalogService.getClasificacionServicios()),
-                        listCliente = DropListHelper.GetClienteValue0(_catalogService.getClientes()),
-                        listStatus = DropListHelper.GetStatusCotizacion(_catalogService.getStatusCotizacion()),
-                    };
-                    return model;
-                }
+        public OTPreliminarSearch generateInitialModel()
+        {
+            var allOTPreliminares = _otPreliminarService.getAllOTPreliminar();
+            var model = new OTPreliminarSearch()
+            {
+                listaOTPreliminares = allOTPreliminares,
+                abiertas = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ABIERTA")).ToList(),
+                cerrada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("CERRADA")).ToList(),
+                obsoleta = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("OBSOLETA")).ToList(),
+                cancelada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("CANCEL")).ToList(),
+                aceptadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ACEPAT")).ToList(),
+                rechazada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("RECHAZADA")).ToList(),
+                laboratorio = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ENVLAB")).ToList(),
+                OTPreliminaresActual = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ABIERTA")).ToList(),
+                listClasificacion = DropListHelper.GetClasificacionServicioValue0(_catalogService.getClasificacionServicios()),
+                listCliente = DropListHelper.GetClienteValue0(_catalogService.getClientes()),
+                listStatus = DropListHelper.GetStatusOTPreliminar(_catalogService.getStatusOTPreliminar())
+            };
+            return model;
+        }
+
+        public OTPreliminarSearch generateNoteModel(long noteID)
+        {
+            var model = new OTPreliminarSearch()
+            {
+                listNotes = _catalogService.getNotesByDocument(noteID),
+                note = new Note()
+            };
+            return model;
+        }
+
+        public ActionResult showOTPreliminarCounterView(string statusCounter)
+        {
+            var model = (OTPreliminarSearch)TempData["OTPreliminarSearch"];
+            TempData.Keep("OTPreliminarSearch");
+
+            if (statusCounter.Equals("ABIERTA"))
+                model.OTPreliminaresActual = model.abiertas;
+            else if (statusCounter.Equals("CERRADA"))
+                model.OTPreliminaresActual = model.cerrada;
+            else if (statusCounter.Equals("OBSOLETA"))
+                model.OTPreliminaresActual = model.obsoleta;
+            else if (statusCounter.Equals("CANCEL"))
+                model.OTPreliminaresActual = model.cancelada;
+            else if (statusCounter.Equals("ACEPAT"))
+                model.OTPreliminaresActual = model.aceptadaAT;
+            else if (statusCounter.Equals("RECHAZADA"))
+                model.OTPreliminaresActual = model.rechazada;
+            else if (statusCounter.Equals("ENVLAB"))
+                model.OTPreliminaresActual = model.laboratorio;
+
+            return Json(new
+            {
+                success = true,
+                cotizacionHtml = StdClassWeb.RenderToString(PartialView("SearchOTPreliminarItem", model), HttpContext),
+                cotizacionCountersHtml = StdClassWeb.RenderToString(PartialView("SearchOTPCounters", model), HttpContext)
+            },
+            JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult searchOTPreliminarFilter(OTPreliminarSearch OTPreliminarSearch)
+        {
+            var predicate = PredicateBuilder.False<OTPreliminar>();
+            var model = (OTPreliminarSearch)TempData["OTPreliminarSearch"];
+            TempData.Keep("OTPreliminarSearch");
+
+            var allOTPreliminares = _otPreliminarService.getAllOTPreliminar();
+
+            if (OTPreliminarSearch.selectedCliente != 0)
+            {
+                allOTPreliminares = allOTPreliminares.Where(i => i.clienteId == OTPreliminarSearch.selectedCliente).ToList();
+            }
+            if (!string.IsNullOrEmpty(OTPreliminarSearch.from) && !string.IsNullOrEmpty(OTPreliminarSearch.to))
+            {
+                var dateFrom = DateTime.Parse(OTPreliminarSearch.from);
+                var dateTo = DateTime.Parse(OTPreliminarSearch.to);
+                allOTPreliminares = allOTPreliminares.Where(t => t.fechaCreacion.Date >= dateFrom.Date && t.fechaCreacion.Date <= dateTo).ToList();
+            }
+            if (OTPreliminarSearch.selectedStatus != 0)
+            {
+                allOTPreliminares = allOTPreliminares.Where(i => i.statusOTPreliminarId == OTPreliminarSearch.selectedStatus).ToList();
+            }
+            if (OTPreliminarSearch.selectedClasificacion != 0)
+            {
+                allOTPreliminares = allOTPreliminares.Where(i => i.clasificacionServicioId == OTPreliminarSearch.selectedClasificacion).ToList();
+            }
+            if (OTPreliminarSearch.nOTPreliminar != 0)
+            {
+                allOTPreliminares = allOTPreliminares.Where(i => i.preliminaresId == OTPreliminarSearch.nOTPreliminar || i.noDoc == OTPreliminarSearch.nOTPreliminar).ToList();
+            }
+            //if (!string.IsNullOrEmpty(OTPreliminarSearch.marca))
+            //{
+            //    allOTPreliminares = allOTPreliminares.Where(i => i.marca.Equals(OTPreliminarSearch.marca)).ToList();
+            //}
+            //if (!string.IsNullOrEmpty(OTPreliminarSearch.modelo))
+            //{
+            //    allOTPreliminares = allOTPreliminares.Where(i => i.modelo.Equals(OTPreliminarSearch.modelo)).ToList();
+            //}
+            //if (!string.IsNullOrEmpty(OTPreliminarSearch.nSerie))
+            //{
+            //    allOTPreliminares = allOTPreliminares.Where(i => i.serie.Equals(OTPreliminarSearch.nSerie)).ToList();
+            //}
+
+            OTPreliminarSearch.OTPreliminaresActual = allOTPreliminares;
+            OTPreliminarSearch.abiertas = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ABIERTA")).ToList();
+            OTPreliminarSearch.laboratorio = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ENVLAB")).ToList();
+            OTPreliminarSearch.rechazada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("RECHAZADA")).ToList();
+            OTPreliminarSearch.cancelada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("CANCEL")).ToList();
+            OTPreliminarSearch.cerrada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("CERRADA")).ToList();
+            OTPreliminarSearch.obsoleta = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("OBSOLETA")).ToList();
+            OTPreliminarSearch.aceptadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ACEPAT")).ToList();
+
+            return Json(new
+            {
+                success = true,
+                otpreliminarHtml = StdClassWeb.RenderToString(PartialView("SearchOTPreliminarItem", OTPreliminarSearch), HttpContext),
+                otpreliminarCountersHtml = StdClassWeb.RenderToString(PartialView("SearchOTPCounters", OTPreliminarSearch), HttpContext)
+            },
+            JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult searchOTPreliminarView(int idOTPreliminarSelected)
+        {
+            var otpreliminarItem = _otPreliminarService.getOTPreliminarById(idOTPreliminarSelected);
+            otpreliminarItem.OTPrePartidas = _otPreliminarService.getAllPrePartidasByOTPreliminar(otpreliminarItem.otPreliminarId);
+            var model = generateNoteModel(otpreliminarItem.noteId);
+            model.otpreliminar = otpreliminarItem;
+            return Json(new
+            {
+                responseOTPreliminarView = StdClassWeb.RenderToString(PartialView("~/Views/OTPreliminar/SearchOTPView.cshtml", otpreliminarItem), HttpContext),
+                responseOTPreliminarStatus = StdClassWeb.RenderToString(PartialView("~/Views/OTPreliminar/SearchOTPStatus.cshtml", otpreliminarItem), HttpContext),
+                responseOTPNotas = StdClassWeb.RenderToString(PartialView("~/Views/OTPreliminar/SearchOTPNotes.cshtml", model), HttpContext),
+                responseOTPNewNotas = StdClassWeb.RenderToString(PartialView("~/Views/OTPreliminar/SearchOTPNewNotes.cshtml", model), HttpContext),
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult newNoteOTPreliminar(OTPreliminarSearch modelSearch)
+        {
+            modelSearch.note.creation = DateTime.Now;
+            modelSearch.note.document = "OTP";
+            modelSearch.note.owner = (string)HttpContext.Session["UserName"];
+            modelSearch.note.noteDocId = modelSearch.otpreliminar.noteId;
+
+            _catalogService.AddNote(modelSearch.note);
+            var model = generateNoteModel(modelSearch.otpreliminar.noteId);
+            return PartialView("~/Views/OTPreliminar/SearchOTPNotes.cshtml", model);
+        }
 
         #endregion OTPreliminar
 

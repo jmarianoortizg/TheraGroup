@@ -41,11 +41,12 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
                 public DbSet<Moneda> Moneda { get; set; }
                 public DbSet<Provedor> Provedor { get; set; }
                 public DbSet<Servicio> Servicio { get; set; }
+                public DbSet<Note> Note { get; set; }
 
         #endregion Catalogs
 
-            #region Cotizacion
-                public DbSet<Preliminar> Preliminar { get; set; }
+        #region Cotizacion
+        public DbSet<Preliminar> Preliminar { get; set; }
                 public DbSet<PrePartidas> PrePartidas { get; set; }
                 public DbSet<StatusCotizacion> StatusCotizacion { get; set; }
 
@@ -54,7 +55,7 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
             #region OrdenTrabajo
                 public DbSet<OTPreliminar> OrdenTrabajo { get; set; }
                 public DbSet<OTPrePartidas> OTPrePartidas { get; set; }
-                public DbSet<StatusOrden> StatusOrden { get; set; }
+                public DbSet<StatusOTPreliminar> StatusOrden { get; set; }
             #endregion OrdenTrabajo
 
         #endregion Fields

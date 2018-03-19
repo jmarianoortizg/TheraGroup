@@ -1,4 +1,6 @@
-﻿using GrupoThera.Entities.Entity.OTPre;
+﻿using GrupoThera.Entities.Entity.Catalogs;
+using GrupoThera.Entities.Entity.Cotizaciones;
+using GrupoThera.Entities.Entity.OTPre;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -21,11 +23,10 @@ namespace GrupoThera.Entities.Models.OTPre
         public IList<OTPreliminar> rechazada { get; set; }
         public IList<OTPreliminar> laboratorio { get; set; }
 
-
         // Filter Section
         public string from { get; set; }
         public string to { get; set; }
-        public long nCotizacion { get; set; }
+        public long nOTPreliminar { get; set; }
         public string marca { get; set; }
         public string modelo { get; set; }
         public string nSerie { get; set; }
@@ -35,5 +36,12 @@ namespace GrupoThera.Entities.Models.OTPre
         public int selectedClasificacion { get; set; }
         public SelectList listStatus { get; set; }
         public int selectedStatus { get; set; }
+
+        public IList<Note> listNotes { get; set; }
+        public Note note { get; set; }
+        public OTPreliminar otpreliminar { get; set; }
+
+
+
     }
 }
