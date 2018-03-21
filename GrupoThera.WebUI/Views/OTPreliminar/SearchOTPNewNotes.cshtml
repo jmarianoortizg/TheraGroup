@@ -1,32 +1,41 @@
 ﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
 @{
     ViewBag.Title = "SearchOTPNewNotes";
+    var id = Model.otpreliminar.otPreliminarId;
 }
 
 <div class="block-content">
-    @using (Ajax.BeginForm("newNoteOTPreliminar", "OTPreliminar",
-                                                            new AjaxOptions
-                                                            {
-                                                                InsertionMode = InsertionMode.Replace,
-                                                                UpdateTargetId = "divNotesOTPreliminar",
-                                                                OnSuccess = "SuccessOTPNewNote",
-                                                                OnFailure = "FailureOTPNewNote",
-                                                                OnBegin = "BeginOTPNewNote",
-                                                            }))
+    @if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("ABIERTA") || Model.otpreliminar.StatusOTPreliminar.codigo.Equals("ENVLAB"))
     {
-        <div class="form-group">
-            @Html.HiddenFor(model => model.otpreliminar.noteId)
-            <div class="col-xs-12">
-                <div class="form-material floating">
-                    @Html.TextAreaFor(model => model.note.content, new { @id = "txtNewOTP", @rows = 7, @cols = 10, placeholder = "Contenido de Nueva Nota", @class = "form-control"})
+        using (Ajax.BeginForm("newNoteOTPreliminar", "OTPreliminar",
+                                                                    new AjaxOptions
+                                                                    {
+                                                                        InsertionMode = InsertionMode.Replace,
+                                                                        UpdateTargetId = "divNotesOTPreliminar",
+                                                                        OnSuccess = "SuccessOTPNewNote",
+                                                                        OnFailure = "FailureOTPNewNote",
+                                                                        OnBegin = "BeginOTPNewNote",
+                                                                    }))
+        {
+            <div class="form-group">
+                @Html.HiddenFor(model => model.otpreliminar.noteId)
+                <div class="col-xs-12">
+                    <div class="form-material floating">
+                        @Html.TextAreaFor(model => model.note.content, new { @id = "txtNewOTP", @rows = 7, @cols = 10, placeholder = "Contenido de Nueva Nota", @class = "form-control" })
+                    </div>
+                    <div class="help-block text-right ">La nota creada sera relacionada con la OT Preliminar #@id</div>
                 </div>
-                <div class="help-block text-right">La nota creada sera relacionada con las OT Preliminares</div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-xs-12">
-                <button class="btn btn-sm btn-info" type="submit"><i class="fa fa-send push-5-r"></i> Crear Nota</button>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button class="btn btn-sm btn-info" type="submit"><i class="fa fa-send push-5-r"></i> Crear Nota</button>
+                </div>
             </div>
-        </div>
+        }
+    }
+    else
+    {
+        <h3 style="margin-left:10%" class="block-title text-city"><strong> <span class="fa fa-warning"> </span> [</strong> Para crear una nota, la OT Preliminar debe de estar Abierta | Enviada a Laboratorio <strong>]</strong> </h3>
+        <hr />
     }
 </div>

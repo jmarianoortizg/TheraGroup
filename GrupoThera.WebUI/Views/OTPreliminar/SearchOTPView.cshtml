@@ -27,26 +27,27 @@
                 <li>
                     <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
                 </li>*@
-            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+            @*@if (!Model.StatusOTPreliminar.codigo.Equals("ENVLAB") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
                   !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
                   !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
             {
                 <li>
-                    <a class="btn btn-noborder" href="SearchCotizcionEdicion/?preliminarId=@hexValue" onclick="reloadDivCotizacion();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
+                    <a class="btn btn-noborder" href="SearchOTPEdicion/?otpreliminarId=@hexValue" onclick="reloadDivOTP();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
+                </li>
+            }*@
+            @if ( !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
+                  !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") )
+            {
+                <li>
+                    <a class="btn btn-noborder statusOTPreliminar" id="RECHAZADA"><i class="fa fa-reply"></i> Rechada Laboratorio</a>
                 </li>
             }
-            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+            @if ( !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
                   !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL"))
             {
                 <li>
-                    <a class="btn btn-noborder statusPreliminar" id="REJECT"><i class="fa fa-reply"></i> Rechada Cliente</a>
-                </li>
-            }
-            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVCLIENTE") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
-                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL"))
-            {
-                <li>
-                    <a class="btn btn-noborder statusPreliminar" id="CANCEL"><i class="fa fa-times-circle-o"></i> Cancelar</a>
+                    <a class="btn btn-noborder statusOTPreliminar" id="CANCEL"><i class="fa fa-times-circle-o"></i> Cancelar</a>
                 </li>
             }
         </ul>

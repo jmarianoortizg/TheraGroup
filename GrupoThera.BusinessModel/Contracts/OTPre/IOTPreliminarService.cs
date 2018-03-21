@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.OTPre;
 using GrupoThera.Entities.Models.Cotizacion;
+using GrupoThera.Entities.Models.OTPre;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,10 @@ namespace GrupoThera.BusinessModel.Contracts.OT
         IList<OTPreliminar> getAllOTPreliminar();
         OTPreliminar getOTPreliminarById(long idOTPreliminar);
         IList<OTPrePartidas> getAllPrePartidasByOTPreliminar(long idOTPreliminar);
+        string edicionOTPreliminar(OTPreliminarSearch otpreliminarSearch);
+        string edicionOTPreliminar(OTPreliminar OTPreliminar);
+        string duplicateOTPreliminar(OTPreliminar OTPreliminar);
+        string newVersion(OTPreliminar otpreliminarItem);
 
         #endregion Methods
     }

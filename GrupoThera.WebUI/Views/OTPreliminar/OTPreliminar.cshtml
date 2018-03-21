@@ -67,7 +67,7 @@
                         <table class="table table-borderless table-condensed table-vcenter font-s13">
                             <tbody>
                                 <tr>
-                                    <td class="font-w600" style="width: 60%;">[ OT Preliminar Seleccionada ] </td>
+                                    <td class="font-w600" style="width: 60%;">[ OT Preliminar ] </td>
                                     <td class="text-right"> [ N/A ]</td>
                                 </tr>
                             </tbody>
@@ -149,7 +149,7 @@
                     <div class="tab-pane active" id="btabs-alt-static2-OTPreliminar">
                         <div class="row items-push" id="divOTPreliminarView">
                             <div class="col-sm-4 col-lg-4">
-                                <h3 class="block-title text-primary"><strong> [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title text-primary"><strong> [</strong> OT Preliminar <strong>] </strong> </h3>
                                 <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                     <div class="tab-pane" id="btabs-alt-static2-Notas">
                         <div class="row items-push" id="divOTPreliminarNotasView">
                             <div class="col-sm-4 col-lg-4">
-                                <h3 class="block-title text-primary"><strong>NOTAS [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title text-primary"><strong>NOTAS [</strong> OT Preliminar <strong>] </strong> </h3>
                                 <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                     <div class="tab-pane" id="btabs-alt-static2-NewNotas">
                         <div class="row items-push" id="divOTPreliminarNewNotasView">
                             <div class="col-sm-4 col-lg-4">
-                                <h3 class="block-title text-primary"><strong>NUEVA NOTA [</strong> OT Preliminar Seleccionada <strong>] </strong> </h3>
+                                <h3 class="block-title text-primary"><strong>NUEVA NOTA [</strong> OT Preliminar <strong>] </strong> </h3>
                                 <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                             $("#spin").hide();
                         }, 800);
                         statusCounters();
-                        statusPreliminar(idOTPreliminar);
+                        statusOTPreliminar(idOTPreliminar);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("uploadView: An error occurred! " + textStatus + " - " + errorThrown);
@@ -259,7 +259,7 @@
 
         function statusCounters() {
 
-            $('.statusCounters').on('click', function () {
+            @*$('.statusCounters').on('click', function () {
                 var model = { "statusCounter": $(this).attr("id") };
 
                 $.ajax({
@@ -269,26 +269,26 @@
                     contentType: 'application/json',
                     success: function (data) {
                         $('#divItemsOTPreliminar').html(data.cotizacionHtml);
-                        uploadView();
                         createMessageInfo("INFO: OT Preliminar cargada Correctamente");
+                        uploadView();
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
-            });
+            });*@
         }
 
-        function statusPreliminar(idPreliminar) {
+        function statusOTPreliminar(idOTPreliminar) {
 
             $("#spin").show();
 
-            $('.statusPreliminar').on('click', function () {
+            $('.statusOTPreliminar').on('click', function () {
 
-                var model = { "statusPreliminar": $(this).attr("id"), "idPreliminar": idPreliminar };
+                var model = { "statusOTPreliminar": $(this).attr("id"), "idOTPreliminar": idOTPreliminar };
 
                 $.ajax({
-                    url: '@Url.Action("changePreliminarStatus", "Cotizacion")',
+                    url: '@Url.Action("changeOTPreliminarStatus", "OTPreliminar")',
                     type: 'POST',
                     data: JSON.stringify(model),
                     contentType: 'application/json',
@@ -296,7 +296,7 @@
                         if (data.success) {
                             $('#divItemsOTPreliminar').html("");
                             $('#divOTPreliminarCounters').html(data.cotizacionCounters);
-                            $('#divOTPreliminarStatus').html("<h4 class='block-title text-primary'><strong>[</strong> OT Preliminar Seleccionada <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
+                            $('#divOTPreliminarStatus').html("<h4 class='block-title text-primary'><strong>[</strong> OT Preliminar <strong>] </strong> </h3> <h3 class='block-title' style='margin-left:10px'><strong> No Seleccionada</strong> </h4>");
                             $('#divOTPreliminarView').html("-------");
                             createMessageSuccess(data.messageSuccess);
                             statusCounters();
@@ -310,7 +310,7 @@
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("statusPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
+                        alert("statusOTPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });

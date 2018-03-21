@@ -16,13 +16,30 @@
 <table class="table table-borderless table-condensed table-vcenter font-s13">
     <tbody>
         <tr>
-            <td class="font-w600" style="width: 60%;">[ OT Preliminar Seleccionada ] </td>
+            <td class="font-w600" style="width: 60%;">[ OT Preliminar ] </td>
             <td class="text-right"> [ @idOTPreliminar ]</td>
         </tr>
-        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA"))
+        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+             !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
         {
             <tr>
-                <td colspan="2"> <button id="NEWVERSION" class="btn btn-success push-5-r push-10 statusPreliminar" type="button"><i class="fa fa-plus"></i> Nueva Version</button> </td>
+                <td colspan="2"> <button id="NEWVERSION" class="btn btn-success push-5-r push-10 statusOTPreliminar" type="button"><i class="fa fa-plus"></i> Nueva Version</button> </td>
+            </tr>
+        }
+        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+             !Model.StatusOTPreliminar.codigo.Equals("CANCEL") && !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") &&
+             !Model.StatusOTPreliminar.codigo.Equals("ABIERTA"))
+        {
+            <tr>
+                <td colspan="2"> <button id="ACEPAT" class="btn btn-success push-5-r push-10 statusOTPreliminar" type="button"><i class="fa fa-eyedropper"></i> Aceptado A.T.</button> </td>
+            </tr>
+        }
+        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+             !Model.StatusOTPreliminar.codigo.Equals("CANCEL") && !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") &&
+             !Model.StatusOTPreliminar.codigo.Equals("ENVLAB"))
+        {
+            <tr>
+                <td colspan="2"> <button id="ENVLAB" class="btn btn-success push-5-r push-10 statusOTPreliminar" type="button"><i class="fa fa-flask"></i> Enviado Laboratorio</button> </td>
             </tr>
         }
     </tbody>

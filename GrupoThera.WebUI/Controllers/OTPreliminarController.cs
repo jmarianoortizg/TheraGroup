@@ -193,6 +193,72 @@ namespace GrupoThera.WebUI.Controllers
             return PartialView("~/Views/OTPreliminar/SearchOTPNotes.cshtml", model);
         }
 
+        public ActionResult changeOTPreliminarStatus(string statusOTPreliminar, long idOTPreliminar)
+        {
+            try
+            {
+                TempData.Keep("OTPreliminarSearch");
+                var preliminarOTItem = _otPreliminarService.getOTPreliminarById(idOTPreliminar);
+                var messageSuccess = "";
+                var messageHeader = false;
+                if (statusOTPreliminar.Equals("ABIERTA") || statusOTPreliminar.Equals("ENVLAB") || 
+                    statusOTPreliminar.Equals("CANCEL")  || statusOTPreliminar.Equals("RECHAZADA") )
+                {
+                    var status = _catalogService.getStatusOTPreliminarStatus(statusOTPreliminar);
+                    preliminarOTItem.StatusOTPreliminar = status;
+                    preliminarOTItem.statusOTPreliminarId = status.statusOTPreliminarId;
+                    var result = _otPreliminarService.edicionOTPreliminar(preliminarOTItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);
+                    messageSuccess = "OK: Cambio de estado correctemente";
+                }
+                else if (statusOTPreliminar.Equals("OT"))
+                {
+                    //preliminarOTItem.OTPrePartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarOTItem.otPreliminarId);
+                    //var result = _otService.createOT(preliminarItem);
+                    //if (result.Contains("Error"))
+                    //    throw new Exception(result);
+                    //messageSuccess = "Nueva Pre-Orden de trabajo Creada #" + result;
+                    //messageHeader = true;
+                    //_cotizacionService.disableParents(preliminarItem);
+                }
+                else if (statusOTPreliminar.Equals("CERRADA"))
+                {
+                    var result = _otPreliminarService.duplicateOTPreliminar(preliminarOTItem);
+                    if (result.Contains("Error"))
+                        throw new Exception(result);
+                    messageSuccess = "Nueva Orden de Trabajo Duplicada Creada #" + result;
+                    messageHeader = true;
+                }
+                else if (statusOTPreliminar.Equals("NEWVERSION"))
+                {
+                    preliminarOTItem.OTPrePartidas = _otPreliminarService.getAllPrePartidasByOTPreliminar(preliminarOTItem.otPreliminarId);
+                    var result = _otPreliminarService.newVersion(preliminarOTItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);
+                    messageSuccess = "OK: Nueva version creada correctamente";
+                }
+
+                var model = generateInitialModel();
+                return Json(new
+                {
+                    success = true,
+                    messageSuccess = messageSuccess,
+                    headerMessage = messageHeader,
+                    cotizacionCounters = StdClassWeb.RenderToString(PartialView("SearchOTPCounters", model), HttpContext)
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseHtml = StdClassWeb.RenderToString(PartialView("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(new Exception(ex.Message), "CotizationController", "changePreliminarStatus")), HttpContext)
+                }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
         #endregion OTPreliminar
 
         [CustomAuthorizeAttribute(privilege = "OTServicio,GeneralOrdenTrabajo")]
