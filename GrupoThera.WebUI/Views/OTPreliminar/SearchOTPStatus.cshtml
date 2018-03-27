@@ -28,14 +28,6 @@
         }
         @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
              !Model.StatusOTPreliminar.codigo.Equals("CANCEL") && !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") &&
-             !Model.StatusOTPreliminar.codigo.Equals("ABIERTA"))
-        {
-            <tr>
-                <td colspan="2"> <button id="ACEPAT" class="btn btn-success push-5-r push-10 statusOTPreliminar" type="button"><i class="fa fa-eyedropper"></i> Aceptado A.T.</button> </td>
-            </tr>
-        }
-        @if (!Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
-             !Model.StatusOTPreliminar.codigo.Equals("CANCEL") && !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") &&
              !Model.StatusOTPreliminar.codigo.Equals("ENVLAB"))
         {
             <tr>

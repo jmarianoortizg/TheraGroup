@@ -1478,7 +1478,7 @@
     <Content Include="Views\Reporte\NewReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Laboratorio\LBLaboratorio.cshtml" />
+    <Content Include="Views\Laboratorio\LabOTPreliminares.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Catalog\AreaServicioEdit.cshtml" />
@@ -1614,6 +1614,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\OTPreliminar\SearchOTPNewNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPEditionPartidas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPEditionPartidasLineConcept.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPEdition.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPEdicionComponentes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OTPreliminar\SearchOTPNewLineConcept.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\OTPreliminarItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\LabOTPItemView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\LabOTPNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\LabOTPNewNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Laboratorio\LabOTPActions.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

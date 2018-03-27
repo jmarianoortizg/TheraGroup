@@ -1,5 +1,4 @@
-﻿
-@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
+﻿@model GrupoThera.Entities.Models.OTPre.OTPreliminarSearch
 @{
     ViewBag.Title = "OTPreliminar";
 
@@ -132,6 +131,7 @@
             </div>
             <!-- END Tickets List -->
         </div>
+
         <div class="col-sm-12 col-lg-12">
             <div class="block">
                 <ul class="nav nav-tabs nav-tabs-alt nav-tabs-right" data-toggle="tabs">
@@ -215,6 +215,7 @@
                 $('#divOTPreliminarCounters').html(response.otpreliminarCountersHtml);
                 $("time.timeago").timeago();
                 createMessageInfo("INFO: Filtro aplicado correctamente");
+                statusCounters();
                 uploadView();
                 goToByScroll("divItemsOTPreliminar");
             } else {
@@ -259,7 +260,7 @@
 
         function statusCounters() {
 
-            @*$('.statusCounters').on('click', function () {
+            $('.statusCounters').on('click', function () {
                 var model = { "statusCounter": $(this).attr("id") };
 
                 $.ajax({
@@ -276,7 +277,7 @@
                         alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
-            });*@
+            });
         }
 
         function statusOTPreliminar(idOTPreliminar) {
@@ -332,6 +333,10 @@
         function SuccessOTPNewNote(){
             $('#txtNewOTP').val("");
             createMessageSuccess("OK: Nueva Nota Creada ");
+        }
+
+        function reloadDivOTP() {
+            $('#divOTPreliminarView').html(" <br> [ Edicion En Proceso, favor de seleccionarla de nuevo ] <br><br>");
         }
 
 

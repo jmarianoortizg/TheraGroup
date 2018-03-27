@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -47,6 +48,8 @@ namespace GrupoThera.Entities.Models.Cotizacion
 
 
         public Preliminar preliminar { get; set; }
+        public OTPreliminar otpreliminar { get; set; }
+
         public Collection<CotizacionField> cotizacionFields { get; set; }
         public CotizacionField cotizacionField { get; set; }
         public string selectedPrice { get; set; }

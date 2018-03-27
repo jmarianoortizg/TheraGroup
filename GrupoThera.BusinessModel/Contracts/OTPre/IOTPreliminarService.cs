@@ -18,10 +18,11 @@ namespace GrupoThera.BusinessModel.Contracts.OT
         IList<OTPreliminar> getAllOTPreliminar();
         OTPreliminar getOTPreliminarById(long idOTPreliminar);
         IList<OTPrePartidas> getAllPrePartidasByOTPreliminar(long idOTPreliminar);
-        string edicionOTPreliminar(OTPreliminarSearch otpreliminarSearch);
+        string edicionOTPreliminar(CotizacionModel cotizacionModel);
         string edicionOTPreliminar(OTPreliminar OTPreliminar);
         string duplicateOTPreliminar(OTPreliminar OTPreliminar);
         string newVersion(OTPreliminar otpreliminarItem);
+        string edicionPartidasPreliminar(CotizacionModel cotizacionModel);
 
         #endregion Methods
     }

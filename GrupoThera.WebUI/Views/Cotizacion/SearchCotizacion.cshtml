@@ -192,6 +192,7 @@
                 $('#divCotizacionCounters').html(response.cotizacionCountersHtml);
                 $("time.timeago").timeago();
                 createMessageInfo("INFO: Filtro aplicado correctamente");
+                statusCounters();
                 uploadView();
             } else {
                 $('#searchCotizacionError').html(response.errorHtml);
@@ -232,7 +233,7 @@
 
         function statusCounters() {
 
-            @*$('.statusCounters').on('click', function () {
+            $('.statusCounters').on('click', function () {
                 var model = { "statusCounter": $(this).attr("id") };
 
                 $.ajax({
@@ -249,7 +250,7 @@
                         alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
-            });*@
+            });
         }
 
         function statusPreliminar(idPreliminar) {

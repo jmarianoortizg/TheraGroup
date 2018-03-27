@@ -1,0 +1,51 @@
+﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
+@{
+    ViewBag.Title = "SearchOTPEditionPartidasLineConcept";
+}
+
+@foreach (var item in Model.otpreliminar.OTPrePartidas)
+{
+    string Rowid = Guid.NewGuid().ToString();
+    var total = 0m;
+    var cantidad = 0d;
+    cantidad = item.cantidad;
+    total = item.precio;
+
+    <tr id='@Rowid'>
+        <td id="CANTIDAD" align="center">
+            <label class="qty" totalQty="@cantidad">@cantidad</label>
+            @Html.HiddenFor(model => item.cantidad, new { Name = string.Format("cotizacionFields[{0}].qty", Rowid) })
+        </td>
+        <td id="PRICE" align="center">
+            $ <label class="sum" totalValue="@total">@total</label>
+            @Html.HiddenFor(model => item.precio, new { Name = string.Format("cotizacionFields[{0}].priceFinal", Rowid) })
+        </td>
+        <td id="NOSERIE" align="center">
+            @Html.DisplayFor(modelItem => item.serie)
+            @Html.HiddenFor(model => item.serie, new { Name = string.Format("cotizacionFields[{0}].noSerie", Rowid) })
+        </td>
+        <td id="MARCA" align="center">
+            @Html.DisplayFor(modelItem => item.marca)
+            @Html.HiddenFor(model => item.marca, new { Name = string.Format("cotizacionFields[{0}].marca", Rowid) })
+        </td>
+        <td id="MODELO" align="center">
+            @Html.DisplayFor(modelItem => item.modelo)
+            @Html.HiddenFor(model => item.modelo, new { Name = string.Format("cotizacionFields[{0}].model", Rowid) })
+        </td>
+        <td id="SERVICIO" align="center">
+            @Html.DisplayFor(modelItem => item.Servicio.descripcion)
+            @Html.HiddenFor(model => item.Servicio.descripcion, new { Name = string.Format("cotizacionFields[{0}].claveServicioText", Rowid) })
+            @Html.HiddenFor(model => item.Servicio.servicioId, new { Name = string.Format("cotizacionFields[{0}].claveServicioCode", Rowid) })
+        </td>
+        <td id="COMENTARIO" align="center">
+            @Html.DisplayFor(modelItem => item.Servicio.comentarios)
+            @Html.HiddenFor(model => item.Servicio.comentarios, new { Name = string.Format("cotizacionFields[{0}].comentarios", Rowid) })
+        </td>
+        <td class="text-center deleteRowsTable">
+            <input type="hidden" name="cotizacionFields.Index" value="@Rowid" />
+            <div class="btn-group">
+                <button id="@Rowid" title="" class="btn btn-xs btn-default" type="button" data-original-title="Borrar Partida" data-toggle="tooltip"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </td>
+    </tr>
+}

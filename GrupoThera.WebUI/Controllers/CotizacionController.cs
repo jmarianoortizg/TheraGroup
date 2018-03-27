@@ -239,7 +239,7 @@ namespace GrupoThera.WebUI.Controllers
             JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult SearchCotizcionEdicion(string preliminarId)
+        public ActionResult SearchCotizacionEdicion(string preliminarId)
         {
             int intAgain = int.Parse(preliminarId, System.Globalization.NumberStyles.HexNumber);
             var preliminarItem = _cotizacionService.getPreliminarById(intAgain);

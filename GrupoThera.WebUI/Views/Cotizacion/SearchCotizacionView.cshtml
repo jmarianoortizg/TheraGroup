@@ -32,7 +32,7 @@
                   !Model.StatusCotizacion.codigo.Equals("RECHAZADA"))
             {
                 <li>
-                    <a class="btn btn-noborder" href="SearchCotizcionEdicion/?preliminarId=@hexValue" onclick="reloadDivCotizacion();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
+                    <a class="btn btn-noborder" href="SearchCotizacionEdicion/?preliminarId=@hexValue" onclick="reloadDivCotizacion();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
                 </li>
             }
             @if ( !Model.StatusCotizacion.codigo.Equals("ENVCLIENTE") && !Model.StatusCotizacion.codigo.Equals("CERRADA") &&

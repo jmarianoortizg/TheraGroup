@@ -3,6 +3,7 @@ using GrupoThera.BusinessModel.Contracts.OT;
 using GrupoThera.Core.Utils;
 using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.OTPre;
+using GrupoThera.Entities.Models.Cotizacion;
 using GrupoThera.Entities.Models.OTPre;
 using GrupoThera.WebUI.Utils;
 using System;
@@ -258,6 +259,57 @@ namespace GrupoThera.WebUI.Controllers
             }
         }
 
+        public ActionResult SearchOTPEdition(string otppreliminarId)
+        {
+            int intAgain = int.Parse(otppreliminarId, System.Globalization.NumberStyles.HexNumber);
+            var otpreliminarItem = _otPreliminarService.getOTPreliminarById(intAgain);
+            otpreliminarItem.OTPrePartidas = _otPreliminarService.getAllPrePartidasByOTPreliminar(otpreliminarItem.otPreliminarId);
+
+            var allClasificacionServicios = _catalogService.getClasificacionServicio();
+            var allServicios = _catalogService.getServicios();
+            var model = new CotizacionModel()
+            {
+                listClasificacionServicio = DropListHelper.GetClasificacionServicio(_catalogService.getClasificacionServicios()),
+                listServicio = DropListHelper.GetServicio(allServicios),
+                listCliente = DropListHelper.GetCliente(_catalogService.getClientes()),
+                listFormaPago = DropListHelper.GetFormaPago(_catalogService.getFormasPago()),
+                listMoneda = DropListHelper.GetMoneda(_catalogService.getMonedas()),
+                allServicio = allServicios,
+                allClasificacionServicio = allClasificacionServicios,
+                otpreliminar = otpreliminarItem
+            };
+            return View("SearchOTPEdition", model);
+        }
+
+        public ActionResult addLineConcepts(CotizacionField cotizacionField)
+        {
+            var model = new CotizacionModel()
+            {
+                cotizacionField = cotizacionField
+            };
+            return PartialView("~/Views/OTPreliminar/SearchOTPNewLineConcept.cshtml", model);
+        }
+
+        public ActionResult EdicionOTPreliminar(CotizacionModel cotizacionModel)
+        {
+            var result = _otPreliminarService.edicionOTPreliminar(cotizacionModel);
+            if (result.Equals("OK"))
+            {
+                result = _otPreliminarService.edicionPartidasPreliminar(cotizacionModel);
+                if (result.Equals("OK"))
+                {
+                    return Json(new
+                    {
+                        success = true
+                    }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new
+            {
+                success = false,
+                responseHtml = StdClassWeb.RenderToString(PartialView("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(new Exception(result), "CatalogController", "CreateClient")), HttpContext)
+            }, JsonRequestBehavior.AllowGet);
+        }
 
         #endregion OTPreliminar
 

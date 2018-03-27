@@ -118,9 +118,9 @@ namespace GrupoThera.BusinessModel.Managers.Cotizacion
                 var itemPar = cotizacionModel.preliminar;
                 var itemEdit = _preliminarDA.Get(t => t.preliminaresId == itemPar.preliminaresId);
 
-                if (itemEdit.StatusCotizacion.Equals("ABIERTA"))
+                if (itemEdit.StatusCotizacion.codigo.Equals("ABIERTA"))
                 {
-                    itemEdit.comentarios = itemPar.comentarios;
+                    itemEdit.comentarios = itemPar.comentarios == null ? "" : itemPar.comentarios;
                     itemEdit.direccionServicio = itemPar.direccionServicio;
                     itemEdit.clienteId = cotizacionModel.selectedCliente;
                     itemEdit.clasificacionServicioId = cotizacionModel.selectedClasificacionServicio;

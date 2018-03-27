@@ -27,20 +27,12 @@
                 <li>
                     <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
                 </li>*@
-            @*@if (!Model.StatusOTPreliminar.codigo.Equals("ENVLAB") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
+            @if (!Model.StatusOTPreliminar.codigo.Equals("ENVLAB") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
                   !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
                   !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
             {
                 <li>
-                    <a class="btn btn-noborder" href="SearchOTPEdicion/?otpreliminarId=@hexValue" onclick="reloadDivOTP();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
-                </li>
-            }*@
-            @if ( !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
-                  !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
-                  !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA") )
-            {
-                <li>
-                    <a class="btn btn-noborder statusOTPreliminar" id="RECHAZADA"><i class="fa fa-reply"></i> Rechada Laboratorio</a>
+                    <a class="btn btn-noborder" href="SearchOTPEdition/?otppreliminarId=@hexValue" onclick="reloadDivOTP();" target="_blank"><i class="fa fa-edit"></i> Edicion</a>
                 </li>
             }
             @if ( !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
@@ -87,8 +79,7 @@
                     <tr>
                         <th class="text-center" style="width: 50px;">Cantidad</th>
                         <th>Servicio</th>
-                        <th class="text-center" style="width: 50px;">Estatus</th>
-                        <th class="text-center" style="width: 100px;">Numero Serie</th>
+                            <th class="text-center" style="width: 100px;">Numero Serie</th>
                         <th class="text-right" style="width: 120px;">Marca</th>
                         <th class="text-right" style="width: 120px;">Modelo</th>
                         <th class="text-right" style="width: 120px;">Precio</th>
@@ -110,15 +101,15 @@
                         </tr>
                     }
                     <tr>
-                        <td class="font-w600 text-right" colspan="6">Subtotal</td>
+                        <td class="font-w600 text-right" colspan="5">Subtotal</td>
                         <td class="text-right">$ @Html.DisplayFor(modelItem => Model.subtotal)</td>
                     </tr>
                     <tr>
-                        <td class="font-w600 text-right" colspan="6">IVA</td>
+                        <td class="font-w600 text-right" colspan="5">IVA</td>
                         <td class="text-right">$ @Html.DisplayFor(modelItem => Model.iva)</td>
                     </tr>
                     <tr class="active">
-                        <td class="font-w700 text-uppercase text-right" colspan="6">Total</td>
+                        <td class="font-w700 text-uppercase text-right" colspan="5">Total</td>
                         <td class="font-w700 text-right">$ @Html.DisplayFor(modelItem => Model.total)</td>
                     </tr>
                 </tbody>

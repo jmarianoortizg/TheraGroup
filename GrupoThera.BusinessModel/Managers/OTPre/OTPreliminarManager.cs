@@ -138,15 +138,21 @@ namespace GrupoThera.BusinessModel.Managers.OT
             return "OK";
         }
 
-        public string edicionOTPreliminar(OTPreliminarSearch otpreliminarSearch)
+        public string edicionOTPreliminar(CotizacionModel cotizacionModel)
         {
             try
             {
-                var itemPar = otpreliminarSearch.otpreliminar;
+                var itemPar = cotizacionModel.otpreliminar;
                 var itemEdit = _otPreliminarDA.Get(t => t.otPreliminarId == itemPar.otPreliminarId);
 
-                if (itemEdit.StatusOTPreliminar.Equals("ABIERTA"))
+                if (itemEdit.StatusOTPreliminar.codigo.Equals("ABIERTA"))
                 {
+                    itemEdit.comentarios = itemPar.comentarios == null ? "" : itemPar.comentarios;
+                    itemEdit.direccionServicio = itemPar.direccionServicio;
+                    itemEdit.clienteId = cotizacionModel.selectedCliente;
+                    itemEdit.clasificacionServicioId = cotizacionModel.selectedClasificacionServicio;
+                    itemEdit.monedaId = cotizacionModel.selectedMoneda;
+                    itemEdit.formaPagoId = cotizacionModel.selectedFormaPago;
                     itemEdit.Cliente = null;
                     itemEdit.ClasificacionServicio = null;
                     itemEdit.Moneda = null;
@@ -163,6 +169,52 @@ namespace GrupoThera.BusinessModel.Managers.OT
                 return "ERROR OTPRELIMINAR: " + ex.Message;
             }
             return "OK";
+        }
+
+        public string edicionPartidasPreliminar(CotizacionModel cotizacionModel)
+        {
+            try
+            {
+                var idOTPreliminar = cotizacionModel.otpreliminar.otPreliminarId;
+                var listActual = getAllPrePartidasByPreliminar(idOTPreliminar);
+
+                foreach (OTPrePartidas item in listActual)
+                {
+                    _otPrePartidaDA.Delete(item);
+                }
+
+                foreach (CotizacionField cf in cotizacionModel.cotizacionFields)
+                {
+                    decimal iva = cf.priceFinal * .16m;
+                    var prePartida = new OTPrePartidas()
+                    {
+                        claveServicio = "-",
+                        descripcionServicio = cf.comentarios,
+                        iva = iva,
+                        precio = cf.priceFinal,
+                        descuento = 0,
+                        total = cf.priceFinal + iva,
+                        marca = cf.marca,
+                        modelo = cf.model,
+                        serie = cf.noSerie,
+                        comentarios = cf.comentarios,
+                        cantidad = cf.qty,
+                        servicioId = Convert.ToInt64(cf.claveServicioCode),
+                        otPreliminarId = idOTPreliminar
+                    };
+                    _otPrePartidaDA.Add(prePartida);
+                }
+            }
+            catch (Exception ex)
+            {
+                return "ERROR OTPREPARTIDAS: " + ex.Message;
+            }
+            return "OK";
+        }
+
+        public IList<OTPrePartidas> getAllPrePartidasByPreliminar(long idOTPreliminar)
+        {
+            return _otPrePartidaDA.GetList(t => t.otPreliminarId == idOTPreliminar).ToList();
         }
 
         public string newVersion(OTPreliminar otpreliminarItem)

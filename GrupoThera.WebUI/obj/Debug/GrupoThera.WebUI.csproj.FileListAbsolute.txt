@@ -196,7 +196,6 @@ D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\log4net.xml
 D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
 D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb
-F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\csc.exe
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -293,5 +292,6 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\log4net.xml
+F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb

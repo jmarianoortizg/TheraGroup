@@ -1,17 +1,17 @@
 ﻿@model GrupoThera.Entities.Models.Cotizacion.CotizacionModel
 @{
-    ViewBag.Title = "NuevaCotizacion";
-    var intValue = Model.preliminar.preliminaresId;
+    ViewBag.Title = "SearchOTPEdition";
+    var intValue = Model.otpreliminar.otPreliminarId;
     string hexValue = intValue.ToString("X");
-    var idCotizacion = "";
+    var idOTPreliminar = "";
 
-    if (Model.preliminar.noDoc != 0)
+    if (Model.otpreliminar.noDoc != 0)
     {
-        idCotizacion = Model.preliminar.noDoc.ToString() + "-" + Model.preliminar.noDocInt.ToString();
+        idOTPreliminar = Model.otpreliminar.noDoc.ToString() + "-" + Model.otpreliminar.noDocInt.ToString();
     }
     else
     {
-        idCotizacion = intValue.ToString();
+        idOTPreliminar = intValue.ToString();
     }
 }
 
@@ -22,7 +22,7 @@
     <div class="row items-push">
         <div class="col-sm-8">
             <h1 class="page-heading">
-                Edicion Cotizacion  #@idCotizacion <small> </small>
+                Edicion OT Preliminar  #@idOTPreliminar <small> </small>
             </h1>
             <h2 class="page-heading text-success" style="margin-left:10%">
                 <span id="messageSuccess"></span>
@@ -34,7 +34,7 @@
 
 </div>
 
-@if (Model.preliminar.StatusCotizacion.codigo.Equals("CERRADA"))
+@if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("CERRADA"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
@@ -45,18 +45,18 @@
         </a>
     </div>
 }
-else if (Model.preliminar.StatusCotizacion.codigo.Equals("ENVCLIENTE"))
+else if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("ENVLAB"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
             <div class="block-content block-content-full bg-city clearfix">
                 <i class="fa fa-ban fa-2x text-white pull-right"></i>
-                <span class="h4 font-w400 text-white">La cotizacion seleccionada ha sido enviada al cliente</span>
+                <span class="h4 font-w400 text-white">La cotizacion seleccionada ha sido enviada al laboratorio</span>
             </div>
         </a>
     </div>
 }
-else if (Model.preliminar.StatusCotizacion.codigo.Equals("OBSOLETA"))
+else if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("OBSOLETA"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
@@ -67,7 +67,7 @@ else if (Model.preliminar.StatusCotizacion.codigo.Equals("OBSOLETA"))
         </a>
     </div>
 }
-else if (Model.preliminar.StatusCotizacion.codigo.Equals("CANCEL"))
+else if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("CANCEL"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
@@ -78,7 +78,7 @@ else if (Model.preliminar.StatusCotizacion.codigo.Equals("CANCEL"))
         </a>
     </div>
 }
-else if (Model.preliminar.StatusCotizacion.codigo.Equals("RECHAZADA"))
+else if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
@@ -89,7 +89,7 @@ else if (Model.preliminar.StatusCotizacion.codigo.Equals("RECHAZADA"))
         </a>
     </div>
 }
-else if (Model.preliminar.StatusCotizacion.codigo.Equals("APROBACION"))
+else if (Model.otpreliminar.StatusOTPreliminar.codigo.Equals("ACEPAT"))
 {
     <div class="col-lg-12">
         <a class="block block-link-hover2" href="javascript:void(0)">
@@ -102,7 +102,7 @@ else if (Model.preliminar.StatusCotizacion.codigo.Equals("APROBACION"))
 }
 else
 {
-    using (Ajax.BeginForm("EditCotizacion", "Cotizacion", null, new AjaxOptions
+    using (Ajax.BeginForm("EdicionOTPreliminar", "OTPreliminar", null, new AjaxOptions
     {
         HttpMethod = "POST",
         OnSuccess = "SuccessEditCotizacion",
@@ -110,6 +110,8 @@ else
         OnFailure = "FailureEditCotizacion",
     }, new { @id = "frmEditCotizacion", @class = "js-validation-bootstrap" }))
     {
+        @Html.HiddenFor(model => model.otpreliminar.otPreliminarId)
+
         <div class="content content-narrow">
             <div class="row">
                 <div class="col-md-10">
@@ -134,13 +136,13 @@ else
                             <div class="tab-pane fade fade-left active in" id="btabs-animated-slideleft-components">
                                 <!-- Components Section -->
                                 @Html.HiddenFor(model => model.preliminar.preliminaresId)
-                                @Html.Partial("SearchCotizacionComponentes", Model)
+                                @Html.Partial("SearchOTPEdicionComponentes", Model)
                                 <!-- /Components Section -->
                             </div>
                             <!-- Partidas -->
                             <div class="tab-pane fade fade-left" id="btabs-animated-slideleft-partidas">
                                 <!-- Partidas Section -->
-                                @Html.Partial("SearchCotizacionEditionPartidas", Model)
+                                @Html.Partial("SearchOTPEditionPartidas", Model)
                                 <!-- /Partidas Section -->
                             </div>
                             <!-- /Partidas -->
@@ -162,7 +164,7 @@ else
                     <h3 class="push-10">#<span id="lblCantidad">0</span> <span class="h5 font-w400 text-muted">Cantidad</span></h3>
                     @Html.HiddenFor(x => x.cantidad, new { id = "valCantidad", Value = "0.0" })
                     <hr />
-                    <button class="btn btn-success push-5-r push-10" type="submit" id="btnSubmitEditCotizacion"><i class="fa fa-edit"></i> Edicion Cotizacion</button>
+                    <button class="btn btn-success push-5-r push-10" type="submit" id="btnSubmitEditCotizacion"><i class="fa fa-edit"></i> Edicion OT Preliminar</button>
                 </div>
                 <!-- /Totales -->
             </div>
@@ -243,7 +245,7 @@ else
                         }
 
                     $.ajax({
-                        url: '@Url.Action("addLineConcepts", "Cotizacion")',
+                        url: '@Url.Action("addLineConcepts", "OTPreliminar")',
                         type: 'POST',
                         data: JSON.stringify(model),
                         contentType: 'application/json',

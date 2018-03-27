@@ -111,6 +111,7 @@
     <Compile Include="Models\Cotizacion\CotizacionSearch.cs" />
     <Compile Include="Models\Cotizacion\CotizacionModel.cs" />
     <Compile Include="Models\General\DashboardModel.cs" />
+    <Compile Include="Models\Laboratorio\LaboratorioModel.cs" />
     <Compile Include="Models\General\UserLoginModel.cs" />
     <Compile Include="Models\OTPreliminar\OTPreliminarSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
