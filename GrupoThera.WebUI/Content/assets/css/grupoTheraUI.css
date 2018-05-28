@@ -7524,11 +7524,23 @@ a.block.block-link-hover3:active {
   font-weight: 300;
   line-height: 60px;
 }
+.itemXL {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 85px;
+}
 a.item:hover,
 a.item:focus {
   opacity: .6;
 }
 .item.item-circle {
+  border-radius: 50%;
+}
+.itemXL.item-circle {
   border-radius: 50%;
 }
 .item.item-rounded {

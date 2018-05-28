@@ -1,0 +1,301 @@
+﻿@model GrupoThera.Entities.Models.AreaTecnica.ATModel
+@{
+    ViewBag.Title = "ATOTPreliminares";
+}
+
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+                <span class="si si-wrench"></span> Area Tecnica [ <strong class="text-success"> OT Preliminares</strong> ]
+            </h1>
+            <h2 class="page-heading text-success" style="margin-left:10%">
+                <span id="messageSuccess"></span>
+            </h2>
+        </div>
+    </div>
+</div>
+<div id="searchOTPreliminarError">
+
+</div>
+
+<div class="content content-narrow">
+    <!-- Icon Counters -->
+    <div class="content-grid push-50">
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 col-lg-2">
+                <a class="block block-link-hover2 text-center ATOTPCounter" id="TODAY">
+                    <div class="block-content block-content-full bg-success">
+                        <i class="si si-calendar fa-4x text-white"></i>
+                        <div class="font-w600 text-white-op push-15-t">Hoy</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-6 col-sm-4 col-lg-2">
+                <a class="block block-link-hover2 text-center ATOTPCounter" id="PENDING">
+                    <div class="block-content block-content-full bg-modern">
+                        <i class="si si-cup fa-4x text-white"></i>
+                        <div class="font-w600 text-white-op push-15-t">Pendientes</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- List Items -->
+    <div class="col-sm-12 col-lg-12">
+        <div class="block hidden-print" id="cotizaciones">
+            <div class="block-header bg-gray-lighter">
+                <ul class="block-options">
+                    <li>
+                        <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                    </li>
+                </ul>
+                <div class="block-title text-normal">
+                    <h3 class="block-title"><strong>[</strong> OT Preliminares <strong>]</strong> </h3>
+                </div>
+            </div>
+            <div class="block-content">
+                <!-- Tickets Table -->
+                <div class="pull-r-l pre-scrollable" id="divItemsOTPreliminar">
+                    @Html.Partial("ATOTPreliminarItem", Model)
+                </div>
+                <!-- END Tickets Table -->
+            </div>
+        </div>
+        <!-- END Tickets List -->
+    </div>
+
+    <div class="col-sm-12 col-lg-12">
+        <div class="block">
+            <ul class="nav nav-tabs nav-tabs-alt nav-tabs-right" data-toggle="tabs">
+                <li class="active">
+                    <a href="#btabs-alt-static2-OTPreliminar">OT Preliminar</a>
+                </li>
+                <li>
+                    <a href="#btabs-alt-static2-Notas">Notas</a>
+                </li>
+                <li>
+                    <a href="#btabs-alt-static2-IngresoAT">Ingreso AT</a>
+                </li>
+                <li>
+                    <a href="#btabs-alt-static2-Actions">Acciones</a>
+                </li>
+            </ul>
+            <div class="block-content tab-content">
+                <div class="tab-pane active" id="btabs-alt-static2-OTPreliminar">
+                    <div class="row items-push" id="divOTPreliminarView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>VISTA GENERAL [</strong> OT Preliminar <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-Notas">
+                    <div class="row items-push" id="divOTPreliminarNotasView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>NOTAS [</strong> OT Preliminar <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-NewNotas">
+                    <div class="row items-push" id="divOTPreliminarNewNotasView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>NUEVA NOTA [</strong> OT Preliminar <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-IngresoAT">
+                    <div class="row items-push" id="divOTPreliminarIngresoAT">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>Ingreso AT [</strong> OT Preliminar <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-Actions">
+                    <div class="row items-push" id="divOTPreliminarActions">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>ACCIONES [</strong> OT Preliminar <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/plugins/timeAgo/js/jquery.timeago.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")"></script>
+
+
+    <script>
+        timeAgo();
+
+        $(document).ready(function () {
+
+            $("#spin").spinner({
+                color: "black"
+                  , background: "rgba(189, 227, 231, .5)"
+                  , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+                  , spin: true
+            });
+
+            statusCounters();
+            itemsView();
+        });
+
+        function itemsView() {
+            $(".OTPreliminarView").on("click", function () {
+                var model = { "idOTPreliminarSelected": $(this).attr("id") };
+                var idOTPreliminar = $(this).attr("id");
+                $("#spin").show();
+                $.ajax({
+                    url: '@Url.Action("searchOTPreliminarView", "AreaTecnica")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divOTPreliminarView').html(data.responseOTPreliminarView);
+                        $('#divOTPreliminarNotasView').html(data.responseOTPNotas);
+                        $('#divOTPreliminarNewNotasView').html(data.responseOTPNewNotas);
+                        $('#divOTPreliminarActions').html(data.responseOTPActions);
+                        $('#divOTPreliminarIngresoAT').html(data.responseOTPIngresoAT);
+
+                        createMessageInfo("INFO: OT Preliminar cargada Correctamente");
+                        setTimeout(function () {
+                            $("#spin").hide();
+                        }, 800);
+                        App.initHelpers(['datepicker', 'datetimepicker']);
+                        statusCounters();
+                        statusOTPreliminar(idOTPreliminar);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("uploadView: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusOTPreliminar(idOTPreliminar) {
+
+            $("#spin").show();
+
+            $('.statusOTPreliminar').on('click', function () {
+
+                if ($(this).attr("id") == "RECHAZADA") {
+                    if ($('#lab-msg').val() == "") {
+                        createMessageWarning("Alerta: Para ser rechazada debe de escribir un comentario");
+                    }
+                } else {
+
+                    var model = {
+                        "statusOTPreliminar": $(this).attr("id"),
+                        "idOTPreliminar": idOTPreliminar,
+                        "message": $('#lab-msg').val()
+                    };
+
+                    $.ajax({
+                        url: '@Url.Action("changeOTPreliminarStatus", "AreaTecnica")',
+                        type: 'POST',
+                        data: JSON.stringify(model),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            if (data.success) {
+                                $('#divItemsOTPreliminar').html(data.messageItems);
+                                $('#divOTPreliminarView').html(data.messageView);
+                                $('#divOTPreliminarNotasView').html(data.messageNotas);
+                                $('#divOTPreliminarNewNotasView').html(data.messageNewNotas);
+                                $('#divOTPreliminarActions').html(data.messageActions);
+                                $('#divOTPreliminarIngresoAT').html(data.messageIngresoAT);
+
+                                if (data.headerMessage) {
+                                    $("#messageSuccess").text(data.messageSuccess);
+                                    createMessageSuccess(data.messageSuccess);
+                                    goToByScroll("searchCotizacionError");
+                                } else {
+                                    createMessageSuccess(data.messageSuccess);
+                                }
+                                statusCounters();
+                                setTimeout(function () {
+                                    $("#spin").hide();
+                                }, 800);
+                            } else {
+                                createMessageDanger("ERROR: Mensaje mostrado en el inicio de la pagina");
+                                $('#searchOTPreliminarError').html(data.responseHtml);
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert("statusOTPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
+                        },
+                    });
+                }
+            });
+
+        }
+
+        function statusCounters() {
+            $(".ATOTPCounter").on("click", function () {
+                var model = { "statusCounter": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("showOTPreliminarCounterView", "AreaTecnica")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divItemsOTPreliminar').html(data.OTPreliminarHtml);
+                        itemsView();
+                        createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        timeAgo();
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function timeAgo() {
+            $("time.timeago").timeago();
+        }
+
+        function FailureOTPNewNote(response) {
+            $('#searchOTPreliminarError').html(response.resumeHtml);
+        }
+
+        function BeginOTPNewNote() {
+            if ($('#txtNewOTP').val() == "") {
+                createMessageDanger("ERROR: la nueva nota no tiene contenido ");
+                return false;
+            }
+            return true;
+        }
+
+        function SuccessOTPNewNote() {
+            $('#txtNewOTP').val("");
+            createMessageSuccess("OK: Nueva Nota Creada ");
+        }
+
+        function SuccessUpdateOTPreliminar(response) {
+            if (response.success) {
+                createMessageSuccess("Ok: Datos Guardados Correctamente");                
+            } else {
+                createMessageSuccess("ERROR:"+ response.responseHtml);                
+            }
+        }
+
+        function FailureUpdateOTPreliminar(response) {
+            createMessageSuccess("ERROR UPDATE OT Preliminar:" + response);
+        }
+    </script>
+}

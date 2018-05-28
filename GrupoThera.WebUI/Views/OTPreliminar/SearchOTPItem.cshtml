@@ -27,36 +27,7 @@ else
                     }
                     <tr>
                         <td class="font-w600 text-center" style="width: 80px;">#@idCotizacion</td>
-                        <td class="hidden-xs hidden-sm hidden-md text-center" style="width: 100px;">
-                            @if (item.StatusOrden.codigo.Equals("ABIERTA"))
-                            {
-                                <span class="label label-primary">Abierta</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("CERRADA"))
-                            {
-                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("OBSOLETA"))
-                            {
-                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("CANCEL"))
-                            {
-                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("ACEPAT"))
-                            {
-                                <span class="label label-success">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("RECHAZADA"))
-                            {
-                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrden.descripcion)</span>
-                            }
-                            else if (item.StatusOrden.codigo.Equals("ENVLAB"))
-                            {
-                                <span class="label label-primary">Laboratorio</span>
-                            }
-                        </td>
+                      
                         <td>
                             <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
                             <div class="text-muted">

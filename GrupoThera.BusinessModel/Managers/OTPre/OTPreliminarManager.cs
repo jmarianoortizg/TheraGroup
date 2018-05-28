@@ -58,7 +58,7 @@ namespace GrupoThera.BusinessModel.Managers.OT
                     comentarios = Preliminar.comentarios,
                     tipoCambio = Preliminar.tipoCambio,
                     viaticos = Preliminar.viaticos,
-                    direccionServicio = Preliminar.direccionServicio,
+                    direccionServicio = Preliminar.direccionServicio == null ? "" : Preliminar.direccionServicio,
                     iva = Preliminar.iva,
                     subtotal = Preliminar.subtotal,
                     totalIva = Preliminar.totalIva,
@@ -294,6 +294,8 @@ namespace GrupoThera.BusinessModel.Managers.OT
             var abierta = _catalogService.getStatusOTPreliminarId("ABIERTA");
             var enviadaLab = _catalogService.getStatusOTPreliminarId("ENVLAB");
             var obsoleta = _catalogService.getStatusOTPreliminarId("OBSOLETA");
+            var enviadaAT = _catalogService.getStatusOTPreliminarId("ENVAT");
+            
 
             otpreliminarItem.statusOTPreliminarId = _catalogService.getStatusOTPreliminarId("CERRADA");
             otpreliminarItem.StatusOTPreliminar = null;
@@ -304,16 +306,16 @@ namespace GrupoThera.BusinessModel.Managers.OT
             if (otpreliminarItem.noDoc != 0)
             {
                 var padre = getOTPreliminarById(otpreliminarItem.noDoc);
-                if (padre.statusOTPreliminarId == abierta || padre.statusOTPreliminarId == enviadaLab)
+                if (padre.statusOTPreliminarId == abierta || padre.statusOTPreliminarId == enviadaLab || padre.statusOTPreliminarId == enviadaAT)
                 {
                     padre.statusOTPreliminarId = obsoleta;
                     padre.StatusOTPreliminar = null;
                     _otPreliminarDA.Update(padre);
                 }
-                disabledChildrens(padre.preliminaresId);
+                disabledChildrens(padre.otPreliminarId);
             }
             else
-                disabledChildrens(otpreliminarItem.preliminaresId);
+                disabledChildrens(otpreliminarItem.otPreliminarId);
         }
 
         public void disabledChildrens(long idPadre)
@@ -321,11 +323,12 @@ namespace GrupoThera.BusinessModel.Managers.OT
             var abierta = _catalogService.getStatusOTPreliminarId("ABIERTA");
             var enviadaLab = _catalogService.getStatusOTPreliminarId("ENVLAB");
             var obsoleta = _catalogService.getStatusOTPreliminarId("OBSOLETA");
+            var enviadaAT = _catalogService.getStatusOTPreliminarId("ENVAT");
 
             var listHijas =_otPreliminarDA.GetList().Where(t => t.noDoc == idPadre).ToList();
             foreach (OTPreliminar item in listHijas)
             {
-                if (item.statusOTPreliminarId == abierta || item.statusOTPreliminarId == enviadaLab)
+                if (item.statusOTPreliminarId == abierta || item.statusOTPreliminarId == enviadaLab || item.statusOTPreliminarId == enviadaAT)
                 {
                     item.statusOTPreliminarId = obsoleta;
                     item.StatusOTPreliminar = null;

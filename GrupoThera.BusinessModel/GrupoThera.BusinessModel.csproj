@@ -73,10 +73,12 @@
     <Compile Include="Contracts\Cotizacion\ICotizacionService.cs" />
     <Compile Include="Contracts\General\ICatalogService.cs" />
     <Compile Include="Contracts\General\IRoleAccountService.cs" />
+    <Compile Include="Contracts\OS\IOServicioService.cs" />
     <Compile Include="Contracts\OTPre\IOTPreliminarService.cs" />
     <Compile Include="Managers\Cotizacion\CotizacionManager.cs" />
     <Compile Include="Managers\General\CatalogManager.cs" />
     <Compile Include="Managers\General\RoleAccountManager.cs" />
+    <Compile Include="Managers\OS\OServicioManager.cs" />
     <Compile Include="Managers\OTPre\OTPreliminarManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

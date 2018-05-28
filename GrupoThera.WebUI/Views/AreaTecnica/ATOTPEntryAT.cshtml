@@ -1,0 +1,99 @@
+﻿@model GrupoThera.Entities.Entity.OTPre.OTPreliminar
+@{
+    ViewBag.Title = "ATOTPItemView";
+    var intValue = Model.otPreliminarId;
+    string idOtPreliminar = "";
+
+    if (Model.noDoc != 0)
+    {
+        idOtPreliminar = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+    }
+    else
+    {
+        idOtPreliminar = intValue.ToString();
+    }
+
+}
+@using (Ajax.BeginForm("updateOTPreliminar", "AreaTecnica", null, new AjaxOptions
+{
+    HttpMethod = "POST",
+    OnSuccess = "SuccessUpdateOTPreliminar",
+    OnFailure = "FailureUpdateOTPreliminar",
+}, new { @id = "frmUpdateOTPreliminar", @class = "js-validation-bootstrap" }))
+{
+    @Html.HiddenFor(model => model.otPreliminarId)
+    <div class="block">
+        <div class="col-xs-2 col-md-2 animated bounceIn text-center" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="300">
+            <div class="itemXL item-circle bg-white border push-10">
+                <i class="si si-wrench text-primary"></i>
+            </div>
+        </div>
+        <div class="col-xs-9 col-md-9 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="300">
+            <h2>Area Tecnica [ OT Preliminar ] #@idOtPreliminar</h2>
+            <br />
+            <div class="row items-push">
+                <div class="col-xs-12">
+                    <label class="checkbox-inline" for="example-inline-checkbox1">
+                        @Html.CheckBoxFor(model => model.check1)  Para el servicio solicitado se tiene: Metodo de prueba seleccionado y adecuado al estado
+                    </label>
+                </div>
+                <div class="col-xs-12">
+                    <label class="checkbox-inline" for="example-inline-checkbox1">
+                        @Html.CheckBoxFor(model => model.check2)<span></span> Capacidad instalada del equipo para cubrir el trabajo
+                    </label>
+                </div>
+                <div class="col-xs-12">
+                    <label class="checkbox-inline" for="example-inline-checkbox1">
+                        @Html.CheckBoxFor(model => model.check3)<span></span> Se tiene el personal suficiente y capacidado para dar el servicio
+                    </label>
+                </div>
+                <div class="col-xs-12">
+                    <label class="checkbox-inline" for="example-inline-checkbox1">
+                        @Html.CheckBoxFor(model => model.check4)<span></span> Tiempo de entrega solicitado suficiente para realizar pruebas
+                    </label>
+                </div>
+
+                <br />
+
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-material" data-date-format="dd/mm/yyyy">
+                            @Html.TextBoxFor(model => model.fechaMuestreo, new { id = "fechaMuestreo", @class = "js-datepicker form-control", type = "text", placeholder = "dd/mm/yy", dateFormat= "dd/mm/yy" })
+                            <label for="example-datepicker4">Fecha de Muestro</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-material" data-date-format="dd/mm/yyyy">
+                            @Html.TextBoxFor(model => model.fechaEntrega, new { id = "fechaEntrega", @class = "js-datepicker form-control", type = "text", placeholder = "dd/mm/yy", dateFormat = "dd/mm/yy" })
+                            <label for="example-datepicker4">Fecha de Entrega de Resultados</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label for="material-textarea-large">Comentarios de la Cotizacion</label>
+                            @Html.TextAreaFor(model => model.comentarios, new { id = "comentarios", @class = "form-control", rows = "6", type = "text", placeholder = "Contenido" })
+                        </div>
+                        <div class="col-xs-6">
+                            <label for="material-textarea-large">Direccion del Servicio</label>
+                            @Html.TextAreaFor(model => model.direccionServicio, new { id = "direccionServicio", @class = "form-control", rows = "6", type = "text", placeholder = "Contenido" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-cloud push-5-r"></i> Salvar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+

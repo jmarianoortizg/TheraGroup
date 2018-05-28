@@ -1,0 +1,87 @@
+﻿@model GrupoThera.Entities.Entity.OTPre.OTPreliminar
+@{
+    ViewBag.Title = "ATOTPItemView";
+    var intValue = Model.otPreliminarId;
+    string hexValue = intValue.ToString("X");
+    string idOtPreliminar = "";
+
+    if (Model.noDoc != 0)
+    {
+        idOtPreliminar = Model.noDoc.ToString() + "-" + Model.noDocInt.ToString();
+    }
+    else
+    {
+        idOtPreliminar = intValue.ToString();
+    }
+
+}
+<div class="block">
+    <div class="col-xs-2 col-md-2 animated bounceIn text-center" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="300">
+        <div class="itemXL item-circle bg-white border push-10">
+            <i class="si si-wrench text-primary"></i>
+        </div>
+    </div>
+    <div class="col-xs-9 col-md-9 animated bounceIn" data-toggle="appear" data-offset="-100" data-class="animated bounceIn" data-timeout="300">
+        <h2>Area Tecnica [ OT Preliminar ] #@idOtPreliminar</h2>
+        <br />
+        <div class="row items-push">
+            <div class="col-sm-6">
+                <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Cliente</h3>
+                <address>
+                    @Html.DisplayFor(modelItem => Model.Cliente.rfc)<br>
+                    @Html.DisplayFor(modelItem => Model.Cliente.direccion)<br>
+                    @Html.DisplayFor(modelItem => Model.Cliente.email)<br>
+                    <i class="si si-call-end"></i> @Html.DisplayFor(modelItem => Model.Cliente.telefono)
+                </address>
+            </div>
+            <div class="col-sm-6">
+                <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Generales</h3>
+                <address>
+                    <strong> Pago: </strong> @Html.DisplayFor(modelItem => Model.FormaPago.pago)<br>
+                    <strong> Clasificacion: </strong> @Html.DisplayFor(modelItem => Model.ClasificacionServicio.descripcion)<br>
+                    <strong> Moneda: </strong> @Html.DisplayFor(modelItem => Model.Moneda.moneda) - @Html.DisplayFor(modelItem => Model.Moneda.tipoCambio)<br>
+                </address>
+            </div>
+            <div class="col-sm-12">
+                <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Comentarios</h3>
+                <p>@Html.DisplayFor(modelItem => Model.comentarios)</p>
+            </div>
+            <div class="col-sm-12">
+                <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Direccion Servicio</h3>
+                <p>@Html.DisplayFor(modelItem => Model.direccionServicio)</p>
+            </div>
+            <div class="col-sm-12">
+                <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Listado Partidas</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center" style="width: 50px;">Cantidad</th>
+                            <th>Servicio</th>
+                            <th class="hidden-xs" style="width: 15%;">Numero Serie</th>
+                            <th class="text-center" style="width: 100px;">Marca</th>
+                            <th class="text-center" style="width: 100px;">Modelo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.OTPrePartidas)
+                        {
+                            <tr>
+                                <td class="text-center">@Html.DisplayFor(modelItem => item.cantidad)</td>
+                                <td>
+                                    <p class="font-w600 push-10">@Html.DisplayFor(modelItem => item.Servicio.clave)</p>
+                                    <div class="text-muted">@Html.DisplayFor(modelItem => item.Servicio.descripcion)</div>
+                                </td>
+                                <td class="text-right">@Html.DisplayFor(modelItem => item.serie)</td>
+                                <td class="text-right">@Html.DisplayFor(modelItem => item.marca)</td>
+                                <td class="text-right">@Html.DisplayFor(modelItem => item.modelo)</td>
+                            </tr>
+                        }             
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -23,6 +23,8 @@ namespace GrupoThera.BusinessModel.Contracts.OT
         string duplicateOTPreliminar(OTPreliminar OTPreliminar);
         string newVersion(OTPreliminar otpreliminarItem);
         string edicionPartidasPreliminar(CotizacionModel cotizacionModel);
+        void disableParents(OTPreliminar otpreliminarItem);
+
 
         #endregion Methods
     }

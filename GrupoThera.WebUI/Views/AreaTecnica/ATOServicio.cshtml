@@ -1,0 +1,294 @@
+﻿@model GrupoThera.Entities.Models.AreaTecnica.ATOSModel
+@{
+    ViewBag.Title = "ATOServicio";
+}
+
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+                <span class="si si-wrench"></span> Area Tecnica [ <strong class="text-success"> Orden Servicio </strong> ]
+            </h1>
+            <h2 class="page-heading text-success" style="margin-left:10%">
+                <span id="messageSuccess"></span>
+            </h2>
+        </div>
+    </div>
+</div>
+<div id="searchOServicioError">
+
+</div>
+
+<div class="content content-narrow">
+    <!-- Icon Counters -->
+    <div class="content-grid push-10">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-lg-12">
+                <div class="content-grid push-50">
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover3 bg-primary ATOSCounter" id="TODAY">
+                                <div class="block-content block-content-full bg-primary clearfix">
+                                    <i class="si si-calendar fa-2x text-white pull-right"></i>
+                                    <span class="h4 font-w700 text-white"> </span> <span class="h4 text-white-op">Hoy</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover1 ATOSCounter" id="ABIERTA">
+                                <div class="block-content block-content-full clearfix">
+                                    <i class="si si-envelope-open fa-2x text-warning pull-right"></i>
+                                    <span class="h4 font-w700"> </span> <span class="h4 text-muted">Abiertas</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover1 ATOSCounter" id="PROCESS">
+                                <div class="block-content block-content-full clearfix">
+                                    <i class="si si-magic-wand fa-2x text-danger pull-right"></i>
+                                    <span class="h4 font-w700"></span> <span class="h4 text-muted">En Proceso</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover3 ATOSCounter" id="CANCEL">
+                                <div class="block-content block-content-full clearfix">
+                                    <i class="si si-ban fa-2x text-muted pull-right"></i>
+                                    <span class="h4 font-w700"> </span> <span class="h4 text-muted">Cancelada</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover3 bg-success ATOSCounter" id="PENDING">
+                                <div class="block-content block-content-full bg-flat clearfix">
+                                    <i class="si si-cup fa-2x text-white pull-right"></i>
+                                    <span class="h4 font-w700 text-white"></span> <span class="h4 text-white-op">Pendientes</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover3 ATOSCounter" id="CLOSE">
+                                <div class="block-content block-content-full bg-danger clearfix">
+                                    <i class="si si-lock fa-2x text-white pull-right"></i>
+                                    <span class="h4 font-w700 text-white"> </span> <span class="h4 text-white-op">Cerradas</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover1 ATOSCounter" id="PARTIAL">
+                                <div class="block-content block-content-full clearfix">
+                                    <i class="si si-puzzle fa-2x text-primary pull-right"></i>
+                                    <span class="h4 font-w700"></span> <span class="h4 text-muted">Realizada Parcial</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3">
+                            <a class="block block-link-hover1 ATOSCounter" id="PROGRAM">
+                                <div class="block-content block-content-full clearfix">
+                                    <i class="si si-calendar fa-2x text-primary pull-right"></i>
+                                    <span class="h4 font-w700"></span> <span class="h4 text-muted">Programada</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- List Items -->
+    <div class="col-sm-12 col-lg-12 remove-padding">
+        <div class="block hidden-print">
+            <div class="block-header bg-gray-lighter">
+                <ul class="block-options">
+                    <li>
+                        <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
+                    </li>
+                </ul>
+                <div class="block-title text-normal">
+                    <h3 class="block-title"><strong>[</strong> Orden Servicio <strong>]</strong> </h3>
+                </div>
+            </div>
+            <div class="block-content">
+                <!-- Tickets Table -->
+                <div class="pull-r-l pre-scrollable" id="divItemsOServicio">
+                    @Html.Partial("ATOServicioItem", Model)
+                </div>
+                <!-- END Tickets Table -->
+            </div>
+        </div>
+        <!-- END Tickets List -->
+    </div>
+
+    <div class="col-sm-12 col-lg-12 remove-padding">
+        <div class="block">
+            <ul class="nav nav-tabs nav-tabs-alt nav-tabs-right" data-toggle="tabs">
+                <li class="active">
+                    <a href="#btabs-alt-static2-OServicio">Orden Servicio</a>
+                </li>
+                <li>
+                    <a href="#btabs-alt-static2-NewNotas">Notas</a>
+                </li>
+                <li>
+                    <a href="#btabs-alt-static2-Notas">Nueva Nota</a>
+                </li>
+            </ul>
+            <div class="block-content tab-content">
+                <div class="tab-pane active" id="btabs-alt-static2-OServicio">
+                    <div class="row items-push" id="divOServicioView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>VISTA GENERAL [</strong> Orden Servicio <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-NewNotas">
+                    <div class="row items-push" id="divOServicioNewNotasView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>NUEVA NOTA [</strong> Orden Servicio <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="btabs-alt-static2-Notas">
+                    <div class="row items-push" id="divOServicioNotasView">
+                        <div class="col-sm-4 col-lg-4">
+                            <h3 class="block-title text-primary"><strong>NOTAS [</strong> Orden Servicio <strong>] </strong> </h3>
+                            <h3 class="block-title" style="margin-left:10px"><strong> No Seleccionada</strong> </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/plugins/timeAgo/js/jquery.timeago.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/moment.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js")"></script>
+
+
+    <script>
+        timeAgo();
+
+        $(document).ready(function () {
+
+            $("#spin").spinner({
+                color: "black"
+                  , background: "rgba(189, 227, 231, .5)"
+                  , html: "<i class='fa fa-repeat' style='color: gray;'> </i>"
+                  , spin: true
+            });
+
+            statusCounters();
+            itemsView();
+        });
+
+        function itemsView() {
+            $(".OServicioView").on("click", function () {
+                var model = { "idOServicioSelected": $(this).attr("id") };
+                var idOTPreliminar = $(this).attr("id");
+                $("#spin").show();
+                $.ajax({
+                    url: '@Url.Action("searchOServicioView", "AreaTecnica")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divOServicioView').html(data.responseOServicioView);
+                        $('#divOServicioNotasView').html(data.responseOSNotas);
+                        $('#divOServicioNewNotasView').html(data.responseOSNewNotas);
+
+                        createMessageInfo("INFO: Orden de Servicio cargada Correctamente");
+                        setTimeout(function () {
+                            $("#spin").hide();
+                        }, 800);
+
+                        ChangeStatusOrdenPartidas();
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("uploadView: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function statusCounters() {
+            $(".ATOSCounter").on("click", function () {
+                var model = { "statusCounter": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("showOServicioCounterView", "AreaTecnica")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#divItemsOServicio').html(data.OServicioHtml);
+                        itemsView();
+                        createMessageInfo("INFO: Orden Servicio cargada Correctamente");
+                        timeAgo();
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+        }
+
+        function timeAgo() {
+            $("time.timeago").timeago();
+        }
+
+        function BeginOSNewNote() {
+            if ($('#txtNewOTP').val() == "") {
+                createMessageDanger("ERROR: La nueva nota no tiene contenido ");
+                return false;
+            }
+            return true;
+        }
+
+        function SuccessOSNewNote() {
+            $('#txtNewOTP').val("");
+            createMessageSuccess("OK: Nueva Nota Creada ");
+        }
+
+        function FailureOSNewNote(response) {
+            $('#searchOServicioError').html(response.resumeHtml);
+        }
+
+        function ChangeStatusOrdenPartidas() {
+            $(".statusOrdenPartidasView").on("change", function () {
+                $(this).attr("disabled", "disabled");
+                var model = { "idOrdenServicioPartida": $(this).attr("id"), "idStatusOrdenPartida": $(this).val() };
+                $.ajax({
+                    url: '@Url.Action("changeStatusOrdenPartidas", "AreaTecnica")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.responseResult)
+                        {
+                            createMessageSuccess("OK: Estatus guardado correctamente");
+                            $('#divItemsOServicio').html("<h3 class='block-title text-primary'><strong>[</strong> Recargar Resultados <strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>");
+                        }else
+                            createMessageInfo("INFO: Orden Servicio cargada Correctamente");
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+
+        }
+
+    </script>
+}

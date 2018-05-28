@@ -1,201 +1,4 @@
-D:\GT\GrupoThera\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\csc.exe
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\System.Collections.Immutable.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\System.Reflection.Metadata.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\vbc.exe
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\VBCSCompiler.exe
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\roslyn\VBCSCompiler.exe.config
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.WebUI.dll.config
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.WebUI.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.WebUI.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\XmlDocument.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Antlr3.Runtime.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\EntityFramework.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\EntityFramework.SqlServer.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.BusinessLogic.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.BusinessModel.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.Core.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.Entities.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Web.Infrastructure.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\MvcSiteMapProvider.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\MvcSiteMapProvider.WebActivator.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Newtonsoft.Json.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.Common.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.WebApi.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.WebApi.WebHost.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.EntityFramework.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Owin.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Net.Http.Formatting.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Helpers.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Http.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Http.WebHost.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Mvc.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Optimization.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Razor.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.Deployment.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.Razor.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\WebActivatorEx.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\WebGrease.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\log4net.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.BusinessLogic.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.BusinessModel.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.Core.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\GrupoThera.Entities.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\EntityFramework.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\EntityFramework.SqlServer.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\MvcSiteMapProvider.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\MvcSiteMapProvider.WebActivator.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Newtonsoft.Json.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.Common.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.WebApi.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Ninject.Web.WebApi.WebHost.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Net.Http.Formatting.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Http.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Http.WebHost.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Helpers.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Mvc.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Optimization.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.Razor.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.Deployment.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\System.Web.WebPages.Razor.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Antlr3.Runtime.pdb
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\bin\log4net.xml
-D:\GT\GrupoThera\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
-D:\GT\GrupoThera\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\csc.exe
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\System.Collections.Immutable.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\System.Reflection.Metadata.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\vbc.exe
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\VBCSCompiler.exe
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\roslyn\VBCSCompiler.exe.config
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.WebUI.dll.config
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.WebUI.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.WebUI.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\XmlDocument.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Antlr3.Runtime.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\EntityFramework.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\EntityFramework.SqlServer.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.BusinessLogic.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.BusinessModel.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.Core.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.Entities.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Web.Infrastructure.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\MvcSiteMapProvider.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\MvcSiteMapProvider.WebActivator.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Newtonsoft.Json.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.Common.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.WebApi.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.WebApi.WebHost.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.EntityFramework.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Owin.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Net.Http.Formatting.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Helpers.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Http.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Http.WebHost.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Mvc.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Optimization.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Razor.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.Deployment.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.Razor.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\WebActivatorEx.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\WebGrease.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\log4net.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.BusinessLogic.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.BusinessModel.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.Core.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\GrupoThera.Entities.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\EntityFramework.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\EntityFramework.SqlServer.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\MvcSiteMapProvider.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\MvcSiteMapProvider.WebActivator.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Newtonsoft.Json.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.Common.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.WebApi.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Ninject.Web.WebApi.WebHost.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Net.Http.Formatting.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Http.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Http.WebHost.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Helpers.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Mvc.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Optimization.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.Razor.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.Deployment.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\System.Web.WebPages.Razor.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Antlr3.Runtime.pdb
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\bin\log4net.xml
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
-D:\GT\GrupoThera V1 - Copy\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb
+F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\csc.exe
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -243,6 +46,11 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Oracle.ManagedDataAccess.EntityFramework.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Owin.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Net.Http.Formatting.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Security.Cryptography.Algorithms.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Security.Cryptography.Encoding.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Security.Cryptography.Primitives.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Security.Cryptography.X509Certificates.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Web.Helpers.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Web.Http.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\System.Web.Http.WebHost.dll
@@ -292,6 +100,11 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\log4net.xml
-F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.xml
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.dep
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.rda
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.xml

@@ -1,11 +1,13 @@
 ﻿using GrupoThera.BusinessLogic.Contracts.Catalogs;
 using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.Contracts.OS;
 using GrupoThera.BusinessLogic.Contracts.OT;
 using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OS;
 using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
@@ -40,6 +42,8 @@ namespace GrupoThera.BusinessModel.Managers.General
         private ITiempoEntrega _tiempoEntregaDA;
         private IStatusCotizacion _statusCotizacionDA;
         private IStatusOTPreliminar _statusOTPreliminarDA;
+        private IStatusOrdenServicio _statusOrdenServicioDA;
+        private IStatusOrdenPartidas _statusOrdenPartidasDA;
         private INote _noteDA;
 
 
@@ -68,6 +72,8 @@ namespace GrupoThera.BusinessModel.Managers.General
                                ITiempoEntrega tiempoEntregaDA,
                                IStatusCotizacion statusCotizacionDA,
                                IStatusOTPreliminar statusOTPreliminarDA,
+                               IStatusOrdenServicio statusOrdenServicioDA,
+                               IStatusOrdenPartidas statusOrdenPartidasDA,
                                INote noteDA
                              )
         {
@@ -93,6 +99,8 @@ namespace GrupoThera.BusinessModel.Managers.General
             _tiempoEntregaDA = tiempoEntregaDA;
             _statusCotizacionDA = statusCotizacionDA;
             _statusOTPreliminarDA = statusOTPreliminarDA;
+            _statusOrdenServicioDA = statusOrdenServicioDA;
+            _statusOrdenPartidasDA = statusOrdenPartidasDA;
             _noteDA = noteDA;
         }
 
@@ -564,6 +572,44 @@ namespace GrupoThera.BusinessModel.Managers.General
         }
 
         #endregion StatusOTPreliminar
+
+        #region StatusOServicio        
+
+        public IList<StatusOrdenServicio> getStatusOrdenServicio()
+        {
+            return _statusOrdenServicioDA.GetList().ToList();
+        }
+
+        public StatusOrdenServicio getStatusOrdenServicio(string status)
+        {
+            return _statusOrdenServicioDA.Get(t => t.codigo.Equals(status));
+        }
+
+        public long getStatusOrdenServicioId(string status)
+        {
+            return _statusOrdenServicioDA.Get(t => t.codigo.Equals(status)).statusOrdenServicioId;
+        }
+
+        #endregion StatusOServicio
+
+        #region StatusOPartidas        
+
+        public IList<StatusOrdenPartidas> getStatusOrdenPartidas()
+        {
+            return _statusOrdenPartidasDA.GetList().ToList();
+        }
+
+        public StatusOrdenPartidas getStatusOrdenPartidas(string status)
+        {
+            return _statusOrdenPartidasDA.Get(t => t.codigo.Equals(status));
+        }
+
+        public long getStatusOrdenPartidasId(string status)
+        {
+            return _statusOrdenPartidasDA.Get(t => t.codigo.Equals(status)).statusOrdenPartidasId;
+        }
+
+        #endregion StatusOPartidas
 
         #region Note 
 

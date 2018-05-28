@@ -57,7 +57,7 @@ namespace GrupoThera.WebUI.Controllers
         }
 
         public ActionResult showOTPreliminarCounterView(string statusCounter) {
-            var model = (LaboratorioModel)TempData["LaboratorioModel"];
+            var model = generateInitialModel();
             TempData.Keep("LaboratorioModel");
 
             if (statusCounter.Equals("TODAY"))
@@ -68,7 +68,7 @@ namespace GrupoThera.WebUI.Controllers
             return Json(new
             {
                 success = true,
-                OTPreliminarHtml = StdClassWeb.RenderToString(PartialView("OTPreliminarItem", model), HttpContext)
+                OTPreliminarHtml = StdClassWeb.RenderToString(PartialView("LabOTPreliminarItem", model), HttpContext)
             },
             JsonRequestBehavior.AllowGet);
         }
@@ -108,6 +108,68 @@ namespace GrupoThera.WebUI.Controllers
             _catalogService.AddNote(modelSearch.note);
             var model = generateNoteModel(modelSearch.otpreliminar.noteId);
             return PartialView("~/Views/Laboratorio/LabOTPNotes.cshtml", model);
+        }
+
+        public ActionResult changeOTPreliminarStatus(string statusOTPreliminar, long idOTPreliminar,string message)
+        {
+            try
+            {
+                TempData.Keep("LaboratorioModel");
+                var preliminarOTItem = _otPreliminarService.getOTPreliminarById(idOTPreliminar);
+                var messageSuccess = "";                
+                if (statusOTPreliminar.Equals("RECHAZADA"))
+                {
+                    var status = _catalogService.getStatusOTPreliminarStatus(statusOTPreliminar);
+                    preliminarOTItem.StatusOTPreliminar = status;
+                    preliminarOTItem.statusOTPreliminarId = status.statusOTPreliminarId;
+                    var result = _otPreliminarService.edicionOTPreliminar(preliminarOTItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);                    
+                    messageSuccess = "OK: Cambio de estado correctemente";           
+                }
+                else if (statusOTPreliminar.Equals("ENVAT"))
+                {
+                    var status = _catalogService.getStatusOTPreliminarStatus(statusOTPreliminar);
+                    preliminarOTItem.StatusOTPreliminar = status;
+                    preliminarOTItem.statusOTPreliminarId = status.statusOTPreliminarId;
+                    var result = _otPreliminarService.edicionOTPreliminar(preliminarOTItem);
+                    if (!result.Equals("OK"))
+                        throw new Exception(result);
+                    messageSuccess = "OK: Cambio de estado correctemente";
+                }
+
+                if (!message.Equals(""))
+                {
+                    var note = new Note();
+                    note.creation = DateTime.Now;
+                    note.document = statusOTPreliminar;
+                    note.owner = (string)HttpContext.Session["UserName"];
+                    note.noteDocId = preliminarOTItem.noteId;
+                    note.content = message;
+                    _catalogService.AddNote(note);
+                }
+
+                return Json(new
+                {
+                    success = true,
+                    messageItems = "<h3 class='block-title text-primary'><strong>[</strong> Recargar Resultados <strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageView = "<h3 class='block-title text-primary'><strong>VISTA GENERAL[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageNotas = "<h3 class='block-title text-primary'><strong>NOTAS[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageNewNotas = "<h3 class='block-title text-primary'><strong>NUEVA NOTA[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageActions = "<h3 class='block-title text-primary'><strong>ACCIONES[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messagePartidas = "<h3 class='block-title text-primary'><strong>ACCIONES[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageQuestions = "<h3 class='block-title text-primary'><strong>ACCIONES[</strong> OT Preliminar<strong>] </strong> </h3><h3 class='block-title' style ='margin-left:10px'><strong> No Seleccionada</strong> </h3>",
+                    messageSuccess = messageSuccess                    
+                }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new
+                {
+                    success = false,
+                    responseHtml = StdClassWeb.RenderToString(PartialView("~/Views/Shared/ErrorFocus.cshtml", new HandleErrorInfo(new Exception(ex.Message), "CotizationController", "changePreliminarStatus")), HttpContext)
+                }, JsonRequestBehavior.AllowGet);
+            }
         }
 
 

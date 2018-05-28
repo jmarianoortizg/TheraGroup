@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OS;
 using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
@@ -96,6 +97,15 @@ namespace GrupoThera.BusinessModel.Contracts.General
         IList<StatusOTPreliminar> getStatusOTPreliminar();
         StatusOTPreliminar getStatusOTPreliminarStatus(string status);
         long getStatusOTPreliminarId(string status);
+
+        IList<StatusOrdenServicio> getStatusOrdenServicio();
+        StatusOrdenServicio getStatusOrdenServicio(string status);
+        long getStatusOrdenServicioId(string status);
+
+        IList<StatusOrdenPartidas> getStatusOrdenPartidas();
+        StatusOrdenPartidas getStatusOrdenPartidas(string status);
+        long getStatusOrdenPartidasId(string status);
+
 
         IList<Note> getNotesByDocument(long idNote);
         void AddNote(Note note);

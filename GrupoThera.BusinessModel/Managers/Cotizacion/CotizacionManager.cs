@@ -2,6 +2,7 @@
 using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.Core.Logging;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Models.Cotizacion;
 using System;

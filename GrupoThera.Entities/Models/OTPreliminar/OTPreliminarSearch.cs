@@ -22,6 +22,9 @@ namespace GrupoThera.Entities.Models.OTPre
         public IList<OTPreliminar> aceptadaAT { get; set; }
         public IList<OTPreliminar> rechazada { get; set; }
         public IList<OTPreliminar> laboratorio { get; set; }
+        public IList<OTPreliminar> enviadaAT { get; set; }
+        public IList<OTPreliminar> rechazadaAT { get; set; }
+
 
         // Filter Section
         public string from { get; set; }

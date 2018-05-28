@@ -102,10 +102,16 @@
     <Compile Include="Entity\Catalogs\Empresa.cs" />
     <Compile Include="Entity\General\Rol.cs" />
     <Compile Include="Entity\General\Usuario.cs" />
+    <Compile Include="Entity\OS\StatusOrdenPartidas.cs" />
+    <Compile Include="Entity\OS\StatusOrdenServicio.cs" />
+    <Compile Include="Entity\OS\OrdenServicioPartidas.cs" />
+    <Compile Include="Entity\OS\OrdenServicio.cs" />
     <Compile Include="Entity\OTPre\StatusOrden.cs" />
     <Compile Include="Entity\OTPre\OTPrePartidas.cs" />
     <Compile Include="Entity\OTPre\OTPreliminar.cs" />
     <Compile Include="Filters\Mock\NotificationFilter.cs" />
+    <Compile Include="Models\AreaTecnica\ATOSModel.cs" />
+    <Compile Include="Models\AreaTecnica\ATModel.cs" />
     <Compile Include="Models\Catalog\CatalogModel.cs" />
     <Compile Include="Models\Cotizacion\CotizacionField.cs" />
     <Compile Include="Models\Cotizacion\CotizacionSearch.cs" />

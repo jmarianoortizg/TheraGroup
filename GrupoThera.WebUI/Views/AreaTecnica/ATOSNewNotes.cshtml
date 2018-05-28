@@ -1,0 +1,35 @@
+﻿@model GrupoThera.Entities.Models.AreaTecnica.ATOSModel
+@{
+    ViewBag.Title = "ATOTPNewNotes";
+    var id = Model.ordenServicio.ordenServicioId;
+}
+
+<div class="block-content">
+
+    @using (Ajax.BeginForm("newNoteOServicio", "AreaTecnica",
+                                                                            new AjaxOptions
+                                                                            {
+                                                                                InsertionMode = InsertionMode.Replace,
+                                                                                UpdateTargetId = "divNotesOServicio",
+                                                                                OnSuccess = "SuccessOSNewNote",
+                                                                                OnFailure = "FailureOSNewNote",
+                                                                                OnBegin = "BeginOSNewNote",
+                                                                            }))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(model => model.ordenServicio.noteId)
+            <div class="col-xs-12">
+                <div class="form-material floating">
+                    @Html.TextAreaFor(model => model.note.content, new { @id = "txtNewOTP", @rows = 7, @cols = 10, placeholder = "Contenido de Nueva Nota", @class = "form-control" })
+                </div>
+                <div class="help-block text-right ">La nota creada sera relacionada con la Orden de Servicio #@id</div>
+            </div>
+        </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button class="btn btn-sm btn-info" type="submit"><i class="fa fa-send push-5-r"></i> Crear Nota</button>
+                </div>
+            </div>
+    }
+
+</div>

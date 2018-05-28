@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "TestDocuments";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default Buttons -->
+            <div class="block">
+                <div class="block-header">
+                    <h3 class="block-title">Test Documents</h3>
+                </div>
+                <div class="block-content">
+                    <div class="col-md-12">
+                        <h1>Welfare Documents</h1>
+                        <div class="row items-push">
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("CotizacionPreliminarWelfare", "Documents", new { documentId = 824 }, FormMethod.Post))
+                                {
+                                    <button class="btn btn-minw btn-default" type="submit">Cot Preliminar PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("CotizacionServicioWelfare", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                <button class="btn btn-minw btn-default" type="submit">Cot Servicio PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("OrdenTrabajoPreliminarWelfare", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                <button class="btn btn-minw btn-default" type="submit">OT Preliminar PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("OrdenTrabajoServicioWelfare", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                <button class="btn btn-minw btn-default" type="submit">OT Servicio PDF</button>
+                                }
+                            </div>
+                        </div>
+                        <div class="row items-push">
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="CotizacionPreliminarWF"> Cot Preliminar Web </a>
+                            </div>
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="CotizacionServicioWF"> Cot Sevicio Web </a>
+                            </div>
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="OrdenTrabajoPreliminarWF"> OT Preliminar Web </a>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="OrdenTrabajoServicioWF"> OT Servicio Web </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h1>PIA Documents</h1>
+                        <div class="row items-push">
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("CotizacionPreliminarPia", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                    <button class="btn btn-minw btn-default" type="submit">Cot Preliminar PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("CotizacionServicioPia", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                    <button class="btn btn-minw btn-default" type="submit">Cot Servicio PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("OrdenTrabajoPreliminarPia", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                    <button class="btn btn-minw btn-default" type="submit">OT Preliminar PDF</button>
+                                }
+                            </div>
+                            <div class="col-xs-2">
+                                @using (Html.BeginForm("OrdenTrabajoServicioPia", "Documents", new { documentId = 43 }, FormMethod.Post))
+                                {
+                                    <button class="btn btn-minw btn-default" type="submit">OT Servicio PDF</button>
+                                }
+                            </div>
+                        </div>
+                        <div class="row items-push">
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="CotizacionPreliminarPIA"> Cot Preliminar Web </a>
+                            </div>
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="CotizacionServicioPIA"> Cot Sevicio Web </a>
+                            </div>
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="OrdenTrabajoPreliminarPIA"> OT Preliminar Web </a>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <a class="btn btn-minw btn-primary preliminaryDocument" id="OrdenTrabajoServicioPIA"> OT Servicio Web </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12" id="DivDocumentView" style="height:3000px">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+
+            $('.preliminaryDocument').on('click', function () {
+
+                var model = { "documentSelected": $(this).attr("id") };
+
+                $.ajax({
+                    url: '@Url.Action("ShowTestDocumentView", "Documents")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $('#DivDocumentView').html(data);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("AddLine: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+
+
+        });
+
+    </script>
+}
+
+

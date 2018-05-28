@@ -1,17 +1,22 @@
 ﻿using GrupoThera.BusinessLogic.Contracts.Catalogs;
 using GrupoThera.BusinessLogic.Contracts.Cotizacion;
 using GrupoThera.BusinessLogic.Contracts.General;
+using GrupoThera.BusinessLogic.Contracts.OS;
 using GrupoThera.BusinessLogic.Contracts.OT;
 using GrupoThera.BusinessLogic.DataAccess.Catalogs;
 using GrupoThera.BusinessLogic.DataAccess.Cotizacion;
 using GrupoThera.BusinessLogic.DataAccess.General;
+using GrupoThera.BusinessLogic.DataAccess.OS;
 using GrupoThera.BusinessLogic.DataAccess.OT;
 using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.BusinessModel.Contracts.OS;
 using GrupoThera.BusinessModel.Contracts.OT;
 using GrupoThera.BusinessModel.Managers.Cotizacion;
 using GrupoThera.BusinessModel.Managers.General;
+using GrupoThera.BusinessModel.Managers.OS;
 using GrupoThera.BusinessModel.Managers.OT;
+using GrupoThera.Entities.Entity.OS;
 using GrupoThera.Entities.Entity.OTPre;
 using Ninject;
 using System;
@@ -88,6 +93,8 @@ namespace GrupoThera.WebUI.DependencyResolvers
             kernel.Bind<ITiempoEntrega>().To<TiempoEntregaDA>().InSingletonScope();
             kernel.Bind<IStatusCotizacion>().To<StatusCotizacionDA>().InSingletonScope();
             kernel.Bind<IStatusOTPreliminar>().To<StatusOTPreliminarDA>().InSingletonScope();
+            kernel.Bind<IStatusOrdenPartidas>().To<StatusOrdenPartidasDA>().InSingletonScope();
+            kernel.Bind<IStatusOrdenServicio>().To<StatusOrdenServicioDA>().InSingletonScope();
             kernel.Bind<INote>().To<NoteDA>().InSingletonScope();
 
             #endregion
@@ -105,8 +112,16 @@ namespace GrupoThera.WebUI.DependencyResolvers
             kernel.Bind<IOTPreliminarService>().To<OTPreliminarManager>().InSingletonScope();
             kernel.Bind<IOTPreliminar>().To<OTPreliminarDA>().InSingletonScope();
             kernel.Bind<IOTPrePartida>().To<OTPrePartidaDA>().InSingletonScope();
-            
+
             #endregion OT 
+
+            #region OS
+
+            kernel.Bind<IOServicioService>().To<OServicioManager>().InSingletonScope();
+            kernel.Bind<IOServicio>().To<OrdenServicioDA>().InSingletonScope();
+            kernel.Bind<IOServicioPartida>().To<OrdenServicioPartidaDA>().InSingletonScope();
+
+            #endregion OS 
         }
 
         /// <summary>

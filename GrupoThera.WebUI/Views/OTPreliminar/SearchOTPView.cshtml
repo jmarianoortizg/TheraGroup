@@ -21,12 +21,12 @@
             <li>
                 <a class="btn btn-noborder" onclick="goToByScroll('searchOTPreliminarError');"><i class="fa fa-search"></i> Ir Filtros</a>
             </li>
-            @*<li>
-                    <a class="btn btn-noborder" onclick="App.initHelper('print-page');"><i class="si si-printer"></i> Imprimir</a>
-                </li>
-                <li>
-                    <a class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
-                </li>*@
+            <li>
+                @using (Html.BeginForm("CotizacionServicioWelfare", "Documents", new { documentId = Model.otPreliminarId }, FormMethod.Post))
+                {
+                    <a onclick='this.parentNode.submit(); return false;' class="btn btn-noborder"><i class="fa fa-download"></i> Descargar</a>
+                }
+            </li>
             @if (!Model.StatusOTPreliminar.codigo.Equals("ENVLAB") && !Model.StatusOTPreliminar.codigo.Equals("CERRADA") &&
                   !Model.StatusOTPreliminar.codigo.Equals("OBSOLETA") && !Model.StatusOTPreliminar.codigo.Equals("CANCEL") &&
                   !Model.StatusOTPreliminar.codigo.Equals("RECHAZADA"))

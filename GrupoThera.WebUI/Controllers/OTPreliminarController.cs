@@ -59,6 +59,8 @@ namespace GrupoThera.WebUI.Controllers
                 aceptadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ACEPAT")).ToList(),
                 rechazada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("RECHAZADA")).ToList(),
                 laboratorio = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ENVLAB")).ToList(),
+                enviadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ENVAT")).ToList(),
+                rechazadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("RECHAZADAAT")).ToList(),
                 OTPreliminaresActual = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ABIERTA")).ToList(),
                 listClasificacion = DropListHelper.GetClasificacionServicioValue0(_catalogService.getClasificacionServicios()),
                 listCliente = DropListHelper.GetClienteValue0(_catalogService.getClientes()),
@@ -79,7 +81,7 @@ namespace GrupoThera.WebUI.Controllers
 
         public ActionResult showOTPreliminarCounterView(string statusCounter)
         {
-            var model = (OTPreliminarSearch)TempData["OTPreliminarSearch"];
+            var model = generateInitialModel();
             TempData.Keep("OTPreliminarSearch");
 
             if (statusCounter.Equals("ABIERTA"))
@@ -90,12 +92,14 @@ namespace GrupoThera.WebUI.Controllers
                 model.OTPreliminaresActual = model.obsoleta;
             else if (statusCounter.Equals("CANCEL"))
                 model.OTPreliminaresActual = model.cancelada;
-            else if (statusCounter.Equals("ACEPAT"))
-                model.OTPreliminaresActual = model.aceptadaAT;
             else if (statusCounter.Equals("RECHAZADA"))
                 model.OTPreliminaresActual = model.rechazada;
             else if (statusCounter.Equals("ENVLAB"))
                 model.OTPreliminaresActual = model.laboratorio;
+            else if (statusCounter.Equals("RECHAZADAAT"))
+                model.OTPreliminaresActual = model.rechazadaAT;
+            else if (statusCounter.Equals("ENVAT"))
+                model.OTPreliminaresActual = model.enviadaAT;
 
             return Json(new
             {
@@ -134,7 +138,7 @@ namespace GrupoThera.WebUI.Controllers
             }
             if (OTPreliminarSearch.nOTPreliminar != 0)
             {
-                allOTPreliminares = allOTPreliminares.Where(i => i.preliminaresId == OTPreliminarSearch.nOTPreliminar || i.noDoc == OTPreliminarSearch.nOTPreliminar).ToList();
+                allOTPreliminares = allOTPreliminares.Where(i => i.otPreliminarId == OTPreliminarSearch.nOTPreliminar || i.noDoc == OTPreliminarSearch.nOTPreliminar).ToList();
             }
             //if (!string.IsNullOrEmpty(OTPreliminarSearch.marca))
             //{
@@ -157,6 +161,9 @@ namespace GrupoThera.WebUI.Controllers
             OTPreliminarSearch.cerrada = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("CERRADA")).ToList();
             OTPreliminarSearch.obsoleta = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("OBSOLETA")).ToList();
             OTPreliminarSearch.aceptadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ACEPAT")).ToList();
+            OTPreliminarSearch.enviadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("ENVAT")).ToList();
+            OTPreliminarSearch.rechazadaAT = allOTPreliminares.Where(t => t.StatusOTPreliminar.codigo.Equals("RECHAZADAAT")).ToList();
+
 
             return Json(new
             {
@@ -212,16 +219,6 @@ namespace GrupoThera.WebUI.Controllers
                     if (!result.Equals("OK"))
                         throw new Exception(result);
                     messageSuccess = "OK: Cambio de estado correctemente";
-                }
-                else if (statusOTPreliminar.Equals("OT"))
-                {
-                    //preliminarOTItem.OTPrePartidas = _cotizacionService.getAllPrePartidasByPreliminar(preliminarOTItem.otPreliminarId);
-                    //var result = _otService.createOT(preliminarItem);
-                    //if (result.Contains("Error"))
-                    //    throw new Exception(result);
-                    //messageSuccess = "Nueva Pre-Orden de trabajo Creada #" + result;
-                    //messageHeader = true;
-                    //_cotizacionService.disableParents(preliminarItem);
                 }
                 else if (statusOTPreliminar.Equals("CERRADA"))
                 {

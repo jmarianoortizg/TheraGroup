@@ -1,0 +1,65 @@
+﻿@model GrupoThera.Entities.Models.AreaTecnica.ATModel
+@{
+    ViewBag.Title = "ATOTPNotes";
+}
+
+<div id="divNotesOTPreliminar">
+
+    @if (Model.listNotes.Count == 0)
+    {
+        <h3 style="margin-left:10%" class="block-title text-city"><strong> <span class="fa fa-warning"> </span> [</strong> Ninguna nota creada <strong>]</strong> </h3>
+        <hr />
+    }
+    else
+    {
+        <div class="block-content">
+            <!-- If you put a checkbox in thead section, it will automatically toggle all tbody section checkboxes -->
+            <table class="js-table-checkable table table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="hidden-xs" style="width: 15%;">Documento</th>
+                        <th class="hidden-xs" style="width: 15%;">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.listNotes)
+                    {
+                        var time = item.creation;
+                        <tr>
+                            <td>
+                                <p class="font-w600 push-10"> @Html.DisplayFor(modelItem => item.owner)</p>
+                                <p class="text-muted remove-margin-b"> @Html.Raw(Html.Encode(item.content).Replace("\n", "<br />"))</p>
+                            </td>
+                            <td class="hidden-xs">
+                                @if (item.document.Equals("OTP"))
+                                {
+                                    <span class="label label-primary">OTP</span>
+                                }
+                                else if (item.document.Equals("LAB"))
+                                {
+                                    <span class="label label-success">Laboratorio</span>
+                                }
+                                else if (item.document.Equals("RECHAZADA"))
+                                {
+                                    <span class="label label-danger">Rechazada Laboratorio</span>
+                                }
+                                else if (item.document.Equals("ENVAT"))
+                                {
+                                    <span class="label label-primary">Enviada AT</span>
+                                }
+                                else if (item.document.Equals("ACEPAT"))
+                                {
+                                    <span class="label label-primary">Area Tecnica OT</span>
+                                }
+                            </td>
+                            <td class="hidden-xs">
+                                <em class="text-muted">@time.ToString("yyyy-MM-dd HH:mm:ss")</em>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OS;
 using GrupoThera.Entities.Entity.OTPre;
 using System;
 using System.Collections.Generic;
@@ -124,7 +125,7 @@ namespace GrupoThera.WebUI.Utils
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
-        
+
         public static SelectList GetEstado(IList<Estado> list)
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
@@ -237,5 +238,48 @@ namespace GrupoThera.WebUI.Utils
             itemsList.Add(new SelectListItem() { Text = "No Estatus Seleccionado", Value = "0" });
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
+
+        public static SelectList GetStatusOrdenPartidasAreaTecnicaInicial(IList<StatusOrdenPartidas> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.statusOrdenPartidasId.ToString()
+            }).ToList();
+
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Cancelada")).Single());
+
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
+        public static SelectList GetStatusOrdenPartidasAreaTecnicaProcess(IList<StatusOrdenPartidas> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.statusOrdenPartidasId.ToString()
+            }).ToList();
+
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Abierta")).Single());
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Cancelada")).Single());
+
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
+        public static SelectList GetStatusOrdenPartidasVentas(IList<StatusOrdenPartidas> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.descripcion,
+                Value = a.statusOrdenPartidasId.ToString()
+            }).ToList();
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Realizada")).Single());
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("En Proceso")).Single());
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Programada")).Single());
+            itemsList.Remove(itemsList.Where(c => c.Text.Equals("Por Cancelar")).Single());
+
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
     }
 }

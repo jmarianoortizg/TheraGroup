@@ -33,10 +33,6 @@ else
                             {
                                 <span class="label label-primary">Abierta</span>
                             }
-                            else if (item.StatusOTPreliminar.codigo.Equals("ACEPAT"))
-                            {
-                                <span class="label label-success">Aceptada AT</span>
-                            }
                             else if (item.StatusOTPreliminar.codigo.Equals("CANCEL"))
                             {
                                 <span class="label label-danger">Cancelada</span>
@@ -47,7 +43,7 @@ else
                             }
                             else if (item.StatusOTPreliminar.codigo.Equals("ENVLAB"))
                             {
-                                <span class="label label-warning">Laboratorio</span>
+                                <span class="label label-warning">Enviada Lab</span>
                             }
                             else if (item.StatusOTPreliminar.codigo.Equals("OBSOLETA"))
                             {
@@ -55,7 +51,15 @@ else
                             }
                             else if (item.StatusOTPreliminar.codigo.Equals("RECHAZADA"))
                             {
-                                <span class="label label-danger">Rechazada</span>
+                                <span class="label label-danger">Rechazada Lab</span>
+                            }
+                            else if (item.StatusOTPreliminar.codigo.Equals("ENVAT"))
+                            {
+                                <span class="label label-primary">Enviada AT</span>
+                            }
+                            else if (item.StatusOTPreliminar.codigo.Equals("RECHAZADAAT"))
+                            {
+                                <span class="label label-danger">Rechazada AT</span>
                             }
                         </td>
                         <td>

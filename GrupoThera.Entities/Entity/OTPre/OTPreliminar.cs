@@ -90,6 +90,18 @@ namespace GrupoThera.Entities.Entity.OTPre
         [Column("OTP_NOTE_ID")]
         public long noteId { get; set; }
 
+        [Column("OTP_CHECK1")]
+        public bool check1 { get; set; }
+
+        [Column("OTP_CHECK2")]
+        public bool check2 { get; set; }
+
+        [Column("OTP_CHECK3")]
+        public bool check3 { get; set; }
+
+        [Column("OTP_CHECK4")]
+        public bool check4 { get; set; }
+
         [Column("OTP_MON_ID")]        
         public long monedaId { get; set; }
         public virtual Moneda Moneda { get; set; }

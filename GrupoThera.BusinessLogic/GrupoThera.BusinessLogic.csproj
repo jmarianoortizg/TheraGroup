@@ -81,6 +81,10 @@
     <Compile Include="Contracts\General\IRol.cs" />
     <Compile Include="Contracts\General\ISucursal.cs" />
     <Compile Include="Contracts\General\IUsuario.cs" />
+    <Compile Include="Contracts\OS\IOServicio.cs" />
+    <Compile Include="Contracts\OS\IOServicioPartida.cs" />
+    <Compile Include="Contracts\OS\IStatusOrdenPartidas.cs" />
+    <Compile Include="Contracts\OS\IStatusOrdenServicio.cs" />
     <Compile Include="Contracts\OT\IStatusOrden.cs" />
     <Compile Include="Contracts\OT\IOTPrePartida.cs" />
     <Compile Include="Contracts\OT\IOTPreliminar.cs" />
@@ -110,6 +114,10 @@
     <Compile Include="DataAccess\General\RolDA.cs" />
     <Compile Include="DataAccess\General\SucursalDA.cs" />
     <Compile Include="DataAccess\General\UsuarioDA.cs" />
+    <Compile Include="DataAccess\OS\OrdenServicioPartidaDA.cs" />
+    <Compile Include="DataAccess\OS\StatusOrdenPartidasDA.cs" />
+    <Compile Include="DataAccess\OS\StatusOrdenServicioDA.cs" />
+    <Compile Include="DataAccess\OS\OrdenServicioDA.cs" />
     <Compile Include="DataAccess\OT\StatusOrdenDA.cs" />
     <Compile Include="DataAccess\OT\OTPrePartidaDA.cs" />
     <Compile Include="DataAccess\OT\OTPreliminarDA.cs" />

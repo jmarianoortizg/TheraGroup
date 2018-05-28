@@ -3,5 +3,22 @@
     ViewBag.Title = "LabOTPActions";
 }
 
-<h2>LabOTPActions</h2>
-
+<div class="form-horizontal push-10-t push-10">
+    <div class="form-group">
+        <div class="col-xs-12">
+            <div class="form-material">
+                <textarea class="form-control" id="lab-msg" name="lab-msg" rows="7" ></textarea>
+                <label for="contact2-msg">Mensaje</label>
+            </div>
+            <div class="help-block text-right">Para cualquier rechazo se debera de realizar un comentario</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-2">
+            <button class="btn btn-sm btn-info statusOTPreliminar" type="button" id="ENVAT"><i class="si si-wrench push-5-r"></i> Enviar A.T</button>
+        </div>
+        <div class="col-xs-2">
+            <button class="btn btn-sm btn-danger statusOTPreliminar" type="button" id="RECHAZADA"><i class="si si-action-undo push-5-r"></i> Rechazar Laboratorio</button>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 ﻿using GrupoThera.Entities.Entity.Catalogs;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
+using GrupoThera.Entities.Entity.OS;
 using GrupoThera.Entities.Entity.OTPre;
 using System.Data.Entity;
 
@@ -45,18 +46,26 @@ namespace GrupoThera.BusinessLogic.EntityFramework.Context
 
         #endregion Catalogs
 
-        #region Cotizacion
-        public DbSet<Preliminar> Preliminar { get; set; }
-                public DbSet<PrePartidas> PrePartidas { get; set; }
-                public DbSet<StatusCotizacion> StatusCotizacion { get; set; }
+            #region Cotizacion
+            public DbSet<Preliminar> Preliminar { get; set; }
+                    public DbSet<PrePartidas> PrePartidas { get; set; }
+                    public DbSet<StatusCotizacion> StatusCotizacion { get; set; }
 
-        #endregion Cotizacion
+            #endregion Cotizacion
 
             #region OrdenTrabajo
-                public DbSet<OTPreliminar> OrdenTrabajo { get; set; }
-                public DbSet<OTPrePartidas> OTPrePartidas { get; set; }
-                public DbSet<StatusOTPreliminar> StatusOrden { get; set; }
+                    public DbSet<OTPreliminar> OrdenTrabajo { get; set; }
+                    public DbSet<OTPrePartidas> OTPrePartidas { get; set; }
+                    public DbSet<StatusOTPreliminar> StatusOrden { get; set; }
             #endregion OrdenTrabajo
+
+            #region OrdenServicio
+            public DbSet<OrdenServicio> OrdenServicio { get; set; }
+            public DbSet<OrdenServicioPartidas> OrdenServicioPartidas { get; set; }
+            public DbSet<StatusOrdenServicio> StatusOrdenServicio { get; set; }
+            public DbSet<StatusOrdenPartidas> StatusOrdenPartidas { get; set; }
+
+        #endregion OrdenServicio
 
         #endregion Fields
 

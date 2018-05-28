@@ -12,6 +12,9 @@
         </div>
     </div>
 </div>
+<div id="searchOTPreliminarError">
+
+</div>
 
 <div class="content content-narrow">
     <!-- Icon Counters -->
@@ -32,7 +35,7 @@
                         <i class="si si-cup fa-4x text-white"></i>
                         <div class="font-w600 text-white-op push-15-t">Pendientes</div>
                     </div>
-                </a> 
+                </a>
             </div>
 
         </div>
@@ -54,7 +57,7 @@
             <div class="block-content">
                 <!-- Tickets Table -->
                 <div class="pull-r-l pre-scrollable" id="divItemsOTPreliminar">
-                    @Html.Partial("OTPreliminarItem", Model)
+                    @Html.Partial("LabOTPreliminarItem", Model)
                 </div>
                 <!-- END Tickets Table -->
             </div>
@@ -121,7 +124,7 @@
     <script src="@Url.Content("~/Content/plugins/timeAgo/js/jquery.timeago.js")"></script>
 
     <script>
-        $("time.timeago").timeago();
+        timeAgo();
 
         $(document).ready(function () {
 
@@ -166,6 +169,56 @@
             });
         }
 
+        function statusOTPreliminar(idOTPreliminar) {
+
+            $("#spin").show();
+
+            $('.statusOTPreliminar').on('click', function () {
+
+                if ($(this).attr("id") == "RECHAZADA") {
+                    if ($('#lab-msg').val() == "") {
+                        createMessageWarning("Alerta: Para ser rechazada debe de escribir un comentario");
+                        return;
+                    }
+                }
+
+                var model = {
+                    "statusOTPreliminar": $(this).attr("id"),
+                    "idOTPreliminar": idOTPreliminar,
+                    "message": $('#lab-msg').val()
+                };
+
+                $.ajax({
+                    url: '@Url.Action("changeOTPreliminarStatus", "Laboratorio")',
+                    type: 'POST',
+                    data: JSON.stringify(model),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        if (data.success) {
+                            $('#divItemsOTPreliminar').html(data.messageItems);
+                            $('#divOTPreliminarView').html(data.messageView);
+                            $('#divOTPreliminarNotasView').html(data.messageNotas);
+                            $('#divOTPreliminarNewNotasView').html(data.messageNewNotas);
+                            $('#divOTPreliminarActions').html(data.messageActions);
+
+                            createMessageSuccess(data.messageSuccess);
+                            statusCounters();
+                            setTimeout(function () {
+                                $("#spin").hide();
+                            }, 800);
+                        } else {
+                            createMessageDanger("ERROR: Mensaje mostrado en el inicio de la pagina");
+                            $('#searchOTPreliminarError').html(data.responseHtml);
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("statusOTPreliminar: An error occurred! " + textStatus + " - " + errorThrown);
+                    },
+                });
+            });
+
+        }
+
         function statusCounters() {
             $(".labOTPCounter").on("click", function () {
                 var model = { "statusCounter": $(this).attr("id") };
@@ -179,12 +232,17 @@
                         $('#divItemsOTPreliminar').html(data.OTPreliminarHtml);
                         itemsView();
                         createMessageInfo("INFO: Preliminar cargada Correctamente");
+                        timeAgo();
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("statusCounters: An error occurred! " + textStatus + " - " + errorThrown);
                     },
                 });
             });
+        }
+
+        function timeAgo() {
+            $("time.timeago").timeago();
         }
 
         function FailureOTPNewNote(response) {

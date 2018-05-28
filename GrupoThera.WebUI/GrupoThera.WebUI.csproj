@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +54,42 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HiQPdf, Version=10.15.0.0, Culture=neutral, PublicKeyToken=acd8b62594985b24, processorArchitecture=MSIL">
+      <HintPath>..\packages\hiqpdf.10.15\lib\net40\HiQPdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Binary, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Binary.1.10.0\lib\net45\jsreport.Binary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Client, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Client.2.0.2\lib\net45\jsreport.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Embedded, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Embedded.1.0.5\lib\net46\jsreport.Embedded.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Local, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Local.1.1.2\lib\net45\jsreport.Local.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.MVC, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.MVC.2.0.1\lib\net46\jsreport.MVC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Shared.1.0.1\lib\net45\jsreport.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="jsreport.Types, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jsreport.Types.1.8.3\lib\net45\jsreport.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -67,7 +104,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -86,29 +123,51 @@
       <HintPath>..\packages\Ninject.Web.WebApi.WebHost.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.24160719\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -141,9 +200,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -161,6 +218,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -249,6 +307,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\api\Filters\GenericAuthenticationFilter .cs" />
     <Compile Include="Controllers\api\Filters\MyExceptionFilter.cs" />
+    <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\AreaTecnicaController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
@@ -315,8 +375,10 @@
     <Content Include="Content\assets\img\favicons\favicon-32x32.png" />
     <Content Include="Content\assets\img\favicons\favicon-96x96.png" />
     <Content Include="Content\assets\img\favicons\favicon.png" />
+    <Content Include="Content\assets\img\logo\logoWelfare.jpg" />
     <Content Include="Content\assets\img\logo\logoBackend.jpg" />
     <Content Include="Content\assets\img\logo\logoOriginal.jpg" />
+    <Content Include="Content\assets\img\logo\WatherMark2.png" />
     <Content Include="Content\assets\js\app.js" />
     <Content Include="Content\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\assets\js\core\jquery.appear.min.js" />
@@ -1190,6 +1252,7 @@
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.css" />
     <Content Include="Content\assets\js\plugins\sweetalert2\sweetalert2.min.js" />
     <Content Include="Content\assets\less\variables.less" />
+    <Content Include="Content\assets\img\logo\logoPia.jpg" />
     <Content Include="Content\plugins\gridforms\example.html" />
     <Content Include="Content\plugins\gridforms\gridforms\gridforms.css" />
     <Content Include="Content\plugins\gridforms\gridforms\gridforms.js" />
@@ -1216,7 +1279,16 @@
     <Content Include="Content\plugins\jquery-validation\lib\jquery.mockjax.js" />
     <Content Include="Content\plugins\jquery-validation\lib\jquery.simulate.js" />
     <Content Include="Content\plugins\jquery-validation\lib\require.js" />
+    <Content Include="Content\plugins\jsPDF\css\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\plugins\jsPDF\css\main.css" />
+    <Content Include="Content\plugins\jsPDF\js\basic.js" />
+    <Content Include="Content\plugins\jsPDF\js\html2canvas.js" />
+    <Content Include="Content\plugins\jsPDF\js\jquery-1.7.1.min.js" />
+    <Content Include="Content\plugins\jsPDF\js\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Content\plugins\jsPDF\js\jspdf.debug.js" />
+    <Content Include="Content\plugins\jsPDF\js\jspdf.min.js" />
     <Content Include="Content\plugins\timeAgo\js\jquery.timeago.js" />
+    <Content Include="Content\assets\img\logo\WatherMark.png" />
     <Content Include="Documentation\XmlDocument.xml" />
     <Content Include="Documentation\XmlDocumentEntities.xml" />
     <Content Include="favicon.ico" />
@@ -1238,7 +1310,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
@@ -1255,7 +1329,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
@@ -1442,7 +1515,7 @@
     <Content Include="Views\Cotizacion\NuevaCotizacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Cotizacion\ReportCotizacion.cshtml" />
+    <Content Include="Views\Documents\CotizacionPreliminarWelfare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\OTPreliminar\OTPreliminar.cshtml" />
@@ -1457,7 +1530,7 @@
     <Content Include="Views\AreaTecnica\ATPreliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\AreaTecnica\ATServicio.cshtml" />
+    <Content Include="Views\AreaTecnica\ATOServicio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\AreaTecnica\ATReporte.cshtml" />
@@ -1631,7 +1704,7 @@
     <Content Include="Views\OTPreliminar\SearchOTPNewLineConcept.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Laboratorio\OTPreliminarItem.cshtml" />
+    <Content Include="Views\Laboratorio\LabOTPreliminarItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Laboratorio\LabOTPItemView.cshtml" />
@@ -1644,6 +1717,67 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Laboratorio\LabOTPActions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPActions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPItemView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPNewNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPreliminar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPreliminarItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOTPEntryAT.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOServicioItemView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOServicioItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOSNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AreaTecnica\ATOSNewNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OServicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OServicioItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OServicioItemView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OSNewNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OSNotes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Venta\OSActions.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
+    <None Include=".bin\npm.cmd" />
+    <Content Include="Views\Documents\TestDocuments.cshtml" />
+    <Content Include="Views\Documents\CotizacionServicioWelfare.cshtml" />
+    <Content Include="Views\Documents\OrdenTrabajoPreliminarWelfare.cshtml" />
+    <Content Include="Views\Documents\OrdenTrabajoServicioWelfare.cshtml" />
+    <Content Include="Views\Documents\CotizacionPreliminarPia.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,6 +8,8 @@
     var aceptadaAT = Model.aceptadaAT.Count;
     var rechazada = Model.rechazada.Count;
     var laboratorio = Model.laboratorio.Count;
+    var enviadaAT = Model.enviadaAT.Count;
+    var rechazadaAT = Model.rechazadaAT.Count;
 }
 
 <ul class="nav nav-pills nav-stacked push">
@@ -18,32 +20,32 @@
     </li>
     <li>
         <a class="statusCounters" id="CERRADA">
-            <span class="badge pull-right">@cerrada</span><i class="fa fa-fw fa-thumbs-o-up push-5-r"></i> Aprobadas
+            <span class="badge pull-right">@cerrada</span><i class="fa fa-fw fa-thumbs-o-up push-5-r"></i> Cerradas
         </a>
     </li>
     <li>
         <a class="statusCounters" id="OBSOLETA">
-            <span class="badge pull-right">@obsoleta</span><i class="fa fa-fw fa-lock push-5-r"></i> Cerradas
+            <span class="badge pull-right">@obsoleta</span><i class="fa fa-fw fa-lock push-5-r"></i> Obsoletas
         </a>
     </li>
     <li>
         <a class="statusCounters" id="CANCEL">
             <span class="badge pull-right">@cancelada</span><i class="fa fa-fw fa-times-circle-o push-5-r"></i> Canceladas
         </a>
-    </li>
-    <li>
-        <a class="statusCounters" id="ACEPAT">
-            <span class="badge pull-right">@aceptadaAT</span><i class="fa fa-fw fa-eyedropper  push-5-r"></i> Aceptadas A.T
-        </a>
-    </li>
+    </li>   
     <li>
         <a class="statusCounters" id="RECHAZADA">
             <span class="badge pull-right">@rechazada</span><i class="fa fa-fw fa-thumbs-o-down push-5-r"></i> Rechazadas Laboratorio
         </a>
     </li>
     <li>
-        <a class="statusCounters" id="ENVLAB">
-            <span class="badge pull-right">@laboratorio</span><i class="fa fa-fw fa-flask push-5-r"></i> Enviadas Laboratorio
+        <a class="statusCounters" id="ENVAT">
+            <span class="badge pull-right">@enviadaAT</span><i class="fa fa-fw fa-flask push-5-r"></i> Enviadas A.T
+        </a>
+    </li>
+    <li>
+        <a class="statusCounters" id="RECHAZADAAT">
+            <span class="badge pull-right">@rechazadaAT</span><i class="fa fa-fw fa-flask push-5-r"></i> Rechazadas A.T
         </a>
     </li>
 </ul>

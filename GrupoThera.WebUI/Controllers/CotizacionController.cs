@@ -1,16 +1,15 @@
 ﻿using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
 using GrupoThera.BusinessModel.Contracts.OT;
+using GrupoThera.Core.Logging;
 using GrupoThera.Core.Utils;
 using GrupoThera.Entities.Entity.Cotizaciones;
 using GrupoThera.Entities.Entity.General;
-using GrupoThera.Entities.Models.Catalog;
 using GrupoThera.Entities.Models.Cotizacion;
 using GrupoThera.WebUI.Utils;
+using HiQPdf;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GrupoThera.WebUI.Controllers
@@ -76,6 +75,7 @@ namespace GrupoThera.WebUI.Controllers
             var result = _cotizacionService.createPreliminar(cotizacionModel);
             if (!result.Contains("ERROR"))
             {
+                Logger.WriteLog(LogLevel.INFO, string.Format("Create new Cotizacion: ID:{0} by {1}", result, HttpContext.Session["UserName"].ToString()));
                 return Json(new
                 {
                     idPreliminar = result,
@@ -215,7 +215,7 @@ namespace GrupoThera.WebUI.Controllers
 
         public ActionResult showPreliminarCounterView(string statusCounter)
         {
-            var model = (CotizacionSearch)TempData["CotizacionSearch"];
+            var model = generateInitialModel();
             TempData.Keep("CotizacionSearch");
 
             if (statusCounter.Equals("OPEN"))
@@ -279,6 +279,8 @@ namespace GrupoThera.WebUI.Controllers
                 result = _cotizacionService.edicionPartidasPreliminar(cotizacionModel);
                 if (result.Equals("OK"))
                 {
+                    Logger.WriteLog(LogLevel.INFO, string.Format("Edition Cotizacion: ID:{0} by {1}", cotizacionModel.preliminar.preliminaresId, HttpContext.Session["UserName"].ToString()));
+
                     return Json(new
                     {
                         success = true
@@ -308,6 +310,7 @@ namespace GrupoThera.WebUI.Controllers
                     if (!result.Equals("OK"))
                         throw new Exception(result);
                     messageSuccess = "OK: Cambio de estado correctemente";
+                    Logger.WriteLog(LogLevel.INFO, string.Format("Cambio Status Cotizacion: ID:{0} Status:{1} by {2}", idPreliminar, statusPreliminar, HttpContext.Session["UserName"].ToString()));
                 }
                 else if (statusPreliminar.Equals("OT"))
                 {
@@ -318,6 +321,8 @@ namespace GrupoThera.WebUI.Controllers
                     messageSuccess = "Nueva Pre-Orden de trabajo Creada #" + result;
                     messageHeader = true;
                     _cotizacionService.disableParents(preliminarItem);
+                    Logger.WriteLog(LogLevel.INFO, string.Format("Cambio Status Cotizacion: ID:{0} Status:{1} by {2}", idPreliminar, statusPreliminar, HttpContext.Session["UserName"].ToString()));
+                    Logger.WriteLog(LogLevel.INFO, string.Format("Create New OTPreliminar: ID:{0} by {1}", result, HttpContext.Session["UserName"].ToString()));
                 }
                 else if (statusPreliminar.Equals("CERRADA"))
                 {   
@@ -326,6 +331,7 @@ namespace GrupoThera.WebUI.Controllers
                         throw new Exception(result);
                     messageSuccess = "Nueva Cotizacion Duplicada Creada #" + result;
                     messageHeader = true;
+                    Logger.WriteLog(LogLevel.INFO, string.Format("Duplicate Cotizacion: Padre:{0}, Hijo{1} by {2}", preliminarItem, result, HttpContext.Session["UserName"].ToString()));
                 }
                 else if (statusPreliminar.Equals("NEWVERSION"))
                 {
@@ -334,6 +340,8 @@ namespace GrupoThera.WebUI.Controllers
                     if (!result.Equals("OK"))
                         throw new Exception(result);
                     messageSuccess = "OK: Nueva version creada correctamente";
+                    Logger.WriteLog(LogLevel.INFO, string.Format("New Version Cotizacion: Padre:{0}, Hijo{1} by {2}", preliminarItem, result, HttpContext.Session["UserName"].ToString()));
+
                 }
 
                 var model = generateInitialModel();     
@@ -358,13 +366,6 @@ namespace GrupoThera.WebUI.Controllers
         #endregion SearchCotizacion
 
         #region ReportCotizacion
-
-        [CustomAuthorizeAttribute(privilege = "ReportCotizacion,GeneralCotizacion")]
-
-        public ActionResult ReportCotizacion()
-        {
-            return View();
-        }
 
         #endregion ReportCotizacion
 

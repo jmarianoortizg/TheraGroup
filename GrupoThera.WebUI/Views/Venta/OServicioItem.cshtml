@@ -1,0 +1,66 @@
+﻿@model GrupoThera.Entities.Models.AreaTecnica.ATOSModel
+@{
+    ViewBag.Title = "OServicioItem";
+}
+
+@if (Model.ordenServicioActual.Count == 0)
+{
+    <h3 style="margin-left:10%" class="block-title text-city"><strong>[</strong> No Resultados <strong>]</strong> </h3>
+    <hr />
+}
+else
+{
+    <table class="table table-hover table-vcenter">
+        <tbody>
+            @foreach (var item in Model.ordenServicioActual)
+
+                {
+                    var time = item.fechaCreacion;
+                    var id = item.ordenServicioId;
+                    var idOServicio = item.ordenServicioId.ToString();
+
+                <tr>
+                    <td class="font-w600 text-center" style="width: 80px;">#@idOServicio</td>
+                    <td>
+                        <a class="font-w600" data-toggle="modal" data-target="#modal-ticket" href="#">@Html.DisplayFor(modelItem => item.comentarios)</a>
+                        <div class="text-muted">
+                            <time class="timeago" datetime="@time.ToString("yyyy-MM-dd HH:mm:ss")"> </time> por <a href="javascript:void(0)">@Html.DisplayFor(modelItem => item.owner)</a> | @time.ToString("yyyy-MM-dd HH:mm tt")
+                        </div>
+                    </td>
+                    <td class="text-center" style="width: 100px;">
+                        @if (item.StatusOrdenServicio.codigo.Equals("ABIERTA"))
+                        {
+                            <span class="label label-primary">@Html.DisplayFor(modelItem => item.StatusOrdenServicio.descripcion)</span>
+                        }
+                        else if (item.StatusOrdenServicio.codigo.Equals("CANCEL"))
+                        {
+                            <span class="label label-danger">@Html.DisplayFor(modelItem => item.StatusOrdenServicio.descripcion)</span>
+                        }
+                        else if (item.StatusOrdenServicio.codigo.Equals("CLOSE"))
+                        {
+                            <span class="label label-success">@Html.DisplayFor(modelItem => item.StatusOrdenServicio.descripcion)</span>
+                        }
+                        else if (item.StatusOrdenServicio.codigo.Equals("PARTIAL"))
+                        {
+                            <span class="label label-warning">@Html.DisplayFor(modelItem => item.StatusOrdenServicio.descripcion)</span>
+                        }
+                        else if (item.StatusOrdenServicio.codigo.Equals("PROCESS"))
+                        {
+                            <span class="label label-warning">@Html.DisplayFor(modelItem => item.StatusOrdenServicio.descripcion)</span>
+                        }
+                    </td>
+                    <td>
+                        <em>Cliente: @Html.DisplayFor(modelItem => item.Cliente.razonSocial)</em>
+                    </td>
+                    <td>
+                        <div class="btn-group" style="width: 1px;">
+                            <a id="@id" class="btn btn-xs btn-default OServicioView" data-original-title="Ver" data-toggle="tooltip"><i class="fa fa-street-view"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
