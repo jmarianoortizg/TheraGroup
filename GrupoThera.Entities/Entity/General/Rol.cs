@@ -17,13 +17,13 @@ namespace GrupoThera.Entities.Entity.General
         public long rolId { get; set; }
 
         [Column("CROL_NAME")]
-        public string name { get; set; }
+        public string category { get; set; }
 
         [Column("CROL_DESCRIPTION")]
         public string descripcion { get; set; }
 
         [Column("CROL_ENABLED")]
-        public long enabled { get; set; }
+        public bool enabled { get; set; }
 
         [Column("CROL_CODE")]
         public string code { get; set; }

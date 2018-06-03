@@ -34,13 +34,19 @@
                     <i class="si si-call-end"></i> @Html.DisplayFor(modelItem => Model.Cliente.telefono)
                 </address>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Generales</h3>
                 <address>
                     <strong> Pago: </strong> @Html.DisplayFor(modelItem => Model.FormaPago.pago)<br>
                     <strong> Clasificacion: </strong> @Html.DisplayFor(modelItem => Model.ClasificacionServicio.descripcion)<br>
                     <strong> Moneda: </strong> @Html.DisplayFor(modelItem => Model.Moneda.moneda) - @Html.DisplayFor(modelItem => Model.Moneda.tipoCambio)<br>
                 </address>
+            </div>
+            <div class="col-sm-2">
+                @using (Html.BeginForm("OrdenTrabajoPreliminarWelfare", "Documents", new { documentId = Model.otPreliminarId }, FormMethod.Post))
+                {
+                    <button class="btn btn-sm btn-info push-5-r push-10" type="submit"><i class="fa fa-download"></i> Descarga PDF </button>
+                }
             </div>
             <div class="col-sm-12">
                 <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Comentarios</h3>
@@ -75,7 +81,7 @@
                                 <td class="text-right">@Html.DisplayFor(modelItem => item.marca)</td>
                                 <td class="text-right">@Html.DisplayFor(modelItem => item.modelo)</td>
                             </tr>
-                        }             
+                        }
                     </tbody>
                 </table>
             </div>

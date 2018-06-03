@@ -36,7 +36,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region OrdenServicio
 
-        [CustomAuthorizeAttribute(privilege = "ATServicio,GeneralAreaTecnica")]
+        [CustomAuthorizeAttribute(privilege = "V004OTSERVICE")]
         public ActionResult OServicio()
         {
             var model = generateInitialModelOS();

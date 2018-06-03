@@ -33,6 +33,12 @@
                     <strong> Moneda: </strong> @Html.DisplayFor(modelItem => Model.ordenServicio.Moneda.moneda) - @Html.DisplayFor(modelItem => Model.ordenServicio.Moneda.tipoCambio)<br>
                 </address>
             </div>
+            <div class="col-sm-2">
+                @using (Html.BeginForm("OrdenTrabajoServicioWelfare", "Documents", new { documentId = Model.ordenServicio.ordenServicioId }, FormMethod.Post))
+                {
+                    <button class="btn btn-sm btn-info push-5-r push-10" type="submit"><i class="fa fa-download"></i> Descarga PDF </button>
+                }
+            </div>
             <div class="col-sm-12">
                 <h3 class="h5 font-w600 text-uppercase push-10"><i class="fa fa-check text-primary push-5-r"></i> Comentarios</h3>
                 <p>@Html.DisplayFor(modelItem => Model.ordenServicio.comentarios)</p>

@@ -16,6 +16,7 @@ namespace GrupoThera.WebUI.Controllers
 
         private ICatalogService _catalogService;
         private IRoleAccountService _roleAccountService;
+        private int idEmpresa = 1;
 
         #endregion Fields
 
@@ -40,10 +41,10 @@ namespace GrupoThera.WebUI.Controllers
             {
                 var userLoginAccount = _roleAccountService.getAccountUser(userLogin.UserName, userLogin.Password);
 
-                if (userLoginAccount == null)
+               if (userLoginAccount == null)
                     throw new Exception("User y/o Password son incorrectos");
 
-                var empresaSucursalUs = _roleAccountService.getEmpresaSucursalUsuario(userLogin.selectedEmpresa,userLogin.selectedSucursal,userLoginAccount.usuarioId);
+                var empresaSucursalUs = _roleAccountService.getEmpresaSucursalUsuario(idEmpresa, userLogin.selectedSucursal,userLoginAccount.usuarioId);
 
                 if (empresaSucursalUs == null)
                     throw new Exception("El usuario no pertenece a esta empresa y/o sucursal");
@@ -55,9 +56,9 @@ namespace GrupoThera.WebUI.Controllers
 
                 HttpContext.Session["Account"] = userLoginAccount.usuarioId;
                 HttpContext.Session["UserName"] = userLoginAccount.nombre;
-                HttpContext.Session["ListRoles"] = userRoleAccount.Select(x => x.name.ToString()).ToList();
+                HttpContext.Session["ListRoles"] = userRoleAccount.Select(x => x.code.ToString()).ToList();
                 HttpContext.Session["Password"] = userLogin.Password;
-                HttpContext.Session["Empresa"] = _catalogService.getEmpresaById(userLogin.selectedEmpresa);
+                HttpContext.Session["Empresa"] = _catalogService.getEmpresaById(idEmpresa);
                 HttpContext.Session["Sucursal"] = _catalogService.getSucursalById(userLogin.selectedSucursal);
 
                 if (userLogin.stayLogin)
@@ -65,9 +66,9 @@ namespace GrupoThera.WebUI.Controllers
                     cookieData cookie = new cookieData();
                     cookie.Password   = userLogin.Password;
                     cookie.UserName   = userLogin.UserName.ToUpper();
-                    cookie.idEmpresa  = userLogin.selectedEmpresa.ToString();
+                    cookie.idEmpresa  = idEmpresa.ToString();
                     cookie.idSucursal = userLogin.selectedSucursal.ToString();
-                    cookie.ListRoles  = userRoleAccount.Select(x => x.name.ToString()).ToList();
+                    cookie.ListRoles  = userRoleAccount.Select(x => x.code.ToString()).ToList();
                     Response.Cookies.Add(StandardClass.CreateCookie(cookie));
                 }
             }

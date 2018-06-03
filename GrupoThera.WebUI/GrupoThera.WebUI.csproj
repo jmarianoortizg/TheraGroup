@@ -305,6 +305,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\api\Filters\GenericAuthenticationFilter .cs" />
     <Compile Include="Controllers\api\Filters\MyExceptionFilter.cs" />
     <Compile Include="Controllers\DocumentsController.cs" />
@@ -1287,6 +1288,8 @@
     <Content Include="Content\plugins\jsPDF\js\jquery-ui-1.8.17.custom.min.js" />
     <Content Include="Content\plugins\jsPDF\js\jspdf.debug.js" />
     <Content Include="Content\plugins\jsPDF\js\jspdf.min.js" />
+    <Content Include="Content\plugins\multiSelect\css\multi-select.css" />
+    <Content Include="Content\plugins\multiSelect\js\jquery.multi-select.js" />
     <Content Include="Content\plugins\timeAgo\js\jquery.timeago.js" />
     <Content Include="Content\assets\img\logo\WatherMark.png" />
     <Content Include="Documentation\XmlDocument.xml" />
@@ -1330,7 +1333,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1778,6 +1780,12 @@
     <Content Include="Views\Documents\OrdenTrabajoPreliminarWelfare.cshtml" />
     <Content Include="Views\Documents\OrdenTrabajoServicioWelfare.cshtml" />
     <Content Include="Views\Documents\CotizacionPreliminarPia.cshtml" />
+    <Content Include="Views\Admin\NewEditUser.cshtml" />
+    <Content Include="Views\Admin\UsuarioEdit.cshtml" />
+    <Content Include="Views\Admin\AssignRoles.cshtml" />
+    <Content Include="Views\Admin\AssignSucursales.cshtml" />
+    <Content Include="Views\Admin\_ASROByUser.cshtml" />
+    <Content Include="Views\Admin\_ASUSBySucursal.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

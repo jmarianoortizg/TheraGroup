@@ -47,7 +47,7 @@ namespace GrupoThera.WebUI.Utils
         {
             List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
             {
-                Text = a.name,
+                Text = a.code + " | " + a.descripcion,
                 Value = a.rolId.ToString()
             }).ToList();
             return new SelectList(itemsList, "Value", "Text", "Selected");
@@ -281,5 +281,24 @@ namespace GrupoThera.WebUI.Utils
             return new SelectList(itemsList, "Value", "Text", "Selected");
         }
 
+        public static SelectList GetUsuario(IList<Usuario> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.nombre + " " + a.apellidos,
+                Value = a.usuarioId.ToString()
+            }).ToList();
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
+
+        public static SelectList GetEmpresaSucursalUsuarioMap(IList<EmpresaSucursalUsuarioMap> list)
+        {
+            List<SelectListItem> itemsList = list.Select(a => new SelectListItem()
+            {
+                Text = a.Usuario.nombre + a.Usuario.apellidos,
+                Value = a.usuarioId.ToString()
+            }).ToList();
+            return new SelectList(itemsList, "Value", "Text", "Selected");
+        }
     }
 }

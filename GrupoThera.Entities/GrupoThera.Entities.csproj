@@ -110,6 +110,7 @@
     <Compile Include="Entity\OTPre\OTPrePartidas.cs" />
     <Compile Include="Entity\OTPre\OTPreliminar.cs" />
     <Compile Include="Filters\Mock\NotificationFilter.cs" />
+    <Compile Include="Models\Admin\AdminModel.cs" />
     <Compile Include="Models\AreaTecnica\ATOSModel.cs" />
     <Compile Include="Models\AreaTecnica\ATModel.cs" />
     <Compile Include="Models\Catalog\CatalogModel.cs" />

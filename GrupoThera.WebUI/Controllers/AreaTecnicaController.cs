@@ -39,7 +39,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region OTPreliminar
 
-        [CustomAuthorizeAttribute(privilege = "ATPreliminar,GeneralAreaTecnica")]
+        [CustomAuthorizeAttribute(privilege = "AT001OTPRE")]
         public ActionResult ATOTPreliminar()
         {
             var model = generateInitialModel();
@@ -213,7 +213,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region OrdenServicio
 
-        [CustomAuthorizeAttribute(privilege = "ATServicio,GeneralAreaTecnica")]
+        [CustomAuthorizeAttribute(privilege = "AT002OTSERVICE")]
         public ActionResult ATOServicio()
         {
             var model = generateInitialModelOS();

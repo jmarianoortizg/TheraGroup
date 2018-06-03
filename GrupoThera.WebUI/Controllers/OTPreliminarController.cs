@@ -37,7 +37,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region OTPreliminar
 
-        [CustomAuthorizeAttribute(privilege = "OTPreliminar,GeneralOrdenTrabajo")]
+        [CustomAuthorizeAttribute(privilege = "V003OTPRE")]
 
         public ActionResult OTPreliminar()
         {

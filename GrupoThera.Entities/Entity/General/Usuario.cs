@@ -34,6 +34,9 @@ namespace GrupoThera.Entities.Entity.General
         [Column("CUSU_PUESTO")]
         public string puesto { get; set; }
 
+        [Column("CUSU_ENABLED")]
+        public bool enabled { get; set; }
+
         [Column("CUSU_CDEP_ID")]
         public long departamentoId { get; set; }
         public virtual Departamento Departamento { get; set; }

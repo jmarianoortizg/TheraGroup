@@ -1,0 +1,56 @@
+﻿@model GrupoThera.Entities.Models.Admin.AdminModel
+@{
+    ViewBag.Title = "UsuarioEdit";
+    Layout = null;
+}
+
+@using (Html.BeginForm("PEEditUsuario", "Admin", FormMethod.Post, new { id = "formEditUsuario", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateEditUsuario()" }))
+{
+    @Html.HiddenFor(model => model.Usuario.usuarioId)
+    <fieldset>
+        <legend>Creacion Nuevo Item</legend>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>Nombre</label>
+                @Html.TextBoxFor(model => model.Usuario.nombre, new { id = "nombre", name = "nombre", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Apellidos</label>
+                @Html.TextBoxFor(model => model.Usuario.apellidos, new { id = "apellidos", name = "apellidos", @class = "form-control required", type = "text" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>UserName</label>
+                @Html.TextBoxFor(model => model.Usuario.usuario, new { id = "usuario", name = "usuario", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Password</label>
+                @Html.TextBoxFor(model => model.Usuario.password, new { id = "password", name = "password", @class = "form-control required", type = "password" })
+            </div>
+        </div>
+        <div data-row-span="5">
+            <div data-field-span="2">
+                <label>E-Mail</label>
+                @Html.TextBoxFor(model => model.Usuario.correo, new { id = "correo", name = "correo", @class = "form-control required", type = "text" })
+            </div>
+            <div data-field-span="2">
+                <label>Puesto</label>
+                @Html.DropDownListFor(model => model.Usuario.departamentoId, Model.listDepartmentos, new { @class = "form-control required" })
+            </div>
+            <div data-field-span="1">
+                <label>Puesto</label>
+                @Html.TextBoxFor(model => model.Usuario.puesto, new { id = "puesto", name = "puesto", @class = "form-control required", type = "text" })
+            </div>
+
+        </div>
+    </fieldset>
+    <br /><br />
+
+    <div class="clearfix pt-md">
+        <div class="pull-right">
+            <button class="btn-primary btn">Edicion Usuario</button>
+        </div>
+    </div>
+}
+

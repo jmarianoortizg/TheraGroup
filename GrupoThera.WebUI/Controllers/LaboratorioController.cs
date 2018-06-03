@@ -33,7 +33,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region Methods
 
-        [CustomAuthorizeAttribute(privilege = "LBLaboratorio,GeneralLaboratorio")]
+        [CustomAuthorizeAttribute(privilege = "L001OTPRE")]
 
         public ActionResult LabOTPreliminares()
         {

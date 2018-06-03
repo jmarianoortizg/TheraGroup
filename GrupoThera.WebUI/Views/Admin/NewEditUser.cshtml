@@ -1,0 +1,235 @@
+﻿@model GrupoThera.Entities.Models.Admin.AdminModel
+@{
+    ViewBag.Title = "NewEditUser";
+    var allItems = Model.AllUsuarios.Count;
+}
+
+<!-- Page Header -->
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading">
+                Usuarios <small>Creacion / Edicion / Eliminacion</small>
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- END Page Header -->
+<!-- Page Content -->
+<div class="content">
+    <div class="block">
+        <ul class="nav nav-tabs" data-toggle="tabs">
+            <li class="active">
+                <a href="#catalog-new">Nuevo</a>
+            </li>
+            <li>
+                <a href="#catalog-list">Listado</a>
+            </li>
+            <li>
+                <a href="#catalog-edit">Edicion</a>
+            </li>
+        </ul>
+        <div class="block-content tab-content bg-white">
+            <!-- Nuevo -->
+            <div class="tab-pane fade fade-up in active" id="catalog-new">                
+                <!-- New Item -->
+                    @using (Html.BeginForm("CreateUsuario", "Admin", FormMethod.Post, new { id = "formCreateUsuario", enctype = "multipart/form-data", @class = "form-horizontal row-border grid-form", onsubmit = "return validateCreateUsuario()" }))
+                    {
+                        <fieldset>
+                            <legend>Creacion Nuevo Item</legend>
+                            <div data-row-span="5">
+                                <div data-field-span="2">
+                                    <label>Nombre</label>
+                                    @Html.TextBoxFor(model => model.Usuario.nombre, new { id = "nombre", name = "nombre", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="2">
+                                    <label>Apellidos</label>
+                                    @Html.TextBoxFor(model => model.Usuario.apellidos, new { id = "apellidos", name = "apellidos", @class = "form-control required", type = "text" })
+                                </div> 
+                            </div>
+                            <div data-row-span="5">
+                                <div data-field-span="2">
+                                    <label>UserName</label>
+                                    @Html.TextBoxFor(model => model.Usuario.usuario, new { id = "usuario", name = "usuario", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="2">
+                                    <label>Password</label>
+                                    @Html.TextBoxFor(model => model.Usuario.password, new { id = "password", name = "password", @class = "form-control required", type = "password" })
+                                </div>
+                            </div>
+                            <div data-row-span="5">
+                                <div data-field-span="2">
+                                    <label>E-Mail</label>
+                                    @Html.TextBoxFor(model => model.Usuario.correo, new { id = "correo", name = "correo", @class = "form-control required", type = "text" })
+                                </div>
+                                <div data-field-span="2">
+                                    <label>Puesto</label>
+                                    @Html.DropDownListFor(model => model.Usuario.departamentoId, Model.listDepartmentos, new { @class = "form-control required" })
+                                </div>
+                                <div data-field-span="1">
+                                    <label>Puesto</label>
+                                    @Html.TextBoxFor(model => model.Usuario.puesto, new { id = "puesto", name = "puesto", @class = "form-control required", type = "text" })
+                                </div>
+
+                            </div>
+                        </fieldset>
+                     
+                        <br /><br />
+                        <div class="clearfix pt-md">
+                            <div class="pull-right">
+                                <button class="btn-primary btn">Crear Nuevo Usuario</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            <!-- END Nuevo -->
+            
+            <!-- Listado -->
+            <div class="tab-pane fade fade-up" id="catalog-list">
+                <div class="border-b push-30">
+                    <h2 class="push-10">@allItems <span class="h5 font-w400 text-muted">Items Encontrados</span></h2>
+                </div>
+                <table class="table table-striped table-vcenter">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>User Name</th>
+                            <th>Correo</th>
+                            <th>Puesto</th>
+                            <th class="text-center" style="width: 5%;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.AllUsuarios)
+                        {
+                            <tr>
+                                <td class="">@item.nombre @item.apellidos </td>
+                                <td class="">@item.usuario</td>
+                                <td class="">@item.correo</td>
+                                <td class="">@item.puesto</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a id="@Html.DisplayFor(modelItem => item.usuarioId)" class="btn btn-xs btn-default clsEditUsuario" type="button"  title="Edicion"><i class="fa fa-pencil"></i></a>
+                                        @*<a id="@Html.DisplayFor(modelItem => item.usuarioId)" class="btn btn-xs btn-default clsDeleteUsuario" type="button"  title="Eliminar"><i class="fa fa-times"></i></a>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- END Listado -->
+
+            <!-- Edicion -->
+            <div class="tab-pane fade fade-up" id="catalog-edit">                
+                <div class="col-md-12" id="divEditionUsuario">
+                    <div class="border-b push-30">
+                        <h2 class="push-10"><span class="h5 font-w400 text-muted">Selecciona un item para la edicion</span></h2>
+                    </div> 
+                </div>
+            </div>
+            <!-- END Edicion -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="@Url.Content("~/Content/plugins/jquery-validation/dist/jquery.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-validation/dist/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Content/plugins/jquery-validation/dist/additional-methods.min.js")"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados Correctamente' }, { type: 'info' });
+
+            $(".clsEditUsuario").on('click', function (e) {
+
+                var model = {
+                    "idUsuarioSelected": $(this).attr("id")
+                };
+
+                $.ajax({
+                    url: '@Url.Action("UsuarioEdit", "Admin")',
+                    async: false,
+                    type: 'POST',
+                    cache: false,
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(model),
+                    success: function (result) {
+                        $.notify({ icon: "fa fa-info-circle", message: 'Datos Cargados para edicion' }, { type: 'info' });
+                        $("#divEditionUsuario").html(result);
+                    }
+                });
+            });
+
+            $(".clsDeleteUsuario").on('click', function (e) {
+                var model = {
+                    "idUsuarioSelected": $(this).attr("id")
+                };
+                var item = $(this).closest("tr");
+                $.ajax({
+                    url: '@Url.Action("DeleteUsuario", "Catalog")',
+                    async: false,
+                    type: 'POST',
+                    cache: false,
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(model),
+                    success: function (result) {
+                        if (result.success == true) {
+                            item.remove();
+                            $("#divEditionUsuario").html("<div class='border-b push-30'><h2 class='push-10'><span class='h5 font-w400 text-muted'>Selecciona un item para la edicion</span></h2></div> ");
+                            $.notify({ icon: "fa fa-check", message: 'Eliminacion Correcta' }, { type: 'success' });
+                        } else {
+                            $.notify({ icon: "fa fa-info-circle", message: 'Error Localizado: Observar la seccion de Edicion' }, { type: 'info' });
+                            $("#divEditionUsuario").html(result.responseText);
+                        }
+                    }
+                });
+            });
+        });
+
+        function validateEditUsuario() {
+            $("#formEditUsuario").validate({
+                wrapper: 'span',
+                errorPlacement: function (error, element) {
+                    error.css({ 'padding-left': '10px', 'margin-right': '20px', 'padding-bottom': '2px' });
+                    error.addClass("arrow")
+                    error.insertAfter(element);
+                },
+                rules: {
+
+                },
+                messages: {
+
+                }
+            });
+            var band = $('#formEditUsuario').validate().form();
+
+            return band;
+        }
+
+
+        function validateCreateUsuario() {
+            $("#formCreateUsuario").validate({
+                wrapper: 'span',
+                errorPlacement: function (error, element) {
+                    error.css({ 'padding-left': '10px', 'margin-right': '20px', 'padding-bottom': '2px' });
+                    error.addClass("arrow")
+                    error.insertAfter(element);
+                },
+                rules: {
+
+                },
+                messages: {
+
+                }
+            });
+            var band = $('#formCreateUsuario').validate().form();
+
+            return band;
+        }
+    </script>
+}

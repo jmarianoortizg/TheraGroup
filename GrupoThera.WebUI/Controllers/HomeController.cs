@@ -15,6 +15,7 @@ namespace GrupoThera.WebUI.Controllers
 
         private ICatalogService _catalogService;
         private IRoleAccountService _roleAccountService;
+        private int idEmpresa = 1;
 
         #endregion Fields
 
@@ -38,7 +39,7 @@ namespace GrupoThera.WebUI.Controllers
                 var model = new UserLoginModel()
                 {
                     listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
-                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(1))
+                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(idEmpresa))
                 };
                 return View("~/Views/General/Loginview.cshtml",model);
             }
@@ -65,7 +66,7 @@ namespace GrupoThera.WebUI.Controllers
                 var model = new UserLoginModel()
                 {
                     listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
-                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(1))
+                    listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(idEmpresa))
                 };
                 return View("~/Views/General/Loginview.cshtml", model);
             }
@@ -78,7 +79,7 @@ namespace GrupoThera.WebUI.Controllers
             var model = new UserLoginModel()
             {
                 listEmpresas = DropListHelper.GetEmpresas(_catalogService.getEmpresas()),
-                listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(1))
+                listSucursal = DropListHelper.GetSucursales(_catalogService.getSucursalesbyEmpresa(idEmpresa))
             };
             return View("~/Views/General/Loginview.cshtml",model);
         }

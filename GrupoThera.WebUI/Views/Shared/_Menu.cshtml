@@ -24,75 +24,60 @@
         <ul>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("NuevaCotizacion")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("V001NEWCOT")) || isAllmightie)
                 {
                 <a href="@Url.Action("NuevaCotizacion","Cotizacion")"> Nueva Cotizacion </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Nueva Cotizacion
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("SearchCotizacion")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("V002SEARCHCOT")) || isAllmightie)
                 {
                     <a href="@Url.Action("SearchCotizacion","Cotizacion")"> Buscar Cotizaciones </a>
                 }
                 else
                 {
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
+                        <span class="fa fa-exclamation-triangle"></span>
                         Buscar Cotizaciones
                     </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("OTPreliminar")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("V003OTPRE")) || isAllmightie)
                 {
                     <a href="@Url.Action("OTPreliminar","OTPreliminar")"> Orden Trabajo Preliminar </a>
                 }
                 else
                 {
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
+                        <span class="fa fa-exclamation-triangle"></span>
                         Orden Trabajo Preliminar
                     </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("VEOServicio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("V004OTSERVICE")) || isAllmightie)
                 {
                     <a href="@Url.Action("OServicio","Venta")"> Orden Trabajo Servicio </a>
                 }
                 else
                 {
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
+                        <span class="fa fa-exclamation-triangle"></span>
                         Orden Trabajo Servicio
                     </a>
                 }
             </li>
-
-            <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("ReportCotizacion")) || isAllmightie)
-                {
-                    <a href="@Url.Action("ReportCotizacion","Cotizacion")"> Reportes </a>
-                }
-                else
-                {
-                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
-                        Reportes
-                    </a>
-                }
-            </li>
-
         </ul>
     </li> <!-- Ventas-->
 
@@ -101,15 +86,15 @@
         <ul>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("LBLaboratorio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("L001OTPRE")) || isAllmightie)
                 {
                     <a href="@Url.Action("LabOTPreliminares","Laboratorio")"> Orden Trabajo Preliminar </a>
                 }
                 else
                 {
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
-                        Laboratorio
+                        <span class="fa fa-exclamation-triangle"></span>
+                        Orden Trabajo Preliminar
                     </a>
                 }
             </li>
@@ -120,28 +105,28 @@
         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wrench"></i><span class="sidebar-mini-hide">Area Tecnica</span></a>
         <ul>
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("ATPreliminar")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("AT001OTPRE")) || isAllmightie)
                 {
                 <a href="@Url.Action("ATOTPreliminar","AreaTecnica")"> Orden Trabajo Preliminar</a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Orden Trabajo Preliminar
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("ATPreliminar")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("AT002OTSERVICE")) || isAllmightie)
                 {
                     <a href="@Url.Action("ATOServicio","AreaTecnica")"> Orden Servicio</a>
                 }
                 else
                 {
                     <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                        <span class="fs fa-exclamation-triangle"></span>
+                        <span class="fa fa-exclamation-triangle"></span>
                         Orden Servicio
                     </a>
                 }
@@ -162,7 +147,7 @@
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Nueva Factura
                 </a>
                 }
@@ -182,7 +167,7 @@
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Nueva Remision
                 </a>
                 }
@@ -202,7 +187,7 @@
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Nueva Compra
                 </a>
                 }
@@ -222,7 +207,7 @@
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Captura Informes
                 </a>
                 }
@@ -235,154 +220,154 @@
         <ul>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Empresa")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C002Empresa")) || isAllmightie)
                 {
                 <a href="@Url.Action("Empresa","Catalog")"> Empresa </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Empresa
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Cliente")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C003Cliente")) || isAllmightie)
                 {
                 <a href="@Url.Action("Cliente","Catalog")"> Cliente </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Cliente
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Provedor")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C005Provedores")) || isAllmightie)
                 {
                 <a href="@Url.Action("Provedor","Catalog")"> Provedor </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Provedor
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Giro")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C005Giros")) || isAllmightie)
                 {
                 <a href="@Url.Action("Giro","Catalog")"> Giro </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
-
+                    <span class="fa fa-exclamation-triangle"></span>
+                    Giro
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("ClasificacionServicio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C006Clasificaciones")) || isAllmightie)
                 {
                 <a href="@Url.Action("ClasificacionServicio","Catalog")"> Clasificacion Servicio</a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Clasificacion Servicio
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("AreaServicio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C007AreasServicio")) || isAllmightie)
                 {
                 <a href="@Url.Action("AreaServicio","Catalog")"> Area de Servicio </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Area de Servicio
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("FrecuenciaServicio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C009Frecuencias")) || isAllmightie)
                 {
                 <a href="@Url.Action("FrecuenciaServicio","Catalog")"> Frecuencia Servicio</a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Frecuencia Servicio
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Moneda")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C011Moneda")) || isAllmightie)
                 {
                 <a href="@Url.Action("Moneda","Catalog")"> Moneda  </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Moneda
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Servicio")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C004Servicios")) || isAllmightie)
                 {
                 <a href="@Url.Action("Servicio","Catalog")"> Servicio  </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Servicio
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("TiempoEntrega")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C0012Entrega")) || isAllmightie)
                 {
                 <a href="@Url.Action("TiempoEntrega","Catalog")">Tiempo de Entrega  </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Tiempo de Entrega
                 </a>
                 }
             </li>
 
             <li>
-                @if ((priviledgesList != null && priviledgesList.Contains("Configuracion")) || isAllmightie)
+                @if ((priviledgesList != null && priviledgesList.Contains("C013Configuracion")) || isAllmightie)
                 {
                 <a href="@Url.Action("Configuracion","Catalog")"> Configuracion </a>
                 }
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Configuracion
                 </a>
                 }
@@ -402,7 +387,7 @@
                 else
                 {
                 <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
-                    <span class="fs fa-exclamation-triangle"></span>
+                    <span class="fa fa-exclamation-triangle"></span>
                     Nuevo Reporte
                 </a>
                 }
@@ -410,4 +395,49 @@
         </ul>
     </li> <!-- Reportes -->
 
+    <li>
+        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-cogs"></i><span class="sidebar-mini-hide">Administracion</span></a>
+        <ul>
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("A001NEUSER")) || isAllmightie)
+                {
+                    <a href="@Url.Action("NewEditUser","Admin")"> Nuevo | Edicion Usuario </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        Nuevo | Edicion Usuario
+                    </a>
+                }
+            </li>
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("A002ROLASS")) || isAllmightie)
+                {
+                    <a href="@Url.Action("AssignRoles","Admin")"> Asignacion de Roles Usuario </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        Asignacion de Roles
+                    </a>
+                }
+            </li>
+            <li>
+                @if ((priviledgesList != null && priviledgesList.Contains("A003SUCASS")) || isAllmightie)
+                {
+                    <a href="@Url.Action("AssignSucursales","Admin")"> Asignacion de Sucursales Usuario </a>
+                }
+                else
+                {
+                    <a disabled style="color:#ff6b6b;" class="linkDisabled" href="">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        Asignacion de Roles
+                    </a>
+                }
+            </li>
+
+        </ul>
+    </li> <!-- Admin -->
 </ul> 

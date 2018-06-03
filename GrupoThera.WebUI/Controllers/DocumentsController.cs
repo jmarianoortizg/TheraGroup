@@ -1,5 +1,6 @@
 ﻿using GrupoThera.BusinessModel.Contracts.Cotizacion;
 using GrupoThera.BusinessModel.Contracts.General;
+using GrupoThera.BusinessModel.Contracts.OS;
 using GrupoThera.BusinessModel.Contracts.OT;
 using GrupoThera.WebUI.Utils;
 using HiQPdf;
@@ -20,7 +21,7 @@ namespace GrupoThera.WebUI.Controllers
         private ICatalogService _catalogService;
         private IOTPreliminarService _otPreliminarService;
         private ICotizacionService _cotizacionService;
-
+        private IOServicioService _oServicioService;
 
 
         private static string CoreRoute = System.AppDomain.CurrentDomain.BaseDirectory;
@@ -29,13 +30,15 @@ namespace GrupoThera.WebUI.Controllers
 
         #region Constructor
 
-        public DocumentsController(ICatalogService catalogService,
+        public DocumentsController( ICatalogService catalogService,
                                     ICotizacionService cotizacionService,
-                                    IOTPreliminarService otPreliminarService)
+                                    IOTPreliminarService otPreliminarService,
+                                    IOServicioService oServicioService)
         {
             _catalogService = catalogService;
             _otPreliminarService = otPreliminarService;
             _cotizacionService = cotizacionService;
+            _oServicioService = oServicioService;
         }
 
         #endregion Constructor
@@ -55,7 +58,7 @@ namespace GrupoThera.WebUI.Controllers
             document.Prepartidas = _cotizacionService.getAllPrePartidasByPreliminar(documentId);
             var idDocument = generateIdDocument(document.preliminaresId, document.noDoc, document.noDocInt);
 
-            var pdfDocument = createDocument("Welfare", "Cotizacion Preliminar", documentId.ToString());
+            var pdfDocument = createDocument("Welfare", "Cotizacion Preliminar", idDocument);
             byte[] pdfBuffer = pdfDocument.ConvertHtmlToMemory(StdClassWeb.RenderToString(PartialView("~/Views/Documents/CotizacionPreliminarWelfare.cshtml", document), HttpContext), "");
             return WatherMarkDocument(pdfBuffer, "CotPreWelfare" + idDocument);
         }
@@ -66,29 +69,31 @@ namespace GrupoThera.WebUI.Controllers
             document.OTPrePartidas = _otPreliminarService.getAllPrePartidasByOTPreliminar(documentId);
             var idDocument = generateIdDocument(document.preliminaresId, document.noDoc, document.noDocInt);
 
-            var pdfDocument = createDocument("Welfare", "Cotizacion Servicio", "43");
+            var pdfDocument = createDocument("Welfare", "Cotizacion Servicio", idDocument);
             byte[] pdfBuffer = pdfDocument.ConvertHtmlToMemory(StdClassWeb.RenderToString(PartialView("~/Views/Documents/CotizacionServicioWelfare.cshtml", document), HttpContext), "");
             return WatherMarkDocument(pdfBuffer, "OTPreWelfare" + idDocument);
         }
 
         public ActionResult OrdenTrabajoPreliminarWelfare(int documentId)
         {
-            var document = _cotizacionService.getPreliminarById(documentId);
+            var document = _otPreliminarService.getOTPreliminarById(documentId);
+            document.OTPrePartidas = _otPreliminarService.getAllPrePartidasByOTPreliminar(documentId);
             var idDocument = generateIdDocument(document.preliminaresId, document.noDoc, document.noDocInt);
 
-            var pdfDocument = createDocument("Welfare", "Orden Trabajo Preliminar", "43");
+            var pdfDocument = createDocument("Welfare", "Orden Trabajo Preliminar", idDocument);
             byte[] pdfBuffer = pdfDocument.ConvertHtmlToMemory(StdClassWeb.RenderToString(PartialView("~/Views/Documents/OrdenTrabajoPreliminarWelfare.cshtml", document), HttpContext), "");
-            return WatherMarkDocument(pdfBuffer, "OrdenTrabajoPreliminarWelfareTest");
+            return WatherMarkDocument(pdfBuffer, "OTPreWelfare" + idDocument);
         }
 
         public ActionResult OrdenTrabajoServicioWelfare(int documentId)
         {
-            var document = _cotizacionService.getPreliminarById(documentId);
-            var idDocument = generateIdDocument(document.preliminaresId, document.noDoc, document.noDocInt);
+            var document = _oServicioService.getOServicioById(documentId);
+            document.OSPrePartidas = _oServicioService.getAllPArtidasByOServicio(documentId);
+            var idDocument = generateIdDocument(document.ordenServicioId, 0, 0);
 
-            var pdfDocument = createDocument("Welfare", "Orden Trabajo Servicio", "43");
+            var pdfDocument = createDocument("Welfare", "Orden Trabajo Servicio", idDocument);
             byte[] pdfBuffer = pdfDocument.ConvertHtmlToMemory(StdClassWeb.RenderToString(PartialView("~/Views/Documents/OrdenTrabajoServicioWelfare.cshtml", document), HttpContext), "");
-            return WatherMarkDocument(pdfBuffer, "OrdenTrabajoServicioWelfareTest");
+            return WatherMarkDocument(pdfBuffer, "OTServicioWelfare"+ idDocument);
         }
         #endregion WelfareDocuments
 

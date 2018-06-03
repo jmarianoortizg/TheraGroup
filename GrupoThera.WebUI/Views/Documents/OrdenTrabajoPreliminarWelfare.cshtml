@@ -1,4 +1,5 @@
-﻿@{
+﻿@model GrupoThera.Entities.Entity.OTPre.OTPreliminar
+@{
     ViewBag.Title = "OrdenTrabajoPreliminarWelfare";
     Layout = null;
     var idCotizacion = "";
@@ -231,25 +232,25 @@
         <div id="logo">
 
         </div>
-        <h1>Orden Trabajo Preliminar # 123123</h1>
+        <h1>Orden Trabajo Preliminar #@idCotizacion</h1>
         <div id="company" class="clearfix">
-            <div><strong>Fecha Emision</strong> : ENE-2014</div>
-            <div><strong>Fecha Vigencia</strong> : DIC-2014</div>
-            <div><strong>Clave</strong> : FO-CP-GV </div>
-            <div><strong>Documento</strong> : Tipo-D</div>
-            <div><strong>Asesor</strong> : Jose Mariano Ortiz Garcia</div>
-            <div><strong>Estado</strong> : ENVIADA</div>
-            <div><strong>Impresion</strong> : 08-05-2018 1:21:11pm</div>
+            <div><strong>Fecha Emision</strong> : @Model.confEmision</div>
+            <div><strong>Fecha Vigencia</strong> : @Model.confVigencia</div>
+            <div><strong>Clave</strong> : @Model.confClave </div>
+            <div><strong>Documento</strong> : @Model.confTipoDoc</div>
+            <div><strong>Asesor</strong> : @Model.owner</div>
+            <div><strong>Estado</strong> : @Model.StatusOTPreliminar.descripcion.ToUpper()</div>
+            <div><strong>Impresion</strong> : @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</div>
         </div>
 
         <div id="project">
-            <div><span>Cliente</span> CIA AZUCARERA LA FE S.A. DE C.V</div>
-            <div><span>Dirección</span> CONOCIDO,SN, SAN FRANCISCO PUJILTIC VENUSTIANO CARRANZA,CHIAPAS MEXICO C.P 30310 </div>
-            <div><span>Lugar Servicio</span> CONOCIDO,SN, SAN FRANCISCO PUJILTIC VENUSTIANO CARRANZA,CHIAPAS MEXICO C.P 30310 </div>
-            <div><span>Dir Empresa</span> Santo Tomas de Aquino #8315 Col. Tres Cruces</div>
-            <div><span>Email</span> jmariano.ortizg@gmail.com</div>
-            <div><span>Telefono</span> 444849302</div>
-            <div><span>Contacto</span> Jose Mariano Ortiz Garcia | 4448404748</div>
+            <div><span>Cliente</span> @Model.Cliente.razonSocial</div>
+            <div><span>Dirección</span> @Model.Cliente.direccion </div>
+            <div><span>Lugar Servicio</span> @Model.Cliente.dirServicio </div>
+            <div><span>Dir Empresa</span> @Model.Empresa.direccion</div>
+            <div><span>Email</span> @Model.Empresa.email</div>
+            <div><span>Telefono</span> @Model.Empresa.telefono</div>
+            <div><span>Contacto</span> @Model.Empresa.contacto</div>
         </div>
     </header>
     <main>
@@ -264,24 +265,16 @@
                 <td style="border-color:white">
                     <table class="meta">
                         <tr>
-                            <th class="fontsizeth"><span>Cotizacion #</span></th>
-                            <td><span>101138</span></td>
+                            <th class="fontsizeth"><span>Orden Trabajo Preliminar #</span></th>
+                            <td><span>@idCotizacion</span></td>
                         </tr>
                         <tr>
-                            <th class="fontsizeth"><span>OT Preliminar #</span></th>
-                            <td><span id="prefix"></span><span> 1-2</span></td>
-                        </tr>
-                        <tr>
-                            <th class="fontsizeth"><span>Entrada</span></th>
-                            <td><span>January 1, 2012</span></td>
-                        </tr>
-                        <tr>
-                            <th class="fontsizeth"><span>Aceptacion</span></th>
-                            <td><span>January 1, 2012</span></td>
+                            <th class="fontsizeth"><span>Entrega</span></th>
+                            <td><span>@Model.fechaEntrega.ToString("dd/MM/yyyy")</span></td>
                         </tr>
                         <tr>
                             <th class="fontsizeth"><span>Muestreo</span></th>
-                            <td><span>January 1, 2012</span></td>
+                            <td><span>@Model.fechaMuestreo.ToString("dd/MM/yyyy")</span></td>
                         </tr>
                     </table>
                 </td>
@@ -297,63 +290,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center"><span>1</span></td>
-                                <td style="text-align:center"><span>A-001</span></td>
-                                <td style="text-align:center"><span>NORMA 001 SEMARNAT 1996 COMPLETA 6 MUESTRAS PARA HACER UNA COMPUESTA PARAMETROS BASICOS:TEMPERATURA(NMX-AA-007-SCFI-2013), PH(NMX-AA-008-SCFI-2011); DBO-5(NMX-AA-028-SCFI-2001), DQO(NMX-AA-030/1-SCFI-2012), GRASAS Y ACEITES(NMX-AA-005-SCFI-2013), SOLIDOS SEDIMENTABLES(NMX-AA-004-SCFI-2013), SOLIDOS SUSPENDIDOS TOTALES(NMX-AA-034-SCFI-2001), MATERIA FLOTANTE(NMX-AA-006-SCFI-2010), NITROGENO TOTAL KJELDAHL (NMX-AA-026-SCFI-2010), NITRITOS (NMX-AA-099-SCFI-2006), NITRATOS (NMX-AA-079-SCFI-2001), FOSFORO TOTAL(NMX-AA-029-SCFI-2001). METALES ARSENICO, CADMIO, COBRE, MERCURIO, CROMO TOTAL, NIQUEL, PLOMO, ZINC(NMX-AA-051-SCFI-2001), CIANUROS TOTALES(NMX-AA-058-SCFI-2001), MICROBIOLÓGICOS COLIFORMES FECALES (NMX-AA-042-SCFI-1987) Y **HUEVOS DE HELMINTO(NMX-AA-113-SCFI-2012) (12 a 24 hrs) $4,100.00A-0011 DESCARGA SERVICIOS GENERALES DE FABRICA </span></td>
-                            </tr>
+                            @foreach (var item in Model.OTPrePartidas)
+                            {
+                                <tr>
+                                    <td style="text-align:center"><span>@item.cantidad</span></td>
+                                    <td style="text-align:center"><span>@item.Servicio.clave</span></td>
+                                    <td style="text-align:center"><span>@item.Servicio.descripcion </span></td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </td>
@@ -363,10 +307,41 @@
                     <div id="notices">
                         <div><h1>Observaciones Laboratorio</h1></div>
                         <div class="notice">
-                            <input type="checkbox" checked> PARA EL SERVICIO SOLICITADO, ESTE TIENE EL METODO DE PRUEBA SELECCIONADO Y ADECUADO AL ESTUDIO<br>
-                            <input type="checkbox" checked> CAPACIDAD INSTALADA DEL EQUIPO PARA CUBRIR EL TRABAJO<br>
-                            <input type="checkbox" checked> SE TIENE EL PERSONAL SUFICIENTE Y CAPACITADO PARA DAR EL SERVICIO<br>
-                            <input type="checkbox" checked> TIEMPO DE ENTREGA SOLICITADO SUFICIENTE PARA REALIZAR LAS PRUEBAS<br>
+
+                            @if (Model.check1)
+                            {
+                                <input type='checkbox' checked><span> PARA EL SERVICIO SOLICITADO, ESTE TIENE EL METODO DE PRUEBA SELECCIONADO Y ADECUADO AL ESTUDIO</span><br>;
+                            }
+                            else
+                            {
+                                <input type='checkbox'><span> PARA EL SERVICIO SOLICITADO, ESTE TIENE EL METODO DE PRUEBA SELECCIONADO Y ADECUADO AL ESTUDIO</span><br>;
+                            }
+
+                            @if (Model.check2)
+                            {
+                                <input type='checkbox' checked><span>CAPACIDAD INSTALADA DEL EQUIPO PARA CUBRIR EL TRABAJO</span><br>
+                            }
+                            else
+                            {
+                                <input type='checkbox'><span>CAPACIDAD INSTALADA DEL EQUIPO PARA CUBRIR EL TRABAJO</span><br>
+                            }
+
+                            @if (Model.check3)
+                            {
+                                <input type='checkbox' checked><span>SE TIENE EL PERSONAL SUFICIENTE Y CAPACITADO PARA DAR EL SERVICIO</span><br>
+                            }
+                            else
+                            {
+                                <input type='checkbox'><span>SE TIENE EL PERSONAL SUFICIENTE Y CAPACITADO PARA DAR EL SERVICIO</span><br>    }
+
+                            @if (Model.check4)
+                            {
+                                <input type='checkbox' checked><span>TIEMPO DE ENTREGA SOLICITADO SUFICIENTE PARA REALIZAR LAS PRUEBAS</span><br>
+                            }
+                            else
+                            {
+                                <input type='checkbox'><span>TIEMPO DE ENTREGA SOLICITADO SUFICIENTE PARA REALIZAR LAS PRUEBAS</span><br>
+                            }
                         </div>
                     </div>
                 </td>
@@ -383,7 +358,7 @@
                     </div>
                 </td>
             </tr>
-       </table>
+        </table>
     </main>
 </body>
 </html>

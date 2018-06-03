@@ -1,0 +1,25 @@
+﻿@model GrupoThera.Entities.Models.Admin.AdminModel
+@{ 
+    ViewBag.Title = "_ASROByUser";
+}
+
+<div class="col-xs-12 col-sm-12 col-lg-12">
+    <h4> <strong>[ Usuario ]</strong> @Model.Usuario.nombre @Model.Usuario.apellidos<br />
+         <strong>[ Empresa ]</strong> @Model.Empresa.nombre<br />
+         <strong>[ Sucursal ]</strong> @Model.Sucursal.nombre<br /><br /><br />  
+        <p><a class="text-danger"> ROLES FALTANTES </a> <span class="glyphicon glyphicon-chevron-right"> </span> <a class="text-success"> ROLES AGREGADOS </a>
+</h4>
+         <input type="hidden" id="empSucUsuMap" value="@Model.empSucUsuMap.empresaSucursalUsuarioMapId" />
+
+    <select multiple="multiple" id="my-select" name="my-select[]">
+        @foreach (var item in Model.rolesAssigned)
+        {
+            <option value="@item.rolId" selected>@item.code | @item.descripcion</option>
+        }
+
+        @foreach (var item in Model.rolesMissing)
+        {
+            <option value="@item.rolId">@item.code | @item.descripcion</option>
+        }
+    </select>
+</div><!-- //form-group-->

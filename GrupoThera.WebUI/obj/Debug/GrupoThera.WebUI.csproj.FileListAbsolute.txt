@@ -1,4 +1,3 @@
-F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\csc.exe
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -22,6 +21,8 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.BusinessLogic.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.BusinessModel.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.Core.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.Entities.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -69,6 +70,8 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.Core.pdb
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\GrupoThera.Entities.pdb
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\EntityFramework.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\EntityFramework.SqlServer.xml
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.xml
+F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\MvcSiteMapProvider.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\MvcSiteMapProvider.WebActivator.xml
@@ -100,11 +103,8 @@ F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Google.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\log4net.xml
-F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
-F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb
-F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.dll
-F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.xml
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.dep
 F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\HiQPdf.rda
-F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.dll
-F:\Proyects\TheraGroup\GrupoThera.WebUI\bin\itextsharp.xml
+F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.csprojResolveAssemblyReference.cache
+F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.dll
+F:\Proyects\TheraGroup\GrupoThera.WebUI\obj\Debug\GrupoThera.WebUI.pdb

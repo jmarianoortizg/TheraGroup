@@ -39,7 +39,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region NuevaCotizacion
 
-        [CustomAuthorizeAttribute(privilege = "NuevaCotizacion,GeneralCotizacion")]
+        [CustomAuthorizeAttribute(privilege = "V001NEWCOT")]
 
         public ActionResult NuevaCotizacion()
         {
@@ -113,7 +113,7 @@ namespace GrupoThera.WebUI.Controllers
 
         #region SearchCotizacion
 
-        [CustomAuthorizeAttribute(privilege = "SearchCotizacion,GeneralCotizacion")]
+        [CustomAuthorizeAttribute(privilege = "V002SEARCHCOT")]
 
         public ActionResult SearchCotizacion()
         {

@@ -1,0 +1,26 @@
+﻿@model GrupoThera.Entities.Models.Admin.AdminModel
+@{
+    ViewBag.Title = "_ASUSBySucursal";
+}
+
+<div class="col-xs-12 col-sm-12 col-lg-12">
+    <h4>
+        <strong>[ Empresa ]</strong> @Model.Empresa.nombre<br />
+        <strong>[ Sucursal ]</strong> @Model.Sucursal.nombre<br /><br /><br />
+        <p><a class="text-danger"> USUARIOS FALTANTES </a> <span class="glyphicon glyphicon-chevron-right"> </span> <a class="text-success"> USUARIOS AGREGADOS </a>
+    </h4>
+</div>
+<input type="hidden" id="empSucUsuMap" value="@Model.empSucMap.empresaSucursalId" />
+
+<select multiple="multiple" id="my-select" name="my-select[]">
+    @foreach (var item in Model.usuarioAssigned)
+    {
+        <option value="@item.usuarioId" selected>@item.apellidos @item.nombre</option>
+    }
+
+    @foreach (var item in Model.usuarioMissing)
+    {
+        <option value="@item.usuarioId">@item.apellidos @item.nombre</option>
+    }
+</select>
+</div><!-- //form-group-->
