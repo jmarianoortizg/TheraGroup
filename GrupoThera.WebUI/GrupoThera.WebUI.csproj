@@ -1332,7 +1332,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1786,6 +1785,7 @@
     <Content Include="Views\Admin\AssignSucursales.cshtml" />
     <Content Include="Views\Admin\_ASROByUser.cshtml" />
     <Content Include="Views\Admin\_ASUSBySucursal.cshtml" />
+    <None Include="Properties\PublishProfiles\Theragroup.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
